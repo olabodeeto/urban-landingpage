@@ -7,7 +7,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      clashDisplay: ["var(--font-clash-display)"],
+    },
+
     extend: {
+      colors: {
+        "custom-yellow": "#BAA333",
+        "urban-green": "#036E03",
+        "urban-black": "#1A1A1A",
+        "urban-lightGreen": "#6CC56C",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
