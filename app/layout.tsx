@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import localfont from "next/font/local";
 import "./globals.css";
+import localfont from "next/font/local";
+import Navbar from "./shared/components/navbar/navbar";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,12 +40,12 @@ const creatoDisplay = localfont({
     },
 
     {
-      path: "./assets/fonts/CreatoDisplay-Light.otf",
-      weight: "200",
+      path: "./assets/fonts/CreatoDisplay-Thin.otf",
+      weight: "100",
       style: "light",
     },
   ],
-  variable: "--font-clash-display",
+  variable: "--font-creato-display",
 });
 
 export const metadata: Metadata = {
@@ -58,7 +60,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={creatoDisplay.className}>{children}</body>
+      <Head>
+        <link
+          href="https://fonts.cdnfonts.com/css/creato-display"
+          rel="stylesheet"
+        />
+      </Head>
+      <body className={creatoDisplay.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
