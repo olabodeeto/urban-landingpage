@@ -17,12 +17,18 @@ export default function Navbar() {
 
   return (
     <div className="w-full p-4 sticky top-2">
-      <div className="w-full lg:w-11/12 m-auto bg-white rounded-lg px-4 py-2 xl:max-w-8xl">
+      <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-4 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl">
         {/* desktop navbar */}
         <div className="hidden lg:block py-1">
           <div className="flex flex-row items-center justify-between">
             <div className="lg:w-1/12 xl:w-2/12">
-              <Image src="./logo.svg" width={80} height={35} alt="" />
+              <Image
+                src="./logo.svg"
+                width={80}
+                height={35}
+                alt=""
+                className="2xl:w-24"
+              />
             </div>
             <div className="lg:w-8/12 xl:w-6/12 flex justify-start">
               <ul className="flex items-center lg:gap-8 xl:gap-10">
@@ -32,7 +38,7 @@ export default function Navbar() {
                       setselectedTab(obj.title);
                     }}
                     key={index}
-                    className={` cursor-pointer lg:text-base xl:text-base hover:underline hover:text-urban-green ${
+                    className={` cursor-pointer lg:text-base xl:text-base 2xl:text-lg hover:underline hover:text-urban-green ${
                       selectedTab === obj.title
                         ? "font-semibold text-urban-green underline"
                         : "font-light"
@@ -44,7 +50,7 @@ export default function Navbar() {
               </ul>
             </div>
             <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4">
-              <button className="px-10 py-3 rounded-md text-urban-green">
+              <button className="px-10 py-3 rounded-md text-urban-green 2xl:text-lg">
                 Login
               </button>
               <PrimaryBtn title="Register" handlePress={() => ""} />
