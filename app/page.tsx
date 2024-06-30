@@ -4,16 +4,16 @@ import Navbar from "./shared/components/navbar/navbar";
 export default function Home() {
   return (
     <main className="relative">
-      <section className="w-full -mt-32 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4">
-        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row m-h-[50vh] lg:mt-48 2xl:mt-64">
-          <div className="min-h-40 w-full lg:w-6/12">
-            <h2 className="py-1 lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extralight uppercase mb-1">
+      <section className="w-full -mt-24 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4">
+        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-48 2xl:mt-64">
+          <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extralight uppercase mb-1">
               Reimagine your
             </h2>
-            <h2 className="py-1 lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
               Travel Experience
             </h2>
-            <h2 className="py-1 lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
               <span className="font-light">with</span> Urban
             </h2>
             <div className="flex items-center gap-1 mt-2 2xl:mt-6">
@@ -45,8 +45,8 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="w-full lg:w-6/12 lg:flex lg:justify-end">
-            <div className="bg-white w-full lg:w-8/12 rounded min-h-[60vh]"></div>
+          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 lg:flex lg:justify-end">
+            <div className="bg-white w-full lg:w-8/12 rounded-2xl min-h-[60vh]"></div>
           </div>
         </div>
       </section>
