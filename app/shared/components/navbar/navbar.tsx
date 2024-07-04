@@ -211,7 +211,7 @@ export default function Navbar({ setMobileVisibility }: any) {
               </div>
             </div>
 
-            <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between">
+            <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between gap-8">
               <div className="w-1/2">
                 <Image
                   src="/assets/mobilefooterLogo.svg"
@@ -225,7 +225,35 @@ export default function Navbar({ setMobileVisibility }: any) {
                   experience
                 </p>
               </div>
-              <div className="w-1/2"></div>
+              <div className="w-1/2">
+                <div className="flex gap-2 mb-4">
+                  <Image
+                    src="/assets/MFooterEmailIcon.svg"
+                    width={32}
+                    height={28}
+                    alt=""
+                    className=""
+                  />
+                  <div className="text-white text-[0.6rem]">
+                    <p>Email</p>
+                    <p>contact@urban.com</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-2">
+                  <Image
+                    src="/assets/MFooterEmailIcon.svg"
+                    width={32}
+                    height={28}
+                    alt=""
+                    className=""
+                  />
+                  <div className="text-white text-[0.6rem]">
+                    <p>Call Us</p>
+                    <p>(00) 112 365 489</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </dialog>
         </div>

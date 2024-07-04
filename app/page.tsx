@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import Navbar from "./shared/components/navbar/navbar";
+import { useState } from "react";
 
 export default function Home() {
+  const [ismovileNavOpen, setismovileNavOpen] = useState(false);
+
   return (
     <main className="relative">
       <section className="w-full -mt-[6.5rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4">
@@ -35,14 +38,14 @@ export default function Home() {
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-28 xl:w-32 2xl:w-60"
+                className="lg:w-28 xl:w-40 2xl:w-60"
               />
               <Image
                 src="/assets/playstoreIcon.svg"
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-28 xl:w-32 2xl:w-60"
+                className="lg:w-28 xl:w-40 2xl:w-60"
               />
             </div>
           </div>
