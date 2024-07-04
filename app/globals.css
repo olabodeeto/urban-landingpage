@@ -13,8 +13,9 @@
   font-style: normal;
 }
 
-body {
+body.no-scroll {
   font-family: "Creato Display", sans-serif;
+  overflow: hidden;
 }
 
 /* .herobg1 {
