@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Navbar from "./shared/components/navbar/navbar";
 import { useState } from "react";
+import BookTripForm from "./shared/components/book-trip-form/book-trip-form";
 
 export default function Home() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -50,7 +51,14 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 lg:flex lg:justify-end">
-            <div className="bg-white w-full lg:w-8/12 rounded-2xl min-h-[60vh]"></div>
+            <div className="bg-white w-full lg:w-8/12 rounded-2xl min-h-[60vh] p-4">
+              <div className="text-xl text-urban-green mt-4 text-center">
+                BOOK A TRIP
+              </div>
+              <div className="w-full mt-4">
+                <BookTripForm />
+              </div>
+            </div>
           </div>
         </div>
       </section>

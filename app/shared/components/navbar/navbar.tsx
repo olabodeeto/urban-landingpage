@@ -146,111 +146,114 @@ export default function Navbar({ setMobileVisibility }: any) {
 
           <dialog
             open={isOpen}
-            className="bg-white rounded-xl p-3 w-full flex flex-col justify-between  top-16 h-[86vh]"
+            className="bg-white rounded-xl p-3 w-full top-16 "
             ref={dialogRef}
           >
-            <div>
-              {tabsData.map((tab, index: number) => (
-                <div
-                  className={`flex items-center gap-1 justify-center py-3 border ${
-                    index > 0 ? "border-t-gray-100 border-l-0 border-r-0" : ""
-                  }`}
-                  key={index}
-                  onClick={() => {
-                    setselectedTab(tab.title);
-                  }}
-                >
-                  {tab.icon && selectedTab == tab.title && (
-                    <div>{tab.icon}</div>
-                  )}
-                  <div className="cursor-pointer">
-                    <span
-                      className={`${
-                        selectedTab == tab.title && "font-bold text-urban-green"
-                      }`}
-                    >
-                      {tab.title}
-                    </span>
+            <div className="flex flex-col justify-between h-[84vh]">
+              <div>
+                {tabsData.map((tab, index: number) => (
+                  <div
+                    className={`flex items-center gap-1 justify-center py-3 border ${
+                      index > 0 ? "border-t-gray-100 border-l-0 border-r-0" : ""
+                    }`}
+                    key={index}
+                    onClick={() => {
+                      setselectedTab(tab.title);
+                    }}
+                  >
+                    {tab.icon && selectedTab == tab.title && (
+                      <div>{tab.icon}</div>
+                    )}
+                    <div className="cursor-pointer">
+                      <span
+                        className={`${
+                          selectedTab == tab.title &&
+                          "font-bold text-urban-green"
+                        }`}
+                      >
+                        {tab.title}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              <div className="mt-4">
-                <div className="flex items-center gap-2 justify-center">
-                  <button className="w-1/2 bg-green-100 rounded py-3">
-                    Login
-                  </button>
-                  <button className="py-3 w-1/2 bg-urban-green text-white rounded">
-                    Register
-                  </button>
-                </div>
-                <div>
-                  <h2 className="text-center mt-6">
-                    <span className="font-bold text-xl">Urban App</span>{" "}
-                    <span className="p-1 italic font-light">
-                      Available on Web and App
-                    </span>
-                  </h2>
-                  <div className="flex justify-center items-center gap-2 mt-2">
-                    <Image
-                      src="/assets/appstoreIcon.svg"
-                      width={140}
-                      height={28}
-                      alt=""
-                      className=""
-                    />
-                    <Image
-                      src="/assets/playstoreIcon.svg"
-                      width={140}
-                      height={28}
-                      alt=""
-                      className=""
-                    />
+                <div className="mt-4">
+                  <div className="flex items-center gap-2 justify-center">
+                    <button className="w-1/2 bg-green-100 rounded py-3">
+                      Login
+                    </button>
+                    <button className="py-3 w-1/2 bg-urban-green text-white rounded">
+                      Register
+                    </button>
+                  </div>
+                  <div>
+                    <h2 className="text-center mt-6">
+                      <span className="font-bold text-xl">Urban App</span>{" "}
+                      <span className="p-1 italic font-light">
+                        Available on Web and App
+                      </span>
+                    </h2>
+                    <div className="flex justify-center items-center gap-2 mt-2">
+                      <Image
+                        src="/assets/appstoreIcon.svg"
+                        width={140}
+                        height={28}
+                        alt=""
+                        className=""
+                      />
+                      <Image
+                        src="/assets/playstoreIcon.svg"
+                        width={140}
+                        height={28}
+                        alt=""
+                        className=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between gap-8">
-              <div className="w-1/2">
-                <Image
-                  src="/assets/mobilefooterLogo.svg"
-                  width={80}
-                  height={28}
-                  alt=""
-                  className=""
-                />
-                <p className="mt-2 italic font-light text-gray-100 text-[0.6rem]">
-                  Urban is an enabler of their inter-state travel needs and
-                  experience
-                </p>
-              </div>
-              <div className="w-1/2">
-                <div className="flex gap-2 mb-4">
+              <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between gap-8">
+                <div className="w-1/2">
                   <Image
-                    src="/assets/MFooterEmailIcon.svg"
-                    width={32}
+                    src="/assets/mobilefooterLogo.svg"
+                    width={80}
                     height={28}
                     alt=""
                     className=""
                   />
-                  <div className="text-white text-[0.6rem]">
-                    <p>Email</p>
-                    <p>contact@urban.com</p>
-                  </div>
+                  <p className="mt-2 italic font-light text-gray-100 text-[0.6rem]">
+                    Urban is an enabler of their inter-state travel needs and
+                    experience
+                  </p>
                 </div>
+                <div className="w-1/2">
+                  <div className="flex gap-2 mb-4">
+                    <Image
+                      src="/assets/MFooterEmailIcon.svg"
+                      width={32}
+                      height={28}
+                      alt=""
+                      className=""
+                    />
+                    <div className="text-white text-[0.6rem]">
+                      <p>Email</p>
+                      <p>contact@urban.com</p>
+                    </div>
+                  </div>
 
-                <div className="flex gap-2">
-                  <Image
-                    src="/assets/MFooterEmailIcon.svg"
-                    width={32}
-                    height={28}
-                    alt=""
-                    className=""
-                  />
-                  <div className="text-white text-[0.6rem]">
-                    <p>Call Us</p>
-                    <p>(00) 112 365 489</p>
+                  <div className="flex gap-2">
+                    <Image
+                      src="/assets/MFooterEmailIcon.svg"
+                      width={32}
+                      height={28}
+                      alt=""
+                      className=""
+                    />
+                    <div className="text-white text-[0.6rem]">
+                      <p>Call Us</p>
+                      <p>(00) 112 365 489</p>
+                    </div>
                   </div>
                 </div>
               </div>
