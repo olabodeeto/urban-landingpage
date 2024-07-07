@@ -7,7 +7,7 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { nigeriaStates } from "../../utils/data";
 
 export default function BookTripForm() {
-  const screenWidth = window.screen.width;
+  // const screenWidth = window.screen.width;
   return (
     <div className="px-2 md:px-3 lg:px-2 w-full mt-8">
       <div className="flex items-start gap-2 w-full">

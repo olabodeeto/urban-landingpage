@@ -38,3 +38,6 @@ input[type="text"] {
 select {
   height: 46px !important;
 }
+.swiper-pagination-bullet-active {
+  background-color: #63e663 !important;
+}
