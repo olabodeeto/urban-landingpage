@@ -27,3 +27,14 @@ body.no-scroll {
   font-weight: 50;
   font-family: "Creato Display", sans-serif;
 }
+
+input {
+  height: 46px !important;
+}
+
+input[type="text"] {
+  border: 1px solid red !important;
+}
+select {
+  height: 46px !important;
+}

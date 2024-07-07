@@ -33,7 +33,7 @@ export default function Home() {
                 Africa's most traveler-centric brand
               </span>
             </div>
-            <div className="flex items-center gap-4 mt-6 2xl:mt-10">
+            <div className="flex items-center gap-10 mt-6 2xl:mt-10">
               <Image
                 src="/assets/appstoreIcon.svg"
                 width={140}
@@ -51,14 +51,98 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 lg:flex lg:justify-end">
-            <div className="bg-white w-full lg:w-8/12 rounded-2xl min-h-[60vh] p-4">
-              <div className="text-xl text-urban-green mt-4 text-center">
+            <div className="bg-white w-full lg:w-10/12 xl:w-8/12 rounded-2xl min-h-[60vh] px-2 py-4 md:px-4 shadow-md">
+              <div className="text-xl text-urban-green mt-4 text-center 2xl:text-4xl 2xl:mt-10">
                 BOOK A TRIP
               </div>
-              <div className="w-full mt-4">
+              <div className="w-full mt-4 pb-4">
                 <BookTripForm />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-11/12 m-auto mt-72 xl:mt-14 min-h-96 xl:py-20">
+        <div className="w-full flex justify-center">
+          <Image
+            src="/assets/section-logo.svg"
+            width={140}
+            height={40}
+            alt=""
+            className="w-52 xl:w-60"
+          />
+        </div>
+        <div className="w-full mt-10 flex flex-col items-center gap-2">
+          <h2 className="text-4xl xl:text-[3.7rem] text-center">
+            <span className=" text-urban-green">With Urban</span>, you're always
+            one click away
+          </h2>
+          <p className="xl:text-4xl font-thin italic text-center mt-2">
+            from experiencing prompt, convenient and better travel with
+            efficient ETAs
+          </p>
+        </div>
+        <div className="bg-[#ebeaea81] min-h-40 xl:p-10 mt-20">
+          <p className="text-center text-xl mt-10 xl:mt-4">
+            Book your trip in 3 easy step
+          </p>
+          <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/stepone.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen">Step One</span>
+              </div>
+              <p className="mt-4 font-light">
+                Download the Urban mobile app on either the Apple Store or the
+                Google Play Store
+              </p>
+            </div>
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/steptwo.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen">Step Two</span>
+              </div>
+              <p className="mt-4 font-light">
+                Sign up on the Urban mobile app you just downloaded using your
+                phone number and email
+              </p>
+            </div>
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/stepthree.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen">Step Three</span>
+              </div>
+              <p className="mt-4 font-light">
+                Conveniently book your trip via the Urban mobile app or web
+                remotely and in real-time
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex items-center w-full lg:w-4/12 m-auto gap-4">
+            <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
+              Contine
+            </button>
+
+            <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base">
+              Check My Bookings
+            </button>
           </div>
         </div>
       </section>

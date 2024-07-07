@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
   const [isOpen, setisOpen] = useState(false);
+  const [isFullWidth, setIsFullWidth] = useState(false);
 
   const tabsData = [
     {
@@ -80,8 +81,28 @@ export default function Navbar({ setMobileVisibility }: any) {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = 200; // Adjust this value to set the height where the change occurs
+      if (window.scrollY >= scrollHeight) {
+        setIsFullWidth(true);
+      } else {
+        setIsFullWidth(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="w-full p-4 sticky top-2 z-50">
+    <div
+      className={`w-full p-4 sticky z-50 ${
+        isFullWidth ? "bg-white top-0" : "top-2"
+      }`}
+    >
       <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-0 py-2 2xl:py-6 2xl:px-6 xl:max-w-8xl -mt-3 lg:-mt-0">
         {/* desktop navbar */}
         <div className="hidden lg:block py-1 px-4">
