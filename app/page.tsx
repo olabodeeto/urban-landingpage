@@ -21,17 +21,17 @@ export default function Home() {
   };
 
   return (
-    <main className="relative">
-      <section className="w-full -mt-[6.5rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4">
-        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-48 2xl:mt-64">
+    <main className="relative ">
+      <section className="w-full -mt-[6.5rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
+        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-32 2xl:mt-52 lg:border-2 lg:border-red-400 xl:border-blue-400 2xl:border-green-400 3xl:border-gray-600">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12">
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extralight uppercase mb-1">
+            <h2 className="py-1 text-4xl lg:text-6xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extralight uppercase mb-1">
               Reimagine your
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-6xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
               Travel Experience
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-6xl xl:text-7xl 2xl:text-[6.5rem] text-white font-creato font-extrabold mb-1">
               <span className="font-light">with</span> Urban
             </h2>
             <div className="flex items-center gap-1 mt-2 2xl:mt-6">
@@ -46,23 +46,24 @@ export default function Home() {
                 Africa's most traveler-centric brand
               </span>
             </div>
-            <div className="flex items-center gap-10 mt-6 2xl:mt-10">
+            <div className="flex items-center gap-10 lg:gap-4 mt-6 2xl:mt-10">
               <Image
                 src="/assets/appstoreIcon.svg"
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-28 xl:w-40 2xl:w-60"
+                className="lg:w-36 xl:w-40 2xl:w-60"
               />
               <Image
                 src="/assets/playstoreIcon.svg"
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-28 xl:w-40 2xl:w-60"
+                className="lg:w-36 xl:w-40 2xl:w-60"
               />
             </div>
           </div>
+
           <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 lg:flex lg:justify-end">
             <div className="bg-white w-full lg:w-10/12 xl:w-8/12 rounded-2xl min-h-[60vh] px-2 py-4 md:px-4 shadow-md">
               <div className="text-xl text-urban-green mt-4 text-center 2xl:text-4xl 2xl:mt-10">
@@ -77,7 +78,7 @@ export default function Home() {
       </section>
 
       <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
-        <section className="m-auto mt-72 xl:mt-14 min-h-96 xl:py-20">
+        <section className="m-auto mt-72 lg:mt-20 xl:mt-14 min-h-96 xl:py-20">
           <div className="w-full flex justify-center">
             <Image
               src="/assets/section-logo.svg"
@@ -231,7 +232,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <div className="full bg-[#6cc56c39] pt-14">
+      <div className="full bg-[#6cc56c1e] pt-14">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
           <section className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
@@ -281,6 +282,144 @@ export default function Home() {
           </section>
         </div>
       </div>
+
+      {/* -----urban location cities ---------------- */}
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+        <section className="w-full bg-whige mt-20 flex flex-col lg:flex-row">
+          <div className="w-full lg:w-3/12">
+            <div>
+              <Image
+                src="/assets/location-logo.svg"
+                width={220}
+                height={60}
+                alt=""
+                className=""
+              />
+            </div>
+            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
+              <span className="lg:block">
+                <span className="text-urban-green">Urban </span>is
+              </span>{" "}
+              <span className="lg:block">available in 4+</span>{" "}
+              <span className="lg:block">Cities across</span>
+              Nigeria
+            </h2>
+          </div>
+          <div className="w-full lg:w-10/12 xl:ml-10">
+            <div className="flex justify-between gap-4 w-full mb-4">
+              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+                <Image
+                  src="/assets/abuja.png"
+                  width={220}
+                  height={60}
+                  alt=""
+                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                />
+                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
+                  Abuja
+                </div>
+              </div>
+
+              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+                <Image
+                  src="/assets/markudi.png"
+                  width={220}
+                  height={60}
+                  alt=""
+                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                />
+                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
+                  Markudi
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-between gap-4 w-full mb-10 ">
+              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+                <Image
+                  src="/assets/jos.png"
+                  width={220}
+                  height={60}
+                  alt=""
+                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                />
+                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
+                  Jos
+                </div>
+              </div>
+              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden flex justify-center items-center">
+                <Image
+                  src="/assets/citimore.png"
+                  width={220}
+                  height={60}
+                  alt=""
+                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                />
+                <div className="absolute py-2 px-4 bg-white rounded z-10 top-30 cursor-pointer">
+                  View more
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      {/* -------------------------------------------- */}
+
+      {/* =========== app ads ======================== */}
+      <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
+          <section className="w-full bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
+            <div className="w-full lg:w-1/2">
+              <Image
+                src="/assets/appAdd.svg"
+                width={120}
+                height={120}
+                alt=""
+                className="w-full"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-80">
+              <div className="">
+                <h2 className="text-4xl lg:text-5xl font-creato font-bold">
+                  Urban App
+                </h2>
+                <p className="italic font-creato text-left text-2xl">
+                  Available on Web and App
+                </p>
+                <div className="flex items-center gap-2 lg:gap-5 mt-6 2xl:mt-10">
+                  <Image
+                    src="/assets/appstoreIcon.svg"
+                    width={140}
+                    height={40}
+                    alt=""
+                    className="lg:w-28 xl:w-32 2xl:w-60"
+                  />
+                  <Image
+                    src="/assets/playstoreIcon.svg"
+                    width={140}
+                    height={40}
+                    alt=""
+                    className="lg:w-28 xl:w-32 2xl:w-60"
+                  />
+                </div>
+                <div className="mt-8 flex items-center gap-2">
+                  <Image
+                    src="/assets/bliplogo.svg"
+                    width={30}
+                    height={30}
+                    alt=""
+                  />
+                  <span className="p-1 font-light">
+                    Powered by <span className="font-bold">BLIP LLC</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {/* ============================================= */}
     </main>
   );
 }
