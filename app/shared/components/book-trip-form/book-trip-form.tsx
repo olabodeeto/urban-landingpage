@@ -16,7 +16,7 @@ export default function BookTripForm() {
           width={10}
           height={40}
           alt=""
-          className="w-6 lg:w-[1.45rem] xl:w-6 2xl:w-10"
+          className="w-6 lg:w-[1.45rem] xl:w-6 2xl:w-[1.44rem]"
         />
         <div className="w-full">
           <div className="flex justify-between w-full gap-4 -mt-1">
