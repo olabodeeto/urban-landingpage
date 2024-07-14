@@ -123,11 +123,11 @@ export default function BookTripForm() {
         </div>
       </div>
       <div className="mt-8 flex items-center w-full gap-4">
-        <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
+        <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-sm text-white lg:text-sm xl:text-base">
           Contine
         </button>
 
-        <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base">
+        <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black text-sm lg:text-sm xl:text-base">
           Check My Bookings
         </button>
       </div>
