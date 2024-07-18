@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Footer from "./shared/components/footer/footer";
 
 export default function Home() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -418,8 +419,11 @@ export default function Home() {
           </section>
         </div>
       </div>
-
       {/* ============================================= */}
+
+      {/* ---------- footer ------------------- */}
+      <Footer />
+      {/* -------------------------------------- */}
     </main>
   );
 }

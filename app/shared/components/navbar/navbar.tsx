@@ -265,7 +265,7 @@ export default function Navbar({ setMobileVisibility }: any) {
 
                   <div className="flex gap-2">
                     <Image
-                      src="/assets/MFooterEmailIcon.svg"
+                      src="/assets/MCallIcon.svg"
                       width={32}
                       height={28}
                       alt=""
