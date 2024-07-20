@@ -182,9 +182,84 @@ export default function Aboutpage() {
               Core Values
             </span>
           </h2>
-          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
-            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden"></div>
-            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden"></div>
+          <div className="mt-10 lg:mt-20 flex flex-col lg:flex-row  justify-between gap-4 mb-4 gap-y-20">
+            <div className="w-full h-52 lg:w-1/2 relative overflow-hidden flex">
+              <div className="w-28">
+                <Image
+                  src="/assets/1.svg"
+                  width={100}
+                  height={80}
+                  alt=""
+                  className="w-full  object-cover object-center"
+                />
+              </div>
+              <div className="pl-10 flex flex-col justify-center gap-4">
+                <h3 className="text-2xl font-creato">Push Boundaries</h3>
+                <hr className=" border border-[#6CC56C]" />
+                <span className="font-creato font-thin w-11/12">
+                  Dare to design the future of travel
+                </span>
+              </div>
+            </div>
+
+            <div className="w-full h-52 lg:w-1/2 relative overflow-hidden flex">
+              <div className="w-28 overflow-hidden">
+                <Image
+                  src="/assets/2.svg"
+                  width={100}
+                  height={80}
+                  alt=""
+                  className="w-full  object-cover object-center"
+                />
+              </div>
+              <div className="pl-10 flex flex-col justify-center gap-4">
+                <h3 className="text-2xl font-creato">Build with Empathy</h3>
+                <hr className="border border-[#6CC56C]" />
+                <span className="font-creato font-thin w-11/12">
+                  Create long-lasting, sustainable impact
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4 mb-4 pr-4">
+            <div className="w-full h-52 lg:w-1/2 relative overflow-hidden flex">
+              <div className="w-28 overflow-hidden">
+                <Image
+                  src="/assets/3.svg"
+                  width={100}
+                  height={80}
+                  alt=""
+                  className="w-full  object-cover object-center"
+                />
+              </div>
+              <div className="pl-10 flex flex-col justify-center gap-4">
+                <h3 className="text-2xl font-creato">Travel Together</h3>
+                <hr className=" border border-[#6CC56C]" />
+                <span className="font-creato font-thin w-11/12">
+                  Collaborate with the ambition of changing the world
+                </span>
+              </div>
+            </div>
+
+            <div className="w-full h-52 lg:w-1/2 relative overflow-hidden flex">
+              <div className="w-28 overflow-hidden">
+                <Image
+                  src="/assets/4.svg"
+                  width={100}
+                  height={80}
+                  alt=""
+                  className="w-full  object-cover object-center"
+                />
+              </div>
+              <div className="pl-10 flex flex-col justify-center gap-4">
+                <h3 className="text-2xl font-creato">Seamless Experience</h3>
+                <hr className="border border-[#6CC56C]" />
+                <span className="font-creato font-thin w-11/12">
+                  Enable linkages across boundaries
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
