@@ -23,7 +23,7 @@ export default function Fleetpage() {
       </section>
 
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20">
         <section className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
             Exploitable{" "}
@@ -65,7 +65,7 @@ export default function Fleetpage() {
       </div>
       {/* ------------------------------------------ */}
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 -mt-14 lg:mt-24">
         <section className="m-auto xl:mt-14 min-h-96">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
             Why become Urban
@@ -74,7 +74,7 @@ export default function Fleetpage() {
             </span>
           </h2>
           <div className="bg-[#6cc56c2a] min-h-40 lg:p-10 mt-14">
-            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
+            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-0">
               <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
                 <div className="flex items-center gap-2">
                   <Image
@@ -118,7 +118,7 @@ export default function Fleetpage() {
               </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
+            <div className="mt-4 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
               <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
                 <div className="flex items-center gap-2">
                   <Image
@@ -166,7 +166,7 @@ export default function Fleetpage() {
       </div>
 
       {/* ----------vision ------------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
+      {/* <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:p-20 flex flex-col items-center gap-4 lg:gap-10 lg:min-h-96">
             <div className="flex items-center gap-4 text-white w-full">
@@ -197,11 +197,11 @@ export default function Fleetpage() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* -------------------------------- */}
 
       {/* ---------------- experience --------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      {/* <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
         <div className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
             The Urban{" "}
@@ -236,11 +236,11 @@ export default function Fleetpage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* ------------------------------------------ */}
 
       {/* ---------------- values --------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      {/* <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
         <div className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
             Urban{" "}
@@ -328,7 +328,7 @@ export default function Fleetpage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* ------------------------------------------ */}
 
       {/* =========== app ads ======================== */}
