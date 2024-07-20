@@ -403,14 +403,14 @@ export default function Home() {
                     className="lg:w-28 xl:w-32 2xl:w-40"
                   />
                 </div>
-                <div className="mt-8 flex items-center gap-2">
+                <div className="mt-4 flex items-center gap-2 pl-1">
                   <Image
                     src="/assets/bliplogo.svg"
-                    width={30}
-                    height={30}
+                    width={24}
+                    height={24}
                     alt=""
                   />
-                  <span className="p-1 font-light">
+                  <span className="font-light text-sm">
                     Powered by <span className="font-bold">BLIP LLC</span>
                   </span>
                 </div>
