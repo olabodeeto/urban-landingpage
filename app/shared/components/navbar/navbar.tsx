@@ -4,12 +4,15 @@ import React, { useEffect, useRef, useState } from "react";
 import PrimaryBtn from "../buttons/primary-btn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FormControl, MenuItem, Select } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
   const [isOpen, setisOpen] = useState(false);
   const [isFullWidth, setIsFullWidth] = useState(false);
   const [travelersPage, settravelersPage] = useState("");
+
+  const router = useRouter();
 
   const tabsData = [
     {
@@ -121,17 +124,18 @@ export default function Navbar({ setMobileVisibility }: any) {
             <div className="lg:w-8/12 xl:w-6/12 flex justify-start">
               <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10">
                 {tabsData.map((obj, index: number) => (
-                  <>
+                  <div key={index}>
                     {obj.title !== "Traveler’s Club" && (
                       <li
                         onClick={() => {
                           setselectedTab(obj.title);
+                          router.push(obj.path);
                         }}
                         key={index}
                         className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
                           selectedTab === obj.title
                             ? "font-semibold text-urban-green underline"
-                            : "font-light"
+                            : "font-light text-urban-black"
                         }`}
                       >
                         {obj.title}
@@ -157,13 +161,15 @@ export default function Navbar({ setMobileVisibility }: any) {
                           },
                         }}
                       >
-                        <MenuItem value="">Traveler’s Club</MenuItem>
-                        <MenuItem value={10}>Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value="" disabled>
+                          Traveler’s Club
+                        </MenuItem>
+                        <MenuItem value="urbanCard">Urban Card</MenuItem>
+                        <MenuItem value="travelersKit">Traveler’s Kit</MenuItem>
+                        <MenuItem value="hotel">Hotels</MenuItem>
                       </Select>
                     )}
-                  </>
+                  </div>
                 ))}
               </ul>
             </div>
