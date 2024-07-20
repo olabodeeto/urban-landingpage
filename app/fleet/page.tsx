@@ -22,85 +22,38 @@ export default function Fleetpage() {
         </div>
       </section>
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20">
-        <section className="flex flex-col lg:flex-row justify-between">
-          <div className="w-full lg:w-1/2 mb-10">
-            <div className="flex items-center gap-4 cursor-pointer">
-              <ArrowBackIcon sx={{ color: "#036E03" }} />
-              <span className="text-xl font-creato text-urban-black font-bold">
-                About Us
-              </span>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2">
-            <span className="text-xl font-creato font-bold">Quick Links:</span>
-            <div className="mt-4 text-sm">
-              <div className="flex items-center gap-4 flex-wrap mb-2">
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Our Vision
-                </span>
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Fleet Partners
-                </span>
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Park Partners
-                </span>
-              </div>
-              <div className="flex items-center gap-4 flex-wrap">
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Traveler's Club
-                </span>
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Traveler's Kits Store
-                </span>
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Hotels
-                </span>
-                <span className="block text-urban-black underline font-creato cursor-pointer">
-                  Urban Cards
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20">
         <section className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
-            We are{" "}
-            <span className=" text-urban-green font-extrabold">Urban</span>
+            Exploitable{" "}
+            <span className=" text-urban-green font-extrabold">
+              Opportunities
+            </span>
           </h2>
           <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
-            Urban is an equal opportunities platform that promotes and value
-            diversity. Team members are welcomed from various backgrounds and
-            cultures with a range of skills and experiences, all sharing the
-            Urban brand ethos and passion for their work. Together, we create
-            magic. We are a travel masterpiece brand executed with jaw-dropping
-            skill and attention to detail.
+            Instantly recognizable, Urban has been delivered across four cities
+            at present. Our team works hand-in-hand with travelers to tailor
+            each travel to their specific travel requirements. This truly
+            bespoke travel experience is a collaboration process with infinite
+            scope for personalization. Urban has instant appeal to travelers
+            looking for ultimate unparallel travel. It's uncompromising approach
+            across fleet and trip design and management has drawn countless
+            accolades lauded as maximizing travelers' engagement and experience.
           </p>
           <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
-            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
+            <div className="w-full h-96 lg:1/2 relative overflow-hidden">
               <Image
-                src="/assets/brand1.png"
+                src="/assets/fleet1.png"
                 width={300}
                 height={140}
                 alt=""
                 className="w-full  object-cover object-center"
               />
             </div>
-            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
+            <div className="w-full h-96 lg:1/2 relative overflow-hidden">
               <Image
-                src="/assets/brand2.png"
-                width={300}
-                height={140}
-                alt=""
-                className="w-full  object-cover object-center"
-              />
-            </div>
-            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
-              <Image
-                src="/assets/brand3.png"
+                src="/assets/fleet2.png"
                 width={300}
                 height={140}
                 alt=""
@@ -111,6 +64,106 @@ export default function Fleetpage() {
         </section>
       </div>
       {/* ------------------------------------------ */}
+
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+        <section className="m-auto xl:mt-14 min-h-96">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            Why become Urban
+            <span className=" text-urban-green font-extrabold">
+              Fleet partner
+            </span>
+          </h2>
+          <div className="bg-[#6cc56c2a] min-h-40 lg:p-10 mt-14">
+            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet1.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Strong support Network round the clock 365days
+                </p>
+              </div>
+
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet2.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Improved Revenue Visibility for Fleet Partners
+                </p>
+              </div>
+
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet3.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Quick, Convenient, Easy to use Fleet Management Dashboard
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet4.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Cutting-Edge Technology built with you in mind
+                </p>
+              </div>
+
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet5.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Assured Revenue with real-time payments per booking
+                </p>
+              </div>
+
+              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/yfleet6.svg"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                </div>
+                <p className="mt-4 font-light text-center">
+                  Fixed agreed cost per Trip without excuses or delay
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* ----------vision ------------------- */}
       <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
