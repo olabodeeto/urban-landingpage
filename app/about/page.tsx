@@ -66,6 +66,35 @@ export default function Aboutpage() {
             magic. We are a travel masterpiece brand executed with jaw-dropping
             skill and attention to detail.
           </p>
+          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
+            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
+              <Image
+                src="/assets/brand1.png"
+                width={300}
+                height={140}
+                alt=""
+                className="w-full  object-cover object-center"
+              />
+            </div>
+            <div className="w-full h-80 lg:3/12 border relative overflow-hidden">
+              <Image
+                src="/assets/brand2.png"
+                width={300}
+                height={140}
+                alt=""
+                className="w-full  object-cover object-center"
+              />
+            </div>
+            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
+              <Image
+                src="/assets/brand3.png"
+                width={300}
+                height={140}
+                alt=""
+                className="w-full  object-cover object-center"
+              />
+            </div>
+          </div>
         </section>
       </div>
       {/* ------------------------------------------ */}
