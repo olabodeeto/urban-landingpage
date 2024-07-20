@@ -52,9 +52,9 @@ export default function Aboutpage() {
         </section>
       </div>
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
         <section className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
             We are{" "}
             <span className=" text-urban-green font-extrabold">Urban</span>
           </h2>
@@ -76,7 +76,7 @@ export default function Aboutpage() {
                 className="w-full  object-cover object-center"
               />
             </div>
-            <div className="w-full h-80 lg:3/12 border relative overflow-hidden">
+            <div className="w-full h-80 lg:3/12 relative overflow-hidden">
               <Image
                 src="/assets/brand2.png"
                 width={300}
@@ -97,6 +97,97 @@ export default function Aboutpage() {
           </div>
         </section>
       </div>
+      {/* ------------------------------------------ */}
+
+      {/* ----------vision ------------------- */}
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:p-20 flex flex-col items-center gap-4 lg:gap-10 lg:min-h-96">
+            <div className="flex items-center gap-4 text-white w-full">
+              <Image
+                src="/assets/pointIcon.svg"
+                width={50}
+                height={50}
+                alt=""
+              />
+              <h2 className="text-4xl font-creato">Our Vision </h2>
+            </div>
+
+            <div className="mt-4 lg:mt-24">
+              <h2 className=" text-2xl lg:text-3xl xl:text-4xl w-10/12 text-white font-creato italic">
+                To be Africa’s{" "}
+                <span className=" text-green-400">
+                  most traveler- centric brand
+                </span>
+              </h2>
+            </div>
+          </div>
+          <div className="w-full lg:w-7/12 bg-[#6CC56C] p-10 flex justify-center">
+            <Image
+              src="/assets/africamap.svg"
+              width={500}
+              height={580}
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      {/* -------------------------------- */}
+
+      {/* ---------------- experience --------------- */}
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+        <div className="">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            The Urban{" "}
+            <span className=" text-urban-green font-extrabold">Experience</span>
+          </h2>
+          <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
+            Urban continues to break novel grounds in the travel vertical and
+            win new fans every day, but our ethos remains the same: challenge
+            convention and provide the ultimate travel experience. To achieve
+            our ethos, we have formed sustainable partnerships with the finest
+            automotive, technology and lifestyle brands with the primary goal of
+            enhancing user experience.
+          </p>
+          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
+            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden">
+              <Image
+                src="/assets/exp1.png"
+                width={300}
+                height={140}
+                alt=""
+                className="w-full  object-cover object-center"
+              />
+            </div>
+            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden">
+              <Image
+                src="/assets/exp2.png"
+                width={300}
+                height={140}
+                alt=""
+                className="w-full  object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ------------------------------------------ */}
+
+      {/* ---------------- values --------------- */}
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+        <div className="">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            Urban{" "}
+            <span className=" text-urban-green font-extrabold">
+              Core Values
+            </span>
+          </h2>
+          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
+            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden"></div>
+            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden"></div>
+          </div>
+        </div>
+      </section>
       {/* ------------------------------------------ */}
     </main>
   );
