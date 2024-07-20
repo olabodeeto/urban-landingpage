@@ -3,11 +3,13 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import PrimaryBtn from "../buttons/primary-btn";
 import MenuIcon from "@mui/icons-material/Menu";
+import { FormControl, MenuItem, Select } from "@mui/material";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
   const [isOpen, setisOpen] = useState(false);
   const [isFullWidth, setIsFullWidth] = useState(false);
+  const [travelersPage, settravelersPage] = useState("");
 
   const tabsData = [
     {
@@ -103,7 +105,7 @@ export default function Navbar({ setMobileVisibility }: any) {
         isFullWidth ? "bg-white top-0" : "top-2"
       }`}
     >
-      <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl -mt-3 lg:-mt-0">
+      <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl -mt-6 lg:-mt-0">
         {/* desktop navbar */}
         <div className="hidden lg:block py-1 px-4">
           <div className="flex flex-row items-center justify-between">
@@ -119,19 +121,49 @@ export default function Navbar({ setMobileVisibility }: any) {
             <div className="lg:w-8/12 xl:w-6/12 flex justify-start">
               <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10">
                 {tabsData.map((obj, index: number) => (
-                  <li
-                    onClick={() => {
-                      setselectedTab(obj.title);
-                    }}
-                    key={index}
-                    className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
-                      selectedTab === obj.title
-                        ? "font-semibold text-urban-green underline"
-                        : "font-light"
-                    }`}
-                  >
-                    {obj.title}
-                  </li>
+                  <>
+                    {obj.title !== "Traveler’s Club" && (
+                      <li
+                        onClick={() => {
+                          setselectedTab(obj.title);
+                        }}
+                        key={index}
+                        className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                          selectedTab === obj.title
+                            ? "font-semibold text-urban-green underline"
+                            : "font-light"
+                        }`}
+                      >
+                        {obj.title}
+                      </li>
+                    )}
+
+                    {obj.title == "Traveler’s Club" && (
+                      <Select
+                        value={travelersPage}
+                        onChange={() => {}}
+                        displayEmpty
+                        inputProps={{ "aria-label": "Without label" }}
+                        className="navbar-select"
+                        sx={{
+                          ".MuiOutlinedInput-notchedOutline": {
+                            borderColor: "transparent", // Remove the border color
+                          },
+                          "&:hover .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "transparent", // Remove the border color on hover
+                          },
+                          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "transparent", // Remove the border color when focused
+                          },
+                        }}
+                      >
+                        <MenuItem value="">Traveler’s Club</MenuItem>
+                        <MenuItem value={10}>Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                      </Select>
+                    )}
+                  </>
                 ))}
               </ul>
             </div>
