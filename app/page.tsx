@@ -25,14 +25,14 @@ export default function Home() {
     <main className="relative ">
       <section className="w-full -mt-[7.5rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-72">
-          <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12">
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5rem] text-white font-creato font-extralight uppercase mb-1">
+          <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-7/12">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[4.8rem] text-white font-creato font-extralight uppercase mb-1">
               Reimagine your
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[6rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[4.8rem] text-white font-creato font-extrabold mb-1">
               Travel Experience
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[6rem] text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[4.8rem] text-white font-creato font-extrabold mb-1">
               <span className="font-light">with</span> Urban
             </h2>
             <div className="flex items-center gap-1 mt-2 2xl:mt-6">
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 lg:flex lg:justify-end">
+          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 2xLw-4/12 lg:flex lg:justify-end">
             <div className="bg-white w-full lg:w-10/12 xl:w-9/12 2xl:w-8/12 rounded-2xl px-2 py-4 md:px-4 shadow-md">
               <div className="text-xl text-urban-green mt-4 text-center 2xl:text-xl 2xl:mt-5 2xl:mb-14">
                 BOOK A TRIP
