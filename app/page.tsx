@@ -53,14 +53,14 @@ export default function Home() {
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-36 xl:w-44 2xl:w-52"
+                className="lg:w-36 xl:w-44"
               />
               <Image
                 src="/assets/playstoreIcon.svg"
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-36 xl:w-44 2xl:w-52"
+                className="lg:w-36 xl:w-44"
               />
             </div>
           </div>
@@ -309,26 +309,26 @@ export default function Home() {
           </div>
           <div className="w-full lg:w-10/12 xl:ml-10">
             <div className="flex justify-between gap-4 w-full mb-4">
-              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
                   src="/assets/abuja.png"
                   width={220}
                   height={60}
                   alt=""
-                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Abuja
                 </div>
               </div>
 
-              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
                   src="/assets/markudi.png"
                   width={220}
                   height={60}
                   alt=""
-                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Markudi
@@ -337,25 +337,25 @@ export default function Home() {
             </div>
 
             <div className="flex justify-between gap-4 w-full mb-10 ">
-              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden">
+              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
                   src="/assets/jos.png"
                   width={220}
                   height={60}
                   alt=""
-                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Jos
                 </div>
               </div>
-              <div className="w-1/2 h-40 lg:h-60 relative overflow-hidden flex justify-center items-center">
+              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
                   src="/assets/citimore.png"
                   width={220}
                   height={60}
                   alt=""
-                  className="h-40 lg:w-full lg:h-80 object-cover object-center"
+                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-30 cursor-pointer">
                   View more
