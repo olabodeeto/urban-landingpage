@@ -26,13 +26,13 @@ export default function Home() {
       <section className="w-full -mt-[7.5rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12">
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white font-creato font-extralight uppercase mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-7xl text-white font-creato font-extralight uppercase mb-1">
               Reimagine your
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-7xl text-white font-creato font-extrabold mb-1">
               Travel Experience
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-7xl 2xl:text-7xl text-white font-creato font-extrabold mb-1">
+            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-7xl text-white font-creato font-extrabold mb-1">
               <span className="font-light">with</span> Urban
             </h2>
             <div className="flex items-center gap-1 mt-2 2xl:mt-6">
@@ -53,14 +53,14 @@ export default function Home() {
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-36 xl:w-40 2xl:w-44"
+                className="lg:w-36 xl:w-44 2xl:w-44"
               />
               <Image
                 src="/assets/playstoreIcon.svg"
                 width={140}
                 height={40}
                 alt=""
-                className="lg:w-36 xl:w-40 2xl:w-44"
+                className="lg:w-36 xl:w-44 2xl:w-44"
               />
             </div>
           </div>
@@ -233,6 +233,7 @@ export default function Home() {
           </div>
         </section>
       </div>
+
       <div className="full bg-[#6cc56c1e] pt-14">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
           <section className="flex flex-col lg:flex-row">

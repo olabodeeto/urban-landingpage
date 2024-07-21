@@ -131,10 +131,6 @@ export default function BookTripForm() {
           Check My Bookings
         </button>
       </div>
-
-      <p className="mt-6 underline text-urban-green cursor-pointer text-center">
-        Complete Your booking here
-      </p>
     </div>
   );
 }

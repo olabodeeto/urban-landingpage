@@ -108,7 +108,7 @@ export default function Navbar({ setMobileVisibility }: any) {
         isFullWidth ? "bg-white top-0" : "top-2"
       }`}
     >
-      <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl -mt-4 lg:-mt-0">
+      <div className="w-full lg:w-11/12 2xl:w-10/12 m-auto bg-white rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl -mt-4 lg:-mt-0 border-2 lg:border-red-400 xl:border-green-500 2xl:border-orange-300">
         {/* desktop navbar */}
         <div className="hidden lg:block py-1 px-4">
           <div className="flex flex-row items-center justify-between">
@@ -121,7 +121,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                 className="2xl:w-24"
               />
             </div>
-            <div className="lg:w-8/12 xl:w-6/12 flex justify-start">
+            <div className="lg:w-8/12 xl:w-7/12 flex justify-start">
               <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10">
                 {tabsData.map((obj, index: number) => (
                   <div key={index}>
