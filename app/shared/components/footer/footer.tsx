@@ -42,7 +42,7 @@ export default function Footer() {
 
                 <div className="flex gap-2">
                   <Image
-                    src="/assets/MCallIcon.svg"
+                    src="/assets/footerCallIcon.svg"
                     width={32}
                     height={28}
                     alt=""
