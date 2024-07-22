@@ -46,7 +46,7 @@ export default function Parkpage() {
             </p>
             <div>
               <div className=" min-h-40 mt-1">
-                <div className="mt-10 flex flex-col lg:flex-row justify-between gap-y-4 gap-2">
+                <div className="mt-10 flex flex-col lg:flex-row justify-between gap-y-4 gap-10 mb-4">
                   <div className="p-20 bg-[#6CC56C] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl">
                     <div className="flex items-center gap-2">
                       <Image
@@ -55,13 +55,12 @@ export default function Parkpage() {
                         height={40}
                         alt=""
                       />
-                      <span className=" text-urban-lightGreen">Step One</span>
                     </div>
-                    <p className="mt-4 font-light">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
                       Improved park management across multiple parks
                     </p>
                   </div>
-                  <div className="p-20 bg-white min-h-40 w-full lg:w-1/2 boxShadow rounded-xl">
+                  <div className="p-20 bg-[#6cc56c30] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden">
                     <div className="flex items-center gap-2">
                       <Image
                         src="/assets/park2.svg"
@@ -69,11 +68,54 @@ export default function Parkpage() {
                         height={40}
                         alt=""
                       />
-                      <span className=" text-urban-lightGreen">Step Two</span>
                     </div>
-                    <p className="mt-4 font-light">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
                       Centralized park management dashboard
                     </p>
+                    <Image
+                      src="/assets/fleetphone.png"
+                      width={50}
+                      height={40}
+                      alt=""
+                      className=" absolute w-60 -right-28 -top-10"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-10 flex flex-col lg:flex-row justify-between gap-y-4 gap-10 mb-4">
+                  <div className="p-20 bg-[#6cc56c39] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl">
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/assets/park3.svg"
+                        width={50}
+                        height={40}
+                        alt=""
+                      />
+                    </div>
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                      Centralized fleet and provider management dashboard
+                    </p>
+                  </div>
+                  <div className="p-20 bg-[#6cc56c] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden">
+                    <div className="flex items-center gap-2">
+                      <Image
+                        src="/assets/park4.svg"
+                        width={50}
+                        height={40}
+                        alt=""
+                      />
+                      <span className=" text-urban-lightGreen">Step Two</span>
+                    </div>
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                      Centralized park management dashboard
+                    </p>
+                    <Image
+                      src="/assets/parkframe.svg"
+                      width={100}
+                      height={400}
+                      alt=""
+                      className=" absolute w-80 lg:w-96 xl:w-80 -right-28  xl:-right-8 top-0 xl:-top-1"
+                    />
                   </div>
                 </div>
               </div>
