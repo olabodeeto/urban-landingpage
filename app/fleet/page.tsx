@@ -68,7 +68,7 @@ export default function Fleetpage() {
         </div>
         {/* ------------------------------------------ */}
 
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 -mt-14 lg:mt-24">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-14 lg:mt-24">
           <section className="m-auto xl:mt-14 min-h-96">
             <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
               Why become Urban
@@ -78,8 +78,8 @@ export default function Fleetpage() {
               </span>
             </h2>
             <div className="bg-[#6cc56c2a] min-h-40 lg:p-10 mt-14">
-              <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2 mb-0">
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+              <div className="mt-4 flex flex-col lg:flex-row justify-between gap-y-4 gap-4 mb-0">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet1.svg"
@@ -93,7 +93,7 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet2.svg"
@@ -107,7 +107,7 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet3.svg"
@@ -122,8 +122,8 @@ export default function Fleetpage() {
                 </div>
               </div>
 
-              <div className="mt-4 flex flex-wrap justify-between gap-y-4 gap-2 mb-6">
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+              <div className="mt-4 flex flex-col lg:flex-row justify-between gap-y-4 gap-4 mb-0">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet4.svg"
@@ -137,7 +137,7 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet5.svg"
@@ -151,7 +151,7 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] flex flex-col items-center">
+                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet6.svg"
