@@ -41,3 +41,7 @@ select {
 .swiper-pagination-bullet-active {
   background-color: #63e663 !important;
 }
+
+.boxShadow {
+  box-shadow: -17px -5px 53px -23px rgba(0, 0, 0, 0.1);
+}

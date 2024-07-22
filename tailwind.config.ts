@@ -26,6 +26,7 @@ const config: Config = {
         herobg1: "url('/assets/herobg1.svg')",
         heroAbout: "url('/assets/heroAbout.svg')",
         heroFleet: "url('/assets/heroFleet.svg')",
+        uFleethand: "url('/assets/ufleethand.png')",
       },
     },
   },

@@ -10,8 +10,8 @@ export default function Footer() {
     <footer className=" bg-urban-black w-full">
       <div className="pt-28">
         {/* ===== desktop footer ================ */}
-        <div className="lg:w-[85%] m-auto hidden lg:block">
-          <div className="flex justify-between items-start text-white">
+        <div className="lg:w-[85%]  m-auto hidden lg:block">
+          <div className="flex justify-between items-start text-white ">
             <div className="w-2/12 pr-2">
               <Image
                 src="/assets/footer-logo.svg"
@@ -74,6 +74,7 @@ export default function Footer() {
                 <li>Urban Experience</li>
                 <li>Our Vision</li>
                 <li>Core Values</li>
+                <li>Blog</li>
               </ul>
             </div>
             <div className="w-2/12">
