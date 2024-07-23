@@ -230,30 +230,74 @@ export default function Navbar({ setMobileVisibility }: any) {
             <div className="flex flex-col justify-between h-[84vh]">
               <div>
                 {tabsData.map((tab, index: number) => (
-                  <div
-                    className={`flex items-center gap-1 justify-center py-3 border ${
-                      index > 0 ? "border-t-gray-100 border-l-0 border-r-0" : ""
-                    }`}
-                    key={index}
-                    onClick={() => {
-                      setselectedTab(tab.title);
-                      router.push(tab.path);
-                      setisOpen(false);
-                    }}
-                  >
-                    {tab.icon && selectedTab == tab.title && (
-                      <div>{tab.icon}</div>
-                    )}
-                    <div className="cursor-pointer">
-                      <span
-                        className={`${
-                          selectedTab == tab.title &&
-                          "font-bold text-urban-green"
+                  <div key={index}>
+                    {tab.title !== "Traveler’s Club" && (
+                      <div
+                        className={`flex items-center gap-1 justify-center py-3 border ${
+                          index > 0
+                            ? "border-t-gray-100 border-l-0 border-r-0"
+                            : ""
                         }`}
+                        onClick={() => {
+                          setselectedTab(tab.title);
+                          router.push(tab.path);
+                          setisOpen(false);
+                        }}
                       >
-                        {tab.title}
-                      </span>
-                    </div>
+                        {tab.icon && selectedTab == tab.title && (
+                          <div>{tab.icon}</div>
+                        )}
+                        <div className="cursor-pointer">
+                          <span
+                            className={`${
+                              selectedTab == tab.title &&
+                              "font-bold text-urban-green"
+                            }`}
+                          >
+                            {tab.title}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    {tab.title == "Traveler’s Club" && (
+                      <>
+                        <div className="relative flex justify-center gap-x-2">
+                          <div
+                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                              selectedTab === tab.title
+                                ? "font-semibold text-urban-green underline"
+                                : " text-urban-black"
+                            }`}
+                          >
+                            Traveler's Club
+                          </div>
+                          <div
+                            className="arrow-down"
+                            onClick={() =>
+                              setisTravelsDropOpen(!isTravelsDropOpen)
+                            }
+                          >
+                            <KeyboardArrowDownIcon
+                              sx={{ fontSize: "1.4rem" }}
+                            />
+                          </div>
+                        </div>
+
+                        {isTravelsDropOpen && (
+                          <div className="travelersItems-container-m left-20">
+                            <div className="item font-creato font-light p-2">
+                              Urban Card
+                            </div>
+                            <div className="item font-creato font-light p-2">
+                              Traveler's kit
+                            </div>
+                            <div className="item font-creato font-light p-2">
+                              Hotels
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    )}
                   </div>
                 ))}
 
