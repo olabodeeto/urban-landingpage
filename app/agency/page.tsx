@@ -24,7 +24,7 @@ export default function AgencyPage() {
 
   return (
     <main className="relative ">
-      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh] bg-agencyHero bg-cover py-10 px-4 ">
+      <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 xl:mt-10 w-full lg:w-6/12 2xl:w-7/12">
             <h2 className="py-1 text-4xl lg:text-4xl xl:text-[3rem] 2xl:text-[4rem] text-white font-creato font-extralight italic mb-1 agency-heroText">
