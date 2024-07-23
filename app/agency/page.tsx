@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Footer from "../shared/components/footer/footer";
+import "./agency.scss";
 
 export default function AgencyPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function AgencyPage() {
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh] bg-agencyHero bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 xl:mt-10 w-full lg:w-6/12 2xl:w-7/12">
-            <h2 className="py-1 text-4xl lg:text-4xl xl:text-[3rem] 2xl:text-[4rem] text-white font-creato font-extralight italic leading-8 mb-1">
+            <h2 className="py-1 text-4xl lg:text-4xl xl:text-[3rem] 2xl:text-[4rem] text-white font-creato font-extralight italic mb-1 agency-heroText">
               Take the Urban Wheel and experience a level of driving purity.
               <span className="font-creato font-bold"> Drive with Us</span>
             </h2>
@@ -35,14 +36,14 @@ export default function AgencyPage() {
             </div>
           </div>
 
-          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 2xLw-5/12 lg:flex lg:justify-end relative">
+          <div className="w-full hidden max-h-80 lg:max-h-none lg:w-6/12 2xLw-5/12 lg:flex lg:justify-end relative">
             <div className="w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 absolute lg:-top-5 xl:-top-10 2xl:top-4 flex 2xl:justify-end">
               <Image
                 src="/assets/agencyCars.svg"
                 width={440}
                 height={400}
                 alt=""
-                className="w-80 lg:w-96 xl:w-[28rem] 2xl:w-[30rem]"
+                className="w-80 lg:w-96 xl:w-[28rem] 2xl:w-[30rem] agencyHeroImage"
               />
             </div>
           </div>
