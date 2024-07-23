@@ -54,3 +54,39 @@
         border: 1px solid rgb(187, 73, 73);
     }
 }
+
+.travelersClub-tab {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 0.2rem;
+    position: relative;
+
+
+    span {
+        display: block;
+    }
+
+    .arrow-down {
+        font-size: 10px;
+        color: black;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+}
+
+.travelersItems-container {
+    position: absolute;
+    top: 6.5rem;
+    background-color: #fff;
+    width: 10rem;
+    min-height: 4rem;
+    display: flex;
+    flex-direction: column;
+
+    & .item {
+        width: 100%;
+
+    }
+}

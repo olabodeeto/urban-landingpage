@@ -6,7 +6,7 @@ import Footer from "../shared/components/footer/footer";
 export default function Aboutpage() {
   return (
     <main className="relative ">
-      <section className="w-full -mt-[7.5rem] 2xl:-mt-40 min-h-[55vh] bg-heroAbout bg-cover py-10 px-4 ">
+      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] bg-heroAbout bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60"></div>
       </section>
 

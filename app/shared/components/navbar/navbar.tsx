@@ -5,12 +5,15 @@ import PrimaryBtn from "../buttons/primary-btn";
 import MenuIcon from "@mui/icons-material/Menu";
 import { FormControl, MenuItem, Select } from "@mui/material";
 import { useRouter } from "next/navigation";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import "./navbar.scss";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
   const [isOpen, setisOpen] = useState(false);
   const [isFullWidth, setIsFullWidth] = useState(false);
-  const [travelersPage, settravelersPage] = useState("");
+  const [travelersPage, settravelersPage] = useState("Travelers");
+  const [isTravelsDropOpen, setisTravelsDropOpen] = useState(false);
 
   const router = useRouter();
 
@@ -102,6 +105,10 @@ export default function Navbar({ setMobileVisibility }: any) {
     };
   }, []);
 
+  useEffect(() => {
+    //  router.push(obj.path);
+  }, [travelersPage]);
+
   return (
     <div
       className={`w-full p-4 sticky z-50 ${
@@ -143,31 +150,43 @@ export default function Navbar({ setMobileVisibility }: any) {
                     )}
 
                     {obj.title == "Traveler’s Club" && (
-                      <Select
-                        value={travelersPage}
-                        onChange={() => {}}
-                        displayEmpty
-                        inputProps={{ "aria-label": "Without label" }}
-                        className="navbar-select"
-                        sx={{
-                          ".MuiOutlinedInput-notchedOutline": {
-                            borderColor: "transparent", // Remove the border color
-                          },
-                          "&:hover .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "transparent", // Remove the border color on hover
-                          },
-                          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                            borderColor: "transparent", // Remove the border color when focused
-                          },
-                        }}
-                      >
-                        <MenuItem value="" disabled>
-                          Traveler’s Club
-                        </MenuItem>
-                        <MenuItem value="urbanCard">Urban Card</MenuItem>
-                        <MenuItem value="travelersKit">Traveler’s Kit</MenuItem>
-                        <MenuItem value="hotel">Hotels</MenuItem>
-                      </Select>
+                      <>
+                        <div className="travelersClub-tab">
+                          <div
+                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                              selectedTab === obj.title
+                                ? "font-semibold text-urban-green underline"
+                                : "font-light text-urban-black"
+                            }`}
+                          >
+                            Traveler's Club
+                          </div>
+                          <div
+                            className="arrow-down"
+                            onClick={() =>
+                              setisTravelsDropOpen(!isTravelsDropOpen)
+                            }
+                          >
+                            <KeyboardArrowDownIcon
+                              sx={{ fontSize: "1.4rem" }}
+                            />
+                          </div>
+                        </div>
+
+                        {isTravelsDropOpen && (
+                          <div className="travelersItems-container">
+                            <div className="item font-creato font-light p-2">
+                              Urban Card
+                            </div>
+                            <div className="item font-creato font-light p-2">
+                              Traveler's kit
+                            </div>
+                            <div className="item font-creato font-light p-2">
+                              Hotels
+                            </div>
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
                 ))}
@@ -218,6 +237,8 @@ export default function Navbar({ setMobileVisibility }: any) {
                     key={index}
                     onClick={() => {
                       setselectedTab(tab.title);
+                      router.push(tab.path);
+                      setisOpen(false);
                     }}
                   >
                     {tab.icon && selectedTab == tab.title && (
