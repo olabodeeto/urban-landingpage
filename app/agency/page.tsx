@@ -24,10 +24,10 @@ export default function AgencyPage() {
 
   return (
     <main className="relative ">
-      <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 ">
-        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60">
-          <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 xl:mt-10 w-full lg:w-6/12 2xl:w-7/12">
-            <h2 className="py-1 text-4xl lg:text-4xl xl:text-[3rem] 2xl:text-[4rem] text-white font-creato font-extralight italic mb-1 agency-heroText">
+      <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 flex flex-col items-center">
+        <div className="agency-hero-container">
+          <div className="_leftSide">
+            <h2 className="agency-heroText font-creato font-thin">
               Take the Urban Wheel and experience a level of driving purity.
               <span className="font-creato font-bold"> Drive with Us</span>
             </h2>
@@ -36,21 +36,25 @@ export default function AgencyPage() {
             </div>
           </div>
 
-          <div className="w-full hidden max-h-80 lg:max-h-none lg:w-6/12 2xLw-5/12 lg:flex lg:justify-end relative">
-            <div className="w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 absolute lg:-top-5 xl:-top-10 2xl:top-4 flex 2xl:justify-end">
+          <div className="_rigthSide">
+            <div className="">
               <Image
                 src="/assets/agencyCars.svg"
                 width={440}
                 height={400}
                 alt=""
-                className="w-80 lg:w-96 xl:w-[28rem] 2xl:w-[30rem] agencyHeroImage"
+                className="agencyHeroImage"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+      <div className="agency-container">
+        <section></section>
+      </div>
+
+      {/* <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
         <section className="m-auto mt-72 lg:mt-20 xl:mt-14 min-h-96 xl:py-20">
           <div className="w-full flex justify-center">
             <Image
@@ -204,8 +208,8 @@ export default function AgencyPage() {
             </div>
           </div>
         </section>
-      </div>
-
+      </div> */}
+      {/* 
       <div className="full bg-[#6cc56c1e] pt-14">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
           <section className="flex flex-col lg:flex-row">
@@ -255,10 +259,10 @@ export default function AgencyPage() {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
 
       {/* -----urban location cities ---------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+      {/* <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
         <section className="w-full bg-whige mt-20 flex flex-col lg:flex-row">
           <div className="w-full lg:w-3/12">
             <div>
@@ -336,11 +340,11 @@ export default function AgencyPage() {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
       {/* -------------------------------------------- */}
 
       {/* =========== app ads ======================== */}
-      <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
+      {/* <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
           <section className="w-full bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
             <div className="w-full lg:w-1/2">
@@ -391,11 +395,11 @@ export default function AgencyPage() {
             </div>
           </section>
         </div>
-      </div>
+      </div> */}
       {/* ============================================= */}
 
       {/* ---------- footer ------------------- */}
-      <Footer />
+      {/* <Footer /> */}
       {/* -------------------------------------- */}
     </main>
   );
