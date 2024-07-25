@@ -128,8 +128,8 @@ export default function Navbar({ setMobileVisibility }: any) {
                 className="2xl:w-24"
               />
             </div>
-            <div className="lg:w-8/12 xl:w-7/12 flex justify-start">
-              <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10">
+            <div className="lg:w-8/12 xl:w-7/12 flex justify-start ">
+              <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
                 {tabsData.map((obj, index: number) => (
                   <div key={index}>
                     {obj.title !== "Traveler’s Club" && (
@@ -139,7 +139,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                           router.push(obj.path);
                         }}
                         key={index}
-                        className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                        className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
                           selectedTab === obj.title
                             ? "font-semibold text-urban-green underline"
                             : "font-light text-urban-black"
@@ -155,8 +155,8 @@ export default function Navbar({ setMobileVisibility }: any) {
                           <div
                             className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
                               selectedTab === obj.title
-                                ? "font-semibold text-urban-green underline"
-                                : "font-light text-urban-black"
+                                ? "font-semibold text-urban-green underline navbar-items"
+                                : "font-light text-urban-black navbar-items"
                             }`}
                           >
                             Traveler's Club
@@ -192,7 +192,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                 ))}
               </ul>
             </div>
-            <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4">
+            <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns">
               <button className="px-10 py-3 2xl:px-5 2xl:py-2 rounded-md text-urban-green 2xl:text-base">
                 Login
               </button>
