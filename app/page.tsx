@@ -178,7 +178,7 @@ export default function Home() {
                 height={40}
                 alt=""
               />
-              <span className="text-lg lg:text-xl font-creato">
+              <span className="text-lg lg:text-xl font-creato 2xl:text-xl">
                 Our Next events & Tours
               </span>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
                 width={540}
                 height={540}
                 alt=""
-                className=""
+                className="2xl:w-[38rem]"
               />
             </div>
             <div className="w-full lg:w-1/2 xl:-ml-20 mt-6">
@@ -260,11 +260,11 @@ export default function Home() {
                     width={250}
                     height={60}
                     alt=""
-                    className=""
+                    className="2xl:w-64"
                   />
                 </div>
                 <div className="mt-4 lg:mt-0">
-                  <p className="text-xl text-center lg:text-left xl:text-4xl font-creato italic font-thin">
+                  <p className="text-xl text-center lg:text-left xl:text-4xl font-creato italic font-thin 2xl:text-5xl 2xl:leading-[3.4rem] leading-relaxed">
                     <span className="underline text-urban-green">
                       Join our community
                     </span>{" "}
@@ -275,12 +275,12 @@ export default function Home() {
                 </div>
 
                 <div className="w-full">
-                  <div className="mt-8 flex justify-start w-full lg:w-8/12 gap-4">
-                    <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
+                  <div className="mt-8 flex justify-start w-full lg:w-8/12 gap-4 2xl:w-9/12">
+                    <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base 2xlpy-4 2xl:px-14 2xl:text-xl">
                       Own A Park
                     </button>
 
-                    <button className="w-1/2 rounded-md py-3 px-2 bg-white text-urban-black lg:text-sm xl:text-base">
+                    <button className="w-1/2 rounded-md py-3 px-2 bg-white text-urban-black lg:text-sm xl:text-base 2xl:py-4 2xl:px-14 2xl:text-xl">
                       Join our Fleet
                     </button>
                   </div>
@@ -301,10 +301,10 @@ export default function Home() {
                 width={220}
                 height={60}
                 alt=""
-                className=""
+                className="2xl:w-60"
               />
             </div>
-            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
+            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl 2xl:text-5xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
               <span className="lg:block">
                 <span className="text-urban-green">Urban </span>is
               </span>{" "}
