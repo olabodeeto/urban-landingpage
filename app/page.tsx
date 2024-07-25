@@ -65,7 +65,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 2xl:w-4/12 lg:flex lg:justify-end border border-red-400">
+          <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 2xl:w-4/12 lg:flex lg:justify-end">
             <div className="bg-white w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 shadow-md">
               <div className="text-xl text-urban-green mt-4 text-center 2xl:text-xl 2xl:mt-5 2xl:mb-14">
                 BOOK A TRIP
