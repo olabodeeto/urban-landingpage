@@ -24,15 +24,15 @@ export default function Fleetpage() {
 
       <div className="2xl:w-11/12 m-auto">
         {/* ---------------- about --------------- */}
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20 2xl:mt-20 2xl:mb-40">
           <section className="">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
               Exploitable{" "}
               <span className=" text-urban-green font-extrabold">
                 Opportunities
               </span>
             </h2>
-            <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
+            <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
               Instantly recognizable, Urban has been delivered across four
               cities at present. Our team works hand-in-hand with travelers to
               tailor each travel to their specific travel requirements. This
@@ -68,9 +68,9 @@ export default function Fleetpage() {
         </div>
         {/* ------------------------------------------ */}
 
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-14 lg:mt-24">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-14 lg:mt-24 2xl:mt-40">
           <section className="m-auto xl:mt-14 min-h-96">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
               Why become Urban
               <span className=" text-urban-green font-extrabold">
                 {" "}
@@ -88,7 +88,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Strong support Network round the clock 365days
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Improved Revenue Visibility for Fleet Partners
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Quick, Convenient, Easy to use Fleet Management Dashboard
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Cutting-Edge Technology built with you in mind
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Assured Revenue with real-time payments per booking
                   </p>
                 </div>
@@ -160,7 +160,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center">
+                  <p className="mt-4 font-light text-center 2xl:text-xl">
                     Fixed agreed cost per Trip without excuses or delay
                   </p>
                 </div>
@@ -170,7 +170,7 @@ export default function Fleetpage() {
         </div>
 
         {/* ----------vision ------------------- */}
-        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
+        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4 2xl:mt-40">
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-7/12 bg-uFleethand bg-cover p-10 flex justify-center"></div>
 
@@ -205,19 +205,19 @@ export default function Fleetpage() {
         {/* -------------------------------- */}
       </div>
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 -mt-14 lg:mt-24">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 -mt-14 lg:mt-24 2xl:mt-40 2xl:w-10/12">
         <section className="m-auto xl:mt-14 min-h-96">
-          <h2 className="text-4xl lg:text-4xl font-creato">
+          <h2 className="text-4xl lg:text-4xl font-creato 2xl:text-5xl">
             How to become Urban
             <span className=" text-urban-green font-extrabold">
               {" "}
               Fleet partner
             </span>
           </h2>
-          <p className="text-xl lg:text-2xl font-thin italic font-creato">
+          <p className="text-xl lg:text-2xl font-thin italic font-creato 2xl:mt-4 2xl:text-4xl">
             follow the steps below
           </p>
-          <div className=" min-h-40 lg:p-10 mt-1">
+          <div className=" min-h-40 lg:p-10 mt-1 2xl:p-0">
             <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
               <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow">
                 <div className="flex items-center gap-2">
@@ -227,9 +227,11 @@ export default function Fleetpage() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step One</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step One
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Download the Urban mobile app on either the Apple Store or the
                   Google Play Store
                 </p>
@@ -242,9 +244,11 @@ export default function Fleetpage() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step Two</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step Two
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Sign up on the Urban mobile app you just downloaded using your
                   phone number and email
                 </p>
@@ -257,16 +261,18 @@ export default function Fleetpage() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step Three</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step Three
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Conveniently book your trip via the Urban mobile app or web
                   remotely and in real-time
                 </p>
               </div>
             </div>
-            <div className="mt-4">
-              <button className="py-2 px-6 bg-urban-green text-white font-creato rounded">
+            <div className="mt-4 2xl:mt-10">
+              <button className="py-2 px-6 bg-urban-green text-white font-creato rounded 2xl:text-xl 2xl:py-3 2xl:px-10">
                 Get Started
               </button>
             </div>
