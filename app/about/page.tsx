@@ -183,7 +183,7 @@ export default function Aboutpage() {
               Core Values
             </span>
           </h2>
-          <div className="mt-10 lg:mt-20 flex flex-col lg:flex-row  justify-between gap-4 mb-4 gap-y-20">
+          <div className="mt-10 lg:mt-20 flex flex-col lg:flex-row  justify-between gap-4 mb-8  lg:mb-20 gap-y-20">
             <div className="w-full h-52 lg:w-1/2 relative overflow-hidden flex pr-4">
               <div className="w-40">
                 <Image
