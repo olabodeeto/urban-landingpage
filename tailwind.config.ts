@@ -31,6 +31,7 @@ const config: Config = {
         uParkImghand: "url('/assets/uparkImg.svg')",
         agencyHero: "url('/assets/agencyHero.svg')",
         agencyVision: "url('/assets/agency-vision.svg')",
+        tvclubHero: "url('/assets/travelersclub-hero.svg')",
       },
     },
   },

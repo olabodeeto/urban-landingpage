@@ -2,13 +2,14 @@ import React from "react";
 import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "../shared/components/footer/footer";
+import "./park.scss";
 
 export default function Parkpage() {
   return (
     <main className="relative">
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[85vh] bg-heroPark bg-cover py-10 px-4">
-        <div className="flex flex-col justify-center items-center">
-          <div className="mt-40 lg:mt-40 2xl:mt-72 w-11/12 lg:w-6/12 xl:w-6/12 m-auto text-center flex flex-col gap-10 items-center">
+        <div className="flex flex-col justify-center items-center park-hero">
+          <div className="mt-40 lg:mt-40 w-11/12 lg:w-6/12 xl:w-6/12 m-auto text-center flex flex-col gap-10 items-center 2xl:w-7/12 2xl:mt-60">
             <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl italic">
               <span className="font-thin">
                 Together, let's make the mobility of tomorrow happen{" "}
@@ -26,13 +27,13 @@ export default function Parkpage() {
         {/* ---------------- about --------------- */}
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20">
           <section className="">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
               Why Become Urban{" "}
               <span className=" text-urban-green font-extrabold">
                 Park Partner?
               </span>
             </h2>
-            <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
+            <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
               Urban holds innovation and technology at the heart of its core
               values; adopting a game changing mindset by redefining the meaning
               of 'new' and breaking ground that's it's not only never done
@@ -56,7 +57,7 @@ export default function Parkpage() {
                         alt=""
                       />
                     </div>
-                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12 2xl:2xl">
                       Improved park management across multiple parks
                     </p>
                   </div>
@@ -69,7 +70,7 @@ export default function Parkpage() {
                         alt=""
                       />
                     </div>
-                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12 2xl:2xl">
                       Centralized park management dashboard
                     </p>
                     <Image
@@ -92,7 +93,7 @@ export default function Parkpage() {
                         alt=""
                       />
                     </div>
-                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12 2xl:2xl">
                       Centralized fleet and provider management dashboard
                     </p>
                   </div>
@@ -106,7 +107,7 @@ export default function Parkpage() {
                       />
                       <span className=" text-urban-lightGreen">Step Two</span>
                     </div>
-                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12">
+                    <p className="mt-4 font-light text-xl xl:4xl lg:w-8/12 2xl:2xl">
                       Centralized park management dashboard
                     </p>
                     <Image
@@ -127,7 +128,7 @@ export default function Parkpage() {
 
       {/* ----------vision ------------------- */}
       <div className="bg-[#6cc56c17] flex justify-center items-center py-20 mt-20">
-        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
+        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4 2xl:w-10/12">
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-7/12 bg-uParkImghand bg-cover p-10 flex justify-center"></div>
 
@@ -151,7 +152,7 @@ export default function Parkpage() {
               </div>
 
               <div className="w-full flex justify-start">
-                <button className="bg-white text-urban-green py-2 px-6 rounded">
+                <button className="bg-white text-urban-green py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
                   Get Started
                 </button>
               </div>
@@ -163,10 +164,10 @@ export default function Parkpage() {
 
       {/* ----------assign manager ------------------- */}
       <div className="bg-[#ffffff] flex justify-center items-center pb-20 mt-20">
-        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
-          <h2 className="text-4xl lg:text-4xl font-creato">
+        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4 2xl:w-10/12">
+          <h2 className="text-4xl lg:text-4xl font-creato 2xl:5xl font-light">
             Quickly Assign{" "}
-            <span className=" text-urban-green font-extrabold">
+            <span className=" text-urban-green font-bold">
               Park Managers & Dispatch Officers?
             </span>
           </h2>
@@ -183,8 +184,10 @@ export default function Parkpage() {
 
             <div className="w-full lg:w-6/12 bg-white p-8 lg:p-20 flex flex-col items-center justify-center gap-8 lg:gap-10 lg:min-h-96">
               <div>
-                <h4 className="font-creato mb-2 font-bold">Park Managers</h4>
-                <p className="font-creato leading-8 font-light">
+                <h4 className="font-creato mb-2 font-bold 2xl:text-3xl">
+                  Park Managers
+                </h4>
+                <p className="font-creato leading-8 font-light 2xl:text-lg">
                   Efficiently assign and manage Park Managers remotely and in
                   real-time. Park Owners are equipped with our seamless suite of
                   integrated park management tools. A suite for both single and
@@ -193,11 +196,11 @@ export default function Parkpage() {
               </div>
 
               <div>
-                <h4 className="font-creato mb-2 font-bold">
+                <h4 className="font-creato mb-2 font-bold 2xl:text-3xl">
                   {" "}
                   Dispatch Officers
                 </h4>
-                <p className="font-creato leading-8 font-light">
+                <p className="font-creato leading-8 font-light 2xl:text-lg">
                   Manage Dispatch Officers remotely and in real-time via our
                   integrated Park Management Dashboard. Urban Park Management
                   Dashboard comes bundled with amazing booking management tools

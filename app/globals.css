@@ -48,3 +48,16 @@ select {
 .boxShadow {
   box-shadow: -17px -5px 53px -23px rgba(0, 0, 0, 0.1);
 }
+
+
+.module-hero {
+  @media screen and (min-width: 1680px) {
+    min-height: 80vh;
+  }
+  & h2 {
+    @media screen and (min-width: 1680px) {
+      font-size: 4.5rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+}

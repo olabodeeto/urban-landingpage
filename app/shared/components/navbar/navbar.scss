@@ -102,12 +102,14 @@
 
 .travelersItems-container {
   position: absolute;
-  top: 6.5rem;
+  top: 6.58rem;
   background-color: #fff;
   width: 10rem;
   min-height: 4rem;
   display: flex;
   flex-direction: column;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 
   & .item {
     width: 100%;

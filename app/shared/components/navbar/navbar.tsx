@@ -69,7 +69,7 @@ export default function Navbar({ setMobileVisibility }: any) {
     { id: 3, title: "Fleet", path: "/fleet" },
     { id: 4, title: "Park", path: "/park" },
     { id: 5, title: "Agency", path: "/agency" },
-    { id: 6, title: "Traveler’s Club", path: "/Travelers-Club" },
+    { id: 6, title: "Traveler’s Club", path: "/travelers-club" },
   ];
 
   const dialogRef: any = useRef(null);
@@ -158,6 +158,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 ? "font-semibold text-urban-green underline navbar-items"
                                 : "font-light text-urban-black navbar-items"
                             }`}
+                            onClick={() => router.push(obj.path)}
                           >
                             Traveler's Club
                           </div>
