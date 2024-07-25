@@ -30,6 +30,7 @@ const config: Config = {
         uFleethand: "url('/assets/ufleethand.png')",
         uParkImghand: "url('/assets/uparkImg.svg')",
         agencyHero: "url('/assets/agencyHero.svg')",
+        agencyVision: "url('/assets/agency-vision.svg')",
       },
     },
   },

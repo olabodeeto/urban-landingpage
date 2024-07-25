@@ -217,7 +217,7 @@ export default function Fleetpage() {
           <p className="text-xl lg:text-2xl font-thin italic font-creato 2xl:mt-4 2xl:text-4xl">
             follow the steps below
           </p>
-          <div className=" min-h-40 lg:p-10 mt-1 2xl:p-0">
+          <div className=" min-h-40 mt-1 2xl:p-0">
             <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
               <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow">
                 <div className="flex items-center gap-2">
@@ -271,7 +271,7 @@ export default function Fleetpage() {
                 </p>
               </div>
             </div>
-            <div className="mt-4 2xl:mt-10">
+            <div className="mt-8 2xl:mt-10">
               <button className="py-2 px-6 bg-urban-green text-white font-creato rounded 2xl:text-xl 2xl:py-3 2xl:px-10">
                 Get Started
               </button>

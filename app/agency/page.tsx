@@ -50,7 +50,7 @@ export default function AgencyPage() {
         </div>
       </section>
 
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-40 2xl:w-10/12">
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-28 lg:mt-40 2xl:w-10/12">
         <div className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
             Why{" "}
@@ -121,298 +121,159 @@ export default function AgencyPage() {
         </div>
       </section>
 
-      {/* <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
-        <section className="m-auto mt-72 lg:mt-20 xl:mt-14 min-h-96 xl:py-20">
-          <div className="w-full flex justify-center">
-            <Image
-              src="/assets/section-logo.svg"
-              width={140}
-              height={40}
-              alt=""
-              className="w-52 xl:w-60"
-            />
-          </div>
-          <div className="w-full mt-10 flex flex-col items-center gap-2">
-            <h2 className="text-4xl xl:text-[3.7rem] text-center">
-              <span className=" text-urban-green">With Urban</span>, you're
-              always one click away
-            </h2>
-            <p className="xl:text-4xl font-thin italic text-center mt-2">
-              from experiencing prompt, convenient and better travel with
-              efficient ETAs
-            </p>
-          </div>
-          <div className="bg-[#ebeaea81] min-h-40 lg:p-10 mt-20">
-            <p className="text-center text-xl mt-10 xl:mt-4">
-              Book your trip in 3 easy step
-            </p>
-            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/assets/stepone.svg"
-                    width={50}
-                    height={40}
-                    alt=""
-                  />
-                  <span className=" text-urban-lightGreen">Step One</span>
-                </div>
-                <p className="mt-4 font-light">
-                  Download the Urban mobile app on either the Apple Store or the
-                  Google Play Store
-                </p>
-              </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/assets/steptwo.svg"
-                    width={50}
-                    height={40}
-                    alt=""
-                  />
-                  <span className=" text-urban-lightGreen">Step Two</span>
-                </div>
-                <p className="mt-4 font-light">
-                  Sign up on the Urban mobile app you just downloaded using your
-                  phone number and email
-                </p>
-              </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/assets/stepthree.svg"
-                    width={50}
-                    height={40}
-                    alt=""
-                  />
-                  <span className=" text-urban-lightGreen">Step Three</span>
-                </div>
-                <p className="mt-4 font-light">
-                  Conveniently book your trip via the Urban mobile app or web
-                  remotely and in real-time
-                </p>
-              </div>
-            </div>
+      <div className="bg-[#6cc56c17] flex justify-center items-center lg:py-20 mt-0 lg:mt-20">
+        <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-5/12 bg-agencyVision bg-cover p-10 flex justify-center"></div>
 
-            <div className="mt-10 mb-5 flex items-center w-full lg:w-5/12 m-auto gap-4">
-              <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
-                Book Now
-              </button>
+            <div className="w-full lg:w-7/12 bg-urban-green p-10 lg:py-20 lg:px-20 flex flex-col items-center gap-4 lg:gap-10 lg:min-h-96">
+              <div className="flex items-center gap-4 text-white w-full">
+                <Image
+                  src="/assets/ufleetlogo.svg"
+                  width={40}
+                  height={40}
+                  alt=""
+                />
+              </div>
 
-              <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base">
-                Check My Bookings
-              </button>
+              <div className="mt-2 lg:mt-2 w-full">
+                <h2 className=" text-2xl lg:text-xl xl:text-5xl lg:w-full w-11/12 text-green-400 font-creato mb-8">
+                  Drive -{" "}
+                  <span className="font-thin text-white italic">
+                    Dream in Motion
+                  </span>
+                </h2>
+                <p className="leading-8 xl:leading-9 font-creato mt-4 text-white font-light lg:text-xl xl:text-2xl">
+                  Every aspect of the urban trip is designed and engineered with
+                  one primary goal in mind: providing the ultimate driving
+                  experience - one that's unrivalled on the road.
+                </p>
+              </div>
+
+              <div className="w-full flex justify-start">
+                <button className="bg-white text-urban-green py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                  Get Started
+                </button>
+              </div>
             </div>
           </div>
         </section>
+      </div>
 
-        <section className="mt-20  lg:mt-10 min-h-60 bg-white">
-          <div>
-            <div className="py-2 lg:py-3 bg-urban-lightGreen rounded px-2 lg:px-4 w-80 lg:w-80 gap-2 flex items-center lg:gap-4">
+      <section className="w-full mt-28 lg:mt-40 py-14 bg-urban-lightGreen relative overflow-hidden">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto 2xl:w-10/12">
+          <div className="flex flex-col lg:flex-row bg-white p-6 lg:p-0">
+            <div className="w-full lg:w-4/12">
               <Image
-                src="/assets/congrats-icon.svg"
+                src="/assets/agency-desktop.svg"
                 width={40}
-                height={40}
+                height={80}
                 alt=""
-              />
-              <span className="text-lg lg:text-xl font-creato">
-                Our Next events & Tours
-              </span>
-            </div>
-
-            <div className="mt-10">
-              <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
-                pagination={pagination}
-                navigation={false}
-                modules={[Autoplay, Pagination]}
-                className="mySwiper min-h-96"
-              >
-                <SwiperSlide className=" min-h-80 ">
-                  <div className="w-full flex flex-col lg:flex-row items-center justify-center">
-                    <img
-                      src="/assets/tour.png"
-                      width={100}
-                      height={40}
-                      alt=""
-                      className="w-full lg:w-1/2"
-                    />
-                    <div className="w-full lg:w-1/2 p-4 ">
-                      <h2 className="text-4xl">
-                        <span className="font-thin">Onboarding</span>{" "}
-                        <span className="italic text-urban-green">
-                          New Traveler’s Club Members
-                        </span>
-                      </h2>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide className=" min-h-80 ">
-                  <div className="w-full flex flex-col lg:flex-row items-center justify-center">
-                    <img
-                      src="/assets/tour.png"
-                      width={100}
-                      height={40}
-                      alt=""
-                      className="w-full lg:w-1/2"
-                    />
-                    <div className="w-full lg:w-1/2 p-4">
-                      <h2 className="text-4xl">
-                        <span className="font-thin">Onboarding</span>{" "}
-                        <span className="italic text-urban-green">
-                          New Traveler’s Club Members
-                        </span>
-                      </h2>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </div>
-        </section>
-      </div> */}
-      {/* 
-      <div className="full bg-[#6cc56c1e] pt-14">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
-          <section className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2">
-              <Image
-                src="/assets/transit.svg"
-                width={540}
-                height={540}
-                alt=""
-                className=""
+                className="w-full"
               />
             </div>
-            <div className="w-full lg:w-1/2 xl:-ml-20 mt-6">
-              <div className="flex flex-col xl:gap-8 justify-center">
-                <div className="flex justify-center lg:justify-start">
-                  <Image
-                    src="/assets/growth-logo.svg"
-                    width={250}
-                    height={60}
-                    alt=""
-                    className=""
-                  />
-                </div>
-                <div className="mt-4 lg:mt-0">
-                  <p className="text-xl text-center lg:text-left xl:text-4xl font-creato italic font-thin">
-                    <span className="underline text-urban-green">
-                      Join our community
-                    </span>{" "}
-                    of <strong>Fleet</strong> and ,
-                    <strong>Park Partners</strong>. Become Urban's partner and
-                    unlock guaranteed revenue.{" "}
-                  </p>
-                </div>
+            <div className="w-full lg:w-8/12 relative py-4 lg:p-10 flex flex-col justify-center items-center mt-14 lg:mt-0">
+              <div className="w-full flex flex-col gap-2">
+                <h2 className="text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+                  The{" "}
+                  <span className=" text-urban-green font-bold">
+                    Urban Provider Agency
+                  </span>
+                </h2>
+                <p className="leading-8 xl:leading-9 font-creato mt-4 font-light lg:text-xl xl:text-2xl">
+                  Urban Provider Agency dashboard is crafted to seamlessly
+                  onboard providers, assign trips to providers, manage providers
+                  and trips, etc.
+                </p>
 
-                <div className="w-full">
-                  <div className="mt-8 flex justify-start w-full lg:w-8/12 gap-4">
-                    <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
-                      Own A Park
-                    </button>
-
-                    <button className="w-1/2 rounded-md py-3 px-2 bg-white text-urban-black lg:text-sm xl:text-base">
-                      Join our Fleet
-                    </button>
-                  </div>
+                <div className="w-full flex justify-start mt-4">
+                  <button className="bg-urban-green text-white py-4 px-10 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                    Drive With Us
+                  </button>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
-      </div> */}
+        <Image
+          src="/assets/agency-blur-app.svg"
+          // src="/assets/agency-desktop.svg"
+          width={40}
+          height={80}
+          alt=""
+          className="w-3/12 absolute -right-40  top-60"
+        />
+      </section>
 
-      {/* -----urban location cities ---------------- */}
-      {/* <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
-        <section className="w-full bg-whige mt-20 flex flex-col lg:flex-row">
-          <div className="w-full lg:w-3/12">
-            <div>
-              <Image
-                src="/assets/location-logo.svg"
-                width={220}
-                height={60}
-                alt=""
-                className=""
-              />
-            </div>
-            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
-              <span className="lg:block">
-                <span className="text-urban-green">Urban </span>is
-              </span>{" "}
-              <span className="lg:block">available in 4+</span>{" "}
-              <span className="lg:block">Cities across</span>
-              Nigeria
-            </h2>
-          </div>
-          <div className="w-full lg:w-10/12 xl:ml-10">
-            <div className="flex justify-between gap-4 w-full mb-4">
-              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
+      {/* ================ ===================== */}
+      <div className="flex justify-center items-center py-20 lg:mt-20">
+        <section className="w-11/12 lg:w-11/12 px-1 lg:px-6 m-auto lg:mt-4">
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:p-10 flex flex-col items-center justify-center gap-4 lg:gap-10 lg:min-h-96">
+              <div className="flex items-center gap-4 text-white w-full">
                 <Image
-                  src="/assets/abuja.png"
-                  width={220}
-                  height={60}
+                  src="/assets/ufleetlogo.svg"
+                  width={40}
+                  height={40}
                   alt=""
-                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
-                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
-                  Abuja
-                </div>
               </div>
 
-              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
+              <div className="mt-4 lg:mt-2 w-full">
+                <h2 className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato">
+                  Worried about{" "}
+                </h2>
+                <h2 className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato">
+                  <span className="font-bold italic">trip consumables?</span>
+                </h2>
+              </div>
+
+              <div className="w-full flex justify-center">
                 <Image
-                  src="/assets/markudi.png"
-                  width={220}
-                  height={60}
+                  src="/assets/urban-card.svg"
+                  width={120}
+                  height={120}
                   alt=""
-                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
+                  className=" w-8/12"
                 />
-                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
-                  Markudi
-                </div>
               </div>
             </div>
 
-            <div className="flex justify-between gap-4 w-full mb-10 ">
-              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
+            <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-7/12 flex gap-2 px-2 mt-16 lg:mt-0">
+              <div className="w-2/12">
                 <Image
-                  src="/assets/jos.png"
-                  width={220}
-                  height={60}
+                  src="/assets/middle-car.svg"
+                  width={40}
+                  height={80}
                   alt=""
-                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
+                  className="w-10/12"
                 />
-                <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
-                  Jos
-                </div>
               </div>
-              <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
-                <Image
-                  src="/assets/citimore.png"
-                  width={220}
-                  height={60}
-                  alt=""
-                  className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
-                />
-                <div className="absolute py-2 px-4 bg-white rounded z-10 top-30 cursor-pointer">
-                  View more
+              <div className="flex flex-col justify-center items-center p-2 w-9/12 gap-4">
+                <h2 className="text-2xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+                  The{" "}
+                  <span className="font-bold text-urban-green">
+                    Urban provider card
+                  </span>{" "}
+                  is the ultimate travel partner for{" "}
+                  <span className="font-bold">seamless driving experience</span>{" "}
+                </h2>
+
+                <div className="w-full flex justify-start mt-4">
+                  <button className="bg-urban-green text-white py-3 lg:py-4 px-10 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                    Get In Touch
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </div> */}
-      {/* -------------------------------------------- */}
+      </div>
+      {/* ============================================ */}
 
       {/* =========== app ads ======================== */}
-      {/* <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
+      <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10 2xl:w-10/12">
           <section className="w-full bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
             <div className="w-full lg:w-1/2">
               <Image
@@ -462,11 +323,11 @@ export default function AgencyPage() {
             </div>
           </section>
         </div>
-      </div> */}
+      </div>
       {/* ============================================= */}
 
       {/* ---------- footer ------------------- */}
-      {/* <Footer /> */}
+      <Footer />
       {/* -------------------------------------- */}
     </main>
   );
