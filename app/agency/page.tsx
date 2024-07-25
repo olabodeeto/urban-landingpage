@@ -32,7 +32,9 @@ export default function AgencyPage() {
               <span className="font-creato font-bold"> Drive with Us</span>
             </h2>
             <div className="mt-8">
-              <button className="py-3 px-10 rounded bg-white">Register</button>
+              <button className="py-3 px-10 rounded bg-white 2xl:py-4 2xl:px-20 2xl:mt-2 2xl:text-xl">
+                Register
+              </button>
             </div>
           </div>
 
