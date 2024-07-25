@@ -10,19 +10,21 @@ export default function Aboutpage() {
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60"></div>
       </section>
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
         <section className="flex flex-col lg:flex-row justify-between">
           <div className="w-full lg:w-1/2 mb-10">
             <div className="flex items-center gap-4 cursor-pointer">
               <ArrowBackIcon sx={{ color: "#036E03" }} />
-              <span className="text-xl font-creato text-urban-black font-bold">
+              <span className="text-xl font-creato text-urban-black font-bold 2xl:text-3xl">
                 About Us
               </span>
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <span className="text-xl font-creato font-bold">Quick Links:</span>
-            <div className="mt-4 text-sm">
+            <span className="text-xl font-creato font-bold 2xl:text-3xl">
+              Quick Links:
+            </span>
+            <div className="mt-4 text-sm 2xl:text-lg">
               <div className="flex items-center gap-4 flex-wrap mb-2">
                 <span className="block text-urban-black underline font-creato cursor-pointer">
                   Our Vision
@@ -53,13 +55,13 @@ export default function Aboutpage() {
         </section>
       </div>
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
         <section className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
             We are{" "}
             <span className=" text-urban-green font-extrabold">Urban</span>
           </h2>
-          <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
+          <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
             Urban is an equal opportunities platform that promotes and value
             diversity. Team members are welcomed from various backgrounds and
             cultures with a range of skills and experiences, all sharing the
@@ -101,7 +103,7 @@ export default function Aboutpage() {
       {/* ------------------------------------------ */}
 
       {/* ----------vision ------------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4">
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-4 2xl:w-10/12">
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:p-20 flex flex-col items-center gap-4 lg:gap-10 lg:min-h-96">
             <div className="flex items-center gap-4 text-white w-full">
@@ -136,13 +138,13 @@ export default function Aboutpage() {
       {/* -------------------------------- */}
 
       {/* ---------------- experience --------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10 2xl:w-10/12">
         <div className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
             The Urban{" "}
             <span className=" text-urban-green font-extrabold">Experience</span>
           </h2>
-          <p className="mt-4 leading-8 lg:leading-10 text-base lg:text-xl font-creato font-light">
+          <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
             Urban continues to break novel grounds in the travel vertical and
             win new fans every day, but our ethos remains the same: challenge
             convention and provide the ultimate travel experience. To achieve
@@ -175,9 +177,9 @@ export default function Aboutpage() {
       {/* ------------------------------------------ */}
 
       {/* ---------------- values --------------- */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10 2xl:w-10/12">
         <div className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
             Urban{" "}
             <span className=" text-urban-green font-extrabold">
               Core Values
@@ -195,9 +197,11 @@ export default function Aboutpage() {
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
-                <h3 className="text-2xl font-creato">Push Boundaries</h3>
+                <h3 className="text-2xl font-creato 2xl:text-4xl">
+                  Push Boundaries
+                </h3>
                 <hr className=" border border-[#6CC56C]" />
-                <span className="font-creato font-thin w-11/12">
+                <span className="font-creato font-thin w-11/12 2xl:text-2xl">
                   Dare to design the future of travel
                 </span>
               </div>
@@ -214,9 +218,11 @@ export default function Aboutpage() {
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
-                <h3 className="text-2xl font-creato">Build with Empathy</h3>
+                <h3 className="text-2xl font-creato 2xl:text-4xl">
+                  Build with Empathy
+                </h3>
                 <hr className="border border-[#6CC56C]" />
-                <span className="font-creato font-thin w-11/12">
+                <span className="font-creato font-thin w-11/12 2xl:text-2xl">
                   Create long-lasting, sustainable impact
                 </span>
               </div>
@@ -235,9 +241,11 @@ export default function Aboutpage() {
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
-                <h3 className="text-2xl font-creato">Travel Together</h3>
+                <h3 className="text-2xl font-creato 2xl:text-4xl">
+                  Travel Together
+                </h3>
                 <hr className=" border border-[#6CC56C]" />
-                <span className="font-creato font-thin w-11/12">
+                <span className="font-creato font-thin w-11/12 2xl:text-2xl">
                   Collaborate with the ambition of changing the world
                 </span>
               </div>
@@ -254,9 +262,11 @@ export default function Aboutpage() {
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
-                <h3 className="text-2xl font-creato">Seamless Experience</h3>
+                <h3 className="text-2xl font-creato 2xl:text-4xl">
+                  Seamless Experience
+                </h3>
                 <hr className="border border-[#6CC56C]" />
-                <span className="font-creato font-thin w-11/12">
+                <span className="font-creato font-thin w-11/12 2xl:text-2xl">
                   Enable linkages across boundaries
                 </span>
               </div>
@@ -265,7 +275,7 @@ export default function Aboutpage() {
         </div>
       </section>
       {/* ------------------------------------------ */}
-      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10">
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-10 2xl:w-10/12">
         <div className="w-full">
           <Image
             src="/assets/withUrban.svg"
@@ -279,7 +289,7 @@ export default function Aboutpage() {
 
       {/* =========== app ads ======================== */}
       <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10 2xl:w-10/12">
           <section className="w-full bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
             <div className="w-full lg:w-1/2">
               <Image

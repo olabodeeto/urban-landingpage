@@ -50,9 +50,76 @@ export default function AgencyPage() {
         </div>
       </section>
 
-      <div className="agency-container">
-        <section></section>
-      </div>
+      <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-40 2xl:w-10/12">
+        <div className="">
+          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+            Why{" "}
+            <span className=" text-urban-green font-extrabold">
+              Drive With Us
+            </span>
+          </h2>
+          <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
+            Our collaborative partnership ecosystem of partners represents a
+            commitment to innovation and excellence. This collaboration and
+            partnership are growth-driven through the integration of
+            cutting-edge technology and resources. Urban equips you with
+            state-of-the-art enterprise-based provider management system,
+            empowering our provider agencies with seamless, scalable, and
+            forward-thinking solutions geared towards consistent and guaranteed
+            revenue per user, per trip.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/stepone.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen 2xl:text-2xl">
+                  Cutting-Edge Technology
+                </span>
+              </div>
+              <p className="mt-4 font-light 2xl:text-xl">
+                Exquisitely engineered technology built for you
+              </p>
+            </div>
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/steptwo.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen 2xl:text-2xl">
+                  Seamless-Prompt Support
+                </span>
+              </div>
+              <p className="mt-4 font-light 2xl:text-xl">
+                Strong support network round the clock 365days
+              </p>
+            </div>
+            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/stepthree.svg"
+                  width={50}
+                  height={40}
+                  alt=""
+                />
+                <span className=" text-urban-lightGreen 2xl:text-2xl">
+                  Easy-to-use Dashboard
+                </span>
+              </div>
+              <p className="mt-4 font-light 2xl:text-xl">
+                Convenient and Easy to use provider dashboard
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
         <section className="m-auto mt-72 lg:mt-20 xl:mt-14 min-h-96 xl:py-20">

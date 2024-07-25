@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12">
         <section className="m-auto mt-72 lg:mt-20 xl:mt-14 min-h-96 xl:py-20">
           <div className="w-full flex justify-center">
             <Image
@@ -100,7 +100,7 @@ export default function Home() {
             </p>
           </div>
           <div className="bg-[#ebeaea81] min-h-40 lg:p-10 mt-20">
-            <p className="text-center text-xl mt-10 xl:mt-4">
+            <p className="text-center text-xl mt-10 xl:mt-4 2xl:text-3xl">
               Book your trip in 3 easy step
             </p>
             <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
@@ -112,9 +112,11 @@ export default function Home() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step One</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step One
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Download the Urban mobile app on either the Apple Store or the
                   Google Play Store
                 </p>
@@ -127,9 +129,11 @@ export default function Home() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step Two</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step Two
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Sign up on the Urban mobile app you just downloaded using your
                   phone number and email
                 </p>
@@ -142,21 +146,23 @@ export default function Home() {
                     height={40}
                     alt=""
                   />
-                  <span className=" text-urban-lightGreen">Step Three</span>
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Step Three
+                  </span>
                 </div>
-                <p className="mt-4 font-light">
+                <p className="mt-4 font-light 2xl:text-xl">
                   Conveniently book your trip via the Urban mobile app or web
                   remotely and in real-time
                 </p>
               </div>
             </div>
 
-            <div className="mt-10 mb-5 flex items-center w-full lg:w-5/12 m-auto gap-4">
-              <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base">
+            <div className="mt-10 mb-5 flex items-center w-full lg:w-5/12 m-auto gap-4 2xl:mt-10">
+              <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base 2xl:text-xl">
                 Book Now
               </button>
 
-              <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base">
+              <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base 2xl:text-xl">
                 Check My Bookings
               </button>
             </div>
@@ -235,7 +241,7 @@ export default function Home() {
       </div>
 
       <div className="full bg-[#6cc56c1e] pt-14">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12">
           <section className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
               <Image
@@ -286,7 +292,7 @@ export default function Home() {
       </div>
 
       {/* -----urban location cities ---------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12">
         <section className="w-full bg-whige mt-20 flex flex-col lg:flex-row">
           <div className="w-full lg:w-3/12">
             <div>
@@ -369,7 +375,7 @@ export default function Home() {
 
       {/* =========== app ads ======================== */}
       <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
+        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10 2xl:w-10/12">
           <section className="w-full bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
             <div className="w-full lg:w-1/2">
               <Image
