@@ -89,7 +89,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Strong support Network round the clock 365days
                   </p>
                 </div>
@@ -103,7 +103,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Improved Revenue Visibility for Fleet Partners
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Quick, Convenient, Easy to use Fleet Management Dashboard
                   </p>
                 </div>
@@ -133,7 +133,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Cutting-Edge Technology built with you in mind
                   </p>
                 </div>
@@ -147,7 +147,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Assured Revenue with real-time payments per booking
                   </p>
                 </div>
@@ -161,7 +161,7 @@ export default function Fleetpage() {
                       alt=""
                     />
                   </div>
-                  <p className="mt-4 font-light text-center 2xl:text-xl">
+                  <p className="mt-4 font-light text-center xl:text-lg 2xl:text-xl">
                     Fixed agreed cost per Trip without excuses or delay
                   </p>
                 </div>
