@@ -6,7 +6,7 @@
 :root {
   font-family: "Creato Display", sans-serif;
 }
-button{
+button {
   border: none !important;
 }
 @font-face {
@@ -49,7 +49,6 @@ select {
   box-shadow: -17px -5px 53px -23px rgba(0, 0, 0, 0.1);
 }
 
-
 .module-hero {
   @media screen and (min-width: 1680px) {
     min-height: 80vh;
@@ -62,6 +61,13 @@ select {
   }
 }
 
-.boxShadow-main{
+.boxShadow-main {
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.homepage-tansit-img {
+  @media screen and (min-width: 1200px) and (max-width: 1439px) {
+    width: 24.5rem !important;
+    margin-top: 2rem;
+  }
 }
