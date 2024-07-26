@@ -66,8 +66,10 @@ select {
 }
 
 .homepage-tansit-img {
+  margin-top: 2rem;
   @media screen and (min-width: 320px) and (max-width: 767px) {
     width: 18.5rem !important;
+    margin-top: 0rem;
   }
   @media screen and (min-width: 1200px) and (max-width: 1439px) {
     width: 24.5rem !important;
