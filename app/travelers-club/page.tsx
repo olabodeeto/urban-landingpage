@@ -58,7 +58,7 @@ export default function TravelersClubPage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center lg:items-start lg:flex-row w-full gap-4 lg:justify-center mt-2">
+            <div className="flex flex-col items-center  lg:flex-row lg:items-center w-full gap-4 lg:justify-center mt-2">
               <div className="flex items-center gap-2">
                 <Image
                   src="/assets/rounded-logo.svg"

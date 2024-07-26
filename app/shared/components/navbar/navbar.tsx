@@ -162,9 +162,13 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 ? "font-semibold text-urban-green underline navbar-items"
                                 : "font-light text-urban-black navbar-items"
                             }`}
-                            onClick={() => router.push(obj.path)}
+                            onClick={() => {
+                              setselectedTab(obj.title);
+                              router.push(obj.path);
+                            }}
                           >
-                            Traveler's Club
+                            {/* {travelersPage?travelersPage: obj.title} */}
+                            Traveler's club
                           </div>
                           <div
                             className="arrow-down"
@@ -180,13 +184,34 @@ export default function Navbar({ setMobileVisibility }: any) {
 
                         {isTravelsDropOpen && (
                           <div className="travelersItems-container">
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("Urban Card");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("urban-card");
+                              }}
+                            >
                               Urban Card
                             </div>
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("Traveler's Kit");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("travelers-kit");
+                              }}
+                            >
                               Traveler's kit
                             </div>
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("Hotels");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("hotels");
+                              }}
+                            >
                               Hotels
                             </div>
                           </div>
