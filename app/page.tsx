@@ -243,7 +243,7 @@ export default function Home() {
       <div className="full bg-[#6cc56c1e] pt-14">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12">
           <section className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 flex items-center">
+            <div className="w-full lg:w-1/2 flex items-center justify-center lg:justify-start mb-10 lg:mb-0 ">
               <div className="bg-white homepage-tansit-img rounded-full p-10 relative lg:w-40 xl:w-[28rem] 2xl:w-[30rem] flex justify-center items-center boxShadow-main">
                 <Image
                   src="/assets/transit.svg"
