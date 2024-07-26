@@ -243,14 +243,16 @@ export default function Home() {
       <div className="full bg-[#6cc56c1e] pt-14">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12">
           <section className="flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2">
-              <Image
-                src="/assets/transit.svg"
-                width={540}
-                height={540}
-                alt=""
-                className="2xl:w-[38rem]"
-              />
+            <div className="w-full lg:w-1/2 flex items-center">
+              <div className="bg-white rounded-full p-10 relative 2xl:w-[30rem] flex justify-center items-center boxShadow-main">
+                <Image
+                  src="/assets/transit.svg"
+                  width={540}
+                  height={540}
+                  alt=""
+                  className="2xl:w-[40rem] boxShadow-main bg-white rounded-full"
+                />
+              </div>
             </div>
             <div className="w-full lg:w-1/2 xl:-ml-20 mt-6">
               <div className="flex flex-col xl:gap-8 justify-center">
@@ -268,9 +270,8 @@ export default function Home() {
                     <span className="underline text-urban-green">
                       Join our community
                     </span>{" "}
-                    of <strong>Fleet</strong> and ,
-                    <strong>Park Partners</strong>. Become Urban's partner and
-                    unlock guaranteed revenue.{" "}
+                    of <strong>Fleet</strong> and <strong>Park Partners</strong>
+                    . Become Urban's partner and unlock guaranteed revenue.{" "}
                   </p>
                 </div>
 
