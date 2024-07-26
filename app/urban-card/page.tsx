@@ -156,7 +156,7 @@ export default function UrbanCardPage() {
       {/* ========================= */}
       <section className="w-full py-10 lg:py-0 lg:w-8/12 2xl:w-10/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full p-10 lg:p-0 lg:w-1/2">
+          <div className="w-full p-20 lg:p-0 lg:w-1/2">
             <Image
               src="/assets/card-store.svg"
               width={120}
@@ -165,7 +165,7 @@ export default function UrbanCardPage() {
               className="w-full lg:w-8/12"
             />
           </div>
-          <div className="w-full p-4 lg:p-0  lg:w-1/2 flex items-center justify-center">
+          <div className="w-full -mt-10 md:-mt-0 p-10 lg:p-0  lg:w-1/2 flex items-center justify-center">
             <h2 className="text-2xl leading-8 md:text-4xl xl:text-4xl 2xl:text-5xl font-creato md:leading-10 font-thin italic">
               <span className="font-bold not-italic text-urban-green">
                 Live Your Best Life!
