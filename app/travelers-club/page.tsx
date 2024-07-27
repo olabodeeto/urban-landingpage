@@ -218,7 +218,7 @@ export default function TravelersClubPage() {
               </div>
             </div>
 
-            <div className="mt-14 mb-5 flex w-full  m-auto gap-4 2xl:mt-10 justify-center lg:justify-start">
+            <div className="mt-14 mb-5 flex w-full  m-auto gap-4 2xl:mt-24 justify-center lg:justify-start">
               <button className="px-6 xl:px-14 rounded-md py-3 border-none bg-urban-green text-white lg:text-sm xl:text-base 2xl:text-xl">
                 Get in Touch
               </button>

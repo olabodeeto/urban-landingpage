@@ -145,7 +145,7 @@ export default function AgencyPage() {
                     Dream in Motion
                   </span>
                 </h2>
-                <p className="leading-8 xl:leading-9 font-creato mt-4 text-white font-light lg:text-xl xl:text-2xl">
+                <p className="leading-8 xl:leading-9 font-creato mt-4 text-white font-light lg:text-xl xl:text-3xl">
                   Every aspect of the urban trip is designed and engineered with
                   one primary goal in mind: providing the ultimate driving
                   experience - one that's unrivalled on the road.
@@ -153,7 +153,7 @@ export default function AgencyPage() {
               </div>
 
               <div className="w-full flex justify-start">
-                <button className="bg-white text-urban-green py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                <button className="bg-white text-urban-green py-2 px-6 rounded 2xl:py-4 2xl:px-10 2xl:text-xl">
                   Get Started
                 </button>
               </div>
