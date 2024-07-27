@@ -196,17 +196,19 @@ export default function Home() {
                 modules={[Autoplay, Pagination]}
                 className="mySwiper min-h-96"
               >
-                <SwiperSlide className=" min-h-80 ">
-                  <div className="w-full flex flex-col lg:flex-row items-center justify-center">
-                    <img
-                      src="/assets/tour.png"
-                      width={100}
-                      height={40}
-                      alt=""
-                      className="w-full lg:w-1/2"
-                    />
-                    <div className="w-full lg:w-1/2 p-4 ">
-                      <h2 className="text-4xl">
+                <SwiperSlide className="min-h-80 w-80">
+                  <div className="w-full flex flex-col lg:flex-row items-center">
+                    <div className="w-full lg:w-5/12">
+                      <img
+                        src="/assets/tour.png"
+                        width={50}
+                        height={40}
+                        alt=""
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="w-full lg:w-1/2 p-4 lg:p-10">
+                      <h2 className="text-2xl lg:text-4xl text-left xl:text-5xl xl:leading-[4rem] home-slider-text">
                         <span className="font-thin">Onboarding</span>{" "}
                         <span className="italic text-urban-green">
                           New Traveler’s Club Members
@@ -215,17 +217,19 @@ export default function Home() {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide className=" min-h-80 ">
-                  <div className="w-full flex flex-col lg:flex-row items-center justify-center">
-                    <img
-                      src="/assets/tour.png"
-                      width={100}
-                      height={40}
-                      alt=""
-                      className="w-full lg:w-1/2"
-                    />
-                    <div className="w-full lg:w-1/2 p-4">
-                      <h2 className="text-4xl">
+                <SwiperSlide className="min-h-80 w-80">
+                  <div className="w-full flex flex-col lg:flex-row items-center">
+                    <div className="w-full lg:w-5/12">
+                      <img
+                        src="/assets/tour.png"
+                        width={50}
+                        height={40}
+                        alt=""
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="w-full lg:w-1/2 p-4 lg:p-10">
+                      <h2 className="text-2xl lg:text-4xl text-left xl:text-5xl xl:leading-[4rem] home-slider-text">
                         <span className="font-thin">Onboarding</span>{" "}
                         <span className="italic text-urban-green">
                           New Traveler’s Club Members
