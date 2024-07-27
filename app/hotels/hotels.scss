@@ -32,3 +32,34 @@
     }
   }
 }
+
+.hotel-card {
+  & ._hotel-card-bodyText {
+    font-size: 0.88rem;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      font-size: 0.8rem;
+    }
+    @media screen and (min-width: 1280px) and (max-width: 1399px) {
+      font-size: 0.7rem;
+    }
+    @media screen and (min-width: 1680px) {
+      font-size: 1rem;
+    }
+  }
+
+  & ._hotel-name {
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  & ._hotel-card-price {
+    font-size: 1rem !important;
+    @media screen and (min-width: 1280px) and (max-width: 1399px) {
+      font-size: 0.88rem !important;
+    }
+    @media screen and (min-width: 1680px) {
+      font-size: 1.2rem !important;
+    }
+  }
+}

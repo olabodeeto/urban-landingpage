@@ -37,8 +37,9 @@ export default function HotelsPage() {
           <h2 className="text-4xl lg:text-4xl font-creato font-light 2xl:text-5xl">
             Recommended Hotels in your Destination
           </h2>
-          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-8">
-            <div className="w-full h-[60rem] lg:3/12 flex flex-col relative overflow-hidden">
+          <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-8 2xl:gap-4">
+            {/* -------------- */}
+            <div className="w-full h-[60rem] lg:3/12 flex flex-col relative overflow-hidden hotel-card">
               <div className="relative">
                 <Image
                   src="/assets/hotel.png"
@@ -56,45 +57,58 @@ export default function HotelsPage() {
               <div className="h-48 mt-4 bg-[#6cc56c2c] rounded-br-[2rem] rounded-bl-[2rem] flex p-4 justify-between items-center">
                 <div>
                   <div className="flex items-center gap-3">
-                    <div className="flex items">
-                      <PlaceOutlinedIcon sx={{ fontSize: "1.2rem" }} />
-                      <span className="font-light text-[0.8rem]">Abuja</span>
+                    <div className="flex items-center">
+                      <PlaceOutlinedIcon
+                        // sx={{ fontSize: "1.2rem" }}
+                        className="text-xl 2xl:text-40"
+                      />
+                      <span className="font-light text-[0.8rem] 2xl:text-base _hotel-card-bodyText">
+                        Abuja
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-light text-sm">
+                    <div className="flex items-center gap-1">
+                      <h3 className="font-light  _hotel-card-bodyText">
                         Rate from
-                        <span className="text-urban-green font-bold text-base">
-                          {" "}
+                      </h3>
+
+                      <h3 className="font-light _hotel-card-price">
+                        <span className="text-urban-green font-bold">
                           N20,000.00
                         </span>
                       </h3>
                     </div>
                   </div>
-                  <h2 className="mt-4 font-creato font-bold text-3xl">
+                  <h2 className="mt-2 font-creato font-bold text-3xl mb-4 _hotel-name ">
                     Elixir Hotel
                   </h2>
-                  <p className="text-[0.8rem] font-light mt-2">
+                  <p className="_hotel-card-bodyText font-light">
                     Address: No 23, Kingsway rd Kaduna
                   </p>
-                  <p className="font-light text-sm mt-4">
+                  <p className="font-light _hotel-card-bodyText mt-4">
                     For Reservations call{" "}
-                    <span className=" text-urban-green">+234 903 476 9809</span>
+                    <span className=" text-urban-green font-bold">
+                      +234 903 476 9809
+                    </span>
                   </p>
                 </div>
                 <div className="flex flex-col items-end">
                   <div className="flex flex-col items-center w-full">
-                    <span className="text-4xl font-bold text-urban-green">
+                    <span className="text-4xl font-bold text-urban-green 2xl:text-[2.42rem]">
                       10%
                     </span>
-                    <p className="font-light text-sm">Discount /Room</p>
+                    <p className="font-light text-sm 2xl:text-base">
+                      Discount /Room
+                    </p>
                   </div>
-                  <div className="mt-2 bg-white text-xs py-2 px-3 rounded-full flex items-center gap-2 shadow-md">
+                  <div className="mt-2 bg-white text-xs py-2 px-3 rounded-full flex items-center gap-2 shadow">
                     <span className="text-[0.66rem]">See Direction</span>
                     <MyLocationOutlinedIcon sx={{ fontSize: "0.8rem" }} />
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* ----------------- */}
 
             <div className="w-full h-80 lg:3/12 relative overflow-hidden">
               <Image
