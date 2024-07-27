@@ -33,6 +33,7 @@ const config: Config = {
         agencyVision: "url('/assets/agency-vision.svg')",
         tvclubHero: "url('/assets/travelersclub-hero.svg')",
         cardSectionBg: "url('/assets/card-section-bg.png')",
+        hotelhero: "url('/assets/hotel-hero.svg')",
       },
     },
   },
