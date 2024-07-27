@@ -4,6 +4,7 @@ import "./globals.css";
 import localfont from "next/font/local";
 import Navbar from "./shared/components/navbar/navbar";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 

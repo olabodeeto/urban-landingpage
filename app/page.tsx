@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "./shared/components/navbar/navbar";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import BookTripForm from "./shared/components/book-trip-form/book-trip-form";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -21,8 +21,70 @@ export default function Home() {
     },
   };
 
+  useEffect(() => {
+    const coords = { x: 80, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    const colors = ["#3e7c4c", "#2e5d39"];
+
+    circles.forEach(function (circle: any, index) {
+      circle.x = 8;
+      circle.y = 8;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle: any, index) {
+        circle.style.left = x - 0 + "px";
+        circle.style.top = y - 8 + "px";
+
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle: any = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.2;
+        y += (nextCircle.y - y) * 0.1;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+  }, []);
+
   return (
     <main className="relative ">
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
+
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60 2xl:justify-between">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
