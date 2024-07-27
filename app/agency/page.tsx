@@ -252,7 +252,7 @@ export default function AgencyPage() {
                 />
               </div>
               <div className="flex flex-col justify-center items-center p-2 w-9/12 gap-4">
-                <h2 className="text-2xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+                <h2 className="text-2xl lg:text-4xl font-creato font-thin 2xl:text-5xl 2xl:leading-[3.5rem]">
                   The{" "}
                   <span className="font-bold text-urban-green">
                     Urban provider card
@@ -262,7 +262,7 @@ export default function AgencyPage() {
                 </h2>
 
                 <div className="w-full flex justify-start mt-4">
-                  <button className="bg-urban-green text-white py-3 lg:py-4 px-10 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                  <button className="bg-urban-green text-white py-3 lg:py-4 px-10 rounded 2xl:py-4 2xl:px-10 2xl:text-xl">
                     Get In Touch
                   </button>
                 </div>
