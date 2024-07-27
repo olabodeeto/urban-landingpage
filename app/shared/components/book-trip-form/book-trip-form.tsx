@@ -100,7 +100,7 @@ export default function BookTripForm() {
       </div>
 
       <div className=" w-full mt-6">
-        <label className="text-base font-light">Number of seats</label>
+        <label className="text-base font-light">Number of passenger</label>
         <div className="mt-3">
           <Select
             defaultValue={18}
@@ -114,7 +114,7 @@ export default function BookTripForm() {
               },
             }}
           >
-            {[6, 10, 18, 20, 24].map((seat, index: number) => (
+            {[1, 2, 3, 4, 5].map((seat, index: number) => (
               <Option value={seat} sx={{ fontSize: "0.8rem" }} key={index}>
                 {seat}
               </Option>
