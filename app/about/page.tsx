@@ -153,7 +153,7 @@ export default function Aboutpage() {
             enhancing user experience.
           </p>
           <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
-            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden">
+            <div className="w-full h-80 2xl:h-[26rem] lg:w-1/2 relative overflow-hidden">
               <Image
                 src="/assets/exp1.png"
                 width={300}
@@ -162,7 +162,7 @@ export default function Aboutpage() {
                 className="w-full  object-cover object-center"
               />
             </div>
-            <div className="w-full h-80 lg:w-1/2 relative overflow-hidden">
+            <div className="w-full h-80 2xl:h-[26rem] lg:w-1/2 relative overflow-hidden">
               <Image
                 src="/assets/exp2.png"
                 width={300}
