@@ -184,7 +184,7 @@ select {
   border: 1px solid red;
 }
 
-p {
+/* p {
   color: white;
   font-family: "arial";
   text-align: center;
@@ -194,7 +194,7 @@ p {
   a {
     color: teal;
   }
-}
+} */
 
 .circle {
   height: 26px;
@@ -206,5 +206,5 @@ p {
   left: 2rem;
   pointer-events: none;
   cursor: pointer;
-  z-index: 99999999; /* so that it stays on top of all other elements */
+  z-index: 99999999;
 }
