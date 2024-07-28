@@ -128,7 +128,8 @@ export default function Home() {
             <div
               className="bg-white w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 shadow-md"
               data-aos="zoom-in-left"
-              data-aos-duration="2000"
+              data-aos-easing="linear"
+              data-aos-duration="800"
             >
               <div className="text-xl text-urban-green mt-4 text-center 2xl:text-xl 2xl:mt-5 2xl:mb-14">
                 BOOK A TRIP
@@ -156,13 +157,17 @@ export default function Home() {
             <h2
               className="text-4xl xl:text-[3.7rem] text-center"
               data-aos="fade-up"
-              data-aos-duration="1000"
+              data-aos-duration="800"
             >
               <span className=" text-urban-green">With Urban</span>, you're
               always one click away
             </h2>
 
-            <p className="xl:text-4xl font-thin italic text-center mt-2">
+            <p
+              className="xl:text-4xl font-thin italic text-center mt-2"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
               from experiencing prompt, convenient and better travel with
               efficient ETAs
             </p>
@@ -172,7 +177,11 @@ export default function Home() {
               Book your trip in 3 easy step
             </p>
             <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="600"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/stepone.svg"
@@ -189,7 +198,12 @@ export default function Home() {
                   Google Play Store
                 </p>
               </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="1800"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/steptwo.svg"
@@ -206,7 +220,11 @@ export default function Home() {
                   phone number and email
                 </p>
               </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="2500"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/stepthree.svg"
@@ -375,6 +393,8 @@ export default function Home() {
                 height={60}
                 alt=""
                 className="2xl:w-60"
+                data-aos="fade-up"
+                data-aos-duration="3000"
               />
             </div>
             <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl 2xl:text-5xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
@@ -395,6 +415,9 @@ export default function Home() {
                   height={60}
                   alt=""
                   className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
+                  data-aos="fade-right"
+                  data-aos-offset="100"
+                  data-aos-easing="ease-in-sine"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Abuja
@@ -408,6 +431,9 @@ export default function Home() {
                   height={60}
                   alt=""
                   className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
+                  data-aos="fade-left"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Markudi
@@ -423,6 +449,10 @@ export default function Home() {
                   height={60}
                   alt=""
                   className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
+                  data-aos="fade-left"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="1000"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
                   Jos
