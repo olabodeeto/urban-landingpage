@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -24,16 +24,28 @@ export default function UrbanCardPage() {
     },
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <main className="relative ">
       <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 flex flex-col items-center">
         <div className="agency-hero-container relative">
           <div className="_leftSide">
-            <h2 className="agency-heroText font-creato font-light">
+            <h2
+              className="agency-heroText font-creato font-light"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               Get discounts and special deals when you use your Urban Traveler's
               Card
             </h2>
-            <div className="flex items-center gap-2 mt-6">
+            <div
+              className="flex items-center gap-2 mt-6"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <Image
                 src="/assets/rounded-logo.svg"
                 width={20}
@@ -53,7 +65,9 @@ export default function UrbanCardPage() {
               width={840}
               height={400}
               alt=""
-              className=""
+              className="floating"
+              data-aos="flip-up"
+              data-aos-duration="1000"
             />
           </div>
         </div>
@@ -73,8 +87,13 @@ export default function UrbanCardPage() {
             </div>
 
             <div className="w-full lg:w-6/12 bg-white p-10 lg:px-20 flex flex-col justify-center">
-              <div className="mt-2 w-full  xl:-mt-8 cardsection-container">
-                <h2 className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 italic font-creato mb-8">
+              <div className="mt-2 w-full  xl:-mt-8 cardsection-container floating-text">
+                <h2
+                  className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 italic font-creato mb-8"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <span className=" text-urban-green">
                     {" "}
                     Urban Trip Financing{" "}
@@ -84,7 +103,12 @@ export default function UrbanCardPage() {
               </div>
 
               <div className="w-full flex justify-start">
-                <button className="bg-urban-green text-white py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl">
+                <button
+                  className="bg-urban-green text-white py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl"
+                  data-aos="fade-up"
+                  data-aos-duration="1800"
+                  data-aos-once="true"
+                >
                   Get Card
                 </button>
               </div>
@@ -187,7 +211,7 @@ export default function UrbanCardPage() {
                 width={120}
                 height={120}
                 alt=""
-                className="w-full"
+                className="w-full floating-text"
               />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-80">
