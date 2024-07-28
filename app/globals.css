@@ -6,6 +6,9 @@
 :root {
   font-family: "Creato Display", sans-serif;
 }
+body.modal-open {
+  overflow: hidden;
+}
 button {
   border: none !important;
 }
@@ -215,6 +218,9 @@ select {
   animation-timing-function: ease-in-out;
   margin-left: 30px;
   margin-top: 5px;
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-left: 0px;
+  }
 }
 
 @keyframes floating {
