@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Navbar from "./shared/components/navbar/navbar";
 import { useState, useRef, useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import BookTripForm from "./shared/components/book-trip-form/book-trip-form";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -20,6 +22,10 @@ export default function Home() {
       return '<span class="' + className + ' bg-urban-green">' + "</span>";
     },
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     const coords = { x: 80, y: 20 };
@@ -67,13 +73,25 @@ export default function Home() {
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 xl:pb-20 2xl:pb-0">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 xl:mt-[12rem] mt-44 2xl:mt-60 2xl:justify-between">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extralight uppercase mb-1">
+            <h2
+              className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extralight uppercase mb-1"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
               Reimagine your
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extrabold mb-1">
+            <h2
+              className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extrabold mb-1"
+              data-aos="fade-up"
+              data-aos-duration="2400"
+            >
               Travel Experience
             </h2>
-            <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extrabold mb-1">
+            <h2
+              className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extrabold mb-1"
+              data-aos="fade-up"
+              data-aos-duration="3000"
+            >
               <span className="font-light">with</span> Urban
             </h2>
             <div className="flex items-center gap-1 mt-2 2xl:mt-6">
@@ -107,7 +125,11 @@ export default function Home() {
           </div>
 
           <div className="w-full max-h-80 lg:max-h-none lg:w-6/12 2xl:w-4/12 lg:flex lg:justify-end">
-            <div className="bg-white w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 shadow-md">
+            <div
+              className="bg-white w-full lg:w-10/12 xl:w-9/12 2xl:w-full rounded-2xl px-2 py-4 md:px-4 shadow-md"
+              data-aos="zoom-in-left"
+              data-aos-duration="2000"
+            >
               <div className="text-xl text-urban-green mt-4 text-center 2xl:text-xl 2xl:mt-5 2xl:mb-14">
                 BOOK A TRIP
               </div>
@@ -131,10 +153,15 @@ export default function Home() {
             />
           </div>
           <div className="w-full mt-10 flex flex-col items-center gap-2">
-            <h2 className="text-4xl xl:text-[3.7rem] text-center">
+            <h2
+              className="text-4xl xl:text-[3.7rem] text-center"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <span className=" text-urban-green">With Urban</span>, you're
               always one click away
             </h2>
+
             <p className="xl:text-4xl font-thin italic text-center mt-2">
               from experiencing prompt, convenient and better travel with
               efficient ETAs

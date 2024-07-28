@@ -10,7 +10,6 @@ import { useRouter, usePathname } from "next/navigation";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./navbar.scss";
 import Link from "next/link";
-const currentPath = window.location.pathname;
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");

@@ -66,6 +66,10 @@ export default function RootLayout({
           href="https://fonts.cdnfonts.com/css/creato-display"
           rel="stylesheet"
         />
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body className={creatoDisplay.className}>
         <Navbar />
