@@ -397,7 +397,7 @@ export default function Home() {
                 data-aos-duration="3000"
               />
             </div>
-            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl 2xl:text-5xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2">
+            <h2 className="text-4xl my-4 lg:my-0 mb-6 lg:mb-0 lg:text-4xl 2xl:text-5xl font-creato xl:mt-10 lg:flex flex-col lg:gap-2 floating-text">
               <span className="lg:block">
                 <span className="text-urban-green">Urban </span>is
               </span>{" "}
