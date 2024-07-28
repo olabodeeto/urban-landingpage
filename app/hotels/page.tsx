@@ -1,22 +1,37 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import Image from "next/image";
 import Footer from "../shared/components/footer/footer";
 import SearchIcon from "@mui/icons-material/Search";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import MyLocationOutlinedIcon from "@mui/icons-material/MyLocationOutlined";
 import "./hotels.scss";
+import AppAd from "../shared/components/app-ad/app-ad";
 
 export default function HotelsPage() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <main className="relative">
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[85vh] bg-hotelhero bg-cover py-10 px-4">
         <div className="flex flex-col justify-center items-center hotel-hero">
           <div className="mt-40 lg:mt-40 w-full lg:w-6/12 xl:w-7/12 m-auto text-center flex flex-col gap-4 lg:gap-10 items-center 2xl:w-8/12 2xl:mt-60">
-            <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl 2xl:text-4xl leading-8 xl:leading-[4rem]">
+            <h2
+              className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl 2xl:text-4xl leading-8 xl:leading-[4rem]"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               Take Advantage of Discounted Room Offers at Our Partner Hotels
             </h2>
             <div className="w-10/12 lg:w-8/12 m-auto 2xl:w-7/12">
-              <form className="w-full rounded-xl bg-white flex items-center gap-1 px-4 2xl:py-2">
+              <form
+                className="w-full rounded-xl bg-white flex items-center gap-1 px-4 2xl:py-2"
+                data-aos="fade-up"
+                data-aos-duration="1800"
+              >
                 <SearchIcon
                   sx={{ color: "#a7a7ab" }}
                   className="2xl:text-3xl"
@@ -34,7 +49,12 @@ export default function HotelsPage() {
 
       <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
         <section className="">
-          <h2 className="text-4xl lg:text-4xl font-creato font-light 2xl:text-5xl">
+          <h2
+            className="text-4xl lg:text-4xl font-creato font-light 2xl:text-5xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             Recommended Hotels in your Destination
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-y-14 lg:gap-y-6 lg:grid-cols-3  justify-between gap-1 lg:gap-6 xl:gap-8 2xl:gap-6">
@@ -459,58 +479,7 @@ export default function HotelsPage() {
       </div>
 
       {/* =========== app ads ======================== */}
-      <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
-          <section className="w-full 2xl:w-11/12 m-auto bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
-            <div className="w-full lg:w-1/2">
-              <Image
-                src="/assets/appAdd.svg"
-                width={120}
-                height={120}
-                alt=""
-                className="w-full"
-              />
-            </div>
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-80">
-              <div className="">
-                <h2 className="text-4xl lg:text-5xl font-creato font-bold">
-                  Urban App
-                </h2>
-                <p className="italic font-creato text-left text-2xl">
-                  Available on Web and App
-                </p>
-                <div className="flex items-center gap-2 lg:gap-5 mt-6 2xl:mt-10">
-                  <Image
-                    src="/assets/appstoreIcon.svg"
-                    width={140}
-                    height={40}
-                    alt=""
-                    className="lg:w-28 xl:w-32 2xl:w-40"
-                  />
-                  <Image
-                    src="/assets/playstoreIcon.svg"
-                    width={140}
-                    height={40}
-                    alt=""
-                    className="lg:w-28 xl:w-32 2xl:w-40"
-                  />
-                </div>
-                <div className="mt-4 flex items-center gap-2 pl-1">
-                  <Image
-                    src="/assets/bliplogo.svg"
-                    width={24}
-                    height={24}
-                    alt=""
-                  />
-                  <span className="font-light text-sm">
-                    Powered by <span className="font-bold">BLIP LLC</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <AppAd />
       {/* ============================================= */}
       {/* ---------- footer ------------------- */}
       <Footer />

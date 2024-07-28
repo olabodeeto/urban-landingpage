@@ -1,11 +1,19 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "../shared/components/footer/footer";
 import Marquee from "react-fast-marquee";
 import "./travelers.scss";
+import AppAd from "../shared/components/app-ad/app-ad";
 
 export default function TravelersClubPage() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const users = [
     {
       name: "PALM DUNG",
@@ -45,21 +53,40 @@ export default function TravelersClubPage() {
         <div className="flex flex-col justify-center items-center travelers-club-hero">
           <div className="mt-32 lg:mt-40 2xl:mt-72 w-11/12 lg:w-5/12 xl:w-5/12 m-auto text-center flex flex-col gap-4 lg:gap-10 items-center 2xl:w-7/12">
             <div className="flex flex-col items-center">
-              <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text font-thin">
+              <h2
+                className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text font-thin"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 Welcome to the official
               </h2>
-              <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text">
+              <h2
+                className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 Urban Traveler's Club
               </h2>
 
-              <p className="text-xl font-creato font-light w-full lg:w-10/12 text-white mt-2">
+              <p
+                className="text-xl font-creato font-light w-full lg:w-10/12 text-white mt-2"
+                data-aos="fade-up"
+                data-aos-duration="1400"
+              >
                 Exclusive club created by Urban's travel enthusiast for Urban
                 enthusias
               </p>
             </div>
 
-            <div className="flex flex-col items-center  lg:flex-row lg:items-center w-full gap-4 lg:justify-center mt-2">
-              <div className="flex items-center gap-2">
+            <div
+              className="flex flex-col items-center  lg:items-center w-full gap-4 lg:justify-center mt-2"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
+              <button className="bg-white text-urban-green xl:text-xl rounded-md py-3 px-4 w-5/12 lg:w-3/12 xl:w-4/12 ">
+                Register
+              </button>
+              <div className="flex items-center gap-2 mt-2">
                 <Image
                   src="/assets/rounded-logo.svg"
                   width={20}
@@ -70,9 +97,6 @@ export default function TravelersClubPage() {
                   Supported by Urban
                 </span>
               </div>
-              <button className="bg-white text-urban-green xl:text-xl rounded-md py-3 px-4 w-5/12 lg:w-3/12 xl:w-4/12 ">
-                Register
-              </button>
             </div>
           </div>
         </div>
@@ -80,13 +104,23 @@ export default function TravelersClubPage() {
 
       <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20 2xl:mt-20 2xl:mb-40 2xl:w-10/12">
         <section className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+          <h2
+            className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             Why join Urban{" "}
             <span className=" text-urban-green font-bold">
               Traveler's club?
             </span>
           </h2>
-          <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
+          <p
+            className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light"
+            data-aos="fade-up"
+            data-aos-duration="1800"
+            data-aos-once="true"
+          >
             Instantly recognizable, Urban has been delivered across four
             cExclusive club created by Urban's travel enthusiast for Urban
             enthusiast. The main purpose is to bring together like-minded
@@ -96,7 +130,12 @@ export default function TravelersClubPage() {
             that has enjoyed phenomenal experience.
           </p>
           <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
-            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+            <div
+              className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
               <div className="flex items-center gap-2">
                 <Image
                   src="/assets/stepone.svg"
@@ -113,7 +152,12 @@ export default function TravelersClubPage() {
                 additional club benefits
               </p>
             </div>
-            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+            <div
+              className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
               <div className="flex items-center gap-2">
                 <Image
                   src="/assets/steptwo.svg"
@@ -130,7 +174,12 @@ export default function TravelersClubPage() {
                 phone number and email
               </p>
             </div>
-            <div className="p-10 bg-white min-h-40 w-full lg:w-[30%]">
+            <div
+              className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
               <div className="flex items-center gap-2">
                 <Image
                   src="/assets/stepthree.svg"
@@ -154,11 +203,21 @@ export default function TravelersClubPage() {
       <section className="bg-[#6cc56c10] pt-10 pb-5 mt-10">
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
           <div className="">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+            <h2
+              className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-once="true"
+            >
               One of a kind{" "}
               <span className=" text-urban-green font-extrabold">Club</span>
             </h2>
-            <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-thin">
+            <p
+              className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-thin"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+              data-aos-once="true"
+            >
               Traveling Urban is a unique experience. Although there are more
               and more enthusiastic travelers around the country, we are still a
               very small circle and tribe. The clubs mission is to provide
@@ -242,11 +301,18 @@ export default function TravelersClubPage() {
                   width={40}
                   height={40}
                   alt=""
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
                 />
               </div>
 
               <div className="mt-4 lg:mt-2 w-full">
-                <h2 className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato">
+                <h2
+                  className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato"
+                  data-aos="fade-up"
+                  data-aos-duration="1800"
+                >
                   You don’t own an{" "}
                   <span className="font-bold text-urban-lightGreen">
                     Urban Card{" "}
@@ -262,11 +328,18 @@ export default function TravelersClubPage() {
                   height={120}
                   alt=""
                   className=" w-8/12"
+                  data-aos="flip-up"
+                  data-aos-duration="1000"
                 />
               </div>
 
               <div className="w-full flex justify-center mt-4">
-                <button className="bg-white text-urban-green rounded-md py-3 lg:py-4 px-10 2xl:py-3 2xl:px-10 2xl:text-xl">
+                <button
+                  className="bg-white text-urban-green rounded-md py-3 lg:py-4 px-10 2xl:py-3 2xl:px-10 2xl:text-xl"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   Get In Touch
                 </button>
               </div>
@@ -349,58 +422,7 @@ export default function TravelersClubPage() {
       {/* ============================================= */}
 
       {/* =========== app ads ======================== */}
-      <div className="w-wull lg:w-full lg:px-6 m-auto bg-urban-black min-h-4">
-        <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto bg-urban-black py-10">
-          <section className="w-full 2xl:w-11/12 m-auto bg-white flex flex-col lg:flex-row p-10 lg:p-20 rounded-xl">
-            <div className="w-full lg:w-1/2">
-              <Image
-                src="/assets/appAdd.svg"
-                width={120}
-                height={120}
-                alt=""
-                className="w-full"
-              />
-            </div>
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center min-h-80">
-              <div className="">
-                <h2 className="text-4xl lg:text-5xl font-creato font-bold">
-                  Urban App
-                </h2>
-                <p className="italic font-creato text-left text-2xl">
-                  Available on Web and App
-                </p>
-                <div className="flex items-center gap-2 lg:gap-5 mt-6 2xl:mt-10">
-                  <Image
-                    src="/assets/appstoreIcon.svg"
-                    width={140}
-                    height={40}
-                    alt=""
-                    className="lg:w-28 xl:w-32 2xl:w-40"
-                  />
-                  <Image
-                    src="/assets/playstoreIcon.svg"
-                    width={140}
-                    height={40}
-                    alt=""
-                    className="lg:w-28 xl:w-32 2xl:w-40"
-                  />
-                </div>
-                <div className="mt-4 flex items-center gap-2 pl-1">
-                  <Image
-                    src="/assets/bliplogo.svg"
-                    width={24}
-                    height={24}
-                    alt=""
-                  />
-                  <span className="font-light text-sm">
-                    Powered by <span className="font-bold">BLIP LLC</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
+      <AppAd />
       {/* ============================================= */}
 
       {/* ---------- footer ------------------- */}
