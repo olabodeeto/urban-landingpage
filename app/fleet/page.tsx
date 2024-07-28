@@ -1,22 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Image from "next/image";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "../shared/components/footer/footer";
 import "./fleet.scss";
 
 export default function Fleetpage() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <main className="relative">
       <section className="w-full -mt-[7.9rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[75vh] bg-heroFleet bg-cover py-10 px-4">
         <div className="flex flex-col justify-center items-center ">
           <div className="mt-40 lg:mt-40 2xl:mt-72 w-11/12 lg:w-5/12 xl:w-5/12 m-auto text-center flex flex-col gap-10 items-center 2xl:w-6/12 fleet-hero">
-            <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text">
+            <h2
+              className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               Exquisitely Engineered Travel Experience.{" "}
               <span className="font-thin">
                 Join Our Community of Fleet Partners
               </span>
             </h2>
-            <button className="bg-white rounded-md py-3 px-4 w-5/12 lg:w-4/12">
+            <button
+              className="bg-white rounded-md py-3 px-4 w-5/12 lg:w-4/12"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
               Get Started
             </button>
           </div>
@@ -27,13 +42,22 @@ export default function Fleetpage() {
         {/* ---------------- about --------------- */}
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20 2xl:mt-20 2xl:mb-40">
           <section className="">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+            <h2
+              className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               Exploitable{" "}
               <span className=" text-urban-green font-extrabold">
                 Opportunities
               </span>
             </h2>
-            <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
+            <p
+              className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light"
+              data-aos="fade-up"
+              data-aos-duration="3000"
+              data-aos-once="true"
+            >
               Instantly recognizable, Urban has been delivered across four
               cities at present. Our team works hand-in-hand with travelers to
               tailor each travel to their specific travel requirements. This
@@ -52,6 +76,9 @@ export default function Fleetpage() {
                   height={140}
                   alt=""
                   className="w-full h-96 2xl:h-[28rem] object-cover object-center"
+                  data-aos="zoom-out-left"
+                  data-aos-duration="2000"
+                  data-aos-once="true"
                 />
               </div>
 
@@ -62,6 +89,9 @@ export default function Fleetpage() {
                   height={140}
                   alt=""
                   className="w-full h-96 2xl:h-[28rem]  object-cover object-center"
+                  data-aos="zoom-out-right"
+                  data-aos-duration="2000"
+                  data-aos-once="true"
                 />
               </div>
             </div>
@@ -71,7 +101,11 @@ export default function Fleetpage() {
 
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-14 lg:mt-24 2xl:mt-40">
           <section className="m-auto xl:mt-14 min-h-96">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+            <h2
+              className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               Why become Urban
               <span className=" text-urban-green font-extrabold">
                 {" "}
@@ -80,7 +114,12 @@ export default function Fleetpage() {
             </h2>
             <div className="bg-[#6cc56c2a] min-h-40 lg:p-10 mt-14">
               <div className="mt-4 flex flex-col lg:flex-row justify-between gap-y-4 gap-4 mb-0">
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="zoom-out-right"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet1.svg"
@@ -94,7 +133,12 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet2.svg"
@@ -108,7 +152,12 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="fade-down"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet3.svg"
@@ -124,7 +173,12 @@ export default function Fleetpage() {
               </div>
 
               <div className="mt-4 flex flex-col lg:flex-row justify-between gap-y-4 gap-4 mb-0">
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="zoom-out-left"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet4.svg"
@@ -138,7 +192,12 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="fade-down"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet5.svg"
@@ -152,7 +211,12 @@ export default function Fleetpage() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center">
+                <div
+                  className="p-10 bg-white min-h-40 w-full lg:w-1/3 flex flex-col items-center"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   <div className="flex items-center gap-2">
                     <Image
                       src="/assets/yfleet6.svg"
@@ -208,19 +272,34 @@ export default function Fleetpage() {
 
       <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 -mt-14 lg:mt-24 2xl:mt-40 2xl:w-10/12">
         <section className="m-auto xl:mt-14 min-h-96">
-          <h2 className="text-4xl lg:text-4xl font-creato 2xl:text-5xl">
+          <h2
+            className="text-4xl lg:text-4xl font-creato 2xl:text-5xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             How to become Urban
             <span className=" text-urban-green font-extrabold">
               {" "}
               Fleet partner
             </span>
           </h2>
-          <p className="text-xl lg:text-2xl font-thin italic font-creato 2xl:mt-4 2xl:text-4xl">
+          <p
+            className="text-xl lg:text-2xl font-thin italic font-creato 2xl:mt-4 2xl:text-4xl"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-once="true"
+          >
             follow the steps below
           </p>
           <div className=" min-h-40 mt-1 2xl:p-0">
             <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-once="true"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/stepone.svg"
@@ -237,7 +316,12 @@ export default function Fleetpage() {
                   Google Play Store
                 </p>
               </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow"
+                data-aos="fade-up"
+                data-aos-duration="1800"
+                data-aos-once="true"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/steptwo.svg"
@@ -254,7 +338,12 @@ export default function Fleetpage() {
                   phone number and email
                 </p>
               </div>
-              <div className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%] boxShadow"
+                data-aos="fade-up"
+                data-aos-duration="2800"
+                data-aos-once="true"
+              >
                 <div className="flex items-center gap-2">
                   <Image
                     src="/assets/stepthree.svg"

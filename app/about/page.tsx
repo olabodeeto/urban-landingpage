@@ -1,9 +1,15 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "../shared/components/footer/footer";
 
 export default function Aboutpage() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <main className="relative ">
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] bg-heroAbout bg-cover py-10 px-4 ">
@@ -55,13 +61,21 @@ export default function Aboutpage() {
         </section>
       </div>
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-20 2xl:w-10/12">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-14 2xl:w-10/12">
         <section className="">
-          <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+          <h2
+            className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             We are{" "}
             <span className=" text-urban-green font-extrabold">Urban</span>
           </h2>
-          <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
+          <p
+            className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             Urban is an equal opportunities platform that promotes and value
             diversity. Team members are welcomed from various backgrounds and
             cultures with a range of skills and experiences, all sharing the
@@ -76,7 +90,9 @@ export default function Aboutpage() {
                 width={300}
                 height={140}
                 alt=""
-                className="w-full  object-cover object-center"
+                className="w-full  object-cover object-center "
+                data-aos="fade-up"
+                data-aos-duration="1000"
               />
             </div>
             <div className="w-full h-80 lg:3/12 relative overflow-hidden">
@@ -86,6 +102,8 @@ export default function Aboutpage() {
                 height={140}
                 alt=""
                 className="w-full  object-cover object-center"
+                data-aos="fade-up"
+                data-aos-duration="2000"
               />
             </div>
             <div className="w-full h-80 lg:3/12 relative overflow-hidden">
@@ -95,6 +113,8 @@ export default function Aboutpage() {
                 height={140}
                 alt=""
                 className="w-full  object-cover object-center"
+                data-aos="fade-up"
+                data-aos-duration="3000"
               />
             </div>
           </div>
@@ -117,7 +137,12 @@ export default function Aboutpage() {
             </div>
 
             <div className="mt-4 lg:mt-24">
-              <h2 className=" text-2xl lg:text-3xl xl:text-4xl w-10/12 text-white font-creato italic">
+              <h2
+                className=" text-2xl lg:text-3xl xl:text-4xl w-10/12 text-white font-creato italic"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-duration="1800"
+              >
                 To be Africa’s{" "}
                 <span className=" text-green-400">
                   most traveler- centric brand
@@ -194,6 +219,9 @@ export default function Aboutpage() {
                   height={80}
                   alt=""
                   className="w-full  object-cover object-center"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  data-aos-duration="1000"
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
@@ -215,6 +243,9 @@ export default function Aboutpage() {
                   height={80}
                   alt=""
                   className="w-full  object-cover object-center"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  data-aos-duration="1800"
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
@@ -238,6 +269,9 @@ export default function Aboutpage() {
                   height={80}
                   alt=""
                   className="w-full  object-cover object-center"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  data-aos-duration="2000"
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">
@@ -259,6 +293,9 @@ export default function Aboutpage() {
                   height={80}
                   alt=""
                   className="w-full  object-cover object-center"
+                  data-aos="fade-up"
+                  data-aos-anchor-placement="top-bottom"
+                  data-aos-duration="2800"
                 />
               </div>
               <div className="pl-10 flex flex-col justify-center gap-4 w-full">

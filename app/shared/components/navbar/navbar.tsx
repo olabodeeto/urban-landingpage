@@ -154,7 +154,7 @@ export default function Navbar({ setMobileVisibility }: any) {
       <div
         className={`w-full lg:w-11/12 2xl:w-10/12 m-auto ${
           isFullWidth ? "bg-opacity-90" : "bg-white"
-        } rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl -mt-4 lg:-mt-0`}
+        } rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl mt-2 lg:-mt-0`}
       >
         {/* desktop navbar */}
         <div className="hidden lg:block py-1 px-4">
