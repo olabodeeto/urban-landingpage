@@ -55,7 +55,7 @@ export default function Aboutpage() {
         </section>
       </div>
       {/* ---------------- about --------------- */}
-      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
+      <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 lg:mt-20 2xl:w-10/12">
         <section className="">
           <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
             We are{" "}

@@ -3,10 +3,12 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import PrimaryBtn from "../buttons/primary-btn";
 import MenuIcon from "@mui/icons-material/Menu";
+
 import { FormControl, MenuItem, Select } from "@mui/material";
 import { useRouter } from "next/navigation";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./navbar.scss";
+import Link from "next/link";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
@@ -14,6 +16,9 @@ export default function Navbar({ setMobileVisibility }: any) {
   const [isFullWidth, setIsFullWidth] = useState(false);
   const [travelersPage, settravelersPage] = useState("Travelers");
   const [isTravelsDropOpen, setisTravelsDropOpen] = useState(false);
+
+  const dropdownRef: any = useRef(null);
+  const dropdownRef2: any = useRef(null);
 
   const router = useRouter();
 
@@ -109,6 +114,40 @@ export default function Navbar({ setMobileVisibility }: any) {
     //  router.push(obj.path);
   }, [travelersPage]);
 
+  useEffect(() => {
+    console.log("here");
+    const handleClickOutside = (event: any) => {
+      if (
+        dropdownRef2.current &&
+        !dropdownRef2.current.contains(event.target)
+      ) {
+        setisTravelsDropOpen(false);
+      } else {
+        return;
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef2]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setisTravelsDropOpen(false);
+      } else {
+        return;
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
   return (
     <div
       className={`w-full p-4 sticky z-50 ${
@@ -132,7 +171,10 @@ export default function Navbar({ setMobileVisibility }: any) {
                 className="2xl:w-24"
               />
             </div>
-            <div className="lg:w-8/12 xl:w-7/12 flex justify-start ">
+            <div
+              className="lg:w-8/12 xl:w-7/12 flex justify-start "
+              ref={dropdownRef}
+            >
               <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
                 {tabsData.map((obj, index: number) => (
                   <div key={index}>
@@ -194,6 +236,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                             >
                               Urban Card
                             </div>
+
                             <div
                               className="item font-creato font-light p-2"
                               onClick={() => {
@@ -315,13 +358,35 @@ export default function Navbar({ setMobileVisibility }: any) {
 
                         {isTravelsDropOpen && (
                           <div className="travelersItems-container-m left-20">
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("Urban Card");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("urban-card");
+                                console.log("here");
+                              }}
+                            >
                               Urban Card
                             </div>
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("travelers-kit");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("traveler-kit");
+                              }}
+                            >
                               Traveler's kit
                             </div>
-                            <div className="item font-creato font-light p-2">
+                            <div
+                              className="item font-creato font-light p-2"
+                              onClick={() => {
+                                settravelersPage("Urban Card");
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                                router.push("hotels");
+                              }}
+                            >
                               Hotels
                             </div>
                           </div>
