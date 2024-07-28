@@ -125,7 +125,7 @@ export default function Navbar({ setMobileVisibility }: any) {
           <div className="flex flex-row items-center justify-between">
             <div className="lg:w-2/12 xl:w-2/12">
               <Image
-                src="./logo.svg"
+                src="/logo.svg"
                 width={80}
                 height={35}
                 alt=""
@@ -237,7 +237,7 @@ export default function Navbar({ setMobileVisibility }: any) {
         <div className="lg:hidden py-2 relative">
           <div className="flex flex-row items-center justify-between px-4">
             <div>
-              <Image src="./logo.svg" width={80} height={35} alt="" />
+              <Image src="/logo.svg" width={80} height={35} alt="" />
             </div>
             <div></div>
             <div
