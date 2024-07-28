@@ -174,13 +174,13 @@ export default function TravelersClubPage() {
             </p>
             <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
               <div className="w-full h-80 lg:3/12 ">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-64">
                   <Image
                     src="/assets/club1.png"
                     width={300}
                     height={140}
                     alt=""
-                    className="w-full  object-cover object-center"
+                    className="w-full h-full  object-cover object-center"
                   />
                 </div>
                 <div className="w-full py-3 px-2 bg-urban-lightGreen text-urban-black text-center font-creato">
@@ -188,13 +188,13 @@ export default function TravelersClubPage() {
                 </div>
               </div>
               <div className="w-full h-80 lg:3/12 ">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-64">
                   <Image
                     src="/assets/club2.png"
                     width={300}
                     height={140}
                     alt=""
-                    className="w-full  object-cover object-center"
+                    className="w-full h-full  object-cover object-center"
                   />
                 </div>
                 <div className="w-full py-3 px-2 bg-urban-green text-white text-center font-creato">
@@ -203,13 +203,13 @@ export default function TravelersClubPage() {
               </div>
 
               <div className="w-full h-80 lg:3/12 ">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-64">
                   <Image
                     src="/assets/club3.png"
                     width={300}
                     height={140}
                     alt=""
-                    className="w-full  object-cover object-center"
+                    className="w-full h-full  object-cover object-center"
                   />
                 </div>
                 <div className="w-full py-3 px-2 bg-urban-black text-white text-center font-creato">
@@ -218,7 +218,7 @@ export default function TravelersClubPage() {
               </div>
             </div>
 
-            <div className="mt-14 mb-5 flex w-full  m-auto gap-4 2xl:mt-24 justify-center lg:justify-start">
+            <div className="mt-14 lg:mt-10  mb-5 flex w-full  m-auto gap-4 2xl:mt-6 justify-center lg:justify-start">
               <button className="px-6 xl:px-14 rounded-md py-3 border-none bg-urban-green text-white lg:text-sm xl:text-base 2xl:text-xl">
                 Get in Touch
               </button>
