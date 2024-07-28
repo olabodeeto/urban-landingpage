@@ -64,8 +64,8 @@ export default function Home() {
 
   return (
     <main className="relative ">
-      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
-        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60 2xl:justify-between">
+      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 xl:pb-20 2xl:pb-0">
+        <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 xl:mt-[12rem] mt-44 2xl:mt-60 2xl:justify-between">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
             <h2 className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extralight uppercase mb-1">
               Reimagine your
