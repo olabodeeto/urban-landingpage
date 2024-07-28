@@ -119,7 +119,6 @@ select {
   @media screen and (min-width: 1200px) and (max-width: 1439px) {
     font-size: 2.4rem !important;
     line-height: 3rem !important;
-    border: 1px solid red;
   }
 }
 
@@ -181,7 +180,7 @@ select {
 
 .expand {
   animation: cursorAnim3 0.5s forwards;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* p {

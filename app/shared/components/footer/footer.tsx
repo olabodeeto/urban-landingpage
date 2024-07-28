@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import "./footer.scss";
+import Link from "next/link";
 
 export default function Footer() {
   const today = new Date();
@@ -12,7 +13,7 @@ export default function Footer() {
         {/* ===== desktop footer ================ */}
         <div className="lg:w-[85%]  m-auto hidden lg:block">
           <div className="flex justify-between items-start text-white ">
-            <div className="w-2/12 pr-2">
+            <div className="w-2/12 pr-2 footer-urban-area">
               <Image
                 src="/assets/footer-logo.svg"
                 alt=""
@@ -20,13 +21,13 @@ export default function Footer() {
                 height={120}
                 className="w-28 xl:w-32"
               />
-              <p className="mt-6 italic font-creato font-light text-xs xl:text-sm">
+              {/* <p className="mt-6 italic font-creato font-light text-xs xl:text-sm">
                 We are a traveler-centric brand with a focus on redefining
                 Africa's approach to travel.
-              </p>
+              </p> */}
 
               <div className="mt-4">
-                <div className="flex gap-2 mb-4">
+                <div className="flex gap-2 mb-4 urban-footer-icons">
                   <Image
                     src="/assets/MFooterEmailIcon.svg"
                     width={32}
@@ -36,11 +37,11 @@ export default function Footer() {
                   />
                   <div className="text-white text-xs xl:text-sm pr-4 font-thin">
                     <p>Email</p>
-                    <p>contact@urban.com</p>
+                    <p>hello@urban.ng</p>
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex gap-2 urban-footer-icons">
                   <Image
                     src="/assets/footerCallIcon.svg"
                     width={32}
@@ -58,13 +59,33 @@ export default function Footer() {
             <div className="w-2/12">
               <h2 className="font-creato">Growth & Partnership</h2>
               <ul className="text-xs xl:text-sm font-thin flex flex-col gap-2 mt-2">
-                <li>Fleets</li>
-                <li>Parks</li>
-                <li>Agencies</li>
-                <li>Traveler's Club</li>
-                <li>Traveler’s Kits</li>
-                <li>Hotels</li>
-                <li>Urban card</li>
+                <Link href="/fleet">
+                  <li>Fleets</li>
+                </Link>
+
+                <Link href="/park">
+                  <li>Parks</li>
+                </Link>
+
+                <Link href="/agency">
+                  <li>Agencies</li>
+                </Link>
+
+                <Link href="/travelers-club">
+                  <li>Traveler's Club</li>
+                </Link>
+
+                <Link href="/travelers-kit">
+                  <li>Traveler’s Kits</li>
+                </Link>
+
+                <Link href="/hotels">
+                  <li>Hotels</li>
+                </Link>
+
+                <Link href="/urban-card">
+                  <li>Urban card</li>
+                </Link>
               </ul>
             </div>
             <div className="w-2/12">

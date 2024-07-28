@@ -8,8 +8,8 @@ export default function Fleetpage() {
   return (
     <main className="relative">
       <section className="w-full -mt-[7.9rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[75vh] bg-heroFleet bg-cover py-10 px-4">
-        <div className="flex flex-col justify-center items-center fleet-hero">
-          <div className="mt-40 lg:mt-40 2xl:mt-72 w-11/12 lg:w-5/12 xl:w-5/12 m-auto text-center flex flex-col gap-10 items-center 2xl:w-6/12">
+        <div className="flex flex-col justify-center items-center ">
+          <div className="mt-40 lg:mt-40 2xl:mt-72 w-11/12 lg:w-5/12 xl:w-5/12 m-auto text-center flex flex-col gap-10 items-center 2xl:w-6/12 fleet-hero">
             <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl fleet-hero-text">
               Exquisitely Engineered Travel Experience.{" "}
               <span className="font-thin">

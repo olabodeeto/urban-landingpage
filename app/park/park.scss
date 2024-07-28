@@ -1,6 +1,11 @@
 .park-hero {
   @media screen and (min-width: 1280px) and (max-width: 1399px) {
-    width: 60%;
+    width: 88%;
+    margin: auto;
+    & h2 {
+      font-size: 2.8rem;
+      line-height: 3rem;
+    }
   }
   & button {
     @media screen and (min-width: 1680px) {
