@@ -77,6 +77,7 @@ export default function AgencyPage() {
             className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light"
             data-aos="fade-up"
             data-aos-duration="2000"
+            data-aos-once="true"
           >
             Our collaborative partnership ecosystem of partners represents a
             commitment to innovation and excellence. This collaboration and
@@ -166,6 +167,7 @@ export default function AgencyPage() {
                   alt=""
                   data-aos="fade-up"
                   data-aos-duration="1000"
+                  data-aos-once="true"
                 />
               </div>
 
@@ -174,6 +176,7 @@ export default function AgencyPage() {
                   className=" text-2xl lg:text-xl xl:text-5xl lg:w-full w-11/12 text-green-400 font-creato mb-8"
                   data-aos="fade-up"
                   data-aos-duration="1200"
+                  data-aos-once="true"
                 >
                   Drive -{" "}
                   <span className="font-thin text-white italic">
@@ -184,6 +187,7 @@ export default function AgencyPage() {
                   className="leading-8 xl:leading-9 font-creato mt-4 text-white font-light lg:text-xl xl:text-3xl"
                   data-aos="fade-up"
                   data-aos-duration="1800"
+                  data-aos-once="true"
                 >
                   Every aspect of the urban trip is designed and engineered with
                   one primary goal in mind: providing the ultimate driving
@@ -219,6 +223,7 @@ export default function AgencyPage() {
                   className="text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
                   data-aos="fade-up"
                   data-aos-duration="1000"
+                  data-aos-once="true"
                 >
                   The{" "}
                   <span className=" text-urban-green font-bold">
@@ -319,6 +324,7 @@ export default function AgencyPage() {
                   className="text-2xl lg:text-4xl font-creato font-thin 2xl:text-5xl 2xl:leading-[3.5rem]"
                   data-aos="fade-up"
                   data-aos-duration="1400"
+                  data-aos-once="true"
                 >
                   The{" "}
                   <span className="font-bold text-urban-green">
@@ -333,6 +339,7 @@ export default function AgencyPage() {
                     className="bg-urban-green text-white py-3 lg:py-4 px-10 rounded 2xl:py-4 2xl:px-10 2xl:text-xl"
                     data-aos="fade-up"
                     data-aos-duration="1800"
+                    data-aos-once="true"
                   >
                     Get In Touch
                   </button>
