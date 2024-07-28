@@ -1,22 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Image from "next/image";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "../shared/components/footer/footer";
 import "./park.scss";
 
 export default function Parkpage() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <main className="relative">
-      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[85vh] bg-heroPark bg-cover py-10 px-4">
-        <div className="flex flex-col justify-center items-center park-hero">
+      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[60vh] lg:min-h-[85vh] xl:min-h-[75vh] bg-heroPark bg-cover py-10 px-4">
+        <div className="flex flex-col justify-center items-center park-hero xl:mt-10">
           <div className="mt-40 lg:mt-40 w-11/12 lg:w-8/12 xl:w-6/12 m-auto text-center flex flex-col gap-10 items-center 2xl:w-7/12 2xl:mt-60">
-            <h2 className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl italic">
+            <h2
+              className="font-creato text-white text-3xl lg:text-4xl xl:text-5xl italic"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <span className="font-thin">
                 Together, let's make the mobility of tomorrow happen{" "}
               </span>
               Join Our Network of Park Partners.{" "}
             </h2>
-            <button className="bg-white rounded-md py-3 px-4 w-5/12 lg:w-4/12">
+            <button
+              className="bg-white rounded-md py-3 px-4 w-5/12 lg:w-4/12"
+              data-aos="fade-up"
+              data-aos-duration="1800"
+            >
               Own A Park
             </button>
           </div>
@@ -27,13 +42,22 @@ export default function Parkpage() {
         {/* ---------------- about --------------- */}
         <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-2 mt-20">
           <section className="">
-            <h2 className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl">
+            <h2
+              className="italic text-4xl lg:text-4xl font-creato font-thin 2xl:text-5xl"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               Why Become Urban{" "}
               <span className=" text-urban-green font-extrabold">
                 Park Partner?
               </span>
             </h2>
-            <p className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light">
+            <p
+              className="mt-4 leading-8 2xl:leading-10 lg:leading-10 text-base lg:text-xl 2xl:text-2xl font-creato font-light"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              data-aos-once="true"
+            >
               Urban holds innovation and technology at the heart of its core
               values; adopting a game changing mindset by redefining the meaning
               of 'new' and breaking ground that's it's not only never done
@@ -48,7 +72,12 @@ export default function Parkpage() {
             <div>
               <div className=" min-h-40 mt-1">
                 <div className="mt-10 flex flex-col lg:flex-row justify-between gap-y-4 gap-10 mb-4">
-                  <div className="p-14 lg:p-20 bg-[#6CC56C] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl">
+                  <div
+                    className="p-14 lg:p-20 bg-[#6CC56C] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl"
+                    data-aos="zoom-out-right"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  >
                     <div className="flex items-center gap-2">
                       <Image
                         src="/assets/park1.svg"
@@ -61,7 +90,12 @@ export default function Parkpage() {
                       Improved park management across multiple parks
                     </p>
                   </div>
-                  <div className="p-14 lg:p-20 bg-[#6cc56c30] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden">
+                  <div
+                    className="p-14 lg:p-20 bg-[#6cc56c30] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden"
+                    data-aos="zoom-in-left"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  >
                     <div className="flex items-center gap-2">
                       <Image
                         src="/assets/park2.svg"
@@ -84,7 +118,12 @@ export default function Parkpage() {
                 </div>
 
                 <div className="mt-10 flex flex-col lg:flex-row justify-between gap-y-4 gap-10 mb-4">
-                  <div className="p-14 lg:p-20 bg-[#6cc56c39] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl">
+                  <div
+                    className="p-14 lg:p-20 bg-[#6cc56c39] min-h-40 w-full lg:w-1/2  boxShadow rounded-xl"
+                    data-aos="fade-up"
+                    data-aos-duration="1800"
+                    data-aos-once="true"
+                  >
                     <div className="flex items-center gap-2">
                       <Image
                         src="/assets/park3.svg"
@@ -97,7 +136,12 @@ export default function Parkpage() {
                       Centralized fleet and provider management dashboard
                     </p>
                   </div>
-                  <div className="p-14 lg:p-20 bg-[#6cc56c] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden">
+                  <div
+                    className="p-14 lg:p-20 bg-[#6cc56c] min-h-40 w-full lg:w-1/2 boxShadow rounded-xl relative overflow-hidden"
+                    data-aos="fade-down"
+                    data-aos-duration="800"
+                    data-aos-once="true"
+                  >
                     <div className="flex items-center gap-2">
                       <Image
                         src="/assets/park4.svg"
@@ -165,7 +209,12 @@ export default function Parkpage() {
       {/* ----------assign manager ------------------- */}
       <div className="bg-[#ffffff] flex justify-center items-center pb-20 mt-20">
         <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4 2xl:w-10/12">
-          <h2 className="text-4xl lg:text-4xl font-creato 2xl:5xl font-light">
+          <h2
+            className="text-4xl lg:text-4xl font-creato 2xl:5xl font-light"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             Quickly Assign{" "}
             <span className=" text-urban-green font-bold">
               Park Managers & Dispatch Officers?
@@ -184,10 +233,20 @@ export default function Parkpage() {
 
             <div className="w-full lg:w-6/12 bg-white p-8 lg:p-20 flex flex-col items-center justify-center gap-8 lg:gap-10 lg:min-h-96">
               <div>
-                <h4 className="font-creato mb-2 font-bold 2xl:text-3xl">
+                <h4
+                  className="font-creato mb-2 font-bold 2xl:text-3xl"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
                   Park Managers
                 </h4>
-                <p className="font-creato leading-8 font-light 2xl:text-lg">
+                <p
+                  className="font-creato leading-8 font-light 2xl:text-lg"
+                  data-aos="fade-up"
+                  data-aos-duration="1800"
+                  data-aos-once="true"
+                >
                   Efficiently assign and manage Park Managers remotely and in
                   real-time. Park Owners are equipped with our seamless suite of
                   integrated park management tools. A suite for both single and
@@ -196,11 +255,19 @@ export default function Parkpage() {
               </div>
 
               <div>
-                <h4 className="font-creato mb-2 font-bold 2xl:text-3xl">
+                <h4
+                  className="font-creato mb-2 font-bold 2xl:text-3xl"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
                   {" "}
                   Dispatch Officers
                 </h4>
-                <p className="font-creato leading-8 font-light 2xl:text-lg">
+                <p
+                  className="font-creato leading-8 font-light 2xl:text-lg"
+                  data-aos="fade-up"
+                  data-aos-duration="2800"
+                >
                   Manage Dispatch Officers remotely and in real-time via our
                   integrated Park Management Dashboard. Urban Park Management
                   Dashboard comes bundled with amazing booking management tools
