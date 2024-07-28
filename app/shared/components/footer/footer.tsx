@@ -111,13 +111,33 @@ export default function Footer() {
             <div className="w-2/12">
               <h2 className="font-creato">Policies</h2>
               <ul className="text-xs xl:text-sm font-thin flex flex-col gap-2 mt-2">
-                <li>Terms Of Use</li>
-                <li>Refund Policy</li>
-                <li>Behavior Policy</li>
-                <li>Trip Cancellation Policy</li>
-                <li>Charter Terms</li>
-                <li>Hotels T&C</li>
-                <li>Cards T&C</li>
+                <Link href="policy/terms-of-use">
+                  <li>Terms Of Use</li>
+                </Link>
+
+                <Link href="policy/refund-policy">
+                  <li>Refund Policy</li>
+                </Link>
+
+                <Link href="policy/behavioral-policy">
+                  <li>Behavior Policy</li>
+                </Link>
+
+                <Link href="policy/trip-cancellation-policy">
+                  <li>Trip Cancellation Policy</li>
+                </Link>
+
+                <Link href="policy/charter-policy">
+                  <li>Charter Terms</li>
+                </Link>
+
+                <Link href="policy/hotels-terms-conditions">
+                  <li>Hotels T&C</li>
+                </Link>
+
+                <Link href="policy/cards-terms-conditions">
+                  <li>Cards T&C</li>
+                </Link>
               </ul>
             </div>
             <div className="w-3/12 pl-4 pr-4">

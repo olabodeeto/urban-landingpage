@@ -5,10 +5,12 @@ import PrimaryBtn from "../buttons/primary-btn";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import { FormControl, MenuItem, Select } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./navbar.scss";
 import Link from "next/link";
+const currentPath = window.location.pathname;
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
@@ -19,6 +21,7 @@ export default function Navbar({ setMobileVisibility }: any) {
 
   const dropdownRef: any = useRef(null);
   const dropdownRef2: any = useRef(null);
+  const pathname = usePathname();
 
   const router = useRouter();
 
@@ -111,11 +114,6 @@ export default function Navbar({ setMobileVisibility }: any) {
   }, []);
 
   useEffect(() => {
-    //  router.push(obj.path);
-  }, [travelersPage]);
-
-  useEffect(() => {
-    console.log("here");
     const handleClickOutside = (event: any) => {
       if (
         dropdownRef2.current &&
@@ -150,7 +148,7 @@ export default function Navbar({ setMobileVisibility }: any) {
 
   return (
     <div
-      className={`w-full p-4 sticky z-50 ${
+      className={`w-full px-4 py-2 2xl:py-4 sticky z-50 ${
         isFullWidth ? "bg-white bg-opacity-60 backdrop-blur-xl top-0" : "top-2"
       }`}
     >
@@ -179,20 +177,22 @@ export default function Navbar({ setMobileVisibility }: any) {
                 {tabsData.map((obj, index: number) => (
                   <div key={index}>
                     {obj.title !== "Traveler’s Club" && (
-                      <li
-                        onClick={() => {
-                          setselectedTab(obj.title);
-                          router.push(obj.path);
-                        }}
-                        key={index}
-                        className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
-                          selectedTab === obj.title
-                            ? "font-semibold text-urban-green underline"
-                            : "font-light text-urban-black"
-                        }`}
-                      >
-                        {obj.title}
-                      </li>
+                      <Link href={obj.path}>
+                        <li
+                          onClick={() => {
+                            setselectedTab(obj.title);
+                            // router.push(obj.path);
+                          }}
+                          key={index}
+                          className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
+                            pathname === obj.path
+                              ? "font-semibold text-urban-green underline"
+                              : "font-light text-urban-black"
+                          }`}
+                        >
+                          {obj.title}
+                        </li>
+                      </Link>
                     )}
 
                     {obj.title == "Traveler’s Club" && (
