@@ -22,7 +22,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const coords = { x: 80, y: 0 };
+    const coords = { x: 80, y: 20 };
     const circles = document.querySelectorAll(".circle");
 
     const colors = ["#3e7c4c", "#2e5d39"];
@@ -43,8 +43,8 @@ export default function Home() {
       let y = coords.y;
 
       circles.forEach(function (circle: any, index) {
-        circle.style.left = x - 0 + "px";
-        circle.style.top = y - 8 + "px";
+        circle.style.left = x - 40 + "px";
+        circle.style.top = y - 2 + "px";
 
         circle.style.scale = (circles.length - index) / circles.length;
 
@@ -52,8 +52,8 @@ export default function Home() {
         circle.y = y;
 
         const nextCircle: any = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.2;
-        y += (nextCircle.y - y) * 0.1;
+        x += (nextCircle.x - x) * 0.4;
+        y += (nextCircle.y - y) * 0.4;
       });
 
       requestAnimationFrame(animateCircles);
@@ -64,27 +64,6 @@ export default function Home() {
 
   return (
     <main className="relative ">
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-      <div className="circle"></div>
-
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 ">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 2xl:mt-60 2xl:justify-between">
           <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
