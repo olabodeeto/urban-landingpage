@@ -3,6 +3,7 @@ import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "@/app/shared/components/footer/footer";
 import PolicyQuickLink from "@/app/shared/components/policy-quick-links/policy-quick-link";
+import Link from "next/link";
 
 export default function HotelPolicypage() {
   return (
@@ -90,9 +91,11 @@ export default function HotelPolicypage() {
             (hotel and the likes) with which your reservation is made to. Right
             after your reservation is placed, Urban acts simply as a mediator
             between you and the service provider.
-            <span className="italic text-urban-green cursor-pointer font-bold">
-              See more
-            </span>
+            <Link href={"/assets/policy/HotelsT.pdf"} target="_blank">
+              <span className="italic text-urban-green cursor-pointer font-bold pl-2">
+                See more
+              </span>
+            </Link>
             <br />
           </p>
         </section>

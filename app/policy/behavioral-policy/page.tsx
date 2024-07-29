@@ -3,6 +3,7 @@ import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "@/app/shared/components/footer/footer";
 import PolicyQuickLink from "@/app/shared/components/policy-quick-links/policy-quick-link";
+import Link from "next/link";
 
 export default function BehavioralPolicypage() {
   return (
@@ -87,9 +88,11 @@ export default function BehavioralPolicypage() {
             level during their journey, ensuring that the volume of
             conversations, electronic devices, or any other activities does not
             disturb or inconvenience others.
-            <span className="italic text-urban-green cursor-pointer font-bold">
-              See more
-            </span>
+            <Link href={"/assets/policy/BehaviorPolicy.pdf"} target="_blank">
+              <span className="italic text-urban-green cursor-pointer font-bold pl-2">
+                See more
+              </span>
+            </Link>
             <br />
           </p>
         </section>

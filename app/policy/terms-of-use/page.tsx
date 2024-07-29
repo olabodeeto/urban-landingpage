@@ -3,6 +3,7 @@ import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "@/app/shared/components/footer/footer";
 import PolicyQuickLink from "@/app/shared/components/policy-quick-links/policy-quick-link";
+import Link from "next/link";
 
 export default function TermOfUsepage() {
   return (
@@ -70,9 +71,11 @@ export default function TermOfUsepage() {
             partner with Us (“Partners”). You hereby acknowledge that the
             transportation services, as well as drivers and vehicles used for
             the same are provided by Partners.{" "}
-            <span className="italic text-urban-green cursor-pointer font-bold">
-              See more
-            </span>
+            <Link href={"/assets/policy/TermsofUse.pdf"} target="_blank">
+              <span className="italic text-urban-green cursor-pointer font-bold pl-2">
+                See more
+              </span>
+            </Link>
             <br />
           </p>
         </section>

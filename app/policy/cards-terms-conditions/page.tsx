@@ -3,6 +3,7 @@ import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "@/app/shared/components/footer/footer";
 import PolicyQuickLink from "@/app/shared/components/policy-quick-links/policy-quick-link";
+import Link from "next/link";
 
 export default function CardPolicypage() {
   return (
@@ -98,9 +99,11 @@ export default function CardPolicypage() {
             demand, to reflect any corporate amalgamation or reconstruction
             which affects the Issuer or to rectify errors, inconsistencies,
             ambiguities or omissions in them.
-            <span className="italic text-urban-green cursor-pointer font-bold">
-              See more
-            </span>
+            <Link href={"/assets/policy/CardsT.pdf"} target="_blank">
+              <span className="italic text-urban-green cursor-pointer font-bold pl-2">
+                See more
+              </span>
+            </Link>
             <br />
           </p>
         </section>

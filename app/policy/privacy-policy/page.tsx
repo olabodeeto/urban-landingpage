@@ -3,6 +3,7 @@ import Image from "next/image";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Footer from "@/app/shared/components/footer/footer";
 import PolicyQuickLink from "@/app/shared/components/policy-quick-links/policy-quick-link";
+import Link from "next/link";
 
 export default function PrivacyPolicypage() {
   return (
@@ -89,9 +90,11 @@ export default function PrivacyPolicypage() {
             those other Controllers, you should contact them if you have
             questions or concerns about the processing of your personal
             information or compliance with the NDPR and other applicable laws.
-            <span className="italic text-urban-green cursor-pointer font-bold">
-              See more
-            </span>
+            <Link href={"/assets/policy/PrivacyPolicy.pdf"} target="_blank">
+              <span className="italic text-urban-green cursor-pointer font-bold pl-2">
+                See more
+              </span>
+            </Link>
             <br />
           </p>
         </section>
