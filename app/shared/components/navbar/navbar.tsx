@@ -280,7 +280,7 @@ export default function Navbar({ setMobileVisibility }: any) {
 
           <dialog
             open={isOpen}
-            className="bg-white rounded-xl p-3 w-full top-16 "
+            className="bg-white rounded-xl p-3 w-full top-16  overflow-scroll"
           >
             <div className="flex flex-col justify-between h-[84vh]">
               <div>

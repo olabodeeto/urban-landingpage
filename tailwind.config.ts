@@ -34,6 +34,7 @@ const config: Config = {
         tvclubHero: "url('/assets/travelersclub-hero.svg')",
         cardSectionBg: "url('/assets/card-section-bg.png')",
         hotelhero: "url('/assets/hotel-hero.svg')",
+        bookingdetailsbg: "url('/assets/bookingdetailsbg.png')",
       },
     },
   },
