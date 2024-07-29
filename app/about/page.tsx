@@ -27,7 +27,7 @@ export default function Aboutpage() {
               </span>
             </div>
             <div>
-              <div className="mt-4 flex flex-row items-center gap-4">
+              <div className="mt-4 flex flex-row items-center gap-4 lg:ml-8">
                 <div className="flex gap-2 urban-footer-icons">
                   <Image
                     src="/assets/MFooterEmailIcon.svg"
