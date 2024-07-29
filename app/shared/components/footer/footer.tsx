@@ -131,7 +131,7 @@ export default function Footer() {
                   <li>Charter Terms</li>
                 </Link>
 
-                <Link href="/policy/hotels-terms-conditions">
+                <Link href="/policy/hotel-terms-conditions">
                   <li>Hotels T&C</li>
                 </Link>
 
