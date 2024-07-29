@@ -193,7 +193,37 @@ export default function UserBooking() {
           </div>
 
           {/* right side */}
-          <div className="w-full lg:w-1/2 hidden lg:block border border-red-400"></div>
+          <div className="w-full lg:w-1/2 hidden lg:block">
+            <div className="flex justify-end">
+              <div className="h-[50rem] w-8/12 relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/assets/bookingslide.svg"
+                  alt=""
+                  width={20}
+                  height={120}
+                  className=" w-full object-cover object-center rounded-lg"
+                />
+                <div className="bg-transparent w-full h-[50rem] absolute top-0">
+                  <div className="h-full">
+                    <h2 className="px-4 text-5xl text-white text-center w-8/12 m-auto mt-32 mb-28">
+                      Advertise with us
+                    </h2>
+
+                    <div className="flex justify-center p-4 mt-40 mb-52">
+                      <button className="border-2 bg-transparent border-white rounded-full p-4 px-20 text-white font-light booking-sendmail-btn">
+                        Send us mail today
+                      </button>
+                    </div>
+                    <div className="flex justify-center gap-2 w-full">
+                      <div className="w-4 h-4 bg-white rounded-full"></div>
+                      <div className="w-4 h-4 bg-urban-lightGreen rounded-full"></div>
+                      <div className="w-4 h-4 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <Footer />
