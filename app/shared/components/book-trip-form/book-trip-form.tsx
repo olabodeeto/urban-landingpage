@@ -5,8 +5,10 @@ import Option from "@mui/joy/Option";
 import Input from "@mui/joy/Input";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { nigeriaStates } from "../../utils/data";
+import { useRouter } from "next/navigation";
 
 export default function BookTripForm() {
+  const router = useRouter();
   // const screenWidth = window.screen.width;
   return (
     <div className="px-2 md:px-3 lg:px-2 w-full mt-8">
@@ -127,7 +129,10 @@ export default function BookTripForm() {
           Contine
         </button>
 
-        <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black text-sm lg:text-sm xl:text-base">
+        <button
+          className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black text-sm lg:text-sm xl:text-base"
+          onClick={() => router.push("/booking/user-booking")}
+        >
           Check My Bookings
         </button>
       </div>

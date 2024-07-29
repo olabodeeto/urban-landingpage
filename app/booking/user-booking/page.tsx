@@ -1,6 +1,8 @@
 import Footer from "@/app/shared/components/footer/footer";
 import Image from "next/image";
 import React from "react";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
 import "./user-booking.scss";
 
 export default function UserBooking() {
@@ -37,15 +39,15 @@ export default function UserBooking() {
                     alt=""
                     className="w-full  object-cover object-center"
                   />
-                  <div className="bg-transparent w-full absolute h-28 flex flex-col justify-center items-center">
+                  <div className="bg-transparent w-full absolute h-28 flex flex-col justify-center items-center gap-2">
                     <Image
                       src="/assets/footer-logo.svg"
                       alt=""
                       width={20}
                       height={120}
-                      className="w-10 xl:w-20 mb-2"
+                      className="w-12 xl:w-20 xl:mt-2"
                     />
-                    <h3 className="text-white">TRIP RECEIPT</h3>
+                    <h3 className="text-white mb-3 lg:mb-0">TRIP RECEIPT</h3>
                   </div>
                 </div>
                 <div className="pt-4 pb-10 px-3 xl:px-6 flex flex-col gap-3 shadow">
@@ -177,11 +179,13 @@ export default function UserBooking() {
                 </div>
 
                 <div className="flex items-center justify-between gap-4 xl:px-6">
-                  <div className="w-1/2 flex items-center h-12 justify-center bg-urban-green text-white rounded-md">
+                  <div className="w-1/2 flex items-center h-12 justify-center bg-urban-green text-white rounded-md gap-2 cursor-pointer">
                     Share Receipt
+                    <ShareOutlinedIcon />
                   </div>
-                  <div className="w-1/2 flex items-center h-12 justify-center border border-urban-green bg-white text-urban-green rounded-md">
+                  <div className="w-1/2 flex items-center h-12 justify-center border border-urban-green bg-white text-urban-green rounded-md gap-2 cursor-pointer">
                     Print Receipt
+                    <LocalPrintshopOutlinedIcon />
                   </div>
                 </div>
               </div>
