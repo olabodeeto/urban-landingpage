@@ -26,6 +26,37 @@ export default function Aboutpage() {
                 About Us
               </span>
             </div>
+            <div>
+              <div className="mt-4 flex flex-row items-center gap-4">
+                <div className="flex gap-2 urban-footer-icons">
+                  <Image
+                    src="/assets/MFooterEmailIcon.svg"
+                    width={32}
+                    height={28}
+                    alt=""
+                    className=""
+                  />
+                  <div className="text-urban-green text-xs xl:text-sm pr-4 font-light">
+                    <p>Email</p>
+                    <p>hello@urban.ng</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-2 urban-footer-icons">
+                  <Image
+                    src="/assets/footerCallIcon.svg"
+                    width={32}
+                    height={28}
+                    alt=""
+                    className=""
+                  />
+                  <div className="text-urban-green text-xs xl:text-sm pr-4 font-light">
+                    <p>Call Us</p>
+                    <p>(00) 112 365 489</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="w-full lg:w-1/2">
             <span className="text-xl font-creato font-bold 2xl:text-3xl">

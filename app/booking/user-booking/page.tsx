@@ -18,7 +18,7 @@ export default function UserBooking() {
               <form className="check-booking-form">
                 <div className="flex flex-col gap-2">
                   <label className="font-light">
-                    Enter your booking Reference here
+                    Enter your booking code here
                   </label>
                   <div className="flex items-center justify-between">
                     <input className="px-2 w-8/12 border border-gray-400 h-10 rounded-lg" />
@@ -51,6 +51,15 @@ export default function UserBooking() {
                   </div>
                 </div>
                 <div className="pt-4 pb-10 px-3 xl:px-6 flex flex-col gap-3 shadow">
+                  <div className="w-full flex justify-between items-center">
+                    <span className="font-light text-base block w-1/2">
+                      Booking Code
+                    </span>
+                    <span className="font-light text-base text-urban-green block w-1/2">
+                      3444763ZZXXJ
+                    </span>
+                  </div>
+
                   <div className="w-full flex justify-between items-center">
                     <span className="font-light text-base block w-1/2">
                       Booking Reference
