@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Footer from "./shared/components/footer/footer";
 import AppAd from "./shared/components/app-ad/app-ad";
+import Link from "next/link";
 
 export default function Home() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -467,9 +468,12 @@ export default function Home() {
                   alt=""
                   className="h-40 2xl:h-80 lg:w-full lg:h-80 object-cover object-center"
                 />
-                <div className="absolute py-2 px-4 bg-white rounded z-10 top-30 cursor-pointer">
-                  View more
-                </div>
+                <Link
+                  href="/cities"
+                  className="absolute py-2 px-4 bg-white rounded z-10 top-30 cursor-pointer"
+                >
+                  <div>View more</div>
+                </Link>
               </div>
             </div>
           </div>

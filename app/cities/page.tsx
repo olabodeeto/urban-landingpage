@@ -49,16 +49,16 @@ export default function CityPage() {
 
       <div className="w-11/12 lg:w-11/12 lg:px-6 m-auto pb-20 mt-20 2xl:w-10/12">
         <section className="">
-          <div className="mt-10 grid grid-cols-1 gap-y-14 lg:gap-y-6 lg:grid-cols-3  justify-between gap-1 lg:gap-6 xl:gap-8 2xl:gap-6">
+          <div className="mt-10 grid grid-cols-1 gap-y-10 lg:gap-y-0 lg:grid-cols-3  justify-between gap-1 lg:gap-2 xl:gap-8 2xl:gap-6">
             {/* -------------- */}
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/abuja.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -67,7 +67,7 @@ export default function CityPage() {
                 </div>
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
-                <h3 className="city-card-sub font-light text-2xl mb-2 text-urban-green">
+                <h3 className="city-card-sub font-light  mb-2 text-urban-green">
                   Center of Unity
                 </h3>
                 <p className="text-left _city-card-bodyText text-urban-black">
@@ -80,14 +80,14 @@ export default function CityPage() {
 
             {/* ----------------- */}
 
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/jos.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -96,7 +96,7 @@ export default function CityPage() {
                 </div>
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
-                <h3 className="city-card-sub font-light text-2xl mb-2 text-urban-green">
+                <h3 className="city-card-sub font-light  mb-2 text-urban-green">
                   Home of Peace and Tourism
                 </h3>
                 <p className="text-left _city-card-bodyText text-urban-black">
@@ -107,14 +107,14 @@ export default function CityPage() {
               </div>
             </div>
 
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/markudi.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -123,7 +123,7 @@ export default function CityPage() {
                 </div>
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
-                <h3 className="city-card-sub font-light text-2xl mb-2 text-urban-green">
+                <h3 className="city-card-sub font-light  mb-2 text-urban-green">
                   Nigeria's Food Basket
                 </h3>
                 <p className="text-left _city-card-bodyText text-urban-black">
@@ -134,14 +134,14 @@ export default function CityPage() {
               </div>
             </div>
 
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/markudi.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -150,7 +150,7 @@ export default function CityPage() {
                 </div>
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
-                <h3 className="city-card-sub font-light text-2xl mb-2 text-urban-green">
+                <h3 className="city-card-sub font-light  mb-2 text-urban-green">
                   The Power State
                 </h3>
                 <p className="text-left _city-card-bodyText text-urban-black">
@@ -161,14 +161,14 @@ export default function CityPage() {
               </div>
             </div>
 
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/lagos.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -178,10 +178,10 @@ export default function CityPage() {
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
                 <div className="flex items-center justify-between">
-                  <h3 className="city-card-sub font-light text-2xl mb-2 text-urban-green">
+                  <h3 className="city-card-sub font-light  mb-2 text-urban-green">
                     Centre of Excellence
                   </h3>
-                  <h3 className="city-card-sub font-thin text-2xl mb-2 text-urban-green italic 2xl:text-xl">
+                  <h3 className="city-card-sub font-thin mb-2 text-urban-green italic">
                     Coming Soon
                   </h3>
                 </div>
@@ -193,14 +193,14 @@ export default function CityPage() {
               </div>
             </div>
 
-            <div className="w-full h-[38rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
+            <div className="w-full h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
                   src="/assets/markudi.png"
                   width={400}
                   height={240}
                   alt=""
-                  className="w-full h-96  object-cover object-center rounded-[0.8rem]"
+                  className="w-full h-80  object-cover object-center rounded-[0.8rem]"
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
@@ -210,10 +210,10 @@ export default function CityPage() {
               </div>
               <div className="h-48 bg-white rounded-br-[2rem] rounded-bl-[2rem] flex flex-col p-3">
                 <div className="flex items-center justify-between">
-                  <h3 className="city-card-sub font-light text-2xl text-urban-green">
+                  <h3 className="city-card-sub font-light text-urban-green">
                     Centre of Commerce
                   </h3>
-                  <h3 className="city-card-sub font-thin text-2xl mb-2 text-urban-green italic 2xl:text-xl">
+                  <h3 className="city-card-sub font-thin mb-2 text-urban-green italic">
                     Coming Soon
                   </h3>
                 </div>

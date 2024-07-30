@@ -35,6 +35,7 @@
 }
 
 .city-card {
+  min-height: 4vh !important;
   @media screen and (min-width: 320px) and (max-width: 767px) {
     min-height: 5vh;
   }
@@ -48,7 +49,7 @@
     }
   }
   & ._city-card-bodyText {
-    font-size: 1.08rem;
+    font-size: 1rem;
     font-weight: 300;
     color: #0d0c11 !important;
 
@@ -70,13 +71,14 @@
     }
   }
 
-  & ._city-card-sub {
-    font-size: 1.2rem !important;
+  & .city-card-sub {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.2rem;
     @media screen and (min-width: 1280px) and (max-width: 1399px) {
       font-size: 0.88rem !important;
     }
     @media screen and (min-width: 1680px) {
-      font-size: 1.2rem !important;
+      font-size: 1.6rem !important;
     }
   }
 }
