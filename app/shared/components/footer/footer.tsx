@@ -105,7 +105,9 @@ export default function Footer() {
                 <li>Jos</li>
                 <li>Makurdi</li>
                 <li>Minna</li>
-                <li>View more</li>
+                <li>
+                  <Link href="/cities">View more</Link>
+                </li>
               </ul>
             </div>
             <div className="w-2/12">
