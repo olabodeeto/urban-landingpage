@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TripCard() {
   return (
-    <div className="trip-card w-full h-[30rem] bg-white overflow-hidden rounded-xl card-shadow">
+    <div className="trip-card w-full h-[30rem] bg-white overflow-hidden rounded-xl card-shadow relative">
       <div className="w-full bg-urban-green h-44 lg:h-40 flex items-center py-2 px-4">
         <div className="flex justify-between w-full">
           <div className="text-white flex flex-col justify-between w-full gap-4 lg:gap-3">
@@ -53,7 +53,7 @@ export default function TripCard() {
             </div>
           </div>
 
-          <div className="flex justify-between w-full mt-16">
+          <div className="flex justify-between w-full mt-16 2xl:mt-20">
             <div className="w-8/12">
               <h5 className="text-sm font-bold text-urban-green">
                 Destination City
@@ -80,6 +80,8 @@ export default function TripCard() {
           <p className="text-sm 2xl:text-base">N30,000.00</p>
         </div>
       </div>
+
+      {/* <div className="absolute w-10/12 right-2 bottom-2 min-h-40 bg-white top-2 border border-red-400"></div> */}
     </div>
   );
 }
