@@ -1,9 +1,14 @@
+"use client";
+import Image from "next/image";
 import Footer from "@/app/shared/components/footer/footer";
-import React from "react";
+import React, { useState } from "react";
 import "./available-trips.scss";
 import SearchIcon from "@/app/shared/components/icons/search-icon";
+import TripCard from "@/app/shared/components/trip-card/trip-card";
 
 export default function availableTrips() {
+  const [selectedTab, setselectedTab] = useState("Bus");
+  const tabs = ["Bus", "Mini-Bus", "Sedan"];
   return (
     <>
       <main className="-mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
@@ -19,7 +24,27 @@ export default function availableTrips() {
             <label className="text-xl text-urban-green">
               Select Vehicle Type
             </label>
-            <div>tabs</div>
+            <div className="flex items-center gap-4 mt-6">
+              {tabs.map((tab, index: number) => (
+                <div
+                  key={index}
+                  className={`${
+                    selectedTab === tab && " border-urban-green"
+                  } py-2 px-5 2xl:py-3 2xl:px-6 2xl:text-xl font-light rounded-full text-center bg-gray-200 cursor-pointer border hover:border-urban-green`}
+                  onClick={() => setselectedTab(tab)}
+                >
+                  {tab}
+                </div>
+              ))}
+            </div>
+            <div className="trips-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-3 lg:gap-x-10">
+              <TripCard />
+              <TripCard />
+              <TripCard />
+              <TripCard />
+              <TripCard />
+              <TripCard />
+            </div>
           </div>
         </section>
       </main>
