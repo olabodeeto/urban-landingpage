@@ -9,9 +9,13 @@ import { useRouter } from "next/navigation";
 
 export default function BookTripForm() {
   const router = useRouter();
+  const handleForm = (e: any) => {
+    e.preventDefault();
+    router.push("/booking/available-trips");
+  };
   // const screenWidth = window.screen.width;
   return (
-    <div className="px-2 md:px-3 lg:px-2 w-full mt-8">
+    <form className="px-2 md:px-3 lg:px-2 w-full mt-8" onSubmit={handleForm}>
       <div className="flex items-start gap-2 w-full">
         <Image
           src="./assets/timline.svg"
@@ -136,6 +140,6 @@ export default function BookTripForm() {
           Check My Bookings
         </button>
       </div>
-    </div>
+    </form>
   );
 }
