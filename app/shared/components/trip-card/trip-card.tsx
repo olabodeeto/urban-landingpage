@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Box from "@mui/material/Box";
+import Popper from "@mui/material/Popper";
 
 export default function TripCard() {
+  const [isparkInfoOpen, setisparkInfoOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(anchorEl ? null : event.currentTarget);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popper" : undefined;
+
   return (
     <div className="trip-card w-full h-[30rem] bg-white overflow-hidden rounded-xl card-shadow relative">
       <div className="w-full bg-urban-green h-44 lg:h-40 flex items-center py-2 px-4">
@@ -47,13 +59,49 @@ export default function TripCard() {
               </p>
             </div>
             <div className="">
-              <button className="text-xs py-2 rounded-full text-urban-green h-25 px-2 lg:px-4 bg-[#6cc56c48]">
+              <button
+                className="text-xs py-2 rounded-full text-urban-green h-25 px-2 lg:px-4 bg-[#6cc56c48]"
+                aria-describedby={id}
+                type="button"
+                onClick={() => setisparkInfoOpen(!isparkInfoOpen)}
+              >
                 See Park Info
               </button>
+              {isparkInfoOpen && (
+                <div className="h-52 rounded-xl w-full right-0 p-2 px-4 lg:w-10/12 bg-white absolute z-10 card-shadow py-4">
+                  <h3 className="text-center text-urban-green">Park Info</h3>
+                  <div className="mt-4 flex flex-col gap-4">
+                    <div className="flex items-center w-full text-xs">
+                      <div className="w-5/12 text-gray-500 font-light">
+                        Park Address:
+                      </div>
+                      <div>No 12, Isale oko Sagamu</div>
+                    </div>
+                    <div className="flex items-center w-full text-xs">
+                      <div className="w-5/12 text-gray-500 font-light">
+                        Departure time:
+                      </div>
+                      <div>09:00AM</div>
+                    </div>
+                    <div className="flex items-center w-full text-xs">
+                      <div className="w-5/12 text-gray-500 font-light">
+                        Departure Date:
+                      </div>
+                      <div>23/03/2023</div>
+                    </div>
+                    <div className="flex items-center w-full text-xs">
+                      <div className="w-5/12 text-gray-500 font-light">
+                        Park Tel:
+                      </div>
+                      <div>09034567892</div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
-          <div className="flex justify-between w-full mt-16 2xl:mt-20">
+          <div className="flex justify-between w-full mt-14 lg:mt-16 2xl:mt-20">
             <div className="w-8/12">
               <h5 className="text-sm font-bold text-urban-green">
                 Destination City
