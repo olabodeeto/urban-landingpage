@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Image from "next/image";
@@ -9,8 +9,10 @@ import Marquee from "react-fast-marquee";
 import "./travelers.scss";
 import AppAd from "../shared/components/app-ad/app-ad";
 import TravelersDialog from "../shared/components/travelers-dialog/travelers-dialog";
+import TravelersClubDialog from "../shared/components/travClub-dialog/travClub-dialog";
 
 export default function TravelersClubPage() {
+  const [isModalOpen, setisModalOpen] = useState(false);
   useEffect(() => {
     AOS.init();
   }, []);
@@ -85,7 +87,10 @@ export default function TravelersClubPage() {
                 data-aos="fade-up"
                 data-aos-duration="1800"
               >
-                <button className="bg-white text-urban-green xl:text-xl rounded-md py-3 px-4 w-5/12 lg:w-3/12 xl:w-4/12 ">
+                <button
+                  className="bg-white text-urban-green xl:text-xl rounded-md py-3 px-4 w-5/12 lg:w-3/12 xl:w-4/12 "
+                  onClick={() => setisModalOpen(true)}
+                >
                   Register
                 </button>
                 <div className="flex items-center gap-2 mt-2">
@@ -432,6 +437,10 @@ export default function TravelersClubPage() {
         <Footer />
         {/* -------------------------------------- */}
       </main>
+
+      {isModalOpen && (
+        <TravelersClubDialog isOpen={isModalOpen} setisopen={setisModalOpen} />
+      )}
     </>
   );
 }
