@@ -213,7 +213,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 settravelersPage("Urban Card");
                                 console.log("nav called");
                                 setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("urban-card");
+                                router.push("/urban-card");
                               }}
                             >
                               Urban Card
@@ -225,7 +225,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 settravelersPage("Traveler's Kit");
                                 setisTravelsDropOpen(!isTravelsDropOpen);
                                 console.log("nav called");
-                                router.push("travelers-kit");
+                                router.push("/travelers-kit");
                               }}
                             >
                               Traveler's kit
@@ -235,7 +235,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                               onClick={() => {
                                 settravelersPage("Hotels");
                                 setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("hotels");
+                                router.push("/hotels");
                               }}
                             >
                               Hotels
