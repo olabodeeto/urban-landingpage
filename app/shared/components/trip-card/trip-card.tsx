@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
+import { useRouter } from "next/navigation";
 
 export default function TripCard() {
   const [isparkInfoOpen, setisparkInfoOpen] = useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const router = useRouter();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
@@ -13,6 +16,10 @@ export default function TripCard() {
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
+
+  const handleBookTrip = () => {
+    router.push("/booking/passenger-details");
+  };
 
   return (
     <div className="trip-card w-full h-[30rem] bg-white overflow-hidden rounded-xl card-shadow relative">
@@ -113,7 +120,10 @@ export default function TripCard() {
         </div>
       </div>
       <div className="w-full mt-8  px-4 flex justify-between items-center">
-        <div className="text-center border border-urban-green rounded-full text-urban-green text-xs lg:text-sm py-2 px-2 lg:px-4">
+        <div
+          className="text-center border border-urban-green rounded-full text-urban-green text-xs lg:text-sm py-2 px-2 lg:px-4 cursor-pointer"
+          onClick={handleBookTrip}
+        >
           Book Trip
         </div>
         <div>
