@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import "./passenger-accordion.scss";
 
 type PropT = {
   sn: number;
@@ -21,7 +22,7 @@ export default function PassengerAccordion({
         className="flex items-center justify-between border border-gray-200 p-2 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="text-base lg:text-lg text-urban-green w-3/12">
+        <div className="text-base lg:text-lg text-urban-green w-3/12 passenger-info">
           {sn} Passenger’s info
         </div>
         <div className="h-8 border-[0.5px] border-gray-400"></div>

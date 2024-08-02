@@ -1,6 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+import Image from "next/image";
+import "aos/dist/aos.css";
+import AOS from "aos";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./passenger-details.scss";
 import Footer from "@/app/shared/components/footer/footer";
@@ -10,9 +13,15 @@ import Select from "@mui/joy/Select";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import Option from "@mui/joy/Option";
 import Input from "@mui/joy/Input";
+import TripCard from "@/app/shared/components/trip-card/trip-card";
+import SimilarTripCard from "./similar-trip-card";
 
 export default function PassengerDetails() {
   const router = useRouter();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <main className="-mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
@@ -33,7 +42,12 @@ export default function PassengerDetails() {
                   passengerName={"Tade Ogunbade"}
                   seatNumber="B1"
                 >
-                  <div className="w-full flex flex-col gap-10">
+                  <div
+                    className="w-full flex flex-col gap-10"
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="800"
+                  >
                     <div className=" w-full mt-6">
                       <label className="text-base font-light">Title</label>
                       <div className="mt-3">
@@ -134,7 +148,7 @@ export default function PassengerDetails() {
                         <label className="text-base font-light">
                           Select Seat
                         </label>
-                        <button className="bg-green-100 text-urban-green py-2 px-4 text-xs rounded-lg">
+                        <button className="bg-[#6cc56c29] text-urban-green py-2 px-4 text-xs rounded-lg">
                           See seat Arrangement
                         </button>
                       </div>
@@ -170,7 +184,22 @@ export default function PassengerDetails() {
               </div>
             </div>
             {/* ----- right side------ */}
-            <div className="w-full lg:w-1/2"></div>
+            <div className="w-full lg:w-1/2 flex justify-end">
+              <div className="border border-gray-300 w-full lg:w-11/12 p-4 px-2 lg:px-7 2xl:px-8">
+                <h2 className="text-center text-xl lg:text-2xl">Map</h2>
+                <div className="mt-4">
+                  <div className="h-80 bg-slate-100"></div>
+
+                  <h2 className="w-full text-lg mt-4 font-light">
+                    Parks around you with similar trips
+                  </h2>
+                  <div className="similar-trip-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-2 lg:gap-x-2">
+                    {/* cards */}
+                    <SimilarTripCard />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
