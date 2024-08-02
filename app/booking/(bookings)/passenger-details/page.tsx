@@ -15,6 +15,7 @@ import Option from "@mui/joy/Option";
 import Input from "@mui/joy/Input";
 import TripCard from "@/app/shared/components/trip-card/trip-card";
 import SimilarTripCard from "./similar-trip-card";
+import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 
 export default function PassengerDetails() {
   const router = useRouter();
@@ -37,150 +38,158 @@ export default function PassengerDetails() {
                 </span>
               </div>
               <div className="mt-4">
-                <PassengerAccordion
-                  sn={1}
-                  passengerName={"Tade Ogunbade"}
-                  seatNumber="B1"
-                >
-                  <div
-                    className="w-full flex flex-col gap-10"
-                    data-aos="fade-up"
-                    data-aos-easing="linear"
-                    data-aos-duration="800"
-                  >
-                    <div className=" w-full mt-6">
-                      <label className="text-base font-light">Title</label>
-                      <div className="mt-3">
-                        <Select
-                          defaultValue={18}
-                          indicator={<KeyboardArrowDown />}
-                          sx={{ height: "48px", fontSize: "0.8rem" }}
-                          slotProps={{
-                            listbox: {
-                              sx: {
-                                maxHeight: "200px",
-                              },
-                            },
-                          }}
-                        >
-                          {["Mr", "Mrs", "Miss", "Sir"].map(
-                            (seat, index: number) => (
-                              <Option
-                                value={seat}
-                                sx={{ fontSize: "0.8rem" }}
-                                key={index}
-                              >
-                                {seat}
-                              </Option>
-                            )
-                          )}
-                        </Select>
-                      </div>
-                    </div>
+                {[1, 2, 3].map((obj, index: number) => (
+                  <div key={index}>
+                    <PassengerAccordion
+                      sn={index + 1}
+                      passengerName={"Tade Ogunbade"}
+                      seatNumber="B1"
+                    >
+                      <div
+                        className="w-full flex flex-col gap-10"
+                        data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="800"
+                      >
+                        <div className=" w-full mt-6">
+                          <label className="text-base font-light">Title</label>
+                          <div className="mt-3">
+                            <Select
+                              defaultValue={18}
+                              indicator={<KeyboardArrowDown />}
+                              sx={{ height: "48px", fontSize: "0.8rem" }}
+                              slotProps={{
+                                listbox: {
+                                  sx: {
+                                    maxHeight: "200px",
+                                  },
+                                },
+                              }}
+                            >
+                              {["Mr", "Mrs", "Miss", "Sir"].map(
+                                (seat, index: number) => (
+                                  <Option
+                                    value={seat}
+                                    sx={{ fontSize: "0.8rem" }}
+                                    key={index}
+                                  >
+                                    {seat}
+                                  </Option>
+                                )
+                              )}
+                            </Select>
+                          </div>
+                        </div>
 
-                    <div className="w-full">
-                      <label className="text-base font-light">First Name</label>
-                      <div className="mt-3">
-                        <Input
-                          type="text"
-                          placeholder="Type in here…"
-                          sx={{
-                            height: "46px",
-                            fontSize: "0.8rem",
-                            "--Input-focusedInset": "var(--any, )",
-                            "--Input-focusedThickness": "0.25px",
-                            "--Input-focusedHighlight": "#15560c",
-                            "&:focus-outside": {
-                              borderColor: "#000000",
-                            },
-                            ":focus": "#000",
-                          }}
-                        />
-                      </div>
-                    </div>
+                        <div className="w-full">
+                          <label className="text-base font-light">
+                            First Name
+                          </label>
+                          <div className="mt-3">
+                            <Input
+                              type="text"
+                              placeholder="Type in here…"
+                              sx={{
+                                height: "46px",
+                                fontSize: "0.8rem",
+                                "--Input-focusedInset": "var(--any, )",
+                                "--Input-focusedThickness": "0.25px",
+                                "--Input-focusedHighlight": "#15560c",
+                                "&:focus-outside": {
+                                  borderColor: "#000000",
+                                },
+                                ":focus": "#000",
+                              }}
+                            />
+                          </div>
+                        </div>
 
-                    <div className="w-full">
-                      <label className="text-base font-light">Last Name</label>
-                      <div className="mt-3">
-                        <Input
-                          type="text"
-                          placeholder="Type in here…"
-                          sx={{
-                            height: "46px",
-                            fontSize: "0.8rem",
-                            "--Input-focusedInset": "var(--any, )",
-                            "--Input-focusedThickness": "0.25px",
-                            "--Input-focusedHighlight": "#15560c",
-                            "&:focus-outside": {
-                              borderColor: "#000000",
-                            },
-                            ":focus": "#000",
-                          }}
-                        />
-                      </div>
-                    </div>
+                        <div className="w-full">
+                          <label className="text-base font-light">
+                            Last Name
+                          </label>
+                          <div className="mt-3">
+                            <Input
+                              type="text"
+                              placeholder="Type in here…"
+                              sx={{
+                                height: "46px",
+                                fontSize: "0.8rem",
+                                "--Input-focusedInset": "var(--any, )",
+                                "--Input-focusedThickness": "0.25px",
+                                "--Input-focusedHighlight": "#15560c",
+                                "&:focus-outside": {
+                                  borderColor: "#000000",
+                                },
+                                ":focus": "#000",
+                              }}
+                            />
+                          </div>
+                        </div>
 
-                    <div className="w-full">
-                      <label className="text-base font-light">
-                        Phone Number
-                      </label>
-                      <div className="mt-3">
-                        <Input
-                          type="text"
-                          placeholder="Type in here…"
-                          sx={{
-                            height: "46px",
-                            fontSize: "0.8rem",
-                            "--Input-focusedInset": "var(--any, )",
-                            "--Input-focusedThickness": "0.25px",
-                            "--Input-focusedHighlight": "#15560c",
-                            "&:focus-outside": {
-                              borderColor: "#000000",
-                            },
-                            ":focus": "#000",
-                          }}
-                        />
-                      </div>
-                    </div>
+                        <div className="w-full">
+                          <label className="text-base font-light">
+                            Phone Number
+                          </label>
+                          <div className="mt-3">
+                            <Input
+                              type="text"
+                              placeholder="Type in here…"
+                              sx={{
+                                height: "46px",
+                                fontSize: "0.8rem",
+                                "--Input-focusedInset": "var(--any, )",
+                                "--Input-focusedThickness": "0.25px",
+                                "--Input-focusedHighlight": "#15560c",
+                                "&:focus-outside": {
+                                  borderColor: "#000000",
+                                },
+                                ":focus": "#000",
+                              }}
+                            />
+                          </div>
+                        </div>
 
-                    <div className=" w-full mt-2">
-                      <div className="w-full flex items-center justify-between">
-                        <label className="text-base font-light">
-                          Select Seat
-                        </label>
-                        <button className="bg-[#6cc56c29] text-urban-green py-2 px-4 text-xs rounded-lg">
-                          See seat Arrangement
-                        </button>
+                        <div className=" w-full mt-2">
+                          <div className="w-full flex items-center justify-between">
+                            <label className="text-base font-light">
+                              Select Seat
+                            </label>
+                            <button className="bg-[#6cc56c29] text-urban-green py-2 px-4 text-xs rounded-lg">
+                              See seat Arrangement
+                            </button>
+                          </div>
+                          <div className="mt-3">
+                            <Select
+                              defaultValue={18}
+                              indicator={<KeyboardArrowDown />}
+                              sx={{ height: "48px", fontSize: "0.8rem" }}
+                              slotProps={{
+                                listbox: {
+                                  sx: {
+                                    maxHeight: "200px",
+                                  },
+                                },
+                              }}
+                            >
+                              {["A1", "A2", "B1", "B2", "B3", "C1"].map(
+                                (seat, index: number) => (
+                                  <Option
+                                    value={seat}
+                                    sx={{ fontSize: "0.8rem" }}
+                                    key={index}
+                                  >
+                                    {seat}
+                                  </Option>
+                                )
+                              )}
+                            </Select>
+                          </div>
+                        </div>
                       </div>
-                      <div className="mt-3">
-                        <Select
-                          defaultValue={18}
-                          indicator={<KeyboardArrowDown />}
-                          sx={{ height: "48px", fontSize: "0.8rem" }}
-                          slotProps={{
-                            listbox: {
-                              sx: {
-                                maxHeight: "200px",
-                              },
-                            },
-                          }}
-                        >
-                          {["A1", "A2", "B1", "B2", "B3", "C1"].map(
-                            (seat, index: number) => (
-                              <Option
-                                value={seat}
-                                sx={{ fontSize: "0.8rem" }}
-                                key={index}
-                              >
-                                {seat}
-                              </Option>
-                            )
-                          )}
-                        </Select>
-                      </div>
-                    </div>
+                    </PassengerAccordion>
                   </div>
-                </PassengerAccordion>
+                ))}
               </div>
             </div>
             {/* ----- right side------ */}
@@ -188,7 +197,9 @@ export default function PassengerDetails() {
               <div className="border border-gray-300 w-full lg:w-11/12 p-4 px-2 lg:px-7 2xl:px-8">
                 <h2 className="text-xl lg:text-2xl">Map</h2>
                 <div className="mt-4">
-                  <div className="h-80 bg-slate-100"></div>
+                  <div className="h-80 bg-slate-100 overflow-hidden">
+                    <MapWithPath />
+                  </div>
 
                   <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
                     Parks around you with similar trips
