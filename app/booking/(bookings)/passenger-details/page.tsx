@@ -186,15 +186,16 @@ export default function PassengerDetails() {
             {/* ----- right side------ */}
             <div className="w-full lg:w-1/2 flex justify-end">
               <div className="border border-gray-300 w-full lg:w-11/12 p-4 px-2 lg:px-7 2xl:px-8">
-                <h2 className="text-center text-xl lg:text-2xl">Map</h2>
+                <h2 className="text-xl lg:text-2xl">Map</h2>
                 <div className="mt-4">
                   <div className="h-80 bg-slate-100"></div>
 
-                  <h2 className="w-full text-lg mt-4 font-light">
+                  <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
                     Parks around you with similar trips
                   </h2>
                   <div className="similar-trip-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-2 lg:gap-x-2">
                     {/* cards */}
+                    <SimilarTripCard />
                     <SimilarTripCard />
                   </div>
                 </div>
