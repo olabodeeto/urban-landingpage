@@ -10,6 +10,8 @@ import { useRouter, usePathname } from "next/navigation";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./navbar.scss";
 import Link from "next/link";
+import LoginDialog from "../login-dialog/login-dialog";
+import RegisterDialog from "../register-dialog/register-dialog";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
@@ -17,6 +19,8 @@ export default function Navbar({ setMobileVisibility }: any) {
   const [isFullWidth, setIsFullWidth] = useState(false);
   const [travelersPage, settravelersPage] = useState("Travelers");
   const [isTravelsDropOpen, setisTravelsDropOpen] = useState(false);
+  const [openModal, setopenModal] = useState(false);
+  const [modalName, setmodalName] = useState("");
 
   const dropdownRef: any = useRef(null);
 
@@ -128,342 +132,366 @@ export default function Navbar({ setMobileVisibility }: any) {
   }, [dropdownRef]);
 
   return (
-    <div
-      className={`w-full px-4 py-2 2xl:py-4 sticky z-50 ${
-        isFullWidth ? "bg-white bg-opacity-60 backdrop-blur-xl top-0" : "top-2"
-      }`}
-    >
+    <>
       <div
-        className={`w-full lg:w-11/12 2xl:w-10/12 m-auto ${
-          isFullWidth ? "bg-opacity-90" : "bg-white"
-        } rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl mt-2 lg:-mt-0`}
+        className={`w-full px-4 py-2 2xl:py-4 sticky z-50 ${
+          isFullWidth
+            ? "bg-white bg-opacity-60 backdrop-blur-xl top-0"
+            : "top-2"
+        }`}
       >
-        {/* desktop navbar */}
-        <div className="hidden lg:block py-1 px-4">
-          <div className="flex flex-row items-center justify-between">
-            <div className="lg:w-2/12 xl:w-2/12">
-              <Image
-                src="/logo.svg"
-                width={80}
-                height={35}
-                alt=""
-                className="2xl:w-24"
-              />
-            </div>
-            <div
-              className="lg:w-8/12 xl:w-7/12 flex justify-start "
-              ref={dropdownRef}
-            >
-              <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
-                {tabsData.map((obj, index: number) => (
-                  <div key={index}>
-                    {obj.title !== "Traveler’s Club" && (
-                      <Link href={obj.path}>
-                        <li
-                          onClick={() => {
-                            setselectedTab(obj.title);
-                            // router.push(obj.path);
-                          }}
-                          key={index}
-                          className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
-                            pathname === obj.path
-                              ? "font-semibold text-urban-green underline"
-                              : "font-light text-urban-black"
-                          }`}
-                        >
-                          {obj.title}
-                        </li>
-                      </Link>
-                    )}
-
-                    {obj.title == "Traveler’s Club" && (
-                      <>
-                        <div className="travelersClub-tab">
-                          <div
-                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
-                              selectedTab === obj.title
-                                ? "font-semibold text-urban-green underline navbar-items"
-                                : "font-light text-urban-black navbar-items"
-                            }`}
+        <div
+          className={`w-full lg:w-11/12 2xl:w-10/12 m-auto ${
+            isFullWidth ? "bg-opacity-90" : "bg-white"
+          } rounded-lg px-0 py-2 2xl:py-4 2xl:px-6 xl:max-w-8xl mt-2 lg:-mt-0`}
+        >
+          {/* desktop navbar */}
+          <div className="hidden lg:block py-1 px-4">
+            <div className="flex flex-row items-center justify-between">
+              <div className="lg:w-2/12 xl:w-2/12">
+                <Image
+                  src="/logo.svg"
+                  width={80}
+                  height={35}
+                  alt=""
+                  className="2xl:w-24"
+                />
+              </div>
+              <div
+                className="lg:w-8/12 xl:w-7/12 flex justify-start "
+                ref={dropdownRef}
+              >
+                <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
+                  {tabsData.map((obj, index: number) => (
+                    <div key={index}>
+                      {obj.title !== "Traveler’s Club" && (
+                        <Link href={obj.path}>
+                          <li
                             onClick={() => {
                               setselectedTab(obj.title);
-                              router.push(obj.path);
+                              // router.push(obj.path);
                             }}
-                          >
-                            {/* {travelersPage?travelersPage: obj.title} */}
-                            Traveler's club
-                          </div>
-                          <div
-                            className="arrow-down"
-                            onClick={() =>
-                              setisTravelsDropOpen(!isTravelsDropOpen)
-                            }
-                          >
-                            <KeyboardArrowDownIcon
-                              sx={{ fontSize: "1.4rem" }}
-                            />
-                          </div>
-                        </div>
-
-                        {isTravelsDropOpen && (
-                          <div className="travelersItems-container">
-                            <div
-                              className="item font-creato font-light p-2"
-                              onClick={() => {
-                                settravelersPage("Urban Card");
-                                console.log("nav called");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("/urban-card");
-                              }}
-                            >
-                              Urban Card
-                            </div>
-
-                            <div
-                              className="item font-creato font-light p-2"
-                              onClick={() => {
-                                settravelersPage("Traveler's Kit");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                console.log("nav called");
-                                router.push("/travelers-kit");
-                              }}
-                            >
-                              Traveler's kit
-                            </div>
-                            <div
-                              className="item font-creato font-light p-2"
-                              onClick={() => {
-                                settravelersPage("Hotels");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("/hotels");
-                              }}
-                            >
-                              Hotels
-                            </div>
-                          </div>
-                        )}
-                      </>
-                    )}
-                  </div>
-                ))}
-              </ul>
-            </div>
-            <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns">
-              <button className="px-10 py-3 2xl:px-5 2xl:py-2 rounded-md text-urban-green 2xl:text-base">
-                Login
-              </button>
-              <PrimaryBtn title="Register" handlePress={() => ""} />
-            </div>
-          </div>
-        </div>
-
-        {/* ---------- */}
-
-        {/* mobile navbar */}
-        <div className="lg:hidden py-2 relative">
-          <div className="flex flex-row items-center justify-between px-4">
-            <div>
-              <Image src="/logo.svg" width={80} height={35} alt="" />
-            </div>
-            <div></div>
-            <div
-              onClick={() => {
-                setisOpen(!isOpen);
-                if (setMobileVisibility) {
-                  setMobileVisibility(!isOpen);
-                }
-              }}
-            >
-              <MenuIcon />
-            </div>
-          </div>
-
-          <dialog
-            open={isOpen}
-            className="bg-white rounded-xl p-3 w-full top-16  overflow-scroll"
-          >
-            <div className="flex flex-col justify-between h-[84vh]">
-              <div>
-                {tabsData.map((tab, index: number) => (
-                  <div key={index}>
-                    {tab.title !== "Traveler’s Club" && (
-                      <div
-                        className={`flex items-center gap-1 justify-center py-3 border ${
-                          index > 0
-                            ? "border-t-gray-100 border-l-0 border-r-0"
-                            : ""
-                        }`}
-                        onClick={() => {
-                          setselectedTab(tab.title);
-                          router.push(tab.path);
-                          setisOpen(false);
-                        }}
-                      >
-                        {tab.icon && selectedTab == tab.title && (
-                          <div>{tab.icon}</div>
-                        )}
-                        <div className="cursor-pointer">
-                          <span
-                            className={`${
-                              selectedTab == tab.title &&
-                              "font-bold text-urban-green"
-                            }`}
-                          >
-                            {tab.title}
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                    {tab.title == "Traveler’s Club" && (
-                      <>
-                        <div className="relative flex justify-center gap-x-2">
-                          <div
-                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
-                              selectedTab === tab.title
+                            key={index}
+                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
+                              pathname === obj.path
                                 ? "font-semibold text-urban-green underline"
-                                : " text-urban-black"
+                                : "font-light text-urban-black"
                             }`}
                           >
-                            Traveler's Club
-                          </div>
-                          <div
-                            className="arrow-down"
-                            onClick={() =>
-                              setisTravelsDropOpen(!isTravelsDropOpen)
-                            }
-                          >
-                            <KeyboardArrowDownIcon
-                              sx={{ fontSize: "1.4rem" }}
-                            />
-                          </div>
-                        </div>
+                            {obj.title}
+                          </li>
+                        </Link>
+                      )}
 
-                        {isTravelsDropOpen && (
-                          <div className="travelersItems-container-m left-20">
+                      {obj.title == "Traveler’s Club" && (
+                        <>
+                          <div className="travelersClub-tab">
                             <div
-                              className="item font-creato font-light p-2"
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === obj.title
+                                  ? "font-semibold text-urban-green underline navbar-items"
+                                  : "font-light text-urban-black navbar-items"
+                              }`}
                               onClick={() => {
-                                settravelersPage("Urban Card");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("urban-card");
-                                console.log("here");
+                                setselectedTab(obj.title);
+                                router.push(obj.path);
                               }}
                             >
-                              Urban Card
+                              {/* {travelersPage?travelersPage: obj.title} */}
+                              Traveler's club
                             </div>
                             <div
-                              className="item font-creato font-light p-2"
-                              onClick={() => {
-                                settravelersPage("travelers-kit");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("traveler-kit");
-                              }}
+                              className="arrow-down"
+                              onClick={() =>
+                                setisTravelsDropOpen(!isTravelsDropOpen)
+                              }
                             >
-                              Traveler's kit
-                            </div>
-                            <div
-                              className="item font-creato font-light p-2"
-                              onClick={() => {
-                                settravelersPage("Urban Card");
-                                setisTravelsDropOpen(!isTravelsDropOpen);
-                                router.push("hotels");
-                              }}
-                            >
-                              Hotels
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
                             </div>
                           </div>
-                        )}
-                      </>
-                    )}
-                  </div>
-                ))}
 
-                <div className="mt-4">
-                  <div className="flex items-center gap-2 justify-center">
-                    <button className="w-1/2 bg-green-100 rounded py-3">
-                      Login
-                    </button>
-                    <button className="py-3 w-1/2 bg-urban-green text-white rounded">
-                      Register
-                    </button>
-                  </div>
-                  <div>
-                    <h2 className="text-center mt-6">
-                      <span className="font-bold text-xl">Urban App</span>{" "}
-                      <span className="p-1 italic font-light">
-                        Available on Web and App
-                      </span>
-                    </h2>
-                    <div className="flex justify-center items-center gap-2 mt-2">
-                      <Image
-                        src="/assets/appstoreIcon.svg"
-                        width={140}
-                        height={28}
-                        alt=""
-                        className=""
-                      />
-                      <Image
-                        src="/assets/playstoreIcon.svg"
-                        width={140}
-                        height={28}
-                        alt=""
-                        className=""
-                      />
+                          {isTravelsDropOpen && (
+                            <div className="travelersItems-container">
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("Urban Card");
+                                  console.log("nav called");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  router.push("/urban-card");
+                                }}
+                              >
+                                Urban Card
+                              </div>
+
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("Traveler's Kit");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  console.log("nav called");
+                                  router.push("/travelers-kit");
+                                }}
+                              >
+                                Traveler's kit
+                              </div>
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("Hotels");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  router.push("/hotels");
+                                }}
+                              >
+                                Hotels
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      )}
                     </div>
-                  </div>
-                </div>
+                  ))}
+                </ul>
               </div>
-
-              <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between gap-8">
-                <div className="w-1/2">
-                  <Image
-                    src="/assets/mobilefooterLogo.svg"
-                    width={80}
-                    height={28}
-                    alt=""
-                    className=""
-                  />
-                  <p className="mt-2 italic font-light text-gray-100 text-[0.6rem]">
-                    Urban is an enabler of their inter-state travel needs and
-                    experience
-                  </p>
-                </div>
-                <div className="w-1/2">
-                  <div className="flex gap-2 mb-4">
-                    <Image
-                      src="/assets/MFooterEmailIcon.svg"
-                      width={32}
-                      height={28}
-                      alt=""
-                      className=""
-                    />
-                    <div className="text-white text-[0.6rem]">
-                      <p>Email</p>
-                      <p>contact@urban.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <Image
-                      src="/assets/MCallIcon.svg"
-                      width={32}
-                      height={28}
-                      alt=""
-                      className=""
-                    />
-                    <div className="text-white text-[0.6rem]">
-                      <p>Call Us</p>
-                      <p>(00) 112 365 489</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns">
+                <button
+                  className="px-10 py-3 2xl:px-5 2xl:py-2 rounded-md text-urban-green 2xl:text-base"
+                  onClick={() => {
+                    setopenModal(true);
+                    setmodalName("login");
+                  }}
+                >
+                  Login
+                </button>
+                <PrimaryBtn
+                  title="Register"
+                  handlePress={() => {
+                    setopenModal(true);
+                    setmodalName("register");
+                  }}
+                />
               </div>
             </div>
-          </dialog>
-        </div>
+          </div>
 
-        {/* ---------- */}
+          {/* ---------- */}
+
+          {/* mobile navbar */}
+          <div className="lg:hidden py-2 relative">
+            <div className="flex flex-row items-center justify-between px-4">
+              <div>
+                <Image src="/logo.svg" width={80} height={35} alt="" />
+              </div>
+              <div></div>
+              <div
+                onClick={() => {
+                  setisOpen(!isOpen);
+                  if (setMobileVisibility) {
+                    setMobileVisibility(!isOpen);
+                  }
+                }}
+              >
+                <MenuIcon />
+              </div>
+            </div>
+
+            <dialog
+              open={isOpen}
+              className="bg-white rounded-xl p-3 w-full top-16  overflow-scroll"
+            >
+              <div className="flex flex-col justify-between h-[84vh]">
+                <div>
+                  {tabsData.map((tab, index: number) => (
+                    <div key={index}>
+                      {tab.title !== "Traveler’s Club" && (
+                        <div
+                          className={`flex items-center gap-1 justify-center py-3 border ${
+                            index > 0
+                              ? "border-t-gray-100 border-l-0 border-r-0"
+                              : ""
+                          }`}
+                          onClick={() => {
+                            setselectedTab(tab.title);
+                            router.push(tab.path);
+                            setisOpen(false);
+                          }}
+                        >
+                          {tab.icon && selectedTab == tab.title && (
+                            <div>{tab.icon}</div>
+                          )}
+                          <div className="cursor-pointer">
+                            <span
+                              className={`${
+                                selectedTab == tab.title &&
+                                "font-bold text-urban-green"
+                              }`}
+                            >
+                              {tab.title}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                      {tab.title == "Traveler’s Club" && (
+                        <>
+                          <div className="relative flex justify-center gap-x-2">
+                            <div
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === tab.title
+                                  ? "font-semibold text-urban-green underline"
+                                  : " text-urban-black"
+                              }`}
+                            >
+                              Traveler's Club
+                            </div>
+                            <div
+                              className="arrow-down"
+                              onClick={() =>
+                                setisTravelsDropOpen(!isTravelsDropOpen)
+                              }
+                            >
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
+                            </div>
+                          </div>
+
+                          {isTravelsDropOpen && (
+                            <div className="travelersItems-container-m left-20">
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("Urban Card");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  router.push("urban-card");
+                                  console.log("here");
+                                }}
+                              >
+                                Urban Card
+                              </div>
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("travelers-kit");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  router.push("traveler-kit");
+                                }}
+                              >
+                                Traveler's kit
+                              </div>
+                              <div
+                                className="item font-creato font-light p-2"
+                                onClick={() => {
+                                  settravelersPage("Urban Card");
+                                  setisTravelsDropOpen(!isTravelsDropOpen);
+                                  router.push("hotels");
+                                }}
+                              >
+                                Hotels
+                              </div>
+                            </div>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  ))}
+
+                  <div className="mt-4">
+                    <div className="flex items-center gap-2 justify-center">
+                      <button className="w-1/2 bg-green-100 rounded py-3">
+                        Login
+                      </button>
+                      <button className="py-3 w-1/2 bg-urban-green text-white rounded">
+                        Register
+                      </button>
+                    </div>
+                    <div>
+                      <h2 className="text-center mt-6">
+                        <span className="font-bold text-xl">Urban App</span>{" "}
+                        <span className="p-1 italic font-light">
+                          Available on Web and App
+                        </span>
+                      </h2>
+                      <div className="flex justify-center items-center gap-2 mt-2">
+                        <Image
+                          src="/assets/appstoreIcon.svg"
+                          width={140}
+                          height={28}
+                          alt=""
+                          className=""
+                        />
+                        <Image
+                          src="/assets/playstoreIcon.svg"
+                          width={140}
+                          height={28}
+                          alt=""
+                          className=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-xl bg-urban-black p-3 w-full py-4 flex justify-between gap-8">
+                  <div className="w-1/2">
+                    <Image
+                      src="/assets/mobilefooterLogo.svg"
+                      width={80}
+                      height={28}
+                      alt=""
+                      className=""
+                    />
+                    <p className="mt-2 italic font-light text-gray-100 text-[0.6rem]">
+                      Urban is an enabler of their inter-state travel needs and
+                      experience
+                    </p>
+                  </div>
+                  <div className="w-1/2">
+                    <div className="flex gap-2 mb-4">
+                      <Image
+                        src="/assets/MFooterEmailIcon.svg"
+                        width={32}
+                        height={28}
+                        alt=""
+                        className=""
+                      />
+                      <div className="text-white text-[0.6rem]">
+                        <p>Email</p>
+                        <p>contact@urban.com</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <Image
+                        src="/assets/MCallIcon.svg"
+                        width={32}
+                        height={28}
+                        alt=""
+                        className=""
+                      />
+                      <div className="text-white text-[0.6rem]">
+                        <p>Call Us</p>
+                        <p>(00) 112 365 489</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </dialog>
+          </div>
+
+          {/* ---------- */}
+        </div>
       </div>
-    </div>
+
+      {modalName === "login" && openModal && (
+        <LoginDialog isOpen={openModal} setisopen={setopenModal} />
+      )}
+
+      {modalName === "register" && openModal && (
+        <RegisterDialog isOpen={openModal} setisopen={setopenModal} />
+      )}
+    </>
   );
 }

@@ -74,7 +74,7 @@ export default function Home() {
     <main className="relative ">
       <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[100vh] bg-herobg1 bg-cover py-10 px-4 xl:pb-20 2xl:pb-0">
         <div className="flex flex-col lg:w-11/12 2xl:w-10/12 m-auto lg:flex-row lg:m-h-[50vh] lg:mt-40 xl:mt-[12rem] mt-44 2xl:mt-60 2xl:justify-between">
-          <div className="min-h-40 mb-20 lg:mb-0 mt-28 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
+          <div className="min-h-40 mb-20 lg:mb-0 mt-14 flex flex-col justify-center items-center lg:items-start lg:justify-start lg:mt-0 w-full lg:w-6/12 2x:w-8/12">
             <h2
               className="py-1 text-4xl lg:text-5xl xl:text-[4.2rem] 2xl:text-[5.2rem] text-white font-creato font-extralight uppercase mb-1"
               data-aos="fade-up"
@@ -108,7 +108,7 @@ export default function Home() {
                 Africa's most traveler-centric brand
               </span>
             </div>
-            <div className="flex items-center gap-10 lg:gap-4 mt-6 2xl:mt-10">
+            <div className="flex items-center gap-4 lg:gap-4 mt-6 2xl:mt-10">
               <Image
                 src="/assets/appstoreIcon.svg"
                 width={140}
