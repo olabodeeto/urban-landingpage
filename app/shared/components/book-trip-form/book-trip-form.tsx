@@ -8,6 +8,7 @@ import { nigeriaStates } from "../../utils/data";
 import { useRouter } from "next/navigation";
 
 export default function BookTripForm() {
+  const initialData = {};
   const router = useRouter();
   const handleForm = (e: any) => {
     e.preventDefault();

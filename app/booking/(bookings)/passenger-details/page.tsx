@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -16,13 +16,42 @@ import Input from "@mui/joy/Input";
 import TripCard from "@/app/shared/components/trip-card/trip-card";
 import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
+import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
 
 export default function PassengerDetails() {
+  const noPassengers = [1, 2];
+  const [showSeatModal, setshowSeatModal] = useState(false);
+  const [passengers, setpassengers] = useState<any[]>(
+    noPassengers.map((obj) => {
+      return {
+        title: "",
+        email: "",
+        firstName: "",
+        surname: "",
+        phoneNumber: "",
+        seat: "",
+        extraLuggage: 0,
+      };
+    })
+  );
+  const [currentPassager, setcurrentPassager] = useState<any>(null);
   const router = useRouter();
+
+  const handleChange = (index: number, fieldName: string, value: any) => {
+    const tempArr = [...passengers];
+    const temcurrentObj = { ...passengers[index], [fieldName]: value };
+    tempArr[index] = temcurrentObj;
+    setpassengers(tempArr);
+  };
 
   useEffect(() => {
     AOS.init();
   }, []);
+
+  useEffect(() => {
+    console.log("===>", passengers);
+  }, [passengers]);
+
   return (
     <>
       <main className="-mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
@@ -38,8 +67,8 @@ export default function PassengerDetails() {
                 </span>
               </div>
               <div className="mt-4">
-                {[1, 2, 3].map((obj, index: number) => (
-                  <div key={index}>
+                {passengers.map((obj, index: number) => (
+                  <div key={index} className="mb-4">
                     <PassengerAccordion
                       sn={index + 1}
                       passengerName={"Tade Ogunbade"}
@@ -65,6 +94,13 @@ export default function PassengerDetails() {
                                   },
                                 },
                               }}
+                              value={passengers[index].title}
+                              onChange={(
+                                event: React.SyntheticEvent | null,
+                                newValue: string | null
+                              ) => {
+                                handleChange(index, "title", newValue);
+                              }}
                             >
                               {["Mr", "Mrs", "Miss", "Sir"].map(
                                 (seat, index: number) => (
@@ -88,7 +124,9 @@ export default function PassengerDetails() {
                           <div className="mt-3">
                             <Input
                               type="text"
+                              required
                               placeholder="Type in here…"
+                              value={passengers[index].firstName}
                               sx={{
                                 height: "46px",
                                 fontSize: "0.8rem",
@@ -99,6 +137,13 @@ export default function PassengerDetails() {
                                   borderColor: "#000000",
                                 },
                                 ":focus": "#000",
+                              }}
+                              onChange={(e: any) => {
+                                handleChange(
+                                  index,
+                                  "firstName",
+                                  e.target.value
+                                );
                               }}
                             />
                           </div>
@@ -112,6 +157,8 @@ export default function PassengerDetails() {
                             <Input
                               type="text"
                               placeholder="Type in here…"
+                              required
+                              value={passengers[index].surname}
                               sx={{
                                 height: "46px",
                                 fontSize: "0.8rem",
@@ -122,6 +169,9 @@ export default function PassengerDetails() {
                                   borderColor: "#000000",
                                 },
                                 ":focus": "#000",
+                              }}
+                              onChange={(e: any) => {
+                                handleChange(index, "surname", e.target.value);
                               }}
                             />
                           </div>
@@ -135,6 +185,8 @@ export default function PassengerDetails() {
                             <Input
                               type="text"
                               placeholder="Type in here…"
+                              required
+                              value={passengers[index].phoneNumber}
                               sx={{
                                 height: "46px",
                                 fontSize: "0.8rem",
@@ -146,6 +198,13 @@ export default function PassengerDetails() {
                                 },
                                 ":focus": "#000",
                               }}
+                              onChange={(e: any) => {
+                                handleChange(
+                                  index,
+                                  "phoneNumber",
+                                  e.target.value
+                                );
+                              }}
                             />
                           </div>
                         </div>
@@ -155,41 +214,50 @@ export default function PassengerDetails() {
                             <label className="text-base font-light">
                               Select Seat
                             </label>
-                            <button className="bg-[#6cc56c29] text-urban-green py-2 px-4 text-xs rounded-lg">
+                            <button
+                              className="bg-[#6cc56c29] text-urban-green py-2 px-4 text-xs rounded-lg"
+                              onClick={() => {
+                                setshowSeatModal(true);
+                                setcurrentPassager(index);
+                              }}
+                            >
                               See seat Arrangement
                             </button>
                           </div>
                           <div className="mt-3">
-                            <Select
-                              defaultValue={18}
-                              indicator={<KeyboardArrowDown />}
-                              sx={{ height: "48px", fontSize: "0.8rem" }}
-                              slotProps={{
-                                listbox: {
-                                  sx: {
-                                    maxHeight: "200px",
-                                  },
+                            <Input
+                              type="text"
+                              placeholder=""
+                              required
+                              disabled
+                              value={passengers[index].seat}
+                              sx={{
+                                height: "46px",
+                                fontSize: "0.8rem",
+                                "--Input-focusedInset": "var(--any, )",
+                                "--Input-focusedThickness": "0.25px",
+                                "--Input-focusedHighlight": "#15560c",
+                                "&:focus-outside": {
+                                  borderColor: "#000000",
                                 },
+                                ":focus": "#000",
                               }}
-                            >
-                              {["A1", "A2", "B1", "B2", "B3", "C1"].map(
-                                (seat, index: number) => (
-                                  <Option
-                                    value={seat}
-                                    sx={{ fontSize: "0.8rem" }}
-                                    key={index}
-                                  >
-                                    {seat}
-                                  </Option>
-                                )
-                              )}
-                            </Select>
+                              onChange={(e: any) => {
+                                handleChange(index, "seat", e.target.value);
+                              }}
+                            />
                           </div>
                         </div>
                       </div>
                     </PassengerAccordion>
                   </div>
                 ))}
+
+                <div className="mt-10 mb-10">
+                  <button className="py-3 rounded-md bg-urban-green text-white px-10">
+                    Submit
+                  </button>
+                </div>
               </div>
             </div>
             {/* ----- right side------ */}
@@ -217,6 +285,15 @@ export default function PassengerDetails() {
       </main>
 
       <Footer />
+
+      {showSeatModal && (
+        <SeatArrangementDialog
+          isOpen={showSeatModal}
+          setisopen={setshowSeatModal}
+          handleSelect={handleChange}
+          currentPassengerIndex={currentPassager}
+        />
+      )}
     </>
   );
 }
