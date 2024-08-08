@@ -1,4 +1,4 @@
-import { storeAuthToken } from "../commons/utils/ls";
+import { storeAuthToken } from "../shared/utils/ls";
 import api from "./api";
 
 type LoginT = {
