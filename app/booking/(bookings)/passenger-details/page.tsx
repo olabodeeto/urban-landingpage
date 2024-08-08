@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -44,12 +45,19 @@ export default function PassengerDetails() {
     setpassengers(tempArr);
   };
 
+  const LazyMap = dynamic(
+    () => import("@/app/shared/components/map-with-path/map-with-path"),
+    {
+      ssr: false,
+    }
+  );
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   useEffect(() => {
-    console.log("===>", passengers);
+    // console.log("===>", passengers);
   }, [passengers]);
 
   return (
@@ -266,7 +274,8 @@ export default function PassengerDetails() {
                 <h2 className="text-xl lg:text-2xl">Map</h2>
                 <div className="mt-4">
                   <div className="h-80 bg-slate-100 overflow-hidden">
-                    <MapWithPath />
+                    {/* <MapWithPath /> */}
+                    <LazyMap />
                   </div>
 
                   <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
