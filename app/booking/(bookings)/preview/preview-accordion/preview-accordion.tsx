@@ -22,8 +22,8 @@ export default function PreviewAccordion({
         className="flex items-center justify-between border border-gray-200 p-2 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="text-base lg:text-[1.120rem] w-6/12 passenger-info">
-          {sn}. Passenger’s details
+        <div className="text-base lg:text-[1.4rem] w-6/12 passenger-info text-urban-green">
+          Passenger’s details
         </div>
 
         <div className="cursor-pointer">

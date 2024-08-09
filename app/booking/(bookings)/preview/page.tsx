@@ -10,10 +10,8 @@ import "./preview-details.scss";
 import Footer from "@/app/shared/components/footer/footer";
 import { useRouter } from "next/navigation";
 import PreviewAccordion from "./preview-accordion/preview-accordion";
-import Select from "@mui/joy/Select";
-import { KeyboardArrowDown } from "@mui/icons-material";
-import Option from "@mui/joy/Option";
-import Input from "@mui/joy/Input";
+
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
@@ -76,31 +74,161 @@ export default function PassengerDetails() {
                 <span className="text-xl lg:text-2xl">Preview</span>
               </div>
               <div className="mt-4">
-                {passengers.map((obj, index: number) => (
-                  <div key={index} className="mb-4">
-                    <PreviewAccordion
-                      sn={index + 1}
-                      passengerName={"Tade Ogunbade"}
-                      seatNumber="B1"
+                <div className="mb-4">
+                  <PreviewAccordion
+                    sn={1}
+                    passengerName={"Tade Ogunbade"}
+                    seatNumber="B1"
+                  >
+                    <div
+                      className="w-full flex flex-col gap-10"
+                      data-aos="fade-up"
+                      data-aos-easing="linear"
+                      data-aos-duration="800"
                     >
-                      <div
-                        className="w-full flex flex-col gap-10"
-                        data-aos="fade-up"
-                        data-aos-easing="linear"
-                        data-aos-duration="800"
-                      >
-                        <div className="w-full border border-red-400 min-h-40"></div>
-                      </div>
-                    </PreviewAccordion>
-                  </div>
-                ))}
+                      <div className="w-full mt-6 min-h-40">
+                        <h2 className="px-2">{1}. Passenger Details</h2>
+                        <div className="mt-4 font-light">
+                          <div className="w-full px-2 py-1 flex items-center justify-between">
+                            <span className="block w-1/2 text-gray-400">
+                              Passenger’s Name
+                            </span>
+                            <span className="block w-1/2">Hassan Tunmise</span>
+                          </div>
 
-                <div className="mt-10 mb-10">
-                  <button
-                    className="py-3 rounded-md bg-urban-green text-white px-10"
+                          <div className="w-full px-2 py-1 flex items-center justify-between">
+                            <span className="block w-1/2 text-gray-400">
+                              Phone Number
+                            </span>
+                            <span className="block w-1/2">09038726543</span>
+                          </div>
+
+                          <div className="w-full px-2 py-1 flex items-center justify-between">
+                            <span className="block w-1/2 text-gray-400">
+                              Seat Number
+                            </span>
+                            <span className="block w-1/2">A1</span>
+                          </div>
+
+                          <div className="w-full px-2 py-1 flex items-center justify-between">
+                            <span className="block w-1/2 text-gray-400">
+                              Extra Luggage size
+                            </span>
+                            <span className="block w-1/2">--</span>
+                          </div>
+                        </div>
+                        <div className="mt-4">
+                          <h2 className="text-urban-green text-xl">
+                            Trip Details
+                          </h2>
+                          <div className="p-2 bg-[#036E030F] mt-6 font-light flex flex-col gap-y-2">
+                            <p>Vehicle Type: Bus</p>
+                            <p>
+                              Trip Code:{" "}
+                              <span className="font-bold text-urban-green">
+                                ABJSAG
+                              </span>
+                            </p>
+                            <p>
+                              Departure Time:{" "}
+                              <span className="font-bold text-urban-green">
+                                08:00 AM
+                              </span>
+                            </p>
+                            <p>
+                              Departure Date:{" "}
+                              <span className="font-bold text-urban-green">
+                                09/06/2024
+                              </span>
+                            </p>
+                            <p>
+                              Departure City:{" "}
+                              <span className="font-bold text-urban-green">
+                                Lagos
+                              </span>
+                            </p>
+                            <p>
+                              Destination City:{" "}
+                              <span className="font-bold text-urban-green">
+                                Abuja
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="mt-4">
+                          <h2 className="text-urban-green text-xl">
+                            Payment Details
+                          </h2>
+                          <div className="mt-4 font-light">
+                            <div className="w-full px-2 py-1 flex items-center justify-between">
+                              <span className="block w-1/2 text-gray-400">
+                                Number of Passenger
+                              </span>
+                              <span className="block w-1/2">1</span>
+                            </div>
+
+                            <div className="w-full px-2 py-1 flex items-center justify-between">
+                              <span className="block w-1/2 text-gray-400">
+                                Price per seats
+                              </span>
+                              <span className="block w-1/2">N12,500.00</span>
+                            </div>
+
+                            <div className="w-full px-2 py-1 flex items-center justify-between">
+                              <span className="block w-1/2 text-gray-400">
+                                Cost Of Extra Luggage
+                              </span>
+                              <span className="block w-1/2">-</span>
+                            </div>
+
+                            <div className="w-full px-2 py-1 flex items-center justify-between">
+                              <span className="block w-1/2 text-gray-400">
+                                VAT
+                              </span>
+                              <span className="block w-1/2">N1,500.00</span>
+                            </div>
+
+                            <div className="w-full px-2 py-1 flex items-center justify-between">
+                              <span className="block w-1/2 text-urban-green text-xl font-bold">
+                                Total Amount
+                              </span>
+                              <span className="block w-1/2 font-semibold">
+                                N16,500.00
+                              </span>
+                            </div>
+                            <div className="mt-4 flex items-center gap-x-1">
+                              <InfoOutlinedIcon
+                                sx={{ fontSize: 18 }}
+                                className="text-urban-green"
+                              />
+                              <p className="text-sm text-gray-800">
+                                <span className="text-urban-green font-semibold">
+                                  Please Note:
+                                </span>{" "}
+                                Luggage size and weight may attract extra cost
+                                at check-in.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </PreviewAccordion>
+                </div>
+
+                <div className="mt-10 mb-10 w-full flex flex-col gap-y-2">
+                  <div
+                    className="py-3 border border-urban-green rounded-md bg-white text-urban-green flex justify-center items-center px-10 w-full"
                     onClick={handleSubmit}
                   >
-                    Submit
+                    Edit Info
+                  </div>
+                  <button
+                    className="py-3 rounded-md bg-urban-green text-white px-10 w-full"
+                    onClick={handleSubmit}
+                  >
+                    Proceed to Payment
                   </button>
                 </div>
               </div>
