@@ -6,17 +6,22 @@ import Image from "next/image";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import "./passenger-payment.scss";
+import "./preview-details.scss";
 import Footer from "@/app/shared/components/footer/footer";
 import { useRouter } from "next/navigation";
+import PreviewAccordion from "./preview-accordion/preview-accordion";
+import Select from "@mui/joy/Select";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import Option from "@mui/joy/Option";
+import Input from "@mui/joy/Input";
+
 import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
-import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
 
 export default function PassengerDetails() {
   const noPassengers = [1, 2];
-  const [showManifestModal, setshowManifestModal] = useState(false);
+  const [showSeatModal, setshowSeatModal] = useState(false);
   const [passengers, setpassengers] = useState<any[]>(
     noPassengers.map((obj) => {
       return {
@@ -33,8 +38,11 @@ export default function PassengerDetails() {
   const [currentPassager, setcurrentPassager] = useState<any>(null);
   const router = useRouter();
 
-  const handleSubmit = () => {
-    router.push("./preview");
+  const handleChange = (index: number, fieldName: string, value: any) => {
+    const tempArr = [...passengers];
+    const temcurrentObj = { ...passengers[index], [fieldName]: value };
+    tempArr[index] = temcurrentObj;
+    setpassengers(tempArr);
   };
 
   const LazyMap = dynamic(
@@ -44,6 +52,9 @@ export default function PassengerDetails() {
     }
   );
 
+  const handleSubmit = () => {
+    router.push("./payment");
+  };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -62,49 +73,28 @@ export default function PassengerDetails() {
                 <div onClick={() => router.back()} className="cursor-pointer">
                   <KeyboardBackspaceIcon />
                 </div>
-                <span className="text-xl 2xl:text-2xl">Payment</span>
+                <span className="text-xl lg:text-2xl">Preview</span>
               </div>
               <div className="mt-4">
-                <div className="mt-6">
-                  <h4 className="text-lg 2xl:text-2xl">Payment</h4>
-                  <p className=" w-full lg:w-10/12 text-base font-light text-gray-600">
-                    You are about to make the payment of N13,000.00 . Select
-                    payment option below
-                  </p>
-                  <div className="mt-4 flex flex-col gap-y-4">
-                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
-                      <span className="text-xs font-light">Pay with</span>
-                      <Image
-                        src="/assets/paystack.svg"
-                        width={80}
-                        height={40}
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
-                      <span className="text-xs font-light">Pay with</span>
-                      <Image
-                        src="/assets/rave.svg"
-                        width={45}
-                        height={20}
-                        alt=""
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <h2 className="text-lg 2xl:text-2xl">
-                      Fill Traveller's Manifest
-                    </h2>
-                    <div
-                      className="w-full rounded-lg bg-[#036E030F] p-3 cursor-pointer"
-                      onClick={() => setshowManifestModal(true)}
+                {passengers.map((obj, index: number) => (
+                  <div key={index} className="mb-4">
+                    <PreviewAccordion
+                      sn={index + 1}
+                      passengerName={"Tade Ogunbade"}
+                      seatNumber="B1"
                     >
-                      <h4 className="text-urban-green">Tap here to fill</h4>
-                    </div>
+                      <div
+                        className="w-full flex flex-col gap-10"
+                        data-aos="fade-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="800"
+                      >
+                        <div className="w-full border border-red-400 min-h-40"></div>
+                      </div>
+                    </PreviewAccordion>
                   </div>
-                </div>
+                ))}
+
                 <div className="mt-10 mb-10">
                   <button
                     className="py-3 rounded-md bg-urban-green text-white px-10"
@@ -142,10 +132,12 @@ export default function PassengerDetails() {
 
       <Footer />
 
-      {showManifestModal && (
-        <TravellersManifestDialog
-          isOpen={showManifestModal}
-          setisopen={setshowManifestModal}
+      {showSeatModal && (
+        <SeatArrangementDialog
+          isOpen={showSeatModal}
+          setisopen={setshowSeatModal}
+          handleSelect={handleChange}
+          currentPassengerIndex={currentPassager}
         />
       )}
     </>
