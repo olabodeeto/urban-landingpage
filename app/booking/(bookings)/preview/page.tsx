@@ -236,11 +236,13 @@ export default function PassengerDetails() {
             {/* ----- right side------ */}
             <div className="w-full lg:w-1/2 flex justify-end">
               <div className="border border-gray-300 w-full lg:w-11/12 p-4 px-2 lg:px-7 2xl:px-8">
-                <h2 className="text-xl lg:text-2xl">Map</h2>
+                <h2 className="text-xl lg:text-2xl">
+                  Recommended Hotels in your Destination
+                </h2>
                 <div className="mt-4">
                   <div className="h-80 bg-slate-100 overflow-hidden">
                     {/* <MapWithPath /> */}
-                    <LazyMap />
+                    {/* <LazyMap /> */}
                   </div>
 
                   <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
