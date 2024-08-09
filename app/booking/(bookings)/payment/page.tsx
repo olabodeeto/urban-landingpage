@@ -9,19 +9,14 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./passenger-payment.scss";
 import Footer from "@/app/shared/components/footer/footer";
 import { useRouter } from "next/navigation";
-import PassengerAccordion from "./passenger-accordion/passenger-accordion";
-import Select from "@mui/joy/Select";
-import { KeyboardArrowDown } from "@mui/icons-material";
-import Option from "@mui/joy/Option";
-import Input from "@mui/joy/Input";
-import TripCard from "@/app/shared/components/trip-card/trip-card";
 import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
+import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
 
 export default function PassengerDetails() {
   const noPassengers = [1, 2];
-  const [showSeatModal, setshowSeatModal] = useState(false);
+  const [showManifestModal, setshowManifestModal] = useState(false);
   const [passengers, setpassengers] = useState<any[]>(
     noPassengers.map((obj) => {
       return {
@@ -70,17 +65,17 @@ export default function PassengerDetails() {
                 <div onClick={() => router.back()} className="cursor-pointer">
                   <KeyboardBackspaceIcon />
                 </div>
-                <span className="text-xl lg:text-2xl">Payment</span>
+                <span className="text-xl 2xl:text-2xl">Payment</span>
               </div>
               <div className="mt-4">
                 <div className="mt-6">
-                  <h4 className="text-xl">Payment</h4>
+                  <h4 className="text-lg 2xl:text-2xl">Payment</h4>
                   <p className=" w-full lg:w-10/12 text-base font-light text-gray-600">
                     You are about to make the payment of N13,000.00 . Select
                     payment option below
                   </p>
                   <div className="mt-4 flex flex-col gap-y-4">
-                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between">
+                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
                       <span className="text-xs font-light">Pay with</span>
                       <Image
                         src="/assets/paystack.svg"
@@ -90,7 +85,7 @@ export default function PassengerDetails() {
                       />
                     </div>
 
-                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between">
+                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
                       <span className="text-xs font-light">Pay with</span>
                       <Image
                         src="/assets/rave.svg"
@@ -100,9 +95,15 @@ export default function PassengerDetails() {
                       />
                     </div>
                   </div>
+
                   <div className="mt-4">
-                    <h2 className="text-xl">Fill Traveller's Manifest</h2>
-                    <div className="w-full rounded-lg bg-[#036E030F] p-3 cursor-pointer">
+                    <h2 className="text-lg 2xl:text-2xl">
+                      Fill Traveller's Manifest
+                    </h2>
+                    <div
+                      className="w-full rounded-lg bg-[#036E030F] p-3 cursor-pointer"
+                      onClick={() => setshowManifestModal(true)}
+                    >
                       <h4 className="text-urban-green">Tap here to fill</h4>
                     </div>
                   </div>
@@ -141,12 +142,10 @@ export default function PassengerDetails() {
 
       <Footer />
 
-      {showSeatModal && (
-        <SeatArrangementDialog
-          isOpen={showSeatModal}
-          setisopen={setshowSeatModal}
-          handleSelect={handleChange}
-          currentPassengerIndex={currentPassager}
+      {showManifestModal && (
+        <TravellersManifestDialog
+          isOpen={showManifestModal}
+          setisopen={setshowManifestModal}
         />
       )}
     </>
