@@ -52,6 +52,9 @@ export default function PassengerDetails() {
     }
   );
 
+  const handleSubmit = () => {
+    router.push("./payment");
+  };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -62,7 +65,7 @@ export default function PassengerDetails() {
 
   return (
     <>
-      <main className="-mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
+      <main className="-mt-[9.8rem]  2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
         <section className="m-h-96  w-full lg:w-11/12 lg:px-6 m-auto pb-20 2xl:w-10/12 passenger-details-trips-page">
           <div className="w-full flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
@@ -262,7 +265,10 @@ export default function PassengerDetails() {
                 ))}
 
                 <div className="mt-10 mb-10">
-                  <button className="py-3 rounded-md bg-urban-green text-white px-10">
+                  <button
+                    className="py-3 rounded-md bg-urban-green text-white px-10"
+                    onClick={handleSubmit}
+                  >
                     Submit
                   </button>
                 </div>
