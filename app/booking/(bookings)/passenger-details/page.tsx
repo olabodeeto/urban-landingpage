@@ -269,7 +269,7 @@ export default function PassengerDetails() {
                     className="py-3 rounded-md bg-urban-green text-white px-10"
                     onClick={handleSubmit}
                   >
-                    Submit
+                    Continue
                   </button>
                 </div>
               </div>

@@ -13,9 +13,11 @@ import PreviewAccordion from "./preview-accordion/preview-accordion";
 
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
-import SimilarTripCard from "./similar-trip-card";
+import SimilarTripCard from "./similar-hotel-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
+import HotelCard from "@/app/shared/components/hotel-card/hotel-card";
+import RecommendedHotel from "./recommended-hotels/recommended-hotel";
 
 export default function PassengerDetails() {
   const noPassengers = [1, 2];
@@ -239,21 +241,7 @@ export default function PassengerDetails() {
                 <h2 className="text-xl lg:text-2xl">
                   Recommended Hotels in your Destination
                 </h2>
-                <div className="mt-4">
-                  <div className="h-80 bg-slate-100 overflow-hidden">
-                    {/* <MapWithPath /> */}
-                    {/* <LazyMap /> */}
-                  </div>
-
-                  <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
-                    Parks around you with similar trips
-                  </h2>
-                  <div className="similar-trip-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-2 lg:gap-x-2">
-                    {/* cards */}
-                    <SimilarTripCard />
-                    <SimilarTripCard />
-                  </div>
-                </div>
+                <RecommendedHotel />
               </div>
             </div>
           </div>
