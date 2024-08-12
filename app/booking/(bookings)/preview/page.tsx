@@ -55,6 +55,10 @@ export default function PassengerDetails() {
   const handleSubmit = () => {
     router.push("./payment");
   };
+
+  const handleEdit = () => {
+    router.push("./passenger-details");
+  };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -221,8 +225,8 @@ export default function PassengerDetails() {
 
                 <div className="mt-10 mb-10 w-full flex flex-col gap-y-2">
                   <div
-                    className="py-3 border border-urban-green rounded-md bg-white text-urban-green flex justify-center items-center px-10 w-full"
-                    onClick={handleSubmit}
+                    className="py-3 border border-urban-green rounded-md bg-white text-urban-green flex justify-center items-center px-10 w-full cursor-pointer"
+                    onClick={handleEdit}
                   >
                     Edit Info
                   </div>

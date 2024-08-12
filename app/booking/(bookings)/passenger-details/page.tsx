@@ -18,10 +18,12 @@ import TripCard from "@/app/shared/components/trip-card/trip-card";
 import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
+import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
 
 export default function PassengerDetails() {
   const noPassengers = [1, 2];
   const [showSeatModal, setshowSeatModal] = useState(false);
+  const [showManifestModal, setshowManifestModal] = useState(false);
   const [passengers, setpassengers] = useState<any[]>(
     noPassengers.map((obj) => {
       return {
@@ -53,7 +55,8 @@ export default function PassengerDetails() {
   );
 
   const handleSubmit = () => {
-    router.push("./payment");
+    setshowManifestModal(true);
+    // router.push("./payment");
   };
   useEffect(() => {
     AOS.init();
@@ -307,6 +310,13 @@ export default function PassengerDetails() {
           setisopen={setshowSeatModal}
           handleSelect={handleChange}
           currentPassengerIndex={currentPassager}
+        />
+      )}
+
+      {showManifestModal && (
+        <TravellersManifestDialog
+          isOpen={showManifestModal}
+          setisopen={setshowManifestModal}
         />
       )}
     </>

@@ -10,13 +10,13 @@ import "./passenger-payment.scss";
 import Footer from "@/app/shared/components/footer/footer";
 import { useRouter } from "next/navigation";
 import SimilarTripCard from "./similar-trip-card";
-import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
-import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
-import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
+
+import SuccessDialog from "@/app/shared/components/success-dialog/success-dialog";
 
 export default function PassengerDetails() {
+  const [showSuccessModal, setshowSuccessModal] = useState(false);
   const noPassengers = [1, 2];
-  const [showManifestModal, setshowManifestModal] = useState(false);
+
   const [passengers, setpassengers] = useState<any[]>(
     noPassengers.map((obj) => {
       return {
@@ -34,7 +34,8 @@ export default function PassengerDetails() {
   const router = useRouter();
 
   const handleSubmit = () => {
-    router.push("./preview");
+    setshowSuccessModal(true);
+    // router.push("./preview");
   };
 
   const LazyMap = dynamic(
@@ -92,18 +93,6 @@ export default function PassengerDetails() {
                       />
                     </div>
                   </div>
-
-                  <div className="mt-4">
-                    <h2 className="text-lg 2xl:text-2xl">
-                      Fill Traveller's Manifest
-                    </h2>
-                    <div
-                      className="w-full rounded-lg bg-[#036E030F] p-3 cursor-pointer"
-                      onClick={() => setshowManifestModal(true)}
-                    >
-                      <h4 className="text-urban-green">Tap here to fill</h4>
-                    </div>
-                  </div>
                 </div>
                 <div className="mt-10 mb-10">
                   <button
@@ -142,10 +131,10 @@ export default function PassengerDetails() {
 
       <Footer />
 
-      {showManifestModal && (
-        <TravellersManifestDialog
-          isOpen={showManifestModal}
-          setisopen={setshowManifestModal}
+      {showSuccessModal && (
+        <SuccessDialog
+          isOpen={showSuccessModal}
+          setisopen={setshowSuccessModal}
         />
       )}
     </>

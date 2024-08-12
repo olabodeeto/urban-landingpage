@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "./travellers-manifest-dialog.scss";
+import { useRouter } from "next/navigation";
 
 type PropT = {
   isOpen?: boolean;
@@ -11,6 +12,7 @@ type PropT = {
 };
 export default function TravellersManifestDialog({ isOpen, setisopen }: PropT) {
   const [open, setopen] = useState(isOpen);
+  const router = useRouter();
 
   useEffect(() => {
     AOS.init();
@@ -72,7 +74,10 @@ export default function TravellersManifestDialog({ isOpen, setisopen }: PropT) {
 
               {/* ----- */}
               <div className="flex flex-col gap-y-2 mt-4 w-5/12">
-                <button className="py-3 px-6 rounded-md bg-urban-green text-white 2xl:py-4 2xl:px-10 2xl:text-xl">
+                <button
+                  className="py-3 px-6 rounded-md bg-urban-green text-white 2xl:py-4 2xl:px-10 2xl:text-xl"
+                  onClick={() => router.push("./preview")}
+                >
                   Proceed
                 </button>
               </div>
