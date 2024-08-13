@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
@@ -7,14 +8,45 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { nigeriaStates } from "../../utils/data";
 import { useRouter } from "next/navigation";
 
+const initialData = {
+  departureState: "abia",
+  destinationState: "lagos",
+  travelDate: "",
+  numberOfPassagers: 5,
+};
 export default function BookTripForm() {
-  const initialData = {};
+  const [userData, setuserData] = useState(initialData);
+  const [isformValid, setisformValid] = useState(false);
+
   const router = useRouter();
   const handleForm = (e: any) => {
     e.preventDefault();
+    localStorage.setItem("firstStep", JSON.stringify(userData));
     router.push("/booking/available-trips");
   };
-  // const screenWidth = window.screen.width;
+
+  const handleChange = (value: any, field: string) => {
+    setuserData((prev: any) => {
+      return { ...prev, [field]: value };
+    });
+  };
+
+  const handleValidation = () => {
+    const { departureState, destinationState, travelDate, numberOfPassagers } =
+      userData;
+
+    const isValid =
+      departureState.length > 0 &&
+      destinationState.length > 0 &&
+      travelDate.length > 0 &&
+      numberOfPassagers > 0;
+    setisformValid(isValid);
+  };
+
+  useEffect(() => {
+    handleValidation();
+  }, [userData]);
+
   return (
     <form className="px-2 md:px-3 lg:px-2 w-full mt-8" onSubmit={handleForm}>
       <div className="flex items-start gap-2 w-full">
@@ -34,6 +66,11 @@ export default function BookTripForm() {
                   defaultValue="abia"
                   indicator={<KeyboardArrowDown />}
                   sx={{ height: "46px", fontSize: "0.8rem" }}
+                  value={userData.departureState}
+                  onChange={(
+                    event: React.SyntheticEvent | null,
+                    newValue: string | null
+                  ) => handleChange(newValue, "departureState")}
                   slotProps={{
                     listbox: {
                       sx: {
@@ -59,6 +96,7 @@ export default function BookTripForm() {
               <div className="mt-3">
                 <Input
                   type="date"
+                  value={userData.travelDate}
                   placeholder="Type in here…"
                   sx={{
                     height: "46px",
@@ -71,6 +109,9 @@ export default function BookTripForm() {
                     },
                     ":focus": "#000",
                   }}
+                  onChange={(e: any) =>
+                    handleChange(e.target.value, "travelDate")
+                  }
                 />
               </div>
             </div>
@@ -90,6 +131,11 @@ export default function BookTripForm() {
                     },
                   },
                 }}
+                value={userData.destinationState}
+                onChange={(
+                  event: React.SyntheticEvent | null,
+                  newValue: string | null
+                ) => handleChange(newValue, "destinationState")}
               >
                 {nigeriaStates.map((state, index: number) => (
                   <Option
@@ -110,7 +156,6 @@ export default function BookTripForm() {
         <label className="text-base font-light">Number of passenger</label>
         <div className="mt-3">
           <Select
-            defaultValue={18}
             indicator={<KeyboardArrowDown />}
             sx={{ height: "46px", fontSize: "0.8rem" }}
             slotProps={{
@@ -120,6 +165,11 @@ export default function BookTripForm() {
                 },
               },
             }}
+            value={userData.numberOfPassagers}
+            onChange={(
+              event: React.SyntheticEvent | null,
+              newValue: number | null
+            ) => handleChange(newValue, "numberOfPassagers")}
           >
             {[1, 2, 3, 4, 5].map((seat, index: number) => (
               <Option value={seat} sx={{ fontSize: "0.8rem" }} key={index}>
@@ -130,7 +180,10 @@ export default function BookTripForm() {
         </div>
       </div>
       <div className="mt-8 flex items-center w-full gap-4">
-        <button className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-sm text-white lg:text-sm xl:text-base">
+        <button
+          disabled={!isformValid}
+          className="w-1/2 rounded-md py-3 px-4 border-none bg-urban-green text-sm text-white lg:text-sm xl:text-base disabled:bg-gray-400 disabled:text-gray-200"
+        >
           Contine
         </button>
 

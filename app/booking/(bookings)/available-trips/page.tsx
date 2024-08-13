@@ -1,14 +1,25 @@
 "use client";
 import Image from "next/image";
 import Footer from "@/app/shared/components/footer/footer";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./available-trips.scss";
 import SearchIcon from "@/app/shared/components/icons/search-icon";
 import TripCard from "@/app/shared/components/trip-card/trip-card";
+import { useRouter } from "next/navigation";
 
 export default function availableTrips() {
   const [selectedTab, setselectedTab] = useState("Bus");
   const tabs = ["Bus", "Mini-Bus", "Sedan"];
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const prevPageData: any = localStorage.getItem("firstStep");
+    if (prevPageData == null || prevPageData.length < 1) {
+      router.push("/");
+    }
+  }, []);
+
   return (
     <>
       <main className="-mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] py-10 px-4">
