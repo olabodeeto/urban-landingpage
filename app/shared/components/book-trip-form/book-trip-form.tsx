@@ -47,6 +47,10 @@ export default function BookTripForm() {
     handleValidation();
   }, [userData]);
 
+  useEffect(() => {
+    router.prefetch("/booking/available-trips");
+  }, []);
+
   return (
     <form className="px-2 md:px-3 lg:px-2 w-full mt-8" onSubmit={handleForm}>
       <div className="flex items-start gap-2 w-full">

@@ -5,7 +5,8 @@ type LoginT = {
   email: string;
   password: string;
 };
-export const userLogin = async (payload: LoginT) => {
+
+export const userLogin = async (payload?: LoginT) => {
   try {
     const response: any = await api.post("/login", payload);
     console.log("login response", response);
@@ -15,6 +16,19 @@ export const userLogin = async (payload: LoginT) => {
     } else {
       return response;
     }
+  } catch (error) {
+    return {
+      status: false,
+      error,
+    };
+  }
+};
+
+export const getTrips = async (payload: any) => {
+  try {
+    const response: any = await api.get("/trip", { params: { ...payload } });
+    console.log("trips response", response);
+    return response;
   } catch (error) {
     return {
       status: false,

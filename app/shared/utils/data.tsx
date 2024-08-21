@@ -35,5 +35,5 @@ export const nigeriaStates = [
   { value: "taraba", title: "Taraba" },
   { value: "yobe", title: "Yobe" },
   { value: "zamfara", title: "Zamfara" },
-  { value: "fct", title: "Federal Capital Territory" },
+  { value: "abuja", title: "Federal Capital Territory" },
 ];

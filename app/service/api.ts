@@ -1,10 +1,8 @@
 import axios from "axios";
 import { getStoredAuthToken, removeStoredAuthToken } from "../shared/utils/ls";
 
-const baseurl = "/api";
-
 const api = axios.create({
-  baseURL: baseurl,
+  baseURL: "https://ui62646llb.execute-api.us-east-1.amazonaws.com/prod",
 });
 
 api.interceptors.request.use(
