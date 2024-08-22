@@ -190,6 +190,10 @@ select {
   /* border: 1px solid red; */
 }
 
+input {
+  padding-left: 0.4rem;
+}
+
 /* p {
   color: white;
   font-family: "arial";
