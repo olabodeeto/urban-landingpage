@@ -99,27 +99,26 @@ export default function BookTripForm() {
             </div>
             <div className="w-1/2">
               <label className="text-base font-light">Travel Date</label>
-              <div className="mt-3">
-                <input
+              <div className="mt-3 w-full">
+                <Input
                   type="date"
                   value={userData.travelDate}
                   placeholder="Type in here…"
-                  min={today}
-                  // sx={{
-                  //   height: "46px",
-                  //   fontSize: "0.8rem",
-                  //   "--Input-focusedInset": "var(--any, )",
-                  //   "--Input-focusedThickness": "0.25px",
-                  //   "--Input-focusedHighlight": "#15560c",
-                  //   "&:focus-outside": {
-                  //     borderColor: "#000000",
-                  //   },
-                  //   ":focus": "#000",
-                  // }}
+                  // min={today}
+                  sx={{
+                    height: "46px",
+                    fontSize: "0.8rem",
+                    "--Input-focusedInset": "var(--any, )",
+                    "--Input-focusedThickness": "0.25px",
+                    "--Input-focusedHighlight": "#15560c",
+                    "&:focus-outside": {
+                      borderColor: "#000000",
+                    },
+                    ":focus": "#000",
+                  }}
                   onChange={(e: any) =>
                     handleChange(e.target.value, "travelDate")
                   }
-                  className="w-full border border-gray-300 rounded-lg px-2 text-sm focus:border-gray-300"
                 />
               </div>
             </div>
