@@ -1,11 +1,12 @@
 import axios from "axios";
 import { getStoredAuthToken, removeStoredAuthToken } from "../shared/utils/ls";
+import { toast } from "react-toastify";
+import { throwError } from "rxjs";
 
-const api = axios.create({
+const http = axios.create({
   baseURL: "https://ui62646llb.execute-api.us-east-1.amazonaws.com/prod",
 });
-
-api.interceptors.request.use(
+http.interceptors.request.use(
   (request) => {
     //@ts-ignore
     request.headers = {
@@ -23,7 +24,7 @@ api.interceptors.request.use(
   }
 );
 
-api.interceptors.response.use(
+http.interceptors.response.use(
   (response) => {
     console.log("response received");
     if (response?.data?.token) {
@@ -37,9 +38,18 @@ api.interceptors.response.use(
       removeStoredAuthToken();
       window.location.assign("/login");
     }
-    return error?.response.data;
+    throw new Error(error?.response.data.error);
+    // return error?.response.data;
     // return Promise.reject(error);
   }
 );
 
-export default api;
+export const handleError = (errorResponse: any) => {
+  const unExpectedError = errorResponse?.response?.status >= 500;
+  if (unExpectedError) {
+    toast.error("An unexpected error occured.");
+  }
+  return throwError(() => errorResponse);
+};
+
+export default http;

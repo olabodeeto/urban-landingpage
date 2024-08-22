@@ -8,28 +8,42 @@ import TripCard from "@/app/shared/components/trip-card/trip-card";
 import { useRouter } from "next/navigation";
 import { getTrips } from "@/app/service/auth.service";
 import Spinner from "@/app/shared/components/Spinner";
+import { toast } from "react-toastify";
+import { ITrips } from "@/app/shared/models/trips.model";
 
 export default function availableTrips() {
   const [isloading, setisloading] = useState(false);
-  const [allTrips, setallTrips] = useState<any>([]);
+  const [allTrips, setallTrips] = useState<ITrips>([]);
   const [selectedTab, setselectedTab] = useState("Bus");
   const [payload, setpayload] = useState<any>({});
   const tabs = ["Bus", "Mini-Bus", "Sedan"];
 
   const router = useRouter();
 
-  const getAvailableTrips = async (payload?: any) => {
-    if (isloading) return;
-    setisloading(true);
-    const response = await getTrips(payload);
-    if (response.data.length) {
-      setallTrips(response.data);
-      setisloading(false);
-    } else {
-      setisloading(false);
-      setallTrips([]);
-    }
-    console.log("trips===>", response);
+  const fetchTrips = (payload?: any) => {
+    const queryApi = () => {
+      setisloading(true);
+      getTrips(payload).subscribe({
+        next: (res) => {
+          if (res) {
+            console.log("===>trips", res);
+            setallTrips(res.data);
+            setisloading(false);
+          } else {
+            toast.info(res.error);
+          }
+        },
+        error: (msg) => {
+          toast.error(msg.message);
+          setisloading(false);
+        },
+        complete: () => {
+          setisloading(false);
+        },
+      });
+    };
+
+    queryApi();
   };
 
   useEffect(() => {
@@ -51,7 +65,7 @@ export default function availableTrips() {
         vehicleType: "bus",
       };
       setpayload(lsPayload);
-      getAvailableTrips(lsPayload);
+      fetchTrips(lsPayload);
     }
   }, []);
 
@@ -79,7 +93,7 @@ export default function availableTrips() {
                   } py-2 px-5 2xl:py-3 2xl:px-6 2xl:text-xl font-light rounded-full text-center bg-gray-200 cursor-pointer border hover:border-urban-green`}
                   onClick={() => {
                     setselectedTab(tab);
-                    getAvailableTrips({ ...payload, ["vehicleType"]: tab });
+                    fetchTrips({ ...payload, ["vehicleType"]: tab });
                   }}
                 >
                   {tab}
@@ -90,12 +104,20 @@ export default function availableTrips() {
               {isloading ? (
                 <Spinner isLoading size={60} />
               ) : (
-                <div className="trips-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-3 lg:gap-x-10">
-                  {allTrips.map((obj: any, index: number) => (
-                    <div key={index + 1}>
-                      <TripCard />
+                <div>
+                  {allTrips.length ? (
+                    <div className="trips-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-3 lg:gap-x-10">
+                      {allTrips.map((obj: any, index: number) => (
+                        <div key={index + 1}>
+                          <TripCard data={obj} />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  ) : (
+                    <div className="w-full min-h-60 flex justify-center items-center">
+                      <h1>No available trip</h1>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
