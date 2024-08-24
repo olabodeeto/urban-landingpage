@@ -21,7 +21,7 @@ import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/s
 import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
 
 export default function PassengerDetails() {
-  const noPassengers = [1, 2];
+  const [noPassengers, setnoPassengers] = useState<number[]>([]);
   const [showSeatModal, setshowSeatModal] = useState(false);
   const [showManifestModal, setshowManifestModal] = useState(false);
   const [passengers, setpassengers] = useState<any[]>(
@@ -55,16 +55,50 @@ export default function PassengerDetails() {
   );
 
   const handleSubmit = () => {
-    setshowManifestModal(true);
-    // router.push("./payment");
+    if (passengers[0].firstName.length > 2) {
+      setshowManifestModal(true);
+    }
   };
+
+  function generateArray(count: number) {
+    return Array.from({ length: count }, (_, index) => index + 1);
+  }
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   useEffect(() => {
-    // console.log("===>", passengers);
-  }, [passengers]);
+    const prevPageData: any = localStorage.getItem("firstStep");
+    const step3Data: any = localStorage.getItem("thirdStep");
+    const thirdStep = JSON.parse(step3Data);
+    if (prevPageData == null || prevPageData.length < 1) {
+      router.push("/");
+    } else {
+      const firstStep = JSON.parse(prevPageData);
+      const { numberOfPassagers } = firstStep;
+      const arrayPassgrs = generateArray(numberOfPassagers);
+      // console.log("===>", arrayPassgrs);
+      if (step3Data !== null) {
+        setpassengers(thirdStep.passagers);
+      } else {
+        const emptyData = arrayPassgrs.map((obj) => {
+          return {
+            title: "",
+            email: "",
+            firstName: "",
+            surname: "",
+            phoneNumber: "",
+            seat: "",
+            extraLuggage: 0,
+          };
+        });
+        setpassengers(emptyData);
+      }
+
+      // setnoPassengers(arrayPassgrs);
+    }
+  }, []);
 
   return (
     <>
@@ -85,7 +119,7 @@ export default function PassengerDetails() {
                   <div key={index} className="mb-4">
                     <PassengerAccordion
                       sn={index + 1}
-                      passengerName={"Tade Ogunbade"}
+                      passengerName={`${obj.firstName} ${obj.surname}`}
                       seatNumber="B1"
                     >
                       <div
@@ -269,7 +303,7 @@ export default function PassengerDetails() {
 
                 <div className="mt-10 mb-10">
                   <button
-                    className="py-3 rounded-md bg-urban-green text-white px-10"
+                    className="py-3 rounded-md disabled:bg-gray-300 bg-urban-green text-white px-10"
                     onClick={handleSubmit}
                   >
                     Continue
@@ -317,6 +351,7 @@ export default function PassengerDetails() {
         <TravellersManifestDialog
           isOpen={showManifestModal}
           setisopen={setshowManifestModal}
+          data={passengers}
         />
       )}
     </>

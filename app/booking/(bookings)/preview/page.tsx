@@ -18,32 +18,13 @@ import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
 import HotelCard from "@/app/shared/components/hotel-card/hotel-card";
 import RecommendedHotel from "./recommended-hotels/recommended-hotel";
+import { formatDate } from "@/app/shared/utils/utils";
 
 export default function PassengerDetails() {
-  const noPassengers = [1, 2];
-  const [showSeatModal, setshowSeatModal] = useState(false);
-  const [passengers, setpassengers] = useState<any[]>(
-    noPassengers.map((obj) => {
-      return {
-        title: "",
-        email: "",
-        firstName: "",
-        surname: "",
-        phoneNumber: "",
-        seat: "",
-        extraLuggage: 0,
-      };
-    })
-  );
-  const [currentPassager, setcurrentPassager] = useState<any>(null);
+  const [passengers, setpassengers] = useState<any[]>();
+  const [tripDetails, settripDetails] = useState<any>({});
+  const [noOfPassanger, setnoOfPassanger] = useState(0);
   const router = useRouter();
-
-  const handleChange = (index: number, fieldName: string, value: any) => {
-    const tempArr = [...passengers];
-    const temcurrentObj = { ...passengers[index], [fieldName]: value };
-    tempArr[index] = temcurrentObj;
-    setpassengers(tempArr);
-  };
 
   const LazyMap = dynamic(
     () => import("@/app/shared/components/map-with-path/map-with-path"),
@@ -64,8 +45,45 @@ export default function PassengerDetails() {
   }, []);
 
   useEffect(() => {
-    // console.log("===>", passengers);
-  }, [passengers]);
+    const step1Data: any = localStorage.getItem("firstStep");
+    const step2Data: any = localStorage.getItem("secondStep");
+    const step3Data: any = localStorage.getItem("thirdStep");
+    if (
+      step1Data == null ||
+      step1Data.length < 1 ||
+      step2Data == null ||
+      step3Data == null
+    ) {
+      router.push("/");
+    } else {
+      const firstStep = JSON.parse(step1Data);
+      const secondStep = JSON.parse(step2Data);
+      const thirdStep = JSON.parse(step3Data);
+      setpassengers(thirdStep.passagers);
+      const {
+        departureCity,
+        destinationCity,
+        tripCode,
+        fare,
+        departureTime,
+        departureDate,
+        vehicleType,
+      } = secondStep;
+      const tripdetails = {
+        departureCity,
+        destinationCity,
+        tripCode,
+        fare,
+        departureTime,
+        departureDate,
+        vehicleType,
+      };
+      const { numberOfPassagers } = firstStep;
+      settripDetails(tripdetails);
+      setnoOfPassanger(parseInt(numberOfPassagers));
+      // console.log("===>", step1Data);
+    }
+  }, []);
 
   return (
     <>
@@ -93,70 +111,81 @@ export default function PassengerDetails() {
                       data-aos-duration="800"
                     >
                       <div className="w-full mt-6 min-h-40">
-                        <h2 className="px-2">{1}. Passenger Details</h2>
-                        <div className="mt-4 font-light">
-                          <div className="w-full px-2 py-1 flex items-center justify-between">
-                            <span className="block w-1/2 text-gray-400">
-                              Passenger’s Name
-                            </span>
-                            <span className="block w-1/2">Hassan Tunmise</span>
-                          </div>
+                        {passengers?.map((obj: any, index: number) => (
+                          <div key={index} className="mb-4">
+                            <h2 className="px-2">
+                              {index + 1}. Passenger Details
+                            </h2>
+                            <div className="mt-4 font-light">
+                              <div className="w-full px-2 py-1 flex items-center justify-between">
+                                <span className="block w-1/2 text-gray-400">
+                                  Passenger’s Name
+                                </span>
+                                <span className="block w-1/2">
+                                  {obj.firstName} {obj.surname}
+                                </span>
+                              </div>
 
-                          <div className="w-full px-2 py-1 flex items-center justify-between">
-                            <span className="block w-1/2 text-gray-400">
-                              Phone Number
-                            </span>
-                            <span className="block w-1/2">09038726543</span>
-                          </div>
+                              <div className="w-full px-2 py-1 flex items-center justify-between">
+                                <span className="block w-1/2 text-gray-400">
+                                  Phone Number
+                                </span>
+                                <span className="block w-1/2">
+                                  {obj.phoneNumber}
+                                </span>
+                              </div>
 
-                          <div className="w-full px-2 py-1 flex items-center justify-between">
-                            <span className="block w-1/2 text-gray-400">
-                              Seat Number
-                            </span>
-                            <span className="block w-1/2">A1</span>
-                          </div>
+                              <div className="w-full px-2 py-1 flex items-center justify-between">
+                                <span className="block w-1/2 text-gray-400">
+                                  Seat Number
+                                </span>
+                                <span className="block w-1/2">{obj.seat}</span>
+                              </div>
 
-                          <div className="w-full px-2 py-1 flex items-center justify-between">
-                            <span className="block w-1/2 text-gray-400">
-                              Extra Luggage size
-                            </span>
-                            <span className="block w-1/2">--</span>
+                              <div className="w-full px-2 py-1 flex items-center justify-between">
+                                <span className="block w-1/2 text-gray-400">
+                                  Extra Luggage size
+                                </span>
+                                <span className="block w-1/2">--</span>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        ))}
+
                         <div className="mt-4">
                           <h2 className="text-urban-green text-xl">
                             Trip Details
                           </h2>
                           <div className="p-2 bg-[#036E030F] mt-6 font-light flex flex-col gap-y-2">
-                            <p>Vehicle Type: Bus</p>
+                            <p>Vehicle Type: {tripDetails.vehicleType}</p>
                             <p>
                               Trip Code:{" "}
                               <span className="font-bold text-urban-green">
-                                ABJSAG
+                                {tripDetails.tripCode}
                               </span>
                             </p>
                             <p>
                               Departure Time:{" "}
                               <span className="font-bold text-urban-green">
-                                08:00 AM
+                                {tripDetails.departureTime}
                               </span>
                             </p>
                             <p>
                               Departure Date:{" "}
                               <span className="font-bold text-urban-green">
-                                09/06/2024
+                                {formatDate(tripDetails.departureDate)}
                               </span>
                             </p>
                             <p>
                               Departure City:{" "}
                               <span className="font-bold text-urban-green">
-                                Lagos
+                                {tripDetails.departureCity}
                               </span>
                             </p>
                             <p>
                               Destination City:{" "}
                               <span className="font-bold text-urban-green">
-                                Abuja
+                                {tripDetails.destinationCity}
                               </span>
                             </p>
                           </div>
@@ -171,14 +200,18 @@ export default function PassengerDetails() {
                               <span className="block w-1/2 text-gray-400">
                                 Number of Passenger
                               </span>
-                              <span className="block w-1/2">1</span>
+                              <span className="block w-1/2">
+                                {noOfPassanger}
+                              </span>
                             </div>
 
                             <div className="w-full px-2 py-1 flex items-center justify-between">
                               <span className="block w-1/2 text-gray-400">
                                 Price per seats
                               </span>
-                              <span className="block w-1/2">N12,500.00</span>
+                              <span className="block w-1/2">
+                                N{tripDetails.fare}
+                              </span>
                             </div>
 
                             <div className="w-full px-2 py-1 flex items-center justify-between">
@@ -192,7 +225,7 @@ export default function PassengerDetails() {
                               <span className="block w-1/2 text-gray-400">
                                 VAT
                               </span>
-                              <span className="block w-1/2">N1,500.00</span>
+                              <span className="block w-1/2">N0</span>
                             </div>
 
                             <div className="w-full px-2 py-1 flex items-center justify-between">
@@ -200,7 +233,7 @@ export default function PassengerDetails() {
                                 Total Amount
                               </span>
                               <span className="block w-1/2 font-semibold">
-                                N16,500.00
+                                N{tripDetails.fare * noOfPassanger}
                               </span>
                             </div>
                             <div className="mt-4 flex items-center gap-x-1">
@@ -253,15 +286,6 @@ export default function PassengerDetails() {
       </main>
 
       <Footer />
-
-      {showSeatModal && (
-        <SeatArrangementDialog
-          isOpen={showSeatModal}
-          setisopen={setshowSeatModal}
-          handleSelect={handleChange}
-          currentPassengerIndex={currentPassager}
-        />
-      )}
     </>
   );
 }

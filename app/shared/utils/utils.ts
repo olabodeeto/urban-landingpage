@@ -49,3 +49,15 @@ export function truncateString(str: string, maxLength: number) {
     return str;
   }
 }
+
+export function formatDate(inputDate: any) {
+  const date = new Date(inputDate);
+
+  // Get day, month, and year
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+  const year = date.getUTCFullYear();
+
+  // Format the date as "MM/DD/YYYY"
+  return `${month}/${day}/${year}`;
+}

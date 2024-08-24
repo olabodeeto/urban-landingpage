@@ -36,6 +36,8 @@ export default function TripCard({ data }: PropT) {
     state: parkState,
     city: parkCity,
     fullAddress: parkAddr,
+    longitude,
+    latitude,
   } = park;
 
   const router = useRouter();
@@ -48,6 +50,22 @@ export default function TripCard({ data }: PropT) {
   const id = open ? "simple-popper" : undefined;
 
   const handleBookTrip = () => {
+    const secondStep = {
+      tripCode,
+      parkAddr,
+      parkCity,
+      parkState,
+      parkname,
+      fare,
+      vehicleType,
+      departureCity: parkCity,
+      destinationCity: endCity,
+      departureTime: time,
+      departureDate: date,
+      lat: "",
+      long: "",
+    };
+    localStorage.setItem("secondStep", JSON.stringify(secondStep));
     router.push("/booking/passenger-details");
   };
 

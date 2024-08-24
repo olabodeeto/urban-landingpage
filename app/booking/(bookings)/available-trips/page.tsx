@@ -26,7 +26,7 @@ export default function availableTrips() {
       getTrips(payload).subscribe({
         next: (res) => {
           if (res) {
-            console.log("===>trips", res);
+            // console.log("===>trips", res);
             setallTrips(res.data);
             setisloading(false);
           } else {
