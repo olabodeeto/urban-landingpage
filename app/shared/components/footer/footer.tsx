@@ -8,7 +8,7 @@ export default function Footer() {
 
   const currentYear = today.getFullYear();
   return (
-    <footer className=" bg-urban-black w-full">
+    <footer className="w-full bg-footerBg">
       <div className="pt-28">
         {/* ===== desktop footer ================ */}
         <div className="lg:w-[85%]  m-auto hidden lg:block">

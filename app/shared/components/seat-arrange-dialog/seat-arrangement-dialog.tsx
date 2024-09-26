@@ -100,6 +100,9 @@ export default function SeatArrangementDialog({
           </h3>
           <div className="mt-2 px-2">
             <div className="p-2">
+              {/* <div className="py-3 rounded-lg bg-slate-200 text-center">
+                Driver's seat
+              </div> */}
               <div className="bg-slate-100 min-h-60 p-4 grid grid-cols-2 lg:grid-cols-4 gap-2">
                 {seats}
               </div>

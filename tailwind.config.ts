@@ -36,6 +36,7 @@ const config: Config = {
         hotelhero: "url('/assets/hotel-hero.svg')",
         bookingdetailsbg: "url('/assets/bookingdetailsbg.png')",
         cityhero: "url('/assets/cityhero.svg')",
+        footerBg: "url('/assets/footerBg.svg')",
       },
     },
   },

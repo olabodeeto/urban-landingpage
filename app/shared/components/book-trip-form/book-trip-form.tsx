@@ -12,7 +12,7 @@ const initialData = {
   departureState: "abia",
   destinationState: "lagos",
   travelDate: "",
-  numberOfPassagers: 5,
+  numberOfPassagers: 1,
 };
 export default function BookTripForm() {
   const [userData, setuserData] = useState(initialData);
