@@ -2,27 +2,27 @@ import router from "next/router";
 import React, { useEffect, useRef } from "react";
 
 type PropT = {
-  settravelersPage: Function;
-  setisTravelsDropOpen: Function;
-  isTravelsDropOpen: boolean;
+  setCompanyPage: Function;
+  setisCompanyDropOpen: Function;
+  isCompanyDropOpen: boolean;
 };
 
-export default function TravelsDesktopDrop({
-  setisTravelsDropOpen,
-  settravelersPage,
-  isTravelsDropOpen,
+export default function CompanyDesktopDrop({
+  setisCompanyDropOpen,
+  setCompanyPage,
+  isCompanyDropOpen,
 }: PropT) {
-  const modalRef: any = useRef(null);
+  const modalRefcard: any = useRef(null);
 
   const handleOutsideClick = (event: any) => {
     // Check if the click is outside the modal
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      setisTravelsDropOpen(false); // Close the modal
+    if (modalRefcard.current && !modalRefcard.current.contains(event.target)) {
+      setisCompanyDropOpen(false); // Close the modal
     }
   };
 
   useEffect(() => {
-    if (isTravelsDropOpen) {
+    if (isCompanyDropOpen) {
       // Add event listener when modal is open
       document.addEventListener("mousedown", handleOutsideClick);
     } else {
@@ -34,12 +34,12 @@ export default function TravelsDesktopDrop({
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [isTravelsDropOpen]);
+  }, [isCompanyDropOpen]);
 
-  if (!isTravelsDropOpen) return null; // Return null if modal is not open
+  if (!isCompanyDropOpen) return null; // Return null if modal is not open
 
   return (
-    <div className="travelersItems-container-t py-4" ref={modalRef}>
+    <div className="travelersItems-container-comp py-4" ref={modalRefcard}>
       <div className="mb-4">
         <hr />
       </div>
@@ -48,9 +48,9 @@ export default function TravelsDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
+              setCompanyPage("Urban Card");
               console.log("nav called");
-              setisTravelsDropOpen(!isTravelsDropOpen);
+              setisCompanyDropOpen(!isCompanyDropOpen);
               router.push("/urban-card");
             }}
           >
@@ -64,9 +64,9 @@ export default function TravelsDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
+              setCompanyPage("Urban Card");
               console.log("nav called");
-              setisTravelsDropOpen(!isTravelsDropOpen);
+              setisCompanyDropOpen(!isCompanyDropOpen);
               router.push("/urban-card");
             }}
           >
@@ -80,8 +80,9 @@ export default function TravelsDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
-              setisTravelsDropOpen(!isTravelsDropOpen);
+              setCompanyPage("Urban Card");
+              console.log("nav called");
+              setisCompanyDropOpen(!isCompanyDropOpen);
               router.push("/urban-card");
             }}
           >
@@ -97,8 +98,9 @@ export default function TravelsDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
-              setisTravelsDropOpen(!isTravelsDropOpen);
+              setCompanyPage("Urban Card");
+              console.log("nav called");
+              setisCompanyDropOpen(!isCompanyDropOpen);
               router.push("/urban-card");
             }}
           >
@@ -112,8 +114,9 @@ export default function TravelsDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
-              setisTravelsDropOpen(!isTravelsDropOpen);
+              setCompanyPage("Urban Card");
+              console.log("nav called");
+              setisCompanyDropOpen(!isCompanyDropOpen);
               router.push("/urban-card");
             }}
           >

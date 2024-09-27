@@ -13,6 +13,8 @@ import Link from "next/link";
 import LoginDialog from "../login-dialog/login-dialog";
 import RegisterDialog from "../register-dialog/register-dialog";
 import TravelsDesktopDrop from "../travels-desktop-drop/travels-desktop-drop";
+import CardDesktopDrop from "../card-desktop-drop copy/card-desktop-drop";
+import CompanyDesktopDrop from "../company-desktop-drop/company-desktop-drop";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
@@ -113,7 +115,7 @@ export default function Navbar({ setMobileVisibility }: any) {
         </>
       ),
     },
-    { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
+    { id: 6, title: "Travels", path: "/travelers-club" },
     { id: 3, title: "Card", path: "/card" },
     // {
     //   id: 2,
@@ -229,28 +231,30 @@ export default function Navbar({ setMobileVisibility }: any) {
                 <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
                   {tabsData.map((obj, index: number) => (
                     <div key={index}>
-                      {obj.title !== "Traveler’s Kit" &&
+                      {obj.title !== "Travels" &&
                         obj.title !== "Card" &&
                         obj.title !== "Company" && (
-                          <Link href={obj.path}>
-                            <li
-                              onClick={() => {
-                                setselectedTab(obj.title);
-                                // router.push(obj.path);
-                              }}
-                              key={index}
-                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
-                                pathname === obj.path
-                                  ? "font-semibold text-urban-green underline"
-                                  : "font-light text-urban-black"
-                              }`}
-                            >
-                              {obj.title}
-                            </li>
-                          </Link>
+                          <>
+                            <Link href={obj.path}>
+                              <li
+                                onClick={() => {
+                                  setselectedTab(obj.title);
+                                  // router.push(obj.path);
+                                }}
+                                key={index}
+                                className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
+                                  pathname === obj.path
+                                    ? "font-semibold text-urban-green underline"
+                                    : "font-light text-urban-black"
+                                }`}
+                              >
+                                {obj.title}
+                              </li>
+                            </Link>
+                          </>
                         )}
 
-                      {obj.title == "Traveler’s Kit" && (
+                      {obj.title == "Travels" && (
                         <>
                           <div className="travelersClub-tab">
                             <div
@@ -265,7 +269,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                               }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
-                              Traveles
+                              Travels
                             </div>
                             <div
                               className="arrow-down"
@@ -280,41 +284,6 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
 
                           {isTravelsDropOpen && (
-                            // <div className="travelersItems-container">
-                            //   <div
-                            //     className="item font-creato font-light p-2"
-                            //     onClick={() => {
-                            //       settravelersPage("Urban Card");
-                            //       console.log("nav called");
-                            //       setisTravelsDropOpen(!isTravelsDropOpen);
-                            //       router.push("/urban-card");
-                            //     }}
-                            //   >
-                            //     Urban Card
-                            //   </div>
-
-                            //   <div
-                            //     className="item font-creato font-light p-2"
-                            //     onClick={() => {
-                            //       settravelersPage("Traveler's Kit");
-                            //       setisTravelsDropOpen(!isTravelsDropOpen);
-                            //       console.log("nav called");
-                            //       router.push("/travelers-kit");
-                            //     }}
-                            //   >
-                            //     Traveler's kit
-                            //   </div>
-                            //   <div
-                            //     className="item font-creato font-light p-2"
-                            //     onClick={() => {
-                            //       settravelersPage("Hotels");
-                            //       setisTravelsDropOpen(!isTravelsDropOpen);
-                            //       router.push("/hotels");
-                            //     }}
-                            //   >
-                            //     Hotels
-                            //   </div>
-                            // </div>
                             <TravelsDesktopDrop
                               isTravelsDropOpen={isTravelsDropOpen}
                               setisTravelsDropOpen={setisTravelsDropOpen}
@@ -354,40 +323,45 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
 
                           {isCardDropOpen && (
-                            <div className="travelersItems-container">
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Urban Card");
-                                  setisCardsDropOpen(!isTravelsDropOpen);
-                                  router.push("/urban-card");
-                                }}
-                              >
-                                Urban Card
-                              </div>
+                            // <div className="travelersItems-container">
+                            //   <div
+                            //     className="item font-creato font-light p-2"
+                            //     onClick={() => {
+                            //       settravelersPage("Urban Card");
+                            //       setisCardsDropOpen(!isTravelsDropOpen);
+                            //       router.push("/urban-card");
+                            //     }}
+                            //   >
+                            //     Urban Card
+                            //   </div>
 
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Traveler's Kit");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  console.log("nav called");
-                                  router.push("/travelers-kit");
-                                }}
-                              >
-                                Traveler's kit
-                              </div>
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Hotels");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("/hotels");
-                                }}
-                              >
-                                Hotels
-                              </div>
-                            </div>
+                            //   <div
+                            //     className="item font-creato font-light p-2"
+                            //     onClick={() => {
+                            //       settravelersPage("Traveler's Kit");
+                            //       setisTravelsDropOpen(!isTravelsDropOpen);
+                            //       console.log("nav called");
+                            //       router.push("/travelers-kit");
+                            //     }}
+                            //   >
+                            //     Traveler's kit
+                            //   </div>
+                            //   <div
+                            //     className="item font-creato font-light p-2"
+                            //     onClick={() => {
+                            //       settravelersPage("Hotels");
+                            //       setisTravelsDropOpen(!isTravelsDropOpen);
+                            //       router.push("/hotels");
+                            //     }}
+                            //   >
+                            //     Hotels
+                            //   </div>
+                            // </div>
+                            <CardDesktopDrop
+                              isCardDropOpen={isCardDropOpen}
+                              setCardPage={() => ""}
+                              setisCardDropOpen={setisCardsDropOpen}
+                            />
                           )}
                         </>
                       )}
@@ -422,41 +396,11 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
 
                           {isCompanyDropOpen && (
-                            <div className="travelersItems-container">
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Urban Card");
-                                  console.log("nav called");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("/urban-card");
-                                }}
-                              >
-                                Urban Card
-                              </div>
-
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Traveler's Kit");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  console.log("nav called");
-                                  router.push("/travelers-kit");
-                                }}
-                              >
-                                Traveler's kit
-                              </div>
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Hotels");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("/hotels");
-                                }}
-                              >
-                                Hotels
-                              </div>
-                            </div>
+                            <CompanyDesktopDrop
+                              isCompanyDropOpen={isCompanyDropOpen}
+                              setisCompanyDropOpen={setisCompanyDropOpen}
+                              setCompanyPage={() => ""}
+                            />
                           )}
                         </>
                       )}
