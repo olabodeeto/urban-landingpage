@@ -1,4 +1,4 @@
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
 type PropT = {
@@ -13,6 +13,8 @@ export default function CompanyDesktopDrop({
   isCompanyDropOpen,
 }: PropT) {
   const modalRefcard: any = useRef(null);
+
+  const router = useRouter();
 
   const handleOutsideClick = (event: any) => {
     // Check if the click is outside the modal
@@ -51,13 +53,13 @@ export default function CompanyDesktopDrop({
               setCompanyPage("Urban Card");
               console.log("nav called");
               setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
+              router.push("/about");
             }}
           >
-            <img src="./assets/parkIcon.svg" alt="" />
+            <img src="./assets/bulb.svg" alt="" className="mt-1" />
             <div>
-              <h4 className="font-bold">Park</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <h4 className="font-bold">About Us</h4>
+              <p className="text-sm">Learn how Urban is reimagining travel.</p>
             </div>
           </div>
 
@@ -70,10 +72,10 @@ export default function CompanyDesktopDrop({
               router.push("/urban-card");
             }}
           >
-            <img src="./assets/fleetIcon.svg" alt="" />
+            <img src="./assets/partnerIcon.svg" alt="" className="mt-1" />
             <div>
-              <h4 className="font-bold">Fleet</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <h4 className="font-bold">Partners</h4>
+              <p className="text-sm">Enabling linkages across boundaries.</p>
             </div>
           </div>
 
@@ -86,17 +88,35 @@ export default function CompanyDesktopDrop({
               router.push("/urban-card");
             }}
           >
-            <img src="./assets/providersIcon.svg" alt="" />
+            <img src="./assets/careerIcon.svg" alt="" className="mt-1" />
             <div>
-              <h4 className="font-bold">Provider’s</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <h4 className="font-bold">Careers</h4>
+              <p className="text-sm">
+                Join our mission-driven culture and redefine travel.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
+            onClick={() => {
+              setCompanyPage("Urban Card");
+              console.log("nav called");
+              setisCompanyDropOpen(!isCompanyDropOpen);
+              router.push("/urban-card");
+            }}
+          >
+            <img src="./assets/contactIcon.svg" alt="" className="mt-1" />
+            <div>
+              <h4 className="font-bold">Contact Us</h4>
+              <p className="text-sm">Get in touch with the Urban team.</p>
             </div>
           </div>
         </div>
 
         <div className="w-1/2 flex flex-col gap-4">
           <div
-            className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
+            className="item font-creato font-light flex flex-row gap-2 items-start p-2"
             onClick={() => {
               setCompanyPage("Urban Card");
               console.log("nav called");
@@ -104,26 +124,75 @@ export default function CompanyDesktopDrop({
               router.push("/urban-card");
             }}
           >
-            <img src="./assets/travelersIcon.svg" alt="" />
+            <img src="./assets/resourceIcon.svg" alt="" className="mt-1" />
             <div>
-              <h4 className="font-bold">Traveler’s Club</h4>
-              <p className="text-sm">Manage your park at one glance</p>
-            </div>
-          </div>
+              <h4 className="font-bold">Resources</h4>
+              <p className="text-sm">Learn how Urban is reimagining travel.</p>
 
-          <div
-            className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
-            onClick={() => {
-              setCompanyPage("Urban Card");
-              console.log("nav called");
-              setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
-            }}
-          >
-            <img src="./assets/travelerskit.svg" alt="" />
-            <div>
-              <h4 className="font-bold">Traveler’s Kit</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <div className="flex flex-col gap-4 mt-4">
+                <div
+                  className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
+                  onClick={() => {
+                    setCompanyPage("Urban Card");
+                    setisCompanyDropOpen(!isCompanyDropOpen);
+                    router.push("/urban-card");
+                  }}
+                >
+                  <img src="./assets/blogIcon.svg" alt="" className="mt-1" />
+                  <div>
+                    <h4 className="text-sm font-creato font-medium">Blog</h4>
+                    <p className="text-sm">
+                      Check out our top posts for personal and business travel.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
+                  onClick={() => {
+                    setCompanyPage("Urban Card");
+                    setisCompanyDropOpen(!isCompanyDropOpen);
+                    router.push("/urban-card");
+                  }}
+                >
+                  <img
+                    src="./assets/glossaryIcon.svg"
+                    alt=""
+                    className="mt-1"
+                  />
+                  <div>
+                    <h4 className="text-sm font-creato font-medium">
+                      Glossary
+                    </h4>
+                    <p className="text-sm">
+                      Learn the language of personal and business travel.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
+                  onClick={() => {
+                    setCompanyPage("Urban Card");
+                    setisCompanyDropOpen(!isCompanyDropOpen);
+                    router.push("/urban-card");
+                  }}
+                >
+                  <img
+                    src="./assets/urbanexpIcon.svg"
+                    alt=""
+                    className="mt-1"
+                  />
+                  <div>
+                    <h4 className="text-sm font-creato font-medium">
+                      Urban Experience Center
+                    </h4>
+                    <p className="text-sm">
+                      Search and visit any of our UEC's near you.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -65,7 +65,7 @@ export default function UrbanCardPage() {
 
             <div className="_cardrigthSide">
               <Image
-                src="/assets/perCard.svg"
+                src="/assets/cardheroo.png"
                 width={840}
                 height={400}
                 alt=""

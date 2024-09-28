@@ -1,4 +1,4 @@
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
 type PropT = {
@@ -12,6 +12,7 @@ export default function TravelsDesktopDrop({
   settravelersPage,
   isTravelsDropOpen,
 }: PropT) {
+  const router = useRouter();
   const modalRef: any = useRef(null);
 
   const handleOutsideClick = (event: any) => {
@@ -49,31 +50,31 @@ export default function TravelsDesktopDrop({
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
               settravelersPage("Urban Card");
-              console.log("nav called");
               setisTravelsDropOpen(!isTravelsDropOpen);
-              router.push("/urban-card");
+              router.push("/park");
             }}
           >
             <img src="./assets/parkIcon.svg" alt="" />
             <div>
               <h4 className="font-bold">Park</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">Join our network of park partners.</p>
             </div>
           </div>
 
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              settravelersPage("Urban Card");
-              console.log("nav called");
+              settravelersPage("fleet");
               setisTravelsDropOpen(!isTravelsDropOpen);
-              router.push("/urban-card");
+              router.push("/fleet");
             }}
           >
             <img src="./assets/fleetIcon.svg" alt="" />
             <div>
               <h4 className="font-bold">Fleet</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">
+                Join our growing community of fleet partners.
+              </p>
             </div>
           </div>
 
@@ -82,13 +83,15 @@ export default function TravelsDesktopDrop({
             onClick={() => {
               settravelersPage("Urban Card");
               setisTravelsDropOpen(!isTravelsDropOpen);
-              router.push("/urban-card");
+              router.push("/agency");
             }}
           >
             <img src="./assets/providersIcon.svg" alt="" />
             <div>
               <h4 className="font-bold">Provider’s</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">
+                Take the Urban wheel and experience a level of driving purity.
+              </p>
             </div>
           </div>
         </div>
@@ -99,13 +102,13 @@ export default function TravelsDesktopDrop({
             onClick={() => {
               settravelersPage("Urban Card");
               setisTravelsDropOpen(!isTravelsDropOpen);
-              router.push("/urban-card");
+              router.push("/travelers-club");
             }}
           >
             <img src="./assets/travelersIcon.svg" alt="" />
             <div>
               <h4 className="font-bold">Traveler’s Club</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">Where to next? Go with Urban.</p>
             </div>
           </div>
 
@@ -114,13 +117,15 @@ export default function TravelsDesktopDrop({
             onClick={() => {
               settravelersPage("Urban Card");
               setisTravelsDropOpen(!isTravelsDropOpen);
-              router.push("/urban-card");
+              router.push("/travelers-kit");
             }}
           >
             <img src="./assets/travelerskit.svg" alt="" />
             <div>
               <h4 className="font-bold">Traveler’s Kit</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">
+                Brilliant travel accessories for every traveler.
+              </p>
             </div>
           </div>
         </div>

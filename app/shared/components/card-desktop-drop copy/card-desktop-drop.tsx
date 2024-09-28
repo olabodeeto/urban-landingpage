@@ -1,4 +1,4 @@
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
 type PropT = {
@@ -13,6 +13,7 @@ export default function CardDesktopDrop({
   isCardDropOpen,
 }: PropT) {
   const modalRefcard: any = useRef(null);
+  const router = useRouter();
 
   const handleOutsideClick = (event: any) => {
     // Check if the click is outside the modal
@@ -57,7 +58,9 @@ export default function CardDesktopDrop({
               <img src="./assets/coopCardIcon.svg" alt="" />
               <div className="-mt-1">
                 <h4 className="font-bold">Corporate Card</h4>
-                <p className="text-sm">Manage your park at one glance</p>
+                <p className="text-sm">
+                  Experience the all-in-one travel and expense platform.
+                </p>
               </div>
             </div>
             <div className="w-4/12">
@@ -78,7 +81,7 @@ export default function CardDesktopDrop({
             <img src="./assets/personalCardIcon.svg" alt="" />
             <div className="-mt-1">
               <h4 className="font-bold">Personal Card</h4>
-              <p className="text-sm">Manage your park at one glance</p>
+              <p className="text-sm">Step out into the world confidently.</p>
             </div>
           </div>
         </div>
