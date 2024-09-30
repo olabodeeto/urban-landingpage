@@ -8,11 +8,12 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import { nigeriaStates } from "../../utils/data";
 import { useRouter } from "next/navigation";
 
+const today = new Date().toISOString().split("T")[0];
 const initialData = {
   departureState: "abia",
   destinationState: "lagos",
-  travelDate: "",
-  numberOfPassagers: 5,
+  travelDate: today,
+  numberOfPassagers: 1,
 };
 export default function BookTripForm() {
   const [userData, setuserData] = useState(initialData);
@@ -30,8 +31,6 @@ export default function BookTripForm() {
       return { ...prev, [field]: value };
     });
   };
-
-  const today = new Date().toISOString().split("T")[0];
 
   const handleValidation = () => {
     const { departureState, destinationState, travelDate, numberOfPassagers } =

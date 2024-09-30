@@ -12,6 +12,9 @@ import "./navbar.scss";
 import Link from "next/link";
 import LoginDialog from "../login-dialog/login-dialog";
 import RegisterDialog from "../register-dialog/register-dialog";
+import TravelsDesktopDrop from "../travels-desktop-drop/travels-desktop-drop";
+import CardDesktopDrop from "../card-desktop-drop copy/card-desktop-drop";
+import CompanyDesktopDrop from "../company-desktop-drop/company-desktop-drop";
 
 export default function Navbar({ setMobileVisibility }: any) {
   const [selectedTab, setselectedTab] = useState("Home");
@@ -19,6 +22,8 @@ export default function Navbar({ setMobileVisibility }: any) {
   const [isFullWidth, setIsFullWidth] = useState(false);
   const [travelersPage, settravelersPage] = useState("Travelers");
   const [isTravelsDropOpen, setisTravelsDropOpen] = useState(false);
+  const [isCardDropOpen, setisCardsDropOpen] = useState(false);
+  const [isCompanyDropOpen, setisCompanyDropOpen] = useState(false);
   const [openModal, setopenModal] = useState(false);
   const [modalName, setmodalName] = useState("");
 
@@ -27,6 +32,63 @@ export default function Navbar({ setMobileVisibility }: any) {
   const pathname = usePathname();
 
   const router = useRouter();
+
+  // const tabsData = [
+  //   {
+  //     id: 1,
+  //     title: "Home",
+  //     path: "/",
+  //     icon: (
+  //       <>
+  //         <svg
+  //           width="24"
+  //           height="24"
+  //           viewBox="0 0 24 24"
+  //           fill="none"
+  //           xmlns="http://www.w3.org/2000/svg"
+  //         >
+  //           <path
+  //             d="M9 16.9999H15M3 14.5999V12.1301C3 10.9814 3 10.407 3.14805 9.87807C3.2792 9.40953 3.49473 8.96886 3.78405 8.57768C4.11067 8.13608 4.56404 7.78346 5.47078 7.07822L8.07078 5.056C9.47608 3.96298 10.1787 3.41648 10.9546 3.2064C11.6392 3.02104 12.3608 3.02104 13.0454 3.2064C13.8213 3.41648 14.5239 3.96299 15.9292 5.056L18.5292 7.07822C19.436 7.78346 19.8893 8.13608 20.2159 8.57768C20.5053 8.96886 20.7208 9.40953 20.8519 9.87807C21 10.407 21 10.9814 21 12.1301V14.5999C21 16.8401 21 17.9603 20.564 18.8159C20.1805 19.5685 19.5686 20.1805 18.816 20.564C17.9603 20.9999 16.8402 20.9999 14.6 20.9999H9.4C7.15979 20.9999 6.03969 20.9999 5.18404 20.564C4.43139 20.1805 3.81947 19.5685 3.43597 18.8159C3 17.9603 3 16.8401 3 14.5999Z"
+  //             stroke="#036E03"
+  //             strokeWidth="2"
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //           />
+  //         </svg>
+  //       </>
+  //     ),
+  //   },
+  //   { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
+  //   { id: 3, title: "Card", path: "/card" },
+  //   {
+  //     id: 2,
+  //     title: "About Us",
+  //     path: "/about",
+  //     icon: (
+  //       <>
+  //         <svg
+  //           width="25"
+  //           height="25"
+  //           viewBox="0 0 25 25"
+  //           fill="none"
+  //           xmlns="http://www.w3.org/2000/svg"
+  //         >
+  //           <path
+  //             d="M13.5 20.366V18.366C13.5 15.6045 11.2614 13.366 8.5 13.366C5.73858 13.366 3.5 15.6045 3.5 18.366V20.366H13.5ZM13.5 20.366H21.5V19.366C21.5 16.4204 19.2614 14.366 16.5 14.366C15.0867 14.366 13.8103 14.9915 12.9009 15.9971M11.5 7.36597C11.5 9.02282 10.1569 10.366 8.5 10.366C6.84315 10.366 5.5 9.02282 5.5 7.36597C5.5 5.70911 6.84315 4.36597 8.5 4.36597C10.1569 4.36597 11.5 5.70911 11.5 7.36597ZM18.5 9.36597C18.5 10.4705 17.6046 11.366 16.5 11.366C15.3954 11.366 14.5 10.4705 14.5 9.36597C14.5 8.2614 15.3954 7.36597 16.5 7.36597C17.6046 7.36597 18.5 8.2614 18.5 9.36597Z"
+  //             stroke="#036E03"
+  //             strokeWidth="2"
+  //             strokeLinecap="round"
+  //             strokeLinejoin="round"
+  //           />
+  //         </svg>
+  //       </>
+  //     ),
+  //   },
+  //   { id: 3, title: "Fleet", path: "/fleet" },
+  //   { id: 4, title: "Park", path: "/park" },
+  //   { id: 5, title: "Agency", path: "/agency" },
+  //   { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
+  // ];
 
   const tabsData = [
     {
@@ -53,34 +115,39 @@ export default function Navbar({ setMobileVisibility }: any) {
         </>
       ),
     },
-    {
-      id: 2,
-      title: "About Us",
-      path: "/about",
-      icon: (
-        <>
-          <svg
-            width="25"
-            height="25"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.5 20.366V18.366C13.5 15.6045 11.2614 13.366 8.5 13.366C5.73858 13.366 3.5 15.6045 3.5 18.366V20.366H13.5ZM13.5 20.366H21.5V19.366C21.5 16.4204 19.2614 14.366 16.5 14.366C15.0867 14.366 13.8103 14.9915 12.9009 15.9971M11.5 7.36597C11.5 9.02282 10.1569 10.366 8.5 10.366C6.84315 10.366 5.5 9.02282 5.5 7.36597C5.5 5.70911 6.84315 4.36597 8.5 4.36597C10.1569 4.36597 11.5 5.70911 11.5 7.36597ZM18.5 9.36597C18.5 10.4705 17.6046 11.366 16.5 11.366C15.3954 11.366 14.5 10.4705 14.5 9.36597C14.5 8.2614 15.3954 7.36597 16.5 7.36597C17.6046 7.36597 18.5 8.2614 18.5 9.36597Z"
-              stroke="#036E03"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </>
-      ),
-    },
-    { id: 3, title: "Fleet", path: "/fleet" },
-    { id: 4, title: "Park", path: "/park" },
-    { id: 5, title: "Agency", path: "/agency" },
-    { id: 6, title: "Traveler’s Club", path: "/travelers-club" },
+    { id: 6, title: "Travels", path: "/travelers-club" },
+    { id: 3, title: "Card", path: "/card" },
+    // {
+    //   id: 2,
+    //   title: "About Us",
+    //   path: "/about",
+    //   icon: (
+    //     <>
+    //       <svg
+    //         width="25"
+    //         height="25"
+    //         viewBox="0 0 25 25"
+    //         fill="none"
+    //         xmlns="http://www.w3.org/2000/svg"
+    //       >
+    //         <path
+    //           d="M13.5 20.366V18.366C13.5 15.6045 11.2614 13.366 8.5 13.366C5.73858 13.366 3.5 15.6045 3.5 18.366V20.366H13.5ZM13.5 20.366H21.5V19.366C21.5 16.4204 19.2614 14.366 16.5 14.366C15.0867 14.366 13.8103 14.9915 12.9009 15.9971M11.5 7.36597C11.5 9.02282 10.1569 10.366 8.5 10.366C6.84315 10.366 5.5 9.02282 5.5 7.36597C5.5 5.70911 6.84315 4.36597 8.5 4.36597C10.1569 4.36597 11.5 5.70911 11.5 7.36597ZM18.5 9.36597C18.5 10.4705 17.6046 11.366 16.5 11.366C15.3954 11.366 14.5 10.4705 14.5 9.36597C14.5 8.2614 15.3954 7.36597 16.5 7.36597C17.6046 7.36597 18.5 8.2614 18.5 9.36597Z"
+    //           stroke="#036E03"
+    //           strokeWidth="2"
+    //           strokeLinecap="round"
+    //           strokeLinejoin="round"
+    //         />
+    //       </svg>
+    //     </>
+    //   ),
+    // },
+    // { id: 3, title: "Fleet", path: "/fleet" },
+    { id: 4, title: "Hotels", path: "/hotels" },
+    // { id: 4, title: "Park", path: "/park" },
+    { id: 4, title: "Merchant", path: "/marchant" },
+    { id: 5, title: "Company", path: "/company" },
+    // { id: 5, title: "Agency", path: "/agency" },
+    // { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
   ];
 
   const dialogRef: any = useRef(null);
@@ -164,26 +231,30 @@ export default function Navbar({ setMobileVisibility }: any) {
                 <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
                   {tabsData.map((obj, index: number) => (
                     <div key={index}>
-                      {obj.title !== "Traveler’s Club" && (
-                        <Link href={obj.path}>
-                          <li
-                            onClick={() => {
-                              setselectedTab(obj.title);
-                              // router.push(obj.path);
-                            }}
-                            key={index}
-                            className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
-                              pathname === obj.path
-                                ? "font-semibold text-urban-green underline"
-                                : "font-light text-urban-black"
-                            }`}
-                          >
-                            {obj.title}
-                          </li>
-                        </Link>
-                      )}
+                      {obj.title !== "Travels" &&
+                        obj.title !== "Card" &&
+                        obj.title !== "Company" && (
+                          <>
+                            <Link href={obj.path}>
+                              <li
+                                onClick={() => {
+                                  setselectedTab(obj.title);
+                                  // router.push(obj.path);
+                                }}
+                                key={index}
+                                className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green navbar-items ${
+                                  pathname === obj.path
+                                    ? "font-semibold text-urban-green underline"
+                                    : "font-light text-urban-black"
+                                }`}
+                              >
+                                {obj.title}
+                              </li>
+                            </Link>
+                          </>
+                        )}
 
-                      {obj.title == "Traveler’s Club" && (
+                      {obj.title == "Travels" && (
                         <>
                           <div className="travelersClub-tab">
                             <div
@@ -198,7 +269,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                               }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
-                              Traveler's club
+                              Travels
                             </div>
                             <div
                               className="arrow-down"
@@ -213,41 +284,88 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
 
                           {isTravelsDropOpen && (
-                            <div className="travelersItems-container">
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Urban Card");
-                                  console.log("nav called");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("/urban-card");
-                                }}
-                              >
-                                Urban Card
-                              </div>
+                            <TravelsDesktopDrop
+                              isTravelsDropOpen={isTravelsDropOpen}
+                              setisTravelsDropOpen={setisTravelsDropOpen}
+                              settravelersPage={settravelersPage}
+                            />
+                          )}
+                        </>
+                      )}
 
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Traveler's Kit");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  console.log("nav called");
-                                  router.push("/travelers-kit");
-                                }}
-                              >
-                                Traveler's kit
-                              </div>
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Hotels");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("/hotels");
-                                }}
-                              >
-                                Hotels
-                              </div>
+                      {obj.title == "Card" && (
+                        <>
+                          <div className="travelersClub-tab">
+                            <div
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === obj.title
+                                  ? "font-semibold text-urban-green underline navbar-items"
+                                  : "font-light text-urban-black navbar-items"
+                              }`}
+                              onClick={() => {
+                                setselectedTab(obj.title);
+                                router.push("/urban-card");
+                              }}
+                            >
+                              Card
                             </div>
+                            <div
+                              className="arrow-down"
+                              onClick={() =>
+                                setisCardsDropOpen(!isCardDropOpen)
+                              }
+                            >
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
+                            </div>
+                          </div>
+
+                          {isCardDropOpen && (
+                            <CardDesktopDrop
+                              isCardDropOpen={isCardDropOpen}
+                              setCardPage={() => ""}
+                              setisCardDropOpen={setisCardsDropOpen}
+                            />
+                          )}
+                        </>
+                      )}
+
+                      {obj.title == "Company" && (
+                        <>
+                          <div className="travelersClub-tab">
+                            <div
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === obj.title
+                                  ? "font-semibold text-urban-green underline navbar-items"
+                                  : "font-light text-urban-black navbar-items"
+                              }`}
+                              onClick={() => {
+                                setselectedTab(obj.title);
+                                router.push(obj.path);
+                              }}
+                            >
+                              {/* {travelersPage?travelersPage: obj.title} */}
+                              Company
+                            </div>
+                            <div
+                              className="arrow-down"
+                              onClick={() =>
+                                setisCompanyDropOpen(!isCompanyDropOpen)
+                              }
+                            >
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
+                            </div>
+                          </div>
+
+                          {isCompanyDropOpen && (
+                            <CompanyDesktopDrop
+                              isCompanyDropOpen={isCompanyDropOpen}
+                              setisCompanyDropOpen={setisCompanyDropOpen}
+                              setCompanyPage={() => ""}
+                            />
                           )}
                         </>
                       )}

@@ -78,7 +78,7 @@ export default function TravelersClubPage() {
                   data-aos-duration="1400"
                 >
                   Exclusive club created by Urban's travel enthusiast for Urban
-                  enthusias
+                  enthusiast
                 </p>
               </div>
 

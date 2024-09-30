@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import "./register-dialog.scss";
+import Link from "next/link";
 
 type PropT = {
   isOpen?: boolean;
@@ -60,36 +61,44 @@ export default function RegisterDialog({ isOpen, setisopen }: PropT) {
               <h2 className="text-xl font-creato font-bold">
                 Register as Fleet Owner
               </h2>
-              <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
-                www.urban.com/fleet
-              </button>
+              <Link href="https://urban.ng" target="_blank">
+                <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
+                  www.urban.ng
+                </button>
+              </Link>
             </div>
 
             <div className="w-full flex flex-col justify-center items-center gap-y-2">
               <h2 className="text-xl font-creato font-bold">
                 Register as Park Owner
               </h2>
-              <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
-                www.urban.com/fleet
-              </button>
+              <Link href="https://urban.ng" target="_blank">
+                <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
+                  www.urban.ng
+                </button>
+              </Link>
             </div>
 
             <div className="w-full flex flex-col justify-center items-center gap-y-2">
               <h2 className="text-xl font-creato font-bold">
                 Register as Park Manager
               </h2>
-              <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
-                www.urban.com/fleet
-              </button>
+              <Link href="https://urban.ng" target="_blank">
+                <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
+                  www.urban.ng
+                </button>
+              </Link>
             </div>
 
             <div className="w-full flex flex-col justify-center items-center gap-y-2">
               <h2 className="text-xl font-creato font-bold">
                 Register as Provider Agency
               </h2>
-              <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
-                www.urban.com/fleet
-              </button>
+              <Link href="https://urban.ng" target="_blank">
+                <button className="text-sm underline bg-[#6cc56c39] py-1 px-4 rounded-md font-light">
+                  www.urban.ng
+                </button>
+              </Link>
             </div>
           </div>
         </div>
