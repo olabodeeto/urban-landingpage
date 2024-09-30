@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { throwError } from "rxjs";
 
 const http = axios.create({
-  baseURL: "https://ui62646llb.execute-api.us-east-1.amazonaws.com/prod",
+  baseURL: "https://seashell-app-lq4vz.ondigitalocean.app",
 });
 http.interceptors.request.use(
   (request) => {

@@ -153,37 +153,56 @@ export default function Footer() {
                 </form>
                 <div className="mt-6 flex items-center gap-2">
                   <div>
-                    <Image
-                      src="/assets/linkedicon.svg"
-                      width={16}
-                      height={16}
-                      alt=""
-                    />
+                    <Link href="">
+                      <Image
+                        src="/assets/linkedicon.svg"
+                        width={16}
+                        height={16}
+                        alt=""
+                      />
+                    </Link>
                   </div>
 
                   <div>
-                    <Image
-                      src="/assets/twittericon.svg"
-                      width={16}
-                      height={16}
-                      alt=""
-                    />
+                    <Link
+                      href="https://x.com/hi_urbannative?s=21&t=GILaAZx6HwscHlqHOkmGSQ"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/assets/twittericon.svg"
+                        width={16}
+                        height={16}
+                        alt=""
+                      />
+                    </Link>
                   </div>
                   <div>
-                    <Image
-                      src="/assets/fbicon.svg"
-                      width={16}
-                      height={16}
-                      alt=""
-                    />
+                    <Link
+                      href="https://www.facebook.com/profile.php?id=61565504132192&mibextid=kFxxJD
+"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/assets/fbicon.svg"
+                        width={16}
+                        height={16}
+                        alt=""
+                      />
+                    </Link>
                   </div>
                   <div>
-                    <Image
-                      src="/assets/igicon.svg"
-                      width={16}
-                      height={16}
-                      alt=""
-                    />
+                    <Link
+                      href="https://www.instagram.com/hi_urbannative?igsh=NjlsbGlmanRvamVm
+"
+                      target="_blank"
+                    >
+                      <Image
+                        src="/assets/igicon.svg"
+                        width={16}
+                        height={16}
+                        alt=""
+                      />
+                    </Link>
                   </div>
 
                   <div>
