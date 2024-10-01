@@ -371,6 +371,9 @@ export default function Navbar({ setMobileVisibility }: any) {
                       )}
                     </div>
                   ))}
+                  <button className="p-2 h-10 px-4 bg-black rounded-full text-white text-sm">
+                    Get Card
+                  </button>
                 </ul>
               </div>
               <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns">
