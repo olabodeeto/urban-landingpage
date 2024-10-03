@@ -215,7 +215,7 @@ export default function Navbar({ setMobileVisibility }: any) {
           {/* desktop navbar */}
           <div className="hidden lg:block py-1 px-4">
             <div className="flex flex-row items-center justify-between">
-              <div className="lg:w-2/12 xl:w-2/12">
+              <div className="lg:w-1/12 xl:w-1/12">
                 <Image
                   src="/logo.svg"
                   width={80}
@@ -225,7 +225,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                 />
               </div>
               <div
-                className="lg:w-8/12 xl:w-7/12 flex justify-start "
+                className="lg:w-8/12 xl:w-8/12 2xl:w-[62%] flex justify-start "
                 ref={dropdownRef}
               >
                 <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
@@ -371,7 +371,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                       )}
                     </div>
                   ))}
-                  <button className="p-2 h-8 2xl:h-10 flex justify-center items-center px-4 bg-black rounded-full text-white text-sm">
+                  <button className="p-2 h-8 2xl:h-10 flex justify-center items-center px-4 2xl:px-4 2xl:w-40 bg-black rounded-full text-white text-sm">
                     Get Card
                   </button>
                 </ul>

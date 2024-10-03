@@ -38,6 +38,7 @@ const config: Config = {
         cityhero: "url('/assets/cityhero.svg')",
         footerBg: "url('/assets/footerBg.svg')",
         policyBg: "url('/assets/policyhero.svg')",
+        newcardHeroBg: "url('/assets/cardheronew.svg')",
       },
     },
   },
