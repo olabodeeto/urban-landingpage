@@ -57,11 +57,11 @@ export default function UrbanCardPage() {
                 featuring top suppliers, to rewards for personal trips and to
                 joining our super-amazing traveler's club
               </h4>
-              <div className="flex items-center gap-x-4 2xl:mt-4">
-                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white">
+              <div className="flex items-center gap-x-4 mt-2 2xl:mt-4">
+                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white cardhereBtn">
                   Get Started
                 </div>
-                <div className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold">
+                <div className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold cardhereBtn">
                   Request A Demo
                 </div>
               </div>
@@ -81,50 +81,109 @@ export default function UrbanCardPage() {
           </div>
         </section>
 
-        <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-20">
-          <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
-            <div className="flex flex-col lg:flex-row justify-between">
-              <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-6/12">
-                <Image
-                  src="/assets/card-section-bg.svg"
-                  width={40}
-                  height={40}
-                  alt=""
-                  className="w-full object-cover object-center"
-                />
+        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-96 xl:py-20">
+          <div className="w-full mt-2 flex flex-col items-center">
+            <h2
+              className="text-4xl xl:text-[3.7rem] text-center"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              Benefits of Urban
+              <span className=" text-urban-green"> Personal card</span>
+            </h2>
+          </div>
+          <div className="bg-[#ebeaea42] min-h-40 lg:p-10 mt-10">
+            <div className="mt-10 flex flex-wrap justify-between gap-y-4 gap-2">
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="600"
+              >
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/benefit1.png"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Seamless travel experience
+                  </span>
+                </div>
+                <p className="mt-4 font-light 2xl:text-xl">
+                  Drive down travel costs without sacrificing your travel
+                  experience. Visit our extensive merchant inventory across the
+                  country.
+                </p>
               </div>
 
-              <div className="w-full lg:w-6/12 bg-white p-10 lg:px-20 flex flex-col justify-center">
-                <div className="mt-2 w-full  xl:-mt-8 cardsection-container floating-text">
-                  <h2
-                    className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 italic font-creato mb-8"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
-                  >
-                    <span className=" text-urban-green">
-                      {" "}
-                      Urban Trip Financing{" "}
-                    </span>{" "}
-                    low on cash! Get the Urban Card.
-                  </h2>
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="1800"
+              >
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/benefit2.png"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    24/7 Support
+                  </span>
                 </div>
-
-                <div className="w-full flex justify-start">
-                  <button
-                    className="bg-urban-green text-white py-2 px-6 rounded 2xl:py-3 2xl:px-10 2xl:text-xl"
-                    data-aos="fade-up"
-                    data-aos-duration="1800"
-                    data-aos-once="true"
-                    onClick={() => setopenModal(true)}
-                  >
-                    Get Card
-                  </button>
+                <p className="mt-4 font-light 2xl:text-xl">
+                  Access a massive network of our travel experience centers or
+                  self-serve with our Urban Mobile app, Webapp or AI Agent.
+                </p>
+              </div>
+              <div
+                className="p-10 bg-white min-h-40 w-full lg:w-[30%]"
+                data-aos="fade-up"
+                data-aos-duration="2500"
+              >
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/assets/benefit3.png"
+                    width={50}
+                    height={40}
+                    alt=""
+                  />
+                  <span className=" text-urban-lightGreen 2xl:text-2xl">
+                    Spend is a breeze
+                  </span>
                 </div>
+                <p className="mt-4 font-light 2xl:text-xl">
+                  Access our extensive ecosystem of merchants across the country
+                  and enjoy unrivaled discounts across your spend.
+                </p>
               </div>
             </div>
-          </section>
-        </div>
+
+            <div className="mt-14 mb-5 flex items-center justify-center w-full lg:w-5/12 m-auto gap-4 2xl:mt-10">
+              <button className="w-60 xl:w-44 2xL:w-60 rounded-md py-4 px-4 border-none bg-urban-green text-white lg:text-sm xl:text-base 2xl:text-xl">
+                Get Started
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* ------------------------------------- */}
+
+        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-96 xl:py-10">
+          <div className="w-full mt-2 flex flex-col items-center">
+            <h2
+              className="text-4xl xl:text-[3.7rem] text-center"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              How to apply for Urban
+              <span className=" text-urban-green"> Personal card</span>
+            </h2>
+          </div>
+        </section>
+        {/* -------------------------------------- */}
 
         {/* ====== swiper ======================= */}
         <section className="w-full py-10 lg:py-0 lg:w-8/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
