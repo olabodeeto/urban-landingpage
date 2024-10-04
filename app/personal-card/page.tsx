@@ -18,6 +18,9 @@ import TravelersDialog from "../shared/components/travelers-dialog/travelers-dia
 import CardSteppercard from "../shared/components/card-steppercard/card-steppercard";
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import { HiOutlineChevronRight } from "react-icons/hi";
+import React from "react";
+import Accordion from "../shared/components/accordion/accordion";
+import { faqsData } from "../shared/utils/data";
 
 export default function UrbanCardPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -220,12 +223,12 @@ export default function UrbanCardPage() {
                 } ${scrollToRight && "change-postion-right"}`}
               >
                 {steps.map((obj, index: number) => (
-                  <>
+                  <React.Fragment key={index}>
                     <CardSteppercard {...obj} key={index} />
                     {obj.step !== 3 && (
                       <span className="h-[0.10rem] w-20 bg-slate-400 mt-10 hidden md:block"></span>
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               </div>
 
@@ -262,9 +265,9 @@ export default function UrbanCardPage() {
         {/* -------------------------------------- */}
 
         {/* ========================= */}
-        <section className="w-full py-10 lg:py-0 lg:w-8/12 2xl:w-10/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
-          <div className="flex flex-col lg:flex-row">
-            <div className="w-full p-20 lg:p-0 lg:w-1/2">
+        <section className="w-full py-10 lg:py-0 lg:w-11/12 2xl:w-10/12 m-auto xl:mt-40 xl:mb-40 lg:xl:my-0 lg:pb-20 relative card-slider-section">
+          <div className="flex flex-col lg:flex-row ">
+            <div className="w-full p-20 lg:p-0 lg:w-1/2 ">
               <Image
                 src="/assets/card-store.svg"
                 width={120}
@@ -275,19 +278,39 @@ export default function UrbanCardPage() {
             </div>
             <div className="w-full -mt-10 md:-mt-0 p-10 lg:p-0  lg:w-1/2 flex items-center justify-center">
               <h2 className="text-2xl leading-8 md:text-4xl xl:text-4xl 2xl:text-5xl font-creato md:leading-10 font-thin italic">
-                <span className="font-bold not-italic text-urban-green">
+                <p className="font-bold not-italic text-urban-green">
                   Live Your Best Life!
-                </span>{" "}
-                Use your Urban Card Anywhere Anytime ATM, POS or Web.
+                </p>
+                <p className="text-xl leading-8 md:text-2xl xl:text-2xl 2xl:text-5xl mt-4 md:mt-8 w-11/12 lg:w-11/12">
+                  Step out into the world confidently. Get the ultimate
+                  companion card that help you make the most of your spend and
+                  travel experiences and adventures.
+                </p>
+                <div className="mt-4 md:mt-8">
+                  <button className="py-3 px-5 bg-urban-green text-white rounded-lg text-base font-bold">
+                    Visit Our Merchants
+                  </button>
+                </div>
               </h2>
             </div>
           </div>
         </section>
         {/* =========================== */}
 
-        {/* =========== app ads ======================== */}
-        <AppAd />
-        {/* ============================================= */}
+        {/* ==== faq ============= */}
+        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-[82vh] xl:py-10 bg-faqBg  bg-cover flex items-center justify-center">
+          <div className="min-h-40 lg:p-10 mt-10 w-10/12 md:w-8/12 m-auto">
+            <h1 className="text-4xl text-center text-white font-creato font-bold">
+              Frequently Asked questions
+            </h1>
+            <div className="mt-10 flex flex-col gap-4">
+              {faqsData.map((obj, index: number) => (
+                <Accordion {...obj} key={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* ======================== */}
 
         {/* ---------- footer ------------------- */}
         <Footer />

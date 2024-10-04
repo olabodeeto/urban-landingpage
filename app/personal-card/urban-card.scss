@@ -244,7 +244,7 @@
       width: 100%;
       overflow: hidden;
       margin-top: 2rem;
-      min-height: 44rem;
+      min-height: 46rem;
     }
   }
 
@@ -278,4 +278,8 @@
       left: -24rem;
     }
   }
+}
+
+.faqstransition {
+  transition: all 0.8s ease-in;
 }
