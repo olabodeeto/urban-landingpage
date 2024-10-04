@@ -198,3 +198,84 @@
 .border2 {
   border: 2px solid #fff;
 }
+
+// ================= swipe section ====================
+.card-swipe-section {
+  // width: 95%;
+  margin-left: 5%;
+  display: flex;
+  gap: 4rem;
+  overflow: hidden;
+  margin-top: 6rem;
+  @media screen and (min-width: 320px) and (max-width: 560px) {
+    flex-direction: column;
+    margin-left: unset;
+    min-height: 10rem;
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    margin-bottom: 10rem;
+  }
+
+  & .card-swipe-image {
+    width: 15rem;
+    @media screen and (min-width: 320px) and (max-width: 560px) {
+      width: 50%;
+      margin: auto;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+      width: 10rem;
+    }
+    @media screen and (min-width: 1280px) and (max-width: 1399px) {
+      width: 14rem;
+    }
+    @media screen and (min-width: 1680px) {
+      width: 18%;
+    }
+  }
+
+  & .card-swipe-container {
+    width: 70%;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (min-width: 320px) and (max-width: 560px) {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 2rem;
+      min-height: 44rem;
+    }
+  }
+
+  & .stepscards-container {
+    position: absolute;
+    display: flex;
+    gap: 1rem;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+    @media screen and (min-width: 320px) and (max-width: 560px) {
+      flex-direction: column;
+      // width: 100vw;
+      position: unset;
+      overflow: scroll;
+    }
+  }
+
+  & .change-postion-left {
+    left: 0rem;
+
+    @media screen and (min-width: 1680px) {
+      left: 0;
+    }
+  }
+  & .change-postion-right {
+    left: -16rem;
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+      left: -36rem;
+    }
+    @media screen and (min-width: 1280px) and (max-width: 1399px) {
+      left: -24rem;
+    }
+  }
+}

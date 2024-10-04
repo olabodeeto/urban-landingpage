@@ -15,9 +15,14 @@ import "swiper/css/pagination";
 import "./urban-card.scss";
 import AppAd from "../shared/components/app-ad/app-ad";
 import TravelersDialog from "../shared/components/travelers-dialog/travelers-dialog";
+import CardSteppercard from "../shared/components/card-steppercard/card-steppercard";
+import { HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronRight } from "react-icons/hi";
 
 export default function UrbanCardPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
+  const [scrollToLeft, setscrollToLeft] = useState(false);
+  const [scrollToRight, setscrollToRight] = useState(false);
   const [openModal, setopenModal] = useState(false);
 
   const pagination = {
@@ -26,6 +31,26 @@ export default function UrbanCardPage() {
       return '<span class="' + className + ' bg-urban-green">' + "</span>";
     },
   };
+
+  const steps = [
+    {
+      step: 1,
+      title: "Sign Up",
+      content: "Sign up on Urban for your customized Urban personal card.",
+    },
+    {
+      step: 2,
+      title: "Request Card",
+      content: "Request for your personalized Urban physical card.",
+    },
+
+    {
+      step: 3,
+      title: "Download the Urban App",
+      content:
+        "Download the Urban app on Google Playstore or Apple IOS Store for your seamless card transaction management.",
+    },
+  ];
 
   useEffect(() => {
     AOS.init();
@@ -81,7 +106,7 @@ export default function UrbanCardPage() {
           </div>
         </section>
 
-        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-96 xl:py-20">
+        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-96 xl:py-10">
           <div className="w-full mt-2 flex flex-col items-center">
             <h2
               className="text-4xl xl:text-[3.7rem] text-center"
@@ -110,7 +135,7 @@ export default function UrbanCardPage() {
                     Seamless travel experience
                   </span>
                 </div>
-                <p className="mt-4 font-light 2xl:text-xl">
+                <p className="mt-4 font-light xl:text-xl 2xl:text-xl">
                   Drive down travel costs without sacrificing your travel
                   experience. Visit our extensive merchant inventory across the
                   country.
@@ -133,7 +158,7 @@ export default function UrbanCardPage() {
                     24/7 Support
                   </span>
                 </div>
-                <p className="mt-4 font-light 2xl:text-xl">
+                <p className="mt-4 font-light xl:text-xl 2xl:text-xl">
                   Access a massive network of our travel experience centers or
                   self-serve with our Urban Mobile app, Webapp or AI Agent.
                 </p>
@@ -154,7 +179,7 @@ export default function UrbanCardPage() {
                     Spend is a breeze
                   </span>
                 </div>
-                <p className="mt-4 font-light 2xl:text-xl">
+                <p className="mt-4 font-light xl:text-xl 2xl:text-xl">
                   Access our extensive ecosystem of merchants across the country
                   and enjoy unrivaled discounts across your spend.
                 </p>
@@ -171,7 +196,7 @@ export default function UrbanCardPage() {
 
         {/* ------------------------------------- */}
 
-        <section className="m-auto mt-10 lg:mt-10 xl:mt-10 min-h-96 xl:py-10">
+        <section className="m-auto mt-20 lg:mt-10 xl:mt-10 min-h-96 xl:py-10">
           <div className="w-full mt-2 flex flex-col items-center">
             <h2
               className="text-4xl xl:text-[3.7rem] text-center"
@@ -182,68 +207,59 @@ export default function UrbanCardPage() {
               <span className=" text-urban-green"> Personal card</span>
             </h2>
           </div>
+
+          {/* ---swipe */}
+          <div className="card-swipe-section mt-14 bg-[#FBFBFB] md:p-4">
+            <div className="card-swipe-image">
+              <img src="/assets/cardsample.svg" alt="" />
+            </div>
+            <div className="card-swipe-container">
+              <div
+                className={`stepscards-container ${
+                  scrollToLeft && "change-postion-left"
+                } ${scrollToRight && "change-postion-right"}`}
+              >
+                {steps.map((obj, index: number) => (
+                  <>
+                    <CardSteppercard {...obj} key={index} />
+                    {obj.step !== 3 && (
+                      <span className="h-[0.10rem] w-20 bg-slate-400 mt-10 hidden md:block"></span>
+                    )}
+                  </>
+                ))}
+              </div>
+
+              <div className="w-full bottom-1 md:bottom-0 absolute flex justify-center md:justify-between items-center px-5">
+                <button className="py-3 xlpy-4 xl:px-10 2xl:py-4 2xl:px-10 2xl:text-2xl px-6 bg-urban-green text-white rounded-lg">
+                  Get Card
+                </button>
+                <div className="hidden md:block">
+                  <div className="flex items-center gap-4 lg:gap-2">
+                    <div
+                      className="w-14 h-14 md:w-8 md:h-8 lg:w-14 lg:h-14 bg-[#D9D9D9] rounded-full flex justify-center items-center cursor-pointer"
+                      onClick={() => {
+                        setscrollToLeft(true);
+                        setscrollToRight(false);
+                      }}
+                    >
+                      <HiOutlineChevronLeft size={36} />
+                    </div>
+                    <div
+                      className="w-14 h-14 md:w-8 md:h-8 lg:w-14 lg:h-14 bg-[#D9D9D9] rounded-full flex justify-center items-center cursor-pointer"
+                      onClick={() => {
+                        setscrollToRight(true);
+                        setscrollToLeft(false);
+                      }}
+                    >
+                      <HiOutlineChevronRight size={36} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         {/* -------------------------------------- */}
-
-        {/* ====== swiper ======================= */}
-        <section className="w-full py-10 lg:py-0 lg:w-8/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
-          <div className="absolute w-full top-12">
-            <h2 className="text-center font-creato lg:text-4xl font-bold">
-              Pick the Card that suits you
-            </h2>
-          </div>
-          <Swiper
-            navigation={true}
-            modules={[Navigation]}
-            className="w-full mycardSwiper"
-          >
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
-
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
-
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </section>
-        {/* ======================================= */}
 
         {/* ========================= */}
         <section className="w-full py-10 lg:py-0 lg:w-8/12 2xl:w-10/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
