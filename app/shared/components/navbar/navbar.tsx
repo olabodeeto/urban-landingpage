@@ -144,7 +144,7 @@ export default function Navbar({ setMobileVisibility }: any) {
     // { id: 3, title: "Fleet", path: "/fleet" },
     { id: 4, title: "Hotels", path: "/hotels" },
     // { id: 4, title: "Park", path: "/park" },
-    { id: 4, title: "Merchant", path: "/marchant" },
+    { id: 4, title: "Merchant", path: "/merchant" },
     { id: 5, title: "Company", path: "/company" },
     // { id: 5, title: "Agency", path: "/agency" },
     // { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },

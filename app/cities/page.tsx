@@ -96,7 +96,7 @@ export default function CityPage() {
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
-                    Jos
+                    JOS
                   </button>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function CityPage() {
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
-                    Markudi
+                    MAKURDI
                   </button>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function CityPage() {
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
-                    Lagos
+                    LAGOS
                   </button>
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function CityPage() {
                 />
                 <div className="w-full absolute top-4 left-4">
                   <button className="bg-white py-2 px-4 rounded cursor-default">
-                    Kano
+                    KANO
                   </button>
                 </div>
               </div>

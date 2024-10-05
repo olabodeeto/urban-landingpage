@@ -40,6 +40,7 @@ const config: Config = {
         policyBg: "url('/assets/policyhero.svg')",
         newcardHeroBg: "url('/assets/cardheronew.svg')",
         faqBg: "url('/assets/faqbg.svg')",
+        merchantBg: "url('/assets/merchanthero.svg')",
       },
     },
   },

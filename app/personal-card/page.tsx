@@ -21,6 +21,7 @@ import { HiOutlineChevronRight } from "react-icons/hi";
 import React from "react";
 import Accordion from "../shared/components/accordion/accordion";
 import { faqsData } from "../shared/utils/data";
+import RequestCardDemoDialog from "../shared/components/request-demo-card/request-demo-card";
 
 export default function UrbanCardPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -86,10 +87,13 @@ export default function UrbanCardPage() {
                 joining our super-amazing traveler's club
               </h4>
               <div className="flex items-center gap-x-4 mt-2 2xl:mt-4">
-                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white cardhereBtn">
+                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white cardhereBtn cursor-pointer">
                   Get Started
                 </div>
-                <div className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold cardhereBtn">
+                <div
+                  className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold cardhereBtn cursor-pointer"
+                  onClick={() => setopenModal(true)}
+                >
                   Request A Demo
                 </div>
               </div>
@@ -281,7 +285,7 @@ export default function UrbanCardPage() {
                 <p className="font-bold not-italic text-urban-green">
                   Live Your Best Life!
                 </p>
-                <p className="text-xl leading-8 md:text-2xl xl:text-2xl 2xl:text-5xl mt-4 md:mt-8 w-11/12 lg:w-11/12">
+                <p className="text-xl leading-8 md:text-2xl xl:text-2xl 2xl:text-2xl mt-4 md:mt-8 w-11/12 lg:w-11/12">
                   Step out into the world confidently. Get the ultimate
                   companion card that help you make the most of your spend and
                   travel experiences and adventures.
@@ -317,7 +321,7 @@ export default function UrbanCardPage() {
         {/* -------------------------------------- */}
       </main>
       {openModal && (
-        <TravelersDialog isOpen={openModal} setisopen={setopenModal} />
+        <RequestCardDemoDialog isOpen={openModal} setisopen={setopenModal} />
       )}
     </>
   );

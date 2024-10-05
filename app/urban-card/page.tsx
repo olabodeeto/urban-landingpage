@@ -34,7 +34,7 @@ export default function UrbanCardPage() {
   return (
     <>
       <main className="relative ">
-        <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 flex flex-col items-center">
+        <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 md:min-h-[82vh] bg-newcardHeroBg bg-cover py-10 px-4 flex flex-col items-center">
           <div className="agency-hero-container relative">
             <div className="_leftSide">
               <h2
@@ -61,11 +61,23 @@ export default function UrbanCardPage() {
                   Travel & Live like a Native
                 </span>
               </div>
+
+              <div className="flex items-center mt-4 gap-x-4  xl:mt-10">
+                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white cardhereBtn cursor-pointer">
+                  Get Started
+                </div>
+                <div
+                  className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold cardhereBtn cursor-pointer"
+                  onClick={() => setopenModal(true)}
+                >
+                  Request A Demo
+                </div>
+              </div>
             </div>
 
             <div className="_cardrigthSide">
               <Image
-                src="/assets/cardheroo.png"
+                src="/assets/simplecard.png"
                 width={840}
                 height={400}
                 alt=""
@@ -77,33 +89,36 @@ export default function UrbanCardPage() {
           </div>
         </section>
 
-        <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-20">
+        <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-2">
           <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
             <div className="flex flex-col lg:flex-row justify-between">
-              <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-6/12">
+              <div className="w-full min-h-[20rem] lg:min-h-[30rem] lg:w-6/12">
                 <Image
                   src="/assets/card-section-bg.svg"
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                   alt=""
                   className="w-full object-cover object-center"
                 />
               </div>
 
-              <div className="w-full lg:w-6/12 bg-white p-10 lg:px-20 flex flex-col justify-center">
-                <div className="mt-2 w-full  xl:-mt-8 cardsection-container floating-text">
-                  <h2
-                    className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 italic font-creato mb-8"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
-                  >
-                    <span className=" text-urban-green">
-                      {" "}
-                      Urban Trip Financing{" "}
-                    </span>{" "}
-                    low on cash! Get the Urban Card.
+              <div className="w-full lg:w-6/12 bg-white mt-8 lg:mt-0 lg:p-10 lg:px-20 flex flex-col">
+                <div className="mt-2 w-full  xl:-mt-8 cardsection-container">
+                  <h2 className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 font-creato mb-2 text-urban-green">
+                    From individuals, small businesses to global enterprises
                   </h2>
+                  <p className="font-creato text-xl mt-4">
+                    {" "}
+                    Everyone spend and saves with Urban Card.{" "}
+                  </p>
+                  <div className="mt-4 mb-4 px-4">
+                    <ul className="flex-col gap-4 text-xl list-item list-disc font-creato list-outside">
+                      <li className="mb-4"> Road Warriors</li>
+                      <li className="mb-4"> Travel Managers</li>
+                      <li className="mb-4"> Finance and Accounting</li>
+                      <li className="mb-4"> Executive Assistants</li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="w-full flex justify-start">
@@ -121,66 +136,6 @@ export default function UrbanCardPage() {
             </div>
           </section>
         </div>
-
-        {/* ====== swiper ======================= */}
-        <section className="w-full py-10 lg:py-0 lg:w-8/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
-          <div className="absolute w-full top-12">
-            <h2 className="text-center font-creato lg:text-4xl font-bold">
-              Pick the Card that suits you
-            </h2>
-          </div>
-          <Swiper
-            navigation={true}
-            modules={[Navigation]}
-            className="w-full mycardSwiper"
-          >
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
-
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
-
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </section>
-        {/* ======================================= */}
 
         {/* ========================= */}
         <section className="w-full py-10 lg:py-0 lg:w-8/12 2xl:w-10/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
