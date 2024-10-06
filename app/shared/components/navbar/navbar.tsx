@@ -144,7 +144,7 @@ export default function Navbar({ setMobileVisibility }: any) {
     // { id: 3, title: "Fleet", path: "/fleet" },
     { id: 4, title: "Hotels", path: "/hotels" },
     // { id: 4, title: "Park", path: "/park" },
-    { id: 4, title: "Merchant", path: "/marchant" },
+    { id: 4, title: "Merchant", path: "/merchant" },
     { id: 5, title: "Company", path: "/company" },
     // { id: 5, title: "Agency", path: "/agency" },
     // { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
@@ -215,7 +215,7 @@ export default function Navbar({ setMobileVisibility }: any) {
           {/* desktop navbar */}
           <div className="hidden lg:block py-1 px-4">
             <div className="flex flex-row items-center justify-between">
-              <div className="lg:w-2/12 xl:w-2/12">
+              <div className="lg:w-1/12 xl:w-1/12">
                 <Image
                   src="/logo.svg"
                   width={80}
@@ -225,7 +225,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                 />
               </div>
               <div
-                className="lg:w-8/12 xl:w-7/12 flex justify-start "
+                className="lg:w-8/12 xl:w-8/12 2xl:w-[62%] flex justify-start navTabsContainer"
                 ref={dropdownRef}
               >
                 <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
@@ -371,12 +371,12 @@ export default function Navbar({ setMobileVisibility }: any) {
                       )}
                     </div>
                   ))}
-                  <button className="p-2 h-8 2xl:h-10 flex justify-center items-center px-4 bg-black rounded-full text-white text-sm">
+                  <button className="p-2 h-8 2xl:h-10 flex justify-center items-center px-4 2xl:px-4 2xl:w-40 bg-black rounded-full text-white text-sm getcardBtn">
                     Get Card
                   </button>
                 </ul>
               </div>
-              <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns">
+              <div className="w-4/12 lg:w-2/12 flex justify-end items-center gap-4 navbar-btns navBarBtn_Container">
                 <button
                   className="px-10 py-3 2xl:px-5 2xl:py-2 rounded-md text-urban-green 2xl:text-base"
                   onClick={() => {

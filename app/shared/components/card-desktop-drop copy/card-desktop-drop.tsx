@@ -52,7 +52,7 @@ export default function CardDesktopDrop({
               onClick={() => {
                 setCardPage("Urban Card");
                 setisCardDropOpen(!isCardDropOpen);
-                router.push("/urban-card");
+                router.push("/corporate-card");
               }}
             >
               <img src="./assets/coopCardIcon.svg" alt="" />
@@ -75,7 +75,7 @@ export default function CardDesktopDrop({
             onClick={() => {
               setCardPage("Urban Card");
               setisCardDropOpen(!isCardDropOpen);
-              router.push("/urban-card");
+              router.push("/personal-card");
             }}
           >
             <img src="./assets/personalCardIcon.svg" alt="" />

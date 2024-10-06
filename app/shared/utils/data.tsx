@@ -37,3 +37,26 @@ export const nigeriaStates = [
   { value: "zamfara", title: "Zamfara" },
   { value: "abuja", title: "Federal Capital Territory" },
 ];
+
+export const faqsData = [
+  {
+    id: 1,
+    question: "How do i order my Urban personal card?",
+    answer: "lorem ipsum margei wwieo judook",
+  },
+  {
+    id: 2,
+    question: "How do i locate Urban merchants?",
+    answer: "lorem ipsum margei wwieo judook",
+  },
+  {
+    id: 3,
+    question: "How do i book travel?",
+    answer: "lorem ipsum margei wwieo judook",
+  },
+  {
+    id: 4,
+    question: "How do i contact support?",
+    answer: "lorem ipsum margei wwieo judook",
+  },
+];

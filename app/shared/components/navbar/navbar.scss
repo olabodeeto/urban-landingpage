@@ -1,3 +1,63 @@
+.navTabsContainer {
+  width: 60%;
+  ul {
+    justify-content: space-between;
+    width: 100%;
+  }
+  @media screen and (min-width: 1680px) {
+    // border: 2px solid #5d00ff;
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1399px) {
+    width: 55%;
+    ul {
+      justify-content: space-between;
+      width: 100%;
+      row-gap: 0.4rem;
+      gap: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    width: 60%;
+
+    ul {
+      justify-content: space-between;
+      width: 100%;
+      gap: 0.2rem;
+
+      li {
+        font-size: 0.8rem !important;
+      }
+      div {
+        font-size: 0.8rem !important;
+      }
+    }
+
+    .getcardBtn {
+      font-size: 0.6rem !important;
+      padding: 1rem !important;
+      height: 1rem !important;
+      width: 5rem;
+    }
+  }
+}
+
+.navBarBtn_Container {
+  @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    width: 22%;
+
+    button {
+      width: 6rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+  }
+}
+
 .tabs-container {
   @media screen and (min-width: 1680px) {
     display: flex;

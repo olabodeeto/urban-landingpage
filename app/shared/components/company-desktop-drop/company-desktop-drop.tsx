@@ -12,10 +12,9 @@ export default function CompanyDesktopDrop({
   setCompanyPage,
   isCompanyDropOpen,
 }: PropT) {
-  const modalRefcard: any = useRef(null);
-
   const router = useRouter();
 
+  const modalRefcard: any = useRef(null);
   const handleOutsideClick = (event: any) => {
     // Check if the click is outside the modal
     if (modalRefcard.current && !modalRefcard.current.contains(event.target)) {

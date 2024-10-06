@@ -438,7 +438,7 @@ export default function Home() {
                   data-aos-easing="ease-in-sine"
                 />
                 <div className="absolute py-2 px-4 bg-white rounded z-10 top-2 left-4">
-                  Markudi
+                  Makurdi
                 </div>
               </div>
             </div>

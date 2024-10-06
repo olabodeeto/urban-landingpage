@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "./urban-card.scss";
 import AppAd from "../shared/components/app-ad/app-ad";
 import TravelersDialog from "../shared/components/travelers-dialog/travelers-dialog";
+import Link from "next/link";
 
 export default function UrbanCardPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function UrbanCardPage() {
   return (
     <>
       <main className="relative ">
-        <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 min-h-[82vh]  bg-agencyHero bg-cover py-10 px-4 flex flex-col items-center">
+        <section className="w-full angecyHero -mt-[7.8rem] 2xl:-mt-40 md:min-h-[82vh] bg-newcardHeroBg bg-cover py-10 px-4 flex flex-col items-center">
           <div className="agency-hero-container relative">
             <div className="_leftSide">
               <h2
@@ -61,11 +62,23 @@ export default function UrbanCardPage() {
                   Travel & Live like a Native
                 </span>
               </div>
+
+              <div className="flex items-center mt-4 gap-x-4  xl:mt-10">
+                <div className="py-4 lg:py-3 2xl:py-5 px-8 2xl:px-12 bg-white rounded-lg font-creato font-semibold border-2 border-white cardhereBtn cursor-pointer">
+                  Get Started
+                </div>
+                <div
+                  className="border-2 border-white py-4 lg:py-3 2xl:py-5 px-5 2xl:px-12 text-white rounded-lg font-creato font-semibold cardhereBtn cursor-pointer"
+                  onClick={() => setopenModal(true)}
+                >
+                  Request A Demo
+                </div>
+              </div>
             </div>
 
             <div className="_cardrigthSide">
               <Image
-                src="/assets/cardheroo.png"
+                src="/assets/simplecard.png"
                 width={840}
                 height={400}
                 alt=""
@@ -77,33 +90,36 @@ export default function UrbanCardPage() {
           </div>
         </section>
 
-        <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-20">
+        <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-2">
           <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
             <div className="flex flex-col lg:flex-row justify-between">
-              <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-6/12">
+              <div className="w-full min-h-[20rem] lg:min-h-[30rem] lg:w-6/12">
                 <Image
                   src="/assets/card-section-bg.svg"
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                   alt=""
                   className="w-full object-cover object-center"
                 />
               </div>
 
-              <div className="w-full lg:w-6/12 bg-white p-10 lg:px-20 flex flex-col justify-center">
-                <div className="mt-2 w-full  xl:-mt-8 cardsection-container floating-text">
-                  <h2
-                    className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 italic font-creato mb-8"
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
-                  >
-                    <span className=" text-urban-green">
-                      {" "}
-                      Urban Trip Financing{" "}
-                    </span>{" "}
-                    low on cash! Get the Urban Card.
+              <div className="w-full lg:w-6/12 bg-white mt-8 lg:mt-0 lg:p-10 lg:px-20 flex flex-col">
+                <div className="mt-2 w-full  xl:-mt-8 cardsection-container">
+                  <h2 className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 font-creato mb-2 text-urban-green">
+                    From individuals, small businesses to global enterprises
                   </h2>
+                  <p className="font-creato text-xl mt-4">
+                    {" "}
+                    Everyone spend and saves with Urban Card.{" "}
+                  </p>
+                  <div className="mt-4 mb-4 px-4">
+                    <ul className="flex-col gap-4 text-xl list-item list-disc font-creato list-outside">
+                      <li className="mb-4"> Road Warriors</li>
+                      <li className="mb-4"> Travel Managers</li>
+                      <li className="mb-4"> Finance and Accounting</li>
+                      <li className="mb-4"> Executive Assistants</li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="w-full flex justify-start">
@@ -122,65 +138,154 @@ export default function UrbanCardPage() {
           </section>
         </div>
 
-        {/* ====== swiper ======================= */}
-        <section className="w-full py-10 lg:py-0 lg:w-8/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
-          <div className="absolute w-full top-12">
-            <h2 className="text-center font-creato lg:text-4xl font-bold">
-              Pick the Card that suits you
-            </h2>
+        {/* ----------- ad ----------- */}
+        <div className="flex justify-center items-center py-10 mb-10 mt-20">
+          <section className="w-11/12 lg:w-11/12 px-1 lg:px-6 m-auto lg:mt-4 2xl:w-10/12">
+            <div className="flex flex-col lg:flex-row justify-between">
+              <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:px-1 flex flex-col items-center justify-center gap-4 lg:gap-10 lg:min-h-96">
+                <div className="flex items-center gap-4 text-white w-full md:px-10">
+                  <Image
+                    src="/assets/cardblob1.svg"
+                    width={140}
+                    height={140}
+                    alt=""
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  />
+                  <Image
+                    src="/assets/cardblob2.svg"
+                    width={140}
+                    height={140}
+                    alt=""
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  />
+                </div>
+
+                <div className="mt-4 lg:mt-2 w-full xl:px-1 flex justify-center">
+                  <div className="w-full md:px-10">
+                    <h2
+                      className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato"
+                      data-aos="fade-up"
+                      data-aos-duration="1800"
+                    >
+                      Spend Smarter with
+                    </h2>
+                    <h2 className=" text-2xl font-bold lg:text-3xl xl:text-4xl w-10/12 text-urban-lightGreen font-creato">
+                      Urban Cards
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="w-full flex justify-center">
+                  <Image
+                    src="/assets/simplecard1.png"
+                    width={120}
+                    height={120}
+                    alt=""
+                    className=" w-8/12"
+                    data-aos="flip-up"
+                    data-aos-duration="1000"
+                  />
+                </div>
+              </div>
+
+              <div className="w-full min-h-[20rem] lg:min-h-[40rem] lg:w-7/12 flex justify-center items-center gap-2 px-2 mt-16 lg:mt-0 xl:p-10">
+                <div className="xl:w-10/12 m-auto">
+                  <h2 className="italic text-3xl  xl:text-5xl font-creato font-thin mb-2">
+                    What would you like to do with{" "}
+                    <span className="text-urban-green font-bold">Urban?</span>
+                  </h2>
+                  <div className="mt-10 mb-4 px-4">
+                    <ul className="flex-col gap-4 text-xl list-item list-decimal font-creato list-outside font-light">
+                      <li className="mb-4">
+                        Enjoy unrivaled discounts across our merchants
+                      </li>
+                      <li className="mb-4">Book your own trip</li>
+                      <li className="mb-4">
+                        Book trips for employees and Execs
+                      </li>
+                      <li className="mb-4">
+                        Manage company cards and expenses
+                      </li>
+                      <li className="mb-4">Create a company travel program</li>
+                      <li className="mb-4">
+                        Attend Urban events across the country
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="p-4 mt-10 flex flex-col gap-6">
+                    <hr />
+                    <li className="text-xl xl:text-2xl font-light italic">
+                      All discounts are for Urban card holders - learn more on
+                      each card with the links below
+                    </li>
+                  </div>
+                  <div className=" flex items-center gap-x-4 mt-4">
+                    <Link href="/personal-card">
+                      <div className="flex cursor-pointerx items-center">
+                        <span className="text-xl font-creato block font-bold">
+                          Personal Card page
+                        </span>
+                        <img src="./assets/roundArrow.svg" alt="" />
+                      </div>
+                    </Link>
+                    <Link href="/corporate-card">
+                      <div className="flex cursor-pointerx items-center">
+                        <span className="text-xl font-creato font-bold">
+                          Corporate Card page
+                        </span>
+                        <img src="./assets/roundArrow.svg" alt="" />
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* -------------------------- */}
+
+        {/* ===== random ============== */}
+        <section className="min-h-[65vh] bg-urban-green w-full mb-10 mt-10 pl-0 pr-0 pt-10 relative">
+          <div className="w-full lg:w-4/12 m-auto  mt-10 mb-14">
+            <p className="text-4xl xl:text-4xl text-center font-creato font-bold italic text-white">
+              <span className="font-light">Do more</span> with Urban Merchants
+            </p>
           </div>
-          <Swiper
-            navigation={true}
-            modules={[Navigation]}
-            className="w-full mycardSwiper"
-          >
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
+          <div className="w-full flex flex-col lg:flex-row justify-between px-10 gap-y-4 items-center mb-14">
+            <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
+              <img src="/assets/rand1.png" alt="" className="object-cover" />
+            </div>
+            <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
+              <img src="/assets/rand2.png" alt="" className="object-cover" />
+            </div>
+            <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
+              <img src="/assets/rand3.png" alt="" className="object-cover" />
+            </div>
+            <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
+              <img src="/assets/rand4.png" alt="" className="object-cover" />
+            </div>
+          </div>
 
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="w-full min-h-96 flex justify-center items-center relative">
-                <div className="w-6/12 flex flex-col justify-center items-center m-auto min-h-40 mt-40">
-                  <Image
-                    src="/assets/urbancard.png"
-                    width={80}
-                    height={40}
-                    alt=""
-                    className="w-6/12"
-                  />
-
-                  <div className="mt-10 flex flex-col items-center gap-4">
-                    <p className="text-xl font-creato font-light 2xl:text-4xl sliderh3">
-                      Personal Credit Card
-                    </p>
-                    <button className="p-3 px-8 bg-urban-green 2xl:py-4 2xl:text-xl text-white outline-none border border-urban-green rounded">
-                      Get Card
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <div className="h-40 overflow-hidden w-full relative">
+            <div className="flex justify-center mt-10 pb-6">
+              <button className="py-3 px-6 2xl:py-4 bg-[#1A1A1A] text-white rounded-lg">
+                Explore our Merchants
+              </button>
+            </div>
+            <Image
+              src="/assets/hiddencard.png"
+              width={120}
+              height={120}
+              alt=""
+              className="w-80 absolute -left-40 -top-2 bottom-0"
+            />
+          </div>
         </section>
-        {/* ======================================= */}
+        {/* =========================== */}
 
         {/* ========================= */}
         <section className="w-full py-10 lg:py-0 lg:w-8/12 2xl:w-10/12 m-auto xl:mt-20 lg:xl:my-0 lg:pb-20 relative card-slider-section">
