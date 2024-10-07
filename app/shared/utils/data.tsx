@@ -38,6 +38,12 @@ export const nigeriaStates = [
   { value: "abuja", title: "Federal Capital Territory" },
 ];
 
+export const merchantCategory = [
+  { value: "abia", title: "Most Popular" },
+  { value: "adamawa", title: "Less Popular" },
+  { value: "akwa-ibom", title: "Recent" },
+];
+
 export const faqsData = [
   {
     id: 1,
