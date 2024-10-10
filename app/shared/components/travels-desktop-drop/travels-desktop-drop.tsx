@@ -23,7 +23,7 @@ export default function TravelsDesktopDrop({
   };
 
   useEffect(() => {
-    if (isTravelsDropOpen) {
+    if (isTravelsDropOpen && window.innerWidth >= 1024) {
       // Add event listener when modal is open
       document.addEventListener("mousedown", handleOutsideClick);
     } else {
