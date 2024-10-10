@@ -412,7 +412,7 @@ export default function Home() {
             <div className="flex justify-between gap-4 w-full mb-4">
               <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
-                  src="/assets/abuja.png"
+                  src="/assets/abuja.svg"
                   width={220}
                   height={60}
                   alt=""
@@ -428,7 +428,7 @@ export default function Home() {
 
               <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
-                  src="/assets/markudi.png"
+                  src="/assets/makurdi.svg"
                   width={220}
                   height={60}
                   alt=""
@@ -446,7 +446,7 @@ export default function Home() {
             <div className="flex justify-between gap-4 w-full mb-10 ">
               <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
-                  src="/assets/jos.png"
+                  src="/assets/jos.svg"
                   width={220}
                   height={60}
                   alt=""
@@ -462,7 +462,7 @@ export default function Home() {
               </div>
               <div className="w-1/2 h-40 lg:h-60 2xl:h-80 relative overflow-hidden flex justify-center items-center">
                 <Image
-                  src="/assets/citimore.png"
+                  src="/assets/citymore.svg"
                   width={220}
                   height={60}
                   alt=""
