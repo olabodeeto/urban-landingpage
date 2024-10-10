@@ -16,7 +16,7 @@ export default function CityPage() {
   }, []);
   return (
     <main className="relative">
-      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] bg-cityhero bg-cover py-10 px-4">
+      <section className="w-full -mt-[7.8rem] 2xl:-mt-40 min-h-[55vh] lg:min-h-[80vh] bg-cityhero bg-cover py-10 px-4 bg-top">
         <div className="flex flex-col justify-center items-center city-hero">
           <div className="mt-40 lg:mt-40 w-full lg:w-6/12 xl:w-7/12 m-auto text-center flex flex-col gap-4 lg:gap-10 items-center 2xl:w-8/12 2xl:mt-60">
             <h2
@@ -54,7 +54,7 @@ export default function CityPage() {
             <div className="w-full  h-[40rem] lg:min-h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/abuja.png"
+                  src="/assets/abuja.svg"
                   width={400}
                   height={240}
                   alt=""
@@ -88,7 +88,7 @@ export default function CityPage() {
             <div className="w-full   h-[40rem] lg:min-h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/jos.png"
+                  src="/assets/jos.svg"
                   width={400}
                   height={240}
                   alt=""
@@ -120,7 +120,7 @@ export default function CityPage() {
             <div className="w-full   h-[40rem] lg:min-h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/markudi.png"
+                  src="/assets/makurdi.svg"
                   width={400}
                   height={240}
                   alt=""
@@ -151,7 +151,7 @@ export default function CityPage() {
             <div className="w-full  h-[40rem] lg:min-h-[34rem]  lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/markudi.png"
+                  src="/assets/minna.svg"
                   width={400}
                   height={240}
                   alt=""
@@ -183,7 +183,7 @@ export default function CityPage() {
             <div className="w-full   h-[40rem] lg:min-h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/lagos.png"
+                  src="/assets/lagos.svg"
                   width={400}
                   height={240}
                   alt=""
@@ -219,7 +219,7 @@ export default function CityPage() {
             <div className="w-full   h-[40rem] lg:min-h-[34rem] lg:3/12 flex flex-col relative overflow-hidden city-card">
               <div className="relative">
                 <Image
-                  src="/assets/markudi.png"
+                  src="/assets/kano.svg"
                   width={400}
                   height={240}
                   alt=""
