@@ -117,37 +117,10 @@ export default function Navbar({ setMobileVisibility }: any) {
     },
     { id: 6, title: "Travels", path: "/travelers-club" },
     { id: 3, title: "Card", path: "/card" },
-    // {
-    //   id: 2,
-    //   title: "About Us",
-    //   path: "/about",
-    //   icon: (
-    //     <>
-    //       <svg
-    //         width="25"
-    //         height="25"
-    //         viewBox="0 0 25 25"
-    //         fill="none"
-    //         xmlns="http://www.w3.org/2000/svg"
-    //       >
-    //         <path
-    //           d="M13.5 20.366V18.366C13.5 15.6045 11.2614 13.366 8.5 13.366C5.73858 13.366 3.5 15.6045 3.5 18.366V20.366H13.5ZM13.5 20.366H21.5V19.366C21.5 16.4204 19.2614 14.366 16.5 14.366C15.0867 14.366 13.8103 14.9915 12.9009 15.9971M11.5 7.36597C11.5 9.02282 10.1569 10.366 8.5 10.366C6.84315 10.366 5.5 9.02282 5.5 7.36597C5.5 5.70911 6.84315 4.36597 8.5 4.36597C10.1569 4.36597 11.5 5.70911 11.5 7.36597ZM18.5 9.36597C18.5 10.4705 17.6046 11.366 16.5 11.366C15.3954 11.366 14.5 10.4705 14.5 9.36597C14.5 8.2614 15.3954 7.36597 16.5 7.36597C17.6046 7.36597 18.5 8.2614 18.5 9.36597Z"
-    //           stroke="#036E03"
-    //           strokeWidth="2"
-    //           strokeLinecap="round"
-    //           strokeLinejoin="round"
-    //         />
-    //       </svg>
-    //     </>
-    //   ),
-    // },
-    // { id: 3, title: "Fleet", path: "/fleet" },
     { id: 4, title: "Hotels", path: "/hotels" },
-    // { id: 4, title: "Park", path: "/park" },
+
     { id: 4, title: "Merchant", path: "/merchant" },
     { id: 5, title: "Company", path: "/company" },
-    // { id: 5, title: "Agency", path: "/agency" },
-    // { id: 6, title: "Traveler’s Kit", path: "/travelers-club" },
   ];
 
   const dialogRef: any = useRef(null);
@@ -426,36 +399,39 @@ export default function Navbar({ setMobileVisibility }: any) {
                 <div>
                   {tabsData.map((tab, index: number) => (
                     <div key={index}>
-                      {tab.title !== "Traveler’s Club" && (
-                        <div
-                          className={`flex items-center gap-1 justify-center py-3 border ${
-                            index > 0
-                              ? "border-t-gray-100 border-l-0 border-r-0"
-                              : ""
-                          }`}
-                          onClick={() => {
-                            setselectedTab(tab.title);
-                            router.push(tab.path);
-                            setisOpen(false);
-                          }}
-                        >
-                          {tab.icon && selectedTab == tab.title && (
-                            <div>{tab.icon}</div>
-                          )}
-                          <div className="cursor-pointer">
-                            <span
-                              className={`${
-                                selectedTab == tab.title &&
-                                "font-bold text-urban-green"
-                              }`}
-                            >
-                              {tab.title}
-                            </span>
+                      {tab.title !== "Travels" &&
+                        tab.title !== "Card" &&
+                        tab.title !== "Company" && (
+                          <div
+                            className={`flex items-center gap-1 justify-center py-3 border ${
+                              index > 0
+                                ? "border-t-gray-100 border-l-0 border-r-0"
+                                : ""
+                            }`}
+                            onClick={() => {
+                              setselectedTab(tab.title);
+                              router.push(tab.path);
+                              setisOpen(false);
+                            }}
+                          >
+                            {tab.icon && selectedTab == tab.title && (
+                              <div>{tab.icon}</div>
+                            )}
+                            <div className="cursor-pointer">
+                              <span
+                                className={`${
+                                  selectedTab == tab.title &&
+                                  "font-bold text-urban-green"
+                                }`}
+                              >
+                                {tab.title}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      )}
-                      {tab.title == "Traveler’s Club" && (
-                        <>
+                        )}
+
+                      {tab.title == "Travels" && (
+                        <div className="mt-2 relative py-2 flex justify-center">
                           <div className="relative flex justify-center gap-x-2">
                             <div
                               className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
@@ -464,13 +440,13 @@ export default function Navbar({ setMobileVisibility }: any) {
                                   : " text-urban-black"
                               }`}
                             >
-                              Traveler's Club
+                              Travelers
                             </div>
                             <div
                               className="arrow-down"
-                              onClick={() =>
-                                setisTravelsDropOpen(!isTravelsDropOpen)
-                              }
+                              onClick={() => {
+                                setisTravelsDropOpen(!isTravelsDropOpen);
+                              }}
                             >
                               <KeyboardArrowDownIcon
                                 sx={{ fontSize: "1.4rem" }}
@@ -479,41 +455,81 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
 
                           {isTravelsDropOpen && (
-                            <div className="travelersItems-container-m left-20">
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Urban Card");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("urban-card");
-                                  console.log("here");
-                                }}
-                              >
-                                Urban Card
-                              </div>
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("travelers-kit");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("traveler-kit");
-                                }}
-                              >
-                                Traveler's kit
-                              </div>
-                              <div
-                                className="item font-creato font-light p-2"
-                                onClick={() => {
-                                  settravelersPage("Urban Card");
-                                  setisTravelsDropOpen(!isTravelsDropOpen);
-                                  router.push("hotels");
-                                }}
-                              >
-                                Hotels
-                              </div>
-                            </div>
+                            <TravelsDesktopDrop
+                              isTravelsDropOpen={isTravelsDropOpen}
+                              setisTravelsDropOpen={setisTravelsDropOpen}
+                              settravelersPage={settravelersPage}
+                            />
                           )}
-                        </>
+                        </div>
+                      )}
+
+                      {tab.title == "Card" && (
+                        <div className="mt-2 relative  py-2 flex justify-center">
+                          <div className="relative flex justify-center gap-x-2">
+                            <div
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === tab.title
+                                  ? "font-semibold text-urban-green underline"
+                                  : " text-urban-black"
+                              }`}
+                            >
+                              Card
+                            </div>
+                            <div
+                              className="arrow-down"
+                              onClick={() =>
+                                setisCardsDropOpen(!isCardDropOpen)
+                              }
+                            >
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
+                            </div>
+                          </div>
+
+                          {isCardDropOpen && (
+                            <CardDesktopDrop
+                              isCardDropOpen={isCardDropOpen}
+                              setCardPage={() => ""}
+                              setisCardDropOpen={setisCardsDropOpen}
+                            />
+                          )}
+                        </div>
+                      )}
+
+                      {tab.title == "Company" && (
+                        <div className="mt-2 relative border border-slate-100 py-2 flex justify-center">
+                          <div className="relative flex justify-center gap-x-2">
+                            <div
+                              className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
+                                selectedTab === tab.title
+                                  ? "font-semibold text-urban-green underline"
+                                  : " text-urban-black"
+                              }`}
+                            >
+                              Company
+                            </div>
+                            <div
+                              className="arrow-down"
+                              onClick={() =>
+                                setisCompanyDropOpen(!isCompanyDropOpen)
+                              }
+                            >
+                              <KeyboardArrowDownIcon
+                                sx={{ fontSize: "1.4rem" }}
+                              />
+                            </div>
+                          </div>
+
+                          {isCompanyDropOpen && (
+                            <CompanyDesktopDrop
+                              isCompanyDropOpen={isCompanyDropOpen}
+                              setisCompanyDropOpen={setisCompanyDropOpen}
+                              setCompanyPage={() => ""}
+                            />
+                          )}
+                        </div>
                       )}
                     </div>
                   ))}
