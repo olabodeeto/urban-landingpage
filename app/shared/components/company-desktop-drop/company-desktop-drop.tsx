@@ -44,8 +44,8 @@ export default function CompanyDesktopDrop({
       <div className="mb-4">
         <hr />
       </div>
-      <div className="flex flex-row gap-2">
-        <div className="w-1/2 flex flex-col gap-4">
+      <div className="flex flex-col lg:flex-row gap-2">
+        <div className="w-full lg:w-1/2 flex flex-col gap-4">
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
@@ -113,7 +113,7 @@ export default function CompanyDesktopDrop({
           </div>
         </div>
 
-        <div className="w-1/2 flex flex-col gap-4">
+        <div className="w-full lg:w-1/2 flex flex-col gap-4">
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start p-2"
             onClick={() => {

@@ -46,7 +46,7 @@ export default function CardDesktopDrop({
       </div>
       <div className="flex flex-row gap-2">
         <div className="w-full flex flex-col gap-4">
-          <div className="flex flex-row justify-between hover:bg-slate-100 p-2">
+          <div className="flex flex-col gap-y-2 lg:flex-row justify-between hover:bg-slate-100 p-2">
             <div
               className="item font-creato font-light flex flex-row gap-2 items-start"
               onClick={() => {
@@ -63,8 +63,8 @@ export default function CardDesktopDrop({
                 </p>
               </div>
             </div>
-            <div className="w-4/12">
-              <button className="bg-black text-white rounded-full px-4 py-2 text-sm">
+            <div className="w-5/12 lg:w-4/12">
+              <button className="bg-black text-white rounded-full px-4 py-3 lg:py-2 text-xs lg:text-sm">
                 Request a demo
               </button>
             </div>
