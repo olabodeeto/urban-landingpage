@@ -395,7 +395,7 @@ export default function Navbar({ setMobileVisibility }: any) {
               open={isOpen}
               className="bg-white rounded-xl p-3 w-full top-16  overflow-scroll"
             >
-              <div className="flex flex-col justify-between h-[84vh]">
+              <div className="flex flex-col justify-between h-[84vh] ">
                 <div>
                   {tabsData.map((tab, index: number) => (
                     <div key={index}>
@@ -430,7 +430,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </div>
                         )}
 
-                      {tab.title == "Travels" && (
+                      {tab.title == "Travels" && isOpen && (
                         <div className="mt-2 relative py-2 flex justify-center">
                           <div className="relative flex justify-center gap-x-2">
                             <div
@@ -457,14 +457,17 @@ export default function Navbar({ setMobileVisibility }: any) {
                           {isTravelsDropOpen && (
                             <TravelsDesktopDrop
                               isTravelsDropOpen={isTravelsDropOpen}
-                              setisTravelsDropOpen={setisTravelsDropOpen}
+                              setisTravelsDropOpen={(value: any) => {
+                                setisTravelsDropOpen(value);
+                                setisOpen(false);
+                              }}
                               settravelersPage={settravelersPage}
                             />
                           )}
                         </div>
                       )}
 
-                      {tab.title == "Card" && (
+                      {tab.title == "Card" && isOpen && (
                         <div className="mt-2 relative  py-2 flex justify-center">
                           <div className="relative flex justify-center gap-x-2">
                             <div
@@ -492,13 +495,16 @@ export default function Navbar({ setMobileVisibility }: any) {
                             <CardDesktopDrop
                               isCardDropOpen={isCardDropOpen}
                               setCardPage={() => ""}
-                              setisCardDropOpen={setisCardsDropOpen}
+                              setisCardDropOpen={(value: any) => {
+                                setisCardsDropOpen(value);
+                                setisOpen(false);
+                              }}
                             />
                           )}
                         </div>
                       )}
 
-                      {tab.title == "Company" && (
+                      {tab.title == "Company" && isOpen && (
                         <div className="mt-2 relative border border-slate-100 py-2 flex justify-center">
                           <div className="relative flex justify-center gap-x-2">
                             <div
@@ -525,7 +531,10 @@ export default function Navbar({ setMobileVisibility }: any) {
                           {isCompanyDropOpen && (
                             <CompanyDesktopDrop
                               isCompanyDropOpen={isCompanyDropOpen}
-                              setisCompanyDropOpen={setisCompanyDropOpen}
+                              setisCompanyDropOpen={(value: any) => {
+                                setisCompanyDropOpen(value);
+                                setisOpen(false);
+                              }}
                               setCompanyPage={() => ""}
                             />
                           )}

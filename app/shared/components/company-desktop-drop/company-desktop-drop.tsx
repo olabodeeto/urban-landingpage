@@ -23,7 +23,7 @@ export default function CompanyDesktopDrop({
   };
 
   useEffect(() => {
-    if (isCompanyDropOpen) {
+    if (isCompanyDropOpen && window.innerWidth >= 1024) {
       // Add event listener when modal is open
       document.addEventListener("mousedown", handleOutsideClick);
     } else {
