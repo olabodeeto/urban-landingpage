@@ -17,12 +17,28 @@ import AppAd from "../shared/components/app-ad/app-ad";
 import ProductCard from "../shared/components/product-card/product-card";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
-export default function MerchantPage() {
-  const [isModalOpen, setisModalOpen] = useState(false);
+function Search() {
   const searchParams = useSearchParams();
   const searchValue = searchParams.get("search");
 
   const [searchVal, setsearchVal] = useState(searchValue ?? "");
+
+  return (
+    <div className="flex items-center bg-white px-2 gap-x-1 lg:w-5/12 rounded-full border border-gray-400">
+      <CiSearch size={24} />
+      <input
+        value={searchVal}
+        className="w-full outline-none h-12 rounded-full placeholder:text-urban-black font-creato font-light"
+        placeholder="What are you looking for?"
+        onChange={(event: any) => setsearchVal(event.target.value)}
+      />
+    </div>
+  );
+}
+
+export default function MerchantPage() {
+  const [isModalOpen, setisModalOpen] = useState(false);
+
   const initialData = {
     category: "Most Popular",
     city: "abia",
@@ -71,16 +87,7 @@ export default function MerchantPage() {
         <section className="mt-10 min-h-80 px-4 lg:px-6">
           <div className="bg-slate-50 w-full xl:w-11/12 m-auto  min-h-20 flex justify-between xl:items-center">
             <div className="w-10/12 flex flex-col gap-y-2 lg:flex-row xl:items-center gap-x-4">
-              <div className="flex items-center bg-white px-2 gap-x-1 lg:w-5/12 rounded-full border border-gray-400">
-                <CiSearch size={24} />
-                <input
-                  value={searchVal}
-                  className="w-full outline-none h-12 rounded-full placeholder:text-urban-black font-creato font-light"
-                  placeholder="What are you looking for?"
-                  onChange={(event: any) => setsearchVal(event.target.value)}
-                />
-              </div>
-
+              <Search />
               <div className="lg:w-3/12 px-4 border border-urban-green bg-white flex items-center rounded-full justify-between">
                 <span className="font-creato font-light">Category:</span>
 
