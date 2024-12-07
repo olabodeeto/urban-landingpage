@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import "./merchant.scss";
 import FavIcon from "../shared/components/icons/fav-icon";
@@ -18,6 +19,10 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
 export default function MerchantPage() {
   const [isModalOpen, setisModalOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const searchValue = searchParams.get("search");
+
+  const [searchVal, setsearchVal] = useState(searchValue ?? "");
   const initialData = {
     category: "Most Popular",
     city: "abia",
@@ -68,8 +73,10 @@ export default function MerchantPage() {
             <div className="flex items-center bg-white px-2 gap-x-1 lg:w-5/12 rounded-full border border-gray-400">
               <CiSearch size={24} />
               <input
+                value={searchVal}
                 className="w-full outline-none h-12 rounded-full placeholder:text-urban-black font-creato font-light"
                 placeholder="What are you looking for?"
+                onChange={(event: any) => setsearchVal(event.target.value)}
               />
             </div>
 
