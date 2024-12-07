@@ -14,6 +14,7 @@ import Footer from "../shared/components/footer/footer";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./travelers-kit.scss";
+import { useRouter } from "next/navigation";
 
 export default function TravelersKitPage() {
   const [ismovileNavOpen, setismovileNavOpen] = useState(false);
@@ -23,6 +24,13 @@ export default function TravelersKitPage() {
     renderBullet: function (index: any, className: any) {
       return '<span class="' + className + ' bg-urban-green">' + "</span>";
     },
+  };
+
+  const router = useRouter();
+  const setSearchValue = () => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("search", "travellers kit"); // Set or update the `searchValue`
+    router.push(`/merchant?${params.toString()}`); // Update the URL
   };
 
   useEffect(() => {
@@ -96,6 +104,7 @@ export default function TravelersKitPage() {
                 data-aos="fade-up"
                 data-aos-duration="2000"
                 data-aos-once="true"
+                onClick={setSearchValue}
               >
                 Shop now
               </button>
@@ -192,7 +201,10 @@ export default function TravelersKitPage() {
             />
 
             <div className="mt-20 mb-10 2xl:mt-14">
-              <button className="py-2 px-6 xl:py-3 xl:px-10 xl:text-xl bg-urban-green text-white font-creato rounded 2xl:text-xl 2xl:py-3 2xl:px-10 floating-text">
+              <button
+                className="py-2 px-6 xl:py-3 xl:px-10 xl:text-xl bg-urban-green text-white font-creato rounded 2xl:text-xl 2xl:py-3 2xl:px-10 floating-text"
+                onClick={setSearchValue}
+              >
                 See more
               </button>
             </div>
