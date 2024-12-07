@@ -88,7 +88,7 @@ export default function TravelsDesktopDrop({
           >
             <img src="./assets/providersIcon.svg" alt="" />
             <div>
-              <h4 className="font-bold">Provider’s</h4>
+              <h4 className="font-bold">Provider’s agency</h4>
               <p className="text-sm">
                 Take the Urban wheel and experience a level of driving purity.
               </p>

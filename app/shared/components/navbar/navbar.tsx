@@ -115,11 +115,11 @@ export default function Navbar({ setMobileVisibility }: any) {
         </>
       ),
     },
-    { id: 6, title: "Travels", path: "/travelers-club" },
-    { id: 3, title: "Card", path: "/card" },
+    { id: 6, title: "Travel", path: "/travelers-club" },
+    { id: 3, title: "Cards", path: "/card" },
     { id: 4, title: "Hotels", path: "/hotels" },
 
-    { id: 4, title: "Merchant", path: "/merchant" },
+    { id: 4, title: "Merchants", path: "/merchant" },
     { id: 5, title: "Company", path: "/company" },
   ];
 
@@ -166,8 +166,10 @@ export default function Navbar({ setMobileVisibility }: any) {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousein", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousein", handleClickOutside);
     };
   }, [dropdownRef]);
 
@@ -204,8 +206,8 @@ export default function Navbar({ setMobileVisibility }: any) {
                 <ul className="flex items-center lg:gap-8 xl:gap-10 2xl:gap-10 tabs-container">
                   {tabsData.map((obj, index: number) => (
                     <div key={index}>
-                      {obj.title !== "Travels" &&
-                        obj.title !== "Card" &&
+                      {obj.title !== "Travel" &&
+                        obj.title !== "Cards" &&
                         obj.title !== "Company" && (
                           <>
                             <Link href={obj.path}>
@@ -227,7 +229,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                           </>
                         )}
 
-                      {obj.title == "Travels" && (
+                      {obj.title == "Travel" && (
                         <>
                           <div className="travelersClub-tab">
                             <div
@@ -240,9 +242,12 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 setselectedTab(obj.title);
                                 router.push(obj.path);
                               }}
+                              onMouseEnter={() => {
+                                setisTravelsDropOpen(true);
+                              }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
-                              Travels
+                              Travel
                             </div>
                             <div
                               className="arrow-down"
@@ -266,7 +271,7 @@ export default function Navbar({ setMobileVisibility }: any) {
                         </>
                       )}
 
-                      {obj.title == "Card" && (
+                      {obj.title == "Cards" && (
                         <>
                           <div className="travelersClub-tab">
                             <div
@@ -279,8 +284,11 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 setselectedTab(obj.title);
                                 router.push("/urban-card");
                               }}
+                              onMouseEnter={() => {
+                                setisCardsDropOpen(true);
+                              }}
                             >
-                              Card
+                              Cards
                             </div>
                             <div
                               className="arrow-down"
@@ -316,6 +324,9 @@ export default function Navbar({ setMobileVisibility }: any) {
                               onClick={() => {
                                 setselectedTab(obj.title);
                                 router.push(obj.path);
+                              }}
+                              onMouseEnter={() => {
+                                setisCompanyDropOpen(true);
                               }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
