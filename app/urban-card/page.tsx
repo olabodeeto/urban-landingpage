@@ -78,9 +78,9 @@ export default function UrbanCardPage() {
 
             <div className="_cardrigthSide">
               <Image
-                src="/assets/simplecard.png"
-                width={840}
-                height={400}
+                src="/assets/simplecard.svg"
+                width={1240}
+                height={800}
                 alt=""
                 className="floating"
                 data-aos="flip-up"
@@ -93,7 +93,7 @@ export default function UrbanCardPage() {
         <div className=" flex justify-center items-center lg:pt-20 mt-24 lg:mt-2">
           <section className="w-11/12 lg:w-11/12 lg:px-6 m-auto lg:mt-4">
             <div className="flex flex-col lg:flex-row justify-between">
-              <div className="w-full min-h-[20rem] lg:min-h-[30rem] lg:w-6/12">
+              <div className="w-full min-h-[20rem] lg:min-h-[20rem] lg:w-4/12 xl:min-h-[30rem] xl:w-6/12">
                 <Image
                   src="/assets/card-section-bg.svg"
                   width={30}
@@ -104,15 +104,15 @@ export default function UrbanCardPage() {
               </div>
 
               <div className="w-full lg:w-6/12 bg-white mt-8 lg:mt-0 lg:p-10 lg:px-20 flex flex-col">
-                <div className="mt-2 w-full  xl:-mt-8 cardsection-container">
-                  <h2 className=" text-2xl lg:text-xl xl:text-4xl lg:w-full w-11/12 font-creato mb-2 text-urban-green">
+                <div className="mt-2 w-full xl:-mt-8 cardsection-container">
+                  <h2 className=" text-2xl lg:text-xl xl:text-4xl 2xl:text-5xl lg:w-full w-11/12 font-creato mb-2 text-urban-green">
                     From individuals, small businesses to global enterprises
                   </h2>
                   <p className="font-creato text-xl mt-4">
                     {" "}
                     Everyone spend and saves with Urban Card.{" "}
                   </p>
-                  <div className="mt-4 mb-4 px-4">
+                  <div className="mt-4 mb-4 px-4 2xl:mt-8">
                     <ul className="flex-col gap-4 text-xl list-item list-disc font-creato list-outside">
                       <li className="mb-4"> Road Warriors</li>
                       <li className="mb-4"> Travel Managers</li>

@@ -96,26 +96,26 @@
 
     img {
       position: absolute;
-      top: 10rem;
+      top: -4rem;
       right: -2rem;
-      width: 36rem;
+      width: 50rem;
 
       @media screen and (min-width: 320px) and (max-width: 560px) {
-        top: 24rem;
+        top: 20rem;
         left: 0;
-        width: 24rem;
-        right: 1rem;
+        width: 60rem;
+        // right: 1rem;
         // position: relative;
       }
 
       @media screen and (min-width: 1280px) and (max-width: 1399px) {
-        width: 34rem;
-        top: 8.6rem;
+        width: 40rem;
+        top: 1.6rem;
         right: -2rem;
       }
       @media screen and (min-width: 1680px) {
-        width: 44rem;
-        top: 6rem;
+        width: 56rem;
+        top: -2rem;
         right: -8rem;
       }
     }
@@ -123,8 +123,13 @@
 }
 
 .cardsection-container {
+  margin-top: 2rem;
   @media screen and (min-width: 1280px) and (max-width: 1399px) {
-    margin-top: -10rem;
+    margin-top: -1rem;
+  }
+
+  @media screen and (min-width: 1680px) {
+    margin-top: 4rem;
   }
 }
 
