@@ -21,10 +21,10 @@ export default function Footer() {
                 height={120}
                 className="w-28 xl:w-32"
               />
-              {/* <p className="mt-6 italic font-creato font-light text-xs xl:text-sm">
+              <p className="mt-6 italic font-creato font-light text-[0.70rem] xl:text-sm mr-2">
                 We are a traveler-centric brand with a focus on redefining
                 Africa's approach to travel.
-              </p> */}
+              </p>
 
               <div className="mt-4">
                 <div className="flex gap-2 mb-4 urban-footer-icons">
@@ -51,7 +51,7 @@ export default function Footer() {
                   />
                   <div className="text-white text-xs xl:text-sm pr-4 font-thin">
                     <p>Call Us</p>
-                    <p>(00) 112 365 489</p>
+                    <p>+234 816 6178 166</p>
                   </div>
                 </div>
               </div>
@@ -213,6 +213,15 @@ export default function Footer() {
                       alt=""
                     />
                   </div>
+                </div>
+
+                <div className="mt-4">
+                  <Image
+                    src="./assets/ncdpc.svg"
+                    width={100}
+                    height={40}
+                    alt=""
+                  />
                 </div>
               </div>
             </div>

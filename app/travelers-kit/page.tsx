@@ -111,7 +111,7 @@ export default function TravelersKitPage() {
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full min-h-[20rem] p-5 lg:p-20 lg:min-h-[40rem] lg:w-7/12 bg-urban-lightGreen bg-cover flex justify-center">
               <Image
-                src="/assets/kit-access.png"
+                src="/assets/kit-access.svg"
                 width={100}
                 height={100}
                 alt=""
@@ -184,7 +184,7 @@ export default function TravelersKitPage() {
           </div>
           <div className="w-11/12 m-auto flex flex-col items-center lg:w-full mt-12">
             <Image
-              src="/assets/mansory.png"
+              src="/assets/mansory.svg"
               width={600}
               height={600}
               alt=""

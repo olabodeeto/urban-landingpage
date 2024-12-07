@@ -128,8 +128,7 @@ export default function TravelersClubPage() {
               data-aos-duration="1800"
               data-aos-once="true"
             >
-              Instantly recognizable, Urban has been delivered across four
-              cExclusive club created by Urban's travel enthusiast for Urban
+              Exclusive club created by Urban's travel enthusiast for Urban
               enthusiast. The main purpose is to bring together like-minded
               travelers who share a passion for exquisite travel experience all
               over the country. Urban traveler's club makes you part of a

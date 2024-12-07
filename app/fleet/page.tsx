@@ -70,22 +70,22 @@ export default function Fleetpage() {
               travelers' engagement and experience.
             </p>
             <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
-              <div className="w-full h-96 lg:h-[28rem] lg:1/2 relative overflow-hidden">
+              <div className="w-full h-96 lg:h-[28rem] lg:w-5/12 relative overflow-hidden">
                 <Image
-                  src="/assets/fleet1.png"
+                  src="/assets/fleet1.svg"
                   width={300}
                   height={140}
                   alt=""
-                  className="w-full h-96 2xl:h-[28rem] object-cover object-center"
+                  className="w-full h-96  2xl:h-[28rem] object-cover object-center"
                   data-aos="zoom-out-left"
                   data-aos-duration="2000"
                   data-aos-once="true"
                 />
               </div>
 
-              <div className="w-full h-96 lg:h-[28rem] lg:1/2 relative overflow-hidden">
+              <div className="w-full h-96 lg:h-[28rem] lg:w-7/12 relative overflow-hidden">
                 <Image
-                  src="/assets/fleet2.png"
+                  src="/assets/fleet2.svg"
                   width={300}
                   height={140}
                   alt=""
