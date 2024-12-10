@@ -109,9 +109,9 @@ export default function HotelDialog({ isOpen, setisopen }: PropT) {
               </div>
             </div>
             <div className="flex flex-col gap-y-2 mt-6 w-8/12 lg:w-6/12 2xl:w-5/12">
-              <button className="py-3 px-6 text-xs lg:text-sm rounded-md bg-urban-green text-white 2xl:py-4 2xl:px-4">
+              {/* <button className="py-3 px-6 text-xs lg:text-sm rounded-md bg-urban-green text-white 2xl:py-4 2xl:px-4">
                 Make Reservations
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

@@ -65,26 +65,26 @@ export default function CompanyDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              setCompanyPage("Urban Card");
+              setCompanyPage("Partners");
               console.log("nav called");
               setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
+              router.push("/partners");
             }}
           >
             <img src="./assets/partnerIcon.svg" alt="" className="mt-1" />
             <div>
               <h4 className="font-bold">Partners</h4>
-              <p className="text-sm">Enabling linkages across boundaries.</p>
+              {/* <p className="text-sm">Enabling linkages across boundaries.</p> */}
             </div>
           </div>
 
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              setCompanyPage("Urban Card");
+              setCompanyPage("Careers");
               console.log("nav called");
               setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
+              router.push("/careers");
             }}
           >
             <img src="./assets/careerIcon.svg" alt="" className="mt-1" />
@@ -99,10 +99,10 @@ export default function CompanyDesktopDrop({
           <div
             className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
             onClick={() => {
-              setCompanyPage("Urban Card");
+              setCompanyPage("contact");
               console.log("nav called");
               setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
+              router.push("/contact");
             }}
           >
             <img src="./assets/contactIcon.svg" alt="" className="mt-1" />
@@ -114,15 +114,7 @@ export default function CompanyDesktopDrop({
         </div>
 
         <div className="w-full lg:w-1/2 flex flex-col gap-4">
-          <div
-            className="item font-creato font-light flex flex-row gap-2 items-start p-2"
-            onClick={() => {
-              setCompanyPage("Urban Card");
-              console.log("nav called");
-              setisCompanyDropOpen(!isCompanyDropOpen);
-              router.push("/urban-card");
-            }}
-          >
+          <div className="item font-creato font-light flex flex-row gap-2 items-start p-2">
             <img src="./assets/resourceIcon.svg" alt="" className="mt-1" />
             <div>
               <h4 className="font-bold">Resources</h4>
@@ -132,9 +124,9 @@ export default function CompanyDesktopDrop({
                 <div
                   className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
                   onClick={() => {
-                    setCompanyPage("Urban Card");
+                    setCompanyPage("Blog");
                     setisCompanyDropOpen(!isCompanyDropOpen);
-                    router.push("/urban-card");
+                    router.push("/blog");
                   }}
                 >
                   <img src="./assets/blogIcon.svg" alt="" className="mt-1" />
@@ -149,9 +141,9 @@ export default function CompanyDesktopDrop({
                 <div
                   className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
                   onClick={() => {
-                    setCompanyPage("Urban Card");
+                    setCompanyPage("Glossary");
                     setisCompanyDropOpen(!isCompanyDropOpen);
-                    router.push("/urban-card");
+                    router.push("/glossary");
                   }}
                 >
                   <img
@@ -172,9 +164,9 @@ export default function CompanyDesktopDrop({
                 <div
                   className="item font-creato font-light flex flex-row gap-2 items-start hover:bg-slate-100 p-2"
                   onClick={() => {
-                    setCompanyPage("Urban Card");
+                    setCompanyPage("Urban Experience");
                     setisCompanyDropOpen(!isCompanyDropOpen);
-                    router.push("/urban-card");
+                    router.push("/urban-Experience");
                   }}
                 >
                   <img

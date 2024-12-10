@@ -114,7 +114,7 @@ export default function Footer() {
               <h2 className="font-creato">Policies</h2>
               <ul className="text-xs xl:text-sm font-thin flex flex-col gap-2 mt-2">
                 <Link href="/policy/terms-of-use">
-                  <li>Terms Of Use</li>
+                  <li>Terms of Use</li>
                 </Link>
 
                 <Link href="/policy/refund-policy">
@@ -156,8 +156,8 @@ export default function Footer() {
                     <Link href="">
                       <Image
                         src="/assets/linkedicon.svg"
-                        width={16}
-                        height={16}
+                        width={20}
+                        height={20}
                         alt=""
                       />
                     </Link>
@@ -170,8 +170,8 @@ export default function Footer() {
                     >
                       <Image
                         src="/assets/twittericon.svg"
-                        width={16}
-                        height={16}
+                        width={20}
+                        height={20}
                         alt=""
                       />
                     </Link>
@@ -184,8 +184,8 @@ export default function Footer() {
                     >
                       <Image
                         src="/assets/fbicon.svg"
-                        width={16}
-                        height={16}
+                        width={20}
+                        height={20}
                         alt=""
                       />
                     </Link>
@@ -198,8 +198,8 @@ export default function Footer() {
                     >
                       <Image
                         src="/assets/igicon.svg"
-                        width={16}
-                        height={16}
+                        width={20}
+                        height={20}
                         alt=""
                       />
                     </Link>
@@ -208,8 +208,8 @@ export default function Footer() {
                   <div>
                     <Image
                       src="/assets/youtubeicon.svg"
-                      width={16}
-                      height={16}
+                      width={20}
+                      height={20}
                       alt=""
                     />
                   </div>
