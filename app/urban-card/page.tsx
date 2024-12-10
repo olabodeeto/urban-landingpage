@@ -43,8 +43,8 @@ export default function UrbanCardPage() {
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                Get discounts and special deals when you use your Urban
-                Traveler's Card
+                It's amazing how much perks and freedom can be packed into a
+                simple card.
               </h2>
               <div
                 className="flex items-center gap-2 mt-6"
@@ -59,7 +59,7 @@ export default function UrbanCardPage() {
                   className="lg:w-10"
                 />
                 <span className="italic block font-thin font-creato text-white text-xl xl:text-3xl">
-                  Travel & Live like a Native
+                  Live like a Native
                 </span>
               </div>
 
@@ -143,28 +143,30 @@ export default function UrbanCardPage() {
           <section className="w-11/12 lg:w-11/12 px-1 lg:px-6 m-auto lg:mt-4 2xl:w-10/12">
             <div className="flex flex-col lg:flex-row justify-between">
               <div className="w-full lg:w-5/12 bg-urban-black p-10 lg:px-1 flex flex-col items-center justify-center gap-4 lg:gap-10 lg:min-h-96">
-                <div className="flex items-center gap-4 text-white w-full md:px-10">
+                <div className="flex items-center gap-4 text-white w-full md:px-10 lg:w-11/12 m-auto">
                   <Image
                     src="/assets/cardblob1.svg"
-                    width={140}
+                    width={180}
                     height={140}
                     alt=""
                     data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-once="true"
+                    className="w-1/2"
                   />
                   <Image
                     src="/assets/cardblob2.svg"
-                    width={140}
+                    width={180}
                     height={140}
                     alt=""
                     data-aos="fade-up"
                     data-aos-duration="1000"
                     data-aos-once="true"
+                    className="w-1/2"
                   />
                 </div>
 
-                <div className="mt-4 lg:mt-2 w-full xl:px-1 flex justify-center">
+                <div className="mt-4 lg:mt-2 w-full xl:px-1 flex justify-center lg:w-11/12 m-auto">
                   <div className="w-full md:px-10">
                     <h2
                       className=" text-2xl font-light lg:text-3xl xl:text-4xl w-10/12 text-white font-creato"
@@ -181,7 +183,7 @@ export default function UrbanCardPage() {
 
                 <div className="w-full flex justify-center">
                   <Image
-                    src="/assets/simplecard1.png"
+                    src="/assets/simplecard1.svg"
                     width={120}
                     height={120}
                     alt=""
