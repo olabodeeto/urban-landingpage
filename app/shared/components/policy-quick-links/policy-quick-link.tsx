@@ -18,7 +18,7 @@ export default function PolicyQuickLink() {
             className="block text-urban-black underline font-creato cursor-pointer"
             onClick={() => router.push("/policy/terms-of-use")}
           >
-            Terms od Use
+            Terms of Use
           </span>
           <span
             className="block text-urban-black underline font-creato cursor-pointer"

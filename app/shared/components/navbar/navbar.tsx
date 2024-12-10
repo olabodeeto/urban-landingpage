@@ -242,9 +242,9 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 setselectedTab(obj.title);
                                 router.push(obj.path);
                               }}
-                              onMouseEnter={() => {
-                                setisTravelsDropOpen(true);
-                              }}
+                              // onMouseEnter={() => {
+                              //   setisTravelsDropOpen(true);
+                              // }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
                               Travel
@@ -284,9 +284,9 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 setselectedTab(obj.title);
                                 router.push("/urban-card");
                               }}
-                              onMouseEnter={() => {
-                                setisCardsDropOpen(true);
-                              }}
+                              // onMouseEnter={() => {
+                              //   setisCardsDropOpen(true);
+                              // }}
                             >
                               Cards
                             </div>
@@ -325,9 +325,9 @@ export default function Navbar({ setMobileVisibility }: any) {
                                 setselectedTab(obj.title);
                                 router.push(obj.path);
                               }}
-                              onMouseEnter={() => {
-                                setisCompanyDropOpen(true);
-                              }}
+                              // onMouseEnter={() => {
+                              //   setisCompanyDropOpen(true);
+                              // }}
                             >
                               {/* {travelersPage?travelersPage: obj.title} */}
                               Company

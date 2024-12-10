@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Image from "next/image";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import Footer from "../shared/components/footer/footer";
 import SearchIcon from "@mui/icons-material/Search";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
@@ -101,6 +102,28 @@ export default function HotelsPage() {
                   setisModalOpen(true);
                 }}
               />
+            </div>
+
+            <div className="w-full flex justify-center mt-10 py-10">
+              <div className="flex items-center gap-10">
+                <span className="font-creato font-bold">Page 1 of 30</span>
+                <div>
+                  <div className="flex items-center gap-4 lg:gap-6">
+                    <div
+                      className="w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#D9D9D9] rounded-full flex justify-center items-center cursor-pointer"
+                      onClick={() => {}}
+                    >
+                      <HiOutlineChevronLeft size={28} />
+                    </div>
+                    <div
+                      className="w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#D9D9D9] rounded-full flex justify-center items-center cursor-pointer"
+                      onClick={() => {}}
+                    >
+                      <HiOutlineChevronRight size={28} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
