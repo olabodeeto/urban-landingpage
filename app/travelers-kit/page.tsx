@@ -60,7 +60,7 @@ export default function TravelersKitPage() {
 
           <div className="_kitrigthSide">
             <Image
-              src="/assets/kithero.png"
+              src="/assets/kithero.svg"
               width={840}
               height={400}
               alt=""
