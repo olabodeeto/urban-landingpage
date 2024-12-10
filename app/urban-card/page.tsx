@@ -257,10 +257,7 @@ export default function UrbanCardPage() {
               <span className="font-light">Do more</span> with Urban Merchants
             </p>
           </div>
-          <div className="w-full flex flex-col lg:flex-row justify-between px-10 gap-y-4 items-center mb-14">
-            <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
-              <img src="/assets/rand1.png" alt="" className="object-cover" />
-            </div>
+          <div className="w-full flex flex-col lg:flex-row justify-around px-10 gap-y-4 items-center mb-14">
             <div className="w-[40vh] h-[40vh] lg:w-[20vw] lg:h-[20vw] rounded-full overflow-hidden">
               <img src="/assets/rand2.png" alt="" className="object-cover" />
             </div>
@@ -279,11 +276,11 @@ export default function UrbanCardPage() {
               </button>
             </div>
             <Image
-              src="/assets/hiddencard.png"
+              src="/assets/hiddencard.svg"
               width={120}
               height={120}
               alt=""
-              className="w-80 absolute -left-40 -top-2 bottom-0"
+              className="w-80 absolute -left-20 -top-20 bottom-0"
             />
           </div>
         </section>

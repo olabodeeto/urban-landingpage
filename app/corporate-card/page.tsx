@@ -100,7 +100,7 @@ export default function UrbanCardPage() {
 
             <div className="_cardPage_hero_rigthSide">
               <Image
-                src="/assets/cardhero2.png"
+                src="/assets/cardhero2.svg"
                 width={840}
                 height={400}
                 alt=""
@@ -422,7 +422,7 @@ export default function UrbanCardPage() {
         {/* ================================ */}
 
         {/* ========================= */}
-        <section className="w-full py-10 lg:py-0 lg:w-11/12 2xl:w-10/12 m-auto xl:mt-40 xl:mb-40 lg:xl:my-0 lg:pb-20 relative card-slider-section">
+        {/* <section className="w-full py-10 lg:py-0 lg:w-11/12 2xl:w-10/12 m-auto xl:mt-40 xl:mb-40 lg:xl:my-0 lg:pb-20 relative card-slider-section">
           <div className="flex flex-col lg:flex-row ">
             <div className="w-full p-20 lg:p-0 lg:w-1/2 ">
               <Image
@@ -451,7 +451,7 @@ export default function UrbanCardPage() {
               </h2>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* =========================== */}
 
         {/* ==== faq ============= */}
