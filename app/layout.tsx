@@ -70,6 +70,7 @@ export default function RootLayout({
           href="https://unpkg.com/aos@2.3.1/dist/aos.css"
           rel="stylesheet"
         ></link>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={creatoDisplay.className}>
         <Navbar />
