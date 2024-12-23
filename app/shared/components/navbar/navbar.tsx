@@ -235,12 +235,11 @@ export default function Navbar({ setMobileVisibility }: any) {
                             <div
                               className={` cursor-pointer lg:text-base xl:text-base 2xl:text-base hover:underline hover:text-urban-green ${
                                 selectedTab === obj.title
-                                  ? "font-semibold text-urban-green underline navbar-items"
+                                  ? "font-semibold text-urban-green navbar-items"
                                   : "font-light text-urban-black navbar-items"
                               }`}
                               onClick={() => {
                                 setselectedTab(obj.title);
-                                router.push(obj.path);
                               }}
                               // onMouseEnter={() => {
                               //   setisTravelsDropOpen(true);

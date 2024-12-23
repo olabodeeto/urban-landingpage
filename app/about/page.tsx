@@ -52,7 +52,7 @@ export default function Aboutpage() {
                   />
                   <div className="text-urban-green text-xs xl:text-sm pr-4 font-light">
                     <p>Call Us</p>
-                    <p>+234 816 6178 166</p>
+                    <p>+234 901 919 5291</p>
                   </div>
                 </div>
               </div>

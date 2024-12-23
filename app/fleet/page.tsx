@@ -59,15 +59,15 @@ export default function Fleetpage() {
               data-aos-duration="3000"
               data-aos-once="true"
             >
-              Instantly recognizable, Urban has been delivered across four
-              cities at present. Our team works hand-in-hand with travelers to
-              tailor each travel to their specific travel requirements. This
-              truly bespoke travel experience is a collaboration process with
-              infinite scope for personalization. Urban has instant appeal to
-              travelers looking for ultimate unparallel travel. It's
-              uncompromising approach across fleet and trip design and
-              management has drawn countless accolades lauded as maximizing
-              travelers' engagement and experience.
+              Instantly recognizable, Urban has been delivered across major
+              cities in Nigeria at present. Our team works hand-in-hand with
+              travelers to tailor each travel to their specific travel
+              requirements. This truly bespoke travel experience is a
+              collaboration process with infinite scope for personalization.
+              Urban has instant appeal to travelers looking for ultimate
+              unparallel travel. It's uncompromising approach across fleet and
+              trip design and management has drawn countless accolades lauded as
+              maximizing travelers' engagement and experience.
             </p>
             <div className="mt-10 flex flex-col lg:flex-row  justify-between gap-4">
               <div className="w-full h-96 lg:h-[28rem] lg:w-5/12 relative overflow-hidden">

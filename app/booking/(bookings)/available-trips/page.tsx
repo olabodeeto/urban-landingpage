@@ -26,7 +26,7 @@ export default function availableTrips() {
       getTrips(payload).subscribe({
         next: (res) => {
           if (res) {
-            // console.log("===>trips", res);
+            console.log("===>trips", res);
             setallTrips(res.data);
             setisloading(false);
           } else {
@@ -59,9 +59,9 @@ export default function availableTrips() {
         numberOfPassagers,
       } = firstStep;
       const lsPayload = {
-        fromState: departureState,
-        toState: destinationState,
-        travelDate: new Date(travelDate).toISOString(),
+        departureState,
+        destinationState,
+        departureDate: new Date(travelDate).toISOString(),
         vehicleType: "bus",
       };
       setpayload(lsPayload);
