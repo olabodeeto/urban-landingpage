@@ -251,7 +251,7 @@ export default function Home() {
               </button>
 
               <button className="w-1/2 rounded-md py-3 px-2 border border-urban-green text-urban-black lg:text-sm xl:text-base 2xl:text-xl">
-                Check My Bookings
+                Check My Booking(s)
               </button>
             </div>
           </div>

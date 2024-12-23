@@ -14,13 +14,15 @@ export default function Footer() {
         <div className="lg:w-[85%]  m-auto hidden lg:block">
           <div className="flex justify-between items-start text-white ">
             <div className="w-2/12 pr-2 footer-urban-area">
-              <Image
-                src="/assets/footer-logo.svg"
-                alt=""
-                width={120}
-                height={120}
-                className="w-28 xl:w-32"
-              />
+              <div className="bg-white py-2 rounded-full flex justify-center items-center w-32">
+                <Image
+                  src="/assets/footer-logo.svg"
+                  alt=""
+                  width={100}
+                  height={100}
+                  className="w-20"
+                />
+              </div>
               <p className="mt-6 italic font-creato font-light text-[0.70rem] xl:text-sm mr-2">
                 We are a traveler-centric brand with a focus on redefining
                 Africa's approach to travel.
@@ -51,7 +53,7 @@ export default function Footer() {
                   />
                   <div className="text-white text-xs xl:text-sm pr-4 font-thin">
                     <p>Call Us</p>
-                    <p>+234 816 6178 166</p>
+                    <p>+234 901 919 5291</p>
                   </div>
                 </div>
               </div>
