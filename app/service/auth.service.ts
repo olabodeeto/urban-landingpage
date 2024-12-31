@@ -8,7 +8,9 @@ type LoginT = {
 };
 
 export const getTrips = (payload: any): Observable<any> => {
-  return from(http.get("/trips/trips-for-booking")).pipe(
+  return from(
+    http.get("/trips/trips-for-booking", { params: { ...payload } })
+  ).pipe(
     map((response: any) => response),
     catchError((e) => handleError(e))
   );

@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { getTrips } from "@/app/service/auth.service";
 import Spinner from "@/app/shared/components/Spinner";
 import { toast } from "react-toastify";
-import { ITrips } from "@/app/shared/models/trips.model";
+import { ITrips } from "@/app/models/trips-model";
 
 export default function availableTrips() {
   const [isloading, setisloading] = useState(false);
@@ -105,7 +105,7 @@ export default function availableTrips() {
                 <Spinner isLoading size={60} />
               ) : (
                 <div>
-                  {allTrips.length ? (
+                  {allTrips && allTrips.length ? (
                     <div className="trips-card-container w-full grid grid-cols-1 gap-y-14 lg:gap-y-10 lg:grid-cols-3 lg:gap-x-10">
                       {allTrips.map((obj: any, index: number) => (
                         <div key={index + 1}>

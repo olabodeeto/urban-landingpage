@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { throwError } from "rxjs";
 
 const http = axios.create({
-  baseURL: "https://seashell-app-lq4vz.ondigitalocean.app/api",
+  baseURL: "https://seashell-app-lq4vz.ondigitalocean.app",
 });
 http.interceptors.request.use(
   (request) => {

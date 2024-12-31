@@ -3,12 +3,13 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 import { useRouter } from "next/navigation";
-import { ITrip } from "../../models/trips.model";
+
 import {
   convertDate,
   convertTo12HourFormat,
   truncateString,
 } from "../../utils/utils";
+import { ITrip } from "@/app/models/trips-model";
 
 type PropT = {
   data: ITrip;
@@ -19,26 +20,37 @@ export default function TripCard({ data }: PropT) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const {
-    tripCode,
-    fare,
-    vehicleType,
-    park,
-    totalSeats,
-    bookedSeats,
-    endState,
-    endCity,
-    date,
-    id: tripId,
-    time,
+    cost,
+    departure,
+    departureDate,
+    departureTime,
+    description,
+    uniqueID,
+    destination,
+    tripVehicle,
+    bookings,
   } = data;
-  const {
-    name: parkname,
-    state: parkState,
-    city: parkCity,
-    fullAddress: parkAddr,
-    longitude,
-    latitude,
-  } = park;
+  // const {
+  //   tripCode,
+  //   fare,
+  //   vehicleType,
+  //   park,
+  //   totalSeats,
+  //   bookedSeats,
+  //   endState,
+  //   endCity,
+  //   date,
+  //   id: tripId,
+  //   time,
+  // } = data;
+  // const {
+  //   name: parkname,
+  //   state: parkState,
+  //   city: parkCity,
+  //   fullAddress: parkAddr,
+  //   longitude,
+  //   latitude,
+  // } = park;
 
   const router = useRouter();
 
@@ -51,17 +63,17 @@ export default function TripCard({ data }: PropT) {
 
   const handleBookTrip = () => {
     const secondStep = {
-      tripCode,
-      parkAddr,
-      parkCity,
-      parkState,
-      parkname,
-      fare,
-      vehicleType,
-      departureCity: parkCity,
-      destinationCity: endCity,
-      departureTime: time,
-      departureDate: date,
+      tripCode: "",
+      parkAddr: "",
+      parkCity: "",
+      parkState: "",
+      parkname: "",
+      fare: "",
+      vehicleType: "",
+      departureCity: "",
+      destinationCity: "",
+      departureTime: "",
+      departureDate: "",
       lat: "",
       long: "",
     };
@@ -69,8 +81,9 @@ export default function TripCard({ data }: PropT) {
     router.push("/booking/passenger-details");
   };
 
-  const journey: string = `${parkCity} to ${endCity}`;
-  const availableSeats = totalSeats && totalSeats - bookedSeats;
+  const journey: string = `${departure.locationCity.name} to ${destination.locationCity.name}`;
+  const seats = tripVehicle.vehicleType.numberOfSeats - 1;
+  const availableSeats = seats - bookings.length;
 
   return (
     <div className="trip-card w-full h-[30rem] bg-white overflow-hidden rounded-xl card-shadow relative">
@@ -78,11 +91,11 @@ export default function TripCard({ data }: PropT) {
         <div className="flex justify-between w-full">
           <div className="text-white flex flex-col justify-between w-full gap-4 lg:gap-3">
             <p className="text-sm font-light">
-              Trip code: <span className="font-bold">{tripCode}</span>
+              Trip code:{" "}
+              <span className="font-bold">{uniqueID.toLowerCase()}</span>
             </p>
-            <h3 className="text-2xl lg:text-3xl font-light">
-              {truncateString(journey, 20)}
-              {/* {journey} */}
+            <h3 className="text-2xl lg:text-2xl 2xl:text-3xl font-light">
+              {truncateString(journey, 28)}
             </h3>
             <button className="bg-white rounded-full p-2 text-[0.7rem] w-6/12 lg:w-[44%] text-urban-black">
               {availableSeats! > 0 ? availableSeats : 0} Seats available
@@ -116,7 +129,7 @@ export default function TripCard({ data }: PropT) {
                 Pickup park
               </h5>
               <p className="font-light text-sm lg;text-base">
-                {parkAddr}, {parkState}
+                {departure.locationCity.name}, {departure.region}
               </p>
             </div>
             <div className="">
@@ -136,25 +149,25 @@ export default function TripCard({ data }: PropT) {
                       <div className="w-5/12 text-gray-500 font-light">
                         Park Address:
                       </div>
-                      <div>{parkAddr}</div>
+                      <div>{departure.address ?? "---"}</div>
                     </div>
                     <div className="flex items-center w-full text-xs">
                       <div className="w-5/12 text-gray-500 font-light">
                         Departure time:
                       </div>
-                      <div>{convertTo12HourFormat(time)}</div>
+                      <div>{convertTo12HourFormat(departureTime)}</div>
                     </div>
                     <div className="flex items-center w-full text-xs">
                       <div className="w-5/12 text-gray-500 font-light">
                         Departure Date:
                       </div>
-                      <div>{convertDate(date)}</div>
+                      <div>{convertDate(departureDate)}</div>
                     </div>
                     <div className="flex items-center w-full text-xs">
                       <div className="w-5/12 text-gray-500 font-light">
                         Park Tel:
                       </div>
-                      <div>{park.parkOwner.user.phoneNumber ?? "---"}</div>
+                      <div>{departure.phone ?? "---"}</div>
                     </div>
                   </div>
                 </div>
@@ -168,7 +181,8 @@ export default function TripCard({ data }: PropT) {
                 Destination City
               </h5>
               <p className="font-light text-sm lg:text-base">
-                {endCity}, {endState}
+                {/* {endCity}, {endState} */}
+                {destination.locationCity.name}, {destination.region}
               </p>
             </div>
             <div className=""></div>
@@ -186,12 +200,14 @@ export default function TripCard({ data }: PropT) {
           <span className="text-sm text-urban-green font-light">
             Departure Time
           </span>
-          <p className="text-xs 2xl:text-sm">{convertTo12HourFormat(time)}</p>
+          <p className="text-xs 2xl:text-sm">
+            {convertTo12HourFormat(departureTime)}
+          </p>
         </div>
 
         <div>
           <span className="text-urban-green text-sm">Amount</span>
-          <p className="text-sm 2xl:text-base">N{fare}</p>
+          <p className="text-sm 2xl:text-base">N{cost}</p>
         </div>
       </div>
 
