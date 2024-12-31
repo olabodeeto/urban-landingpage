@@ -2,41 +2,36 @@
 import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "aos/dist/aos.css";
+import { GiSteeringWheel } from "react-icons/gi";
 import AOS from "aos";
 import "./seat-arrange.scss";
+import { IVehicleType } from "@/app/models/trips-model";
+import {
+  generateSeatDivs,
+  generateSeatObjects,
+  splitAndConvertToNumbers,
+} from "../../utils/utils";
 
 type PropT = {
   isOpen?: boolean;
   setisopen: Function;
   handleSelect: Function;
   currentPassengerIndex: any;
+  vehicleData: IVehicleType;
 };
 export default function SeatArrangementDialog({
   isOpen,
   setisopen,
   handleSelect,
   currentPassengerIndex,
+  vehicleData,
 }: PropT) {
   const [open, setopen] = useState(isOpen);
 
-  const arrangements = [
-    { title: "A1", isAvailable: true },
-    { title: "A2", isAvailable: true },
-    { title: "A3", isAvailable: false },
-    { title: "A4", isAvailable: true },
-
-    { title: "B1", isAvailable: false },
-    { title: "B2", isAvailable: true },
-    { title: "B3", isAvailable: true },
-    { title: "B4", isAvailable: false },
-
-    { title: "C1", isAvailable: true },
-    { title: "C2", isAvailable: false },
-    { title: "C3", isAvailable: true },
-    { title: "C4", isAvailable: true },
-  ];
-
-  const seats = arrangements.map((obj, index: number) => (
+  const seatFormation = splitAndConvertToNumbers(vehicleData.seatFormation);
+  const numberOfRows = vehicleData.numberOfRows;
+  const arrangements = generateSeatObjects(seatFormation);
+  const seats = arrangements.map((obj: any, index: number) => (
     <div
       className={`w-full h-20 lg:h-28 ${
         obj.isAvailable ? "bg-green-500 cursor-pointer" : "bg-white"
@@ -53,8 +48,55 @@ export default function SeatArrangementDialog({
     </div>
   ));
 
+  const SeatArrangement = () => {
+    const arrangement = seatFormation;
+    const rowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    const bgChecker = (seatId: any) => {
+      const arr: any = [];
+      if (arr.includes(seatId)) return "bg-urban-green";
+      else return "bg-white";
+    };
+
+    return (
+      <div className="seat-arrangement w-full">
+        {arrangement.map((seatsInRow, rowIndex) => (
+          <div
+            className="row w-full flex items-center justify-around"
+            id={`row-${rowLetters[rowIndex]}`}
+            key={rowIndex}
+          >
+            {Array.from({ length: seatsInRow }).map((_, seatIndex) => {
+              const seatId = `${rowLetters[rowIndex]}${seatIndex + 1}`;
+              return (
+                <div
+                  className={`seat w-full h-20 lg:h-28 flex items-center justify-center rounded-md cursor-pointer ${
+                    seatId === "A1"
+                      ? "bg-gray-500 text-gray-100 cursor-not-allowed hover:bg-gray-500"
+                      : bgChecker(seatId)
+                  } hover:bg-urban-green font-bold text-urban-black  m-1 `}
+                  id={seatId}
+                  key={seatId}
+                >
+                  {seatId === "A1" ? (
+                    <div>
+                      <GiSteeringWheel color="#fff" size={40} />
+                    </div>
+                  ) : (
+                    seatId
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   useEffect(() => {
     AOS.init();
+    console.log("vehicle ===>", vehicleData);
   }, []);
 
   useEffect(() => {
@@ -103,8 +145,9 @@ export default function SeatArrangementDialog({
               {/* <div className="py-3 rounded-lg bg-slate-200 text-center">
                 Driver's seat
               </div> */}
-              <div className="bg-slate-100 min-h-60 p-4 grid grid-cols-2 lg:grid-cols-4 gap-2">
-                {seats}
+              <div className="bg-[#f0f6f0] min-h-60 p-4">
+                {/* {seats} */}
+                <SeatArrangement />
               </div>
             </div>
           </div>

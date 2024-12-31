@@ -34,10 +34,14 @@ const PathMap: React.FC<{ path: [number, number][] }> = ({ path }) => {
   );
 };
 
-const MapWithPath: React.FC = () => {
+type propT = {
+  depatPath: [number, number];
+  destinPath: [number, number];
+};
+const MapWithPath = ({ depatPath, destinPath }: propT) => {
   // Coordinates for Akure and Ado Ekiti
-  const akureCoordinates: [number, number] = [7.250771, 5.210266];
-  const adoEkitiCoordinates: [number, number] = [7.623289, 5.22087];
+  const akureCoordinates: [number, number] = depatPath;
+  const adoEkitiCoordinates: [number, number] = destinPath;
 
   // Define the path with the coordinates
   const path: [number, number][] = [akureCoordinates, adoEkitiCoordinates];

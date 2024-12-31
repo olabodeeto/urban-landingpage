@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import {
   convertDate,
   convertTo12HourFormat,
+  stringToNumberArray,
   truncateString,
 } from "../../utils/utils";
 import { ITrip } from "@/app/models/trips-model";
@@ -63,19 +64,22 @@ export default function TripCard({ data }: PropT) {
 
   const handleBookTrip = () => {
     const secondStep = {
-      tripCode: "",
-      parkAddr: "",
-      parkCity: "",
-      parkState: "",
-      parkname: "",
-      fare: "",
-      vehicleType: "",
-      departureCity: "",
-      destinationCity: "",
-      departureTime: "",
-      departureDate: "",
+      tripCode: uniqueID,
+      parkAddr: departure.address ?? "---",
+      parkCity: departure.city,
+      parkState: departure.region,
+      parkname: "---",
+      fare: parseInt(cost),
+      vehicleType: tripVehicle.vehicleType.category,
+      departureCity: departure.city,
+      destinationCity: destination.city,
+      departureTime: departureTime,
+      departureDate: departureDate,
       lat: "",
       long: "",
+      depatPath: stringToNumberArray(departure.coordinate),
+      destinPath: stringToNumberArray(destination.coordinate),
+      vehicleData: tripVehicle.vehicleType,
     };
     localStorage.setItem("secondStep", JSON.stringify(secondStep));
     router.push("/booking/passenger-details");

@@ -61,3 +61,48 @@ export function formatDate(inputDate: any) {
   // Format the date as "MM/DD/YYYY"
   return `${month}/${day}/${year}`;
 }
+
+export function stringToNumberArray(input: any) {
+  return input.split(",").map((item: any) => Number(item.trim()));
+}
+
+export function splitAndConvertToNumbers(input: String) {
+  return input.split("-").map(Number);
+}
+
+export function generateSeatObjects(arrangement: any) {
+  const seatObjects: any = [];
+  const rowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let seatIndex = 0;
+
+  arrangement.forEach((seatsInRow: any, rowIndex: any) => {
+    for (let seatNumber = 1; seatNumber <= seatsInRow; seatNumber++) {
+      seatObjects.push({
+        title: `${rowLetters[rowIndex]}${seatNumber}`,
+        isAvailable: true,
+      });
+      seatIndex++;
+    }
+  });
+
+  return seatObjects;
+}
+
+export function generateSeatDivs(arrangement: any) {
+  const rowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let htmlString = "";
+
+  arrangement.forEach((seatsInRow: any, rowIndex: any) => {
+    htmlString += `<div class="row" id="row-${rowLetters[rowIndex]}">\n`;
+
+    for (let seatNumber = 1; seatNumber <= seatsInRow; seatNumber++) {
+      const seatId = `${rowLetters[rowIndex]}${seatNumber}`;
+      htmlString += `  <div class="seat" id="${seatId}">${seatId}</div>\n`;
+    }
+
+    htmlString += `</div>\n`;
+  });
+
+  return htmlString;
+}

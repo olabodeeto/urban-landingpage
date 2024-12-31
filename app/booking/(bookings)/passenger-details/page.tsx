@@ -24,6 +24,7 @@ export default function PassengerDetails() {
   const [noPassengers, setnoPassengers] = useState<number[]>([]);
   const [showSeatModal, setshowSeatModal] = useState(false);
   const [showManifestModal, setshowManifestModal] = useState(false);
+  const [secondStepData, setsecondStepData] = useState<any>({});
   const [passengers, setpassengers] = useState<any[]>(
     noPassengers.map((obj) => {
       return {
@@ -71,14 +72,17 @@ export default function PassengerDetails() {
   useEffect(() => {
     const prevPageData: any = localStorage.getItem("firstStep");
     const step3Data: any = localStorage.getItem("thirdStep");
+    const step2Data: any = localStorage.getItem("secondStep");
     const thirdStep = JSON.parse(step3Data);
+    setsecondStepData(JSON.parse(step2Data));
+
     if (prevPageData == null || prevPageData.length < 1) {
       router.push("/");
     } else {
       const firstStep = JSON.parse(prevPageData);
       const { numberOfPassagers } = firstStep;
       const arrayPassgrs = generateArray(numberOfPassagers);
-      // console.log("===>", arrayPassgrs);
+
       if (step3Data !== null) {
         setpassengers(thirdStep.passagers);
       } else {
@@ -318,7 +322,12 @@ export default function PassengerDetails() {
                 <div className="mt-4">
                   <div className="h-80 bg-slate-100 overflow-hidden">
                     {/* <MapWithPath /> */}
-                    <LazyMap />
+                    {Object.keys(secondStepData).length > 0 && (
+                      <LazyMap
+                        depatPath={secondStepData.depatPath}
+                        destinPath={secondStepData.destinPath}
+                      />
+                    )}
                   </div>
 
                   <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">
@@ -344,6 +353,7 @@ export default function PassengerDetails() {
           setisopen={setshowSeatModal}
           handleSelect={handleChange}
           currentPassengerIndex={currentPassager}
+          vehicleData={secondStepData.vehicleData}
         />
       )}
 
