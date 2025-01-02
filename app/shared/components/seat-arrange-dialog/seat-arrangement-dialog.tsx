@@ -18,6 +18,9 @@ type PropT = {
   handleSelect: Function;
   currentPassengerIndex: any;
   vehicleData: IVehicleType;
+  setSelectedSeat: Function;
+  bookedSeats: String[];
+  selectedSeat: String;
 };
 export default function SeatArrangementDialog({
   isOpen,
@@ -25,36 +28,23 @@ export default function SeatArrangementDialog({
   handleSelect,
   currentPassengerIndex,
   vehicleData,
+  setSelectedSeat,
+  bookedSeats,
+  selectedSeat,
 }: PropT) {
   const [open, setopen] = useState(isOpen);
 
   const seatFormation = splitAndConvertToNumbers(vehicleData.seatFormation);
   const numberOfRows = vehicleData.numberOfRows;
   const arrangements = generateSeatObjects(seatFormation);
-  const seats = arrangements.map((obj: any, index: number) => (
-    <div
-      className={`w-full h-20 lg:h-28 ${
-        obj.isAvailable ? "bg-green-500 cursor-pointer" : "bg-white"
-      } flex items-center justify-center rounded-md`}
-      key={index}
-      onClick={() => {
-        if (obj.isAvailable) {
-          setisopen(false);
-          handleSelect(currentPassengerIndex, "seat", obj.title);
-        }
-      }}
-    >
-      {obj.title}
-    </div>
-  ));
 
   const SeatArrangement = () => {
     const arrangement = seatFormation;
     const rowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     const bgChecker = (seatId: any) => {
-      const arr: any = [];
-      if (arr.includes(seatId)) return "bg-urban-green";
+      if (bookedSeats.includes(seatId) || seatId === selectedSeat)
+        return "bg-urban-green";
       else return "bg-white";
     };
 
@@ -77,6 +67,12 @@ export default function SeatArrangementDialog({
                   } hover:bg-urban-green font-bold text-urban-black  m-1 `}
                   id={seatId}
                   key={seatId}
+                  onClick={() => {
+                    if (!bookedSeats.includes(seatId)) {
+                      setSelectedSeat(seatId);
+                      setisopen(!open);
+                    }
+                  }}
                 >
                   {seatId === "A1" ? (
                     <div>
@@ -96,7 +92,6 @@ export default function SeatArrangementDialog({
 
   useEffect(() => {
     AOS.init();
-    console.log("vehicle ===>", vehicleData);
   }, []);
 
   useEffect(() => {

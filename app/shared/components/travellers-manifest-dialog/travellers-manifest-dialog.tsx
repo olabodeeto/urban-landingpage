@@ -10,11 +10,13 @@ type PropT = {
   isOpen?: boolean;
   setisopen: Function;
   data: any;
+  bookedSeats: any;
 };
 export default function TravellersManifestDialog({
   isOpen,
   setisopen,
   data,
+  bookedSeats,
 }: PropT) {
   const step3Data: any = localStorage.getItem("thirdStep");
   const thirdStep = JSON.parse(step3Data);
@@ -109,6 +111,7 @@ export default function TravellersManifestDialog({
                   onClick={() => {
                     const thirdStep = {
                       passagers: data,
+                      bookedSeats,
                       manifest: { nextkinName, nextkinPhone },
                     };
                     localStorage.setItem(

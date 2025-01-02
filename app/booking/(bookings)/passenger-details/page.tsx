@@ -19,6 +19,7 @@ import SimilarTripCard from "./similar-trip-card";
 import MapWithPath from "@/app/shared/components/map-with-path/map-with-path";
 import SeatArrangementDialog from "@/app/shared/components/seat-arrange-dialog/seat-arrangement-dialog";
 import TravellersManifestDialog from "@/app/shared/components/travellers-manifest-dialog/travellers-manifest-dialog";
+import PassengerRow from "./passenger-row/passenger-row";
 
 export default function PassengerDetails() {
   const [noPassengers, setnoPassengers] = useState<number[]>([]);
@@ -38,7 +39,10 @@ export default function PassengerDetails() {
       };
     })
   );
+  const [selectedSeat, setselectedSeat] = useState("");
   const [currentPassager, setcurrentPassager] = useState<any>(null);
+  const [bookedSeats, setbookedSeats] = useState<any>([]);
+  const [isformValid, setisformValid] = useState(false);
   const router = useRouter();
 
   const handleChange = (index: number, fieldName: string, value: any) => {
@@ -61,9 +65,49 @@ export default function PassengerDetails() {
     }
   };
 
+  const handleSeatFieldChange = (
+    index: number,
+    fieldName: string,
+    value: any
+  ) => {
+    setpassengers((prevFormValues: any) => {
+      const updatedItems = [...prevFormValues];
+      const updatedItem = { ...updatedItems[index] };
+      updatedItem[fieldName] = value;
+      updatedItems[index] = updatedItem;
+      return [...updatedItems];
+    });
+    const step3Data: any = localStorage.getItem("thirdStep");
+    if (step3Data == null) {
+      if (!bookedSeats.includes(value)) {
+        setbookedSeats([...bookedSeats, value]);
+      }
+    } else {
+      const arr = bookedSeats.filter(
+        (item: any) => item !== passengers[index].seat
+      );
+      setbookedSeats([...arr, value]);
+    }
+  };
+
   function generateArray(count: number) {
     return Array.from({ length: count }, (_, index) => index + 1);
   }
+
+  const handleValidation = () => {
+    passengers.map((obj: any) => {
+      const { title, firstName, surname, phoneNumber, seat } = obj;
+      if (title !== null) {
+        const isValid =
+          title.length > 0 &&
+          firstName.length > 2 &&
+          surname.length > 2 &&
+          phoneNumber.length == 11 &&
+          seat.length === 2;
+        setisformValid(isValid);
+      }
+    });
+  };
 
   useEffect(() => {
     AOS.init();
@@ -73,6 +117,10 @@ export default function PassengerDetails() {
     const prevPageData: any = localStorage.getItem("firstStep");
     const step3Data: any = localStorage.getItem("thirdStep");
     const step2Data: any = localStorage.getItem("secondStep");
+    const bookingsData = JSON.parse(step2Data);
+    const bookSeats = bookingsData.bookings.map((item: any) => item.seatNumber);
+    //get all already booked seats in the vehicle
+    setbookedSeats(bookSeats);
     const thirdStep = JSON.parse(step3Data);
     setsecondStepData(JSON.parse(step2Data));
 
@@ -85,6 +133,7 @@ export default function PassengerDetails() {
 
       if (step3Data !== null) {
         setpassengers(thirdStep.passagers);
+        setbookedSeats(thirdStep.bookedSeats);
       } else {
         const emptyData = arrayPassgrs.map((obj) => {
           return {
@@ -103,6 +152,10 @@ export default function PassengerDetails() {
       // setnoPassengers(arrayPassgrs);
     }
   }, []);
+
+  useEffect(() => {
+    handleValidation();
+  }, [passengers]);
 
   return (
     <>
@@ -124,7 +177,7 @@ export default function PassengerDetails() {
                     <PassengerAccordion
                       sn={index + 1}
                       passengerName={`${obj.firstName} ${obj.surname}`}
-                      seatNumber="B1"
+                      seatNumber={passengers[index].seat ?? "---"}
                     >
                       <div
                         className="w-full flex flex-col gap-10"
@@ -294,9 +347,7 @@ export default function PassengerDetails() {
                                 },
                                 ":focus": "#000",
                               }}
-                              onChange={(e: any) => {
-                                handleChange(index, "seat", e.target.value);
-                              }}
+                              defaultValue={selectedSeat}
                             />
                           </div>
                         </div>
@@ -309,6 +360,7 @@ export default function PassengerDetails() {
                   <button
                     className="py-3 rounded-md disabled:bg-gray-300 bg-urban-green text-white px-10"
                     onClick={handleSubmit}
+                    disabled={!isformValid}
                   >
                     Continue
                   </button>
@@ -354,6 +406,11 @@ export default function PassengerDetails() {
           handleSelect={handleChange}
           currentPassengerIndex={currentPassager}
           vehicleData={secondStepData.vehicleData}
+          setSelectedSeat={(value: any) =>
+            handleSeatFieldChange(currentPassager, "seat", value)
+          }
+          bookedSeats={bookedSeats}
+          selectedSeat={selectedSeat}
         />
       )}
 
@@ -362,6 +419,7 @@ export default function PassengerDetails() {
           isOpen={showManifestModal}
           setisopen={setshowManifestModal}
           data={passengers}
+          bookedSeats={bookedSeats}
         />
       )}
     </>

@@ -31,27 +31,6 @@ export default function TripCard({ data }: PropT) {
     tripVehicle,
     bookings,
   } = data;
-  // const {
-  //   tripCode,
-  //   fare,
-  //   vehicleType,
-  //   park,
-  //   totalSeats,
-  //   bookedSeats,
-  //   endState,
-  //   endCity,
-  //   date,
-  //   id: tripId,
-  //   time,
-  // } = data;
-  // const {
-  //   name: parkname,
-  //   state: parkState,
-  //   city: parkCity,
-  //   fullAddress: parkAddr,
-  //   longitude,
-  //   latitude,
-  // } = park;
 
   const router = useRouter();
 
@@ -80,6 +59,7 @@ export default function TripCard({ data }: PropT) {
       depatPath: stringToNumberArray(departure.coordinate),
       destinPath: stringToNumberArray(destination.coordinate),
       vehicleData: tripVehicle.vehicleType,
+      bookings: bookings,
     };
     localStorage.setItem("secondStep", JSON.stringify(secondStep));
     router.push("/booking/passenger-details");
