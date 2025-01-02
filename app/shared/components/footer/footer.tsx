@@ -219,7 +219,7 @@ export default function Footer() {
 
                 <div className="mt-4">
                   <Image
-                    src="./assets/ncdpc.svg"
+                    src="/assets/ncdpc.svg"
                     width={100}
                     height={40}
                     alt=""

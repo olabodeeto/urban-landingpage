@@ -14,7 +14,10 @@ import SimilarTripCard from "./similar-trip-card";
 import SuccessDialog from "@/app/shared/components/success-dialog/success-dialog";
 
 export default function PassengerDetails() {
+  const [secondStepData, setsecondStepData] = useState<any>({});
+  const [tripDetails, settripDetails] = useState<any>({});
   const [showSuccessModal, setshowSuccessModal] = useState(false);
+  const [noOfPassanger, setnoOfPassanger] = useState(0);
   const noPassengers = [1, 2];
 
   const [passengers, setpassengers] = useState<any[]>(
@@ -50,8 +53,15 @@ export default function PassengerDetails() {
   }, []);
 
   useEffect(() => {
-    // console.log("===>", passengers);
-  }, [passengers]);
+    const step1Data: any = localStorage.getItem("firstStep");
+    const step2Data: any = localStorage.getItem("secondStep");
+    const finalData: any = localStorage.getItem("finalStep");
+    const firstStep = JSON.parse(step1Data);
+    const { numberOfPassagers } = firstStep;
+    setnoOfPassanger(parseInt(numberOfPassagers));
+    setsecondStepData(JSON.parse(step2Data));
+    settripDetails(JSON.parse(finalData));
+  }, []);
 
   return (
     <>
@@ -68,10 +78,14 @@ export default function PassengerDetails() {
               <div className="mt-4">
                 <div className="mt-6">
                   <h4 className="text-lg 2xl:text-2xl">Payment</h4>
-                  <p className=" w-full lg:w-10/12 text-base font-light text-gray-600">
-                    You are about to make the payment of N13,000.00 . Select
-                    payment option below
-                  </p>
+                  {Object.keys(tripDetails).length && (
+                    <p className=" w-full lg:w-10/12 text-base font-light text-gray-600">
+                      You are about to make the payment of N
+                      {tripDetails.fare * noOfPassanger}. Select payment option
+                      below
+                    </p>
+                  )}
+
                   <div className="mt-4 flex flex-col gap-y-4">
                     <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
                       <span className="text-xs font-light">Pay with</span>
@@ -83,8 +97,10 @@ export default function PassengerDetails() {
                       />
                     </div>
 
-                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-pointer">
-                      <span className="text-xs font-light">Pay with</span>
+                    <div className="w-full p-3 border border-gray-200 rounded-lg flex items-center justify-between cursor-not-allowed bg-gray-200">
+                      <span className="text-xs font-light text-gray-400">
+                        Pay with
+                      </span>
                       <Image
                         src="/assets/rave.svg"
                         width={45}
@@ -111,7 +127,13 @@ export default function PassengerDetails() {
                 <div className="mt-4">
                   <div className="h-80 bg-slate-100 overflow-hidden">
                     {/* <MapWithPath /> */}
-                    <LazyMap />
+                    {/* <LazyMap /> */}
+                    {Object.keys(secondStepData).length > 0 && (
+                      <LazyMap
+                        depatPath={secondStepData.depatPath}
+                        destinPath={secondStepData.destinPath}
+                      />
+                    )}
                   </div>
 
                   <h2 className="w-full text-xl lg:text-2xl mt-10 mb-4 font-light">

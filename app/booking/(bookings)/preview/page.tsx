@@ -34,6 +34,7 @@ export default function PassengerDetails() {
   );
 
   const handleSubmit = () => {
+    localStorage.setItem("finalStep", JSON.stringify(tripDetails));
     router.push("./payment");
   };
 
@@ -80,6 +81,7 @@ export default function PassengerDetails() {
       };
       const { numberOfPassagers } = firstStep;
       settripDetails(tripdetails);
+
       setnoOfPassanger(parseInt(numberOfPassagers));
       // console.log("===>", step1Data);
     }
